@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #667080;
 }
 
 h1 {
@@ -28,4 +29,46 @@ h3 {
 p {
   font-family: "Nunito Sans";
   font-size: 1rem;
+}
+
+#figure-lola {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#figure-lola img {
+  width: 100%;
+  height: 100%;
+}
+
+#line-divider {
+  width: 100%;
+  border-bottom: 3px solid #ededed;
+}
+
+#profile-badge {
+  height: 100%;
+  padding: 1px 3px;
+  background-color: #F0B941;
+}
+
+#my-star {
+  color: #F0B941;
+}
+
+.checked-icon {
+  color: green;
+}
+
+.na {
+  height: 8vh;
+  background-color: #ffffff;
+  border-bottom: 1px solid #1dc9c6;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
 }/*# sourceMappingURL=main.css.map */
