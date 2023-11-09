@@ -51,11 +51,11 @@ p {
 #profile-badge {
   height: 100%;
   padding: 1px 3px;
-  background-color: #F0B941;
+  background-color: #F9BB18;
 }
 
 #my-star {
-  color: #F0B941;
+  color: #F9BB18;
 }
 
 .checked-icon {
@@ -65,7 +65,7 @@ p {
 .na {
   height: 8vh;
   background-color: #ffffff;
-  border-bottom: 1px solid #1dc9c6;
+  border-bottom: 1px solid #1D838A;
   display: flex;
   justify-content: space-between;
   position: fixed;
