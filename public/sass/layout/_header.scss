@@ -1,0 +1,40 @@
+.na{
+    height: 8vh;
+    background-color: $white-color;
+    border-bottom: 1px solid $light-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    width: 100vw;
+    padding: 0 2vw;
+
+    @media (max-width: 700px){
+        background-color: red;
+    }
+
+    &__input{
+        background-color: $searchbar-color;
+        border-radius: 5px;
+        border: none;
+        width: 25%;
+        outline: none;
+        height: 1.5rem;
+        padding: 0 0.5rem;
+
+    }
+
+    &__list{
+        display: flex;
+        list-style-type: none;
+        gap: 2rem;
+        margin-bottom: 0;
+
+        @media (max-width: 700px){
+            display: none;
+        }
+
+    }
+
+}
