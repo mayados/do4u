@@ -1,0 +1,31 @@
+#figure-lola{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#figure-lola img {
+    width: 100%;
+    height: 100%;
+}
+
+#line-divider{
+    width: 100%;
+    border-bottom: 3px solid $searchbar-color;
+}
+
+#profile-badge{
+    height: 100%;
+    padding: 1px 3px;
+    background-color: $yellow-logo-color;
+}
+
+#my-star{
+    color: $yellow-logo-color;
+}
+
+.checked-icon {
+    color: green;
+}
+

@@ -3,18 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mon profil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
 </head>
 <body>
-    <header>
-
+    <header> 
+        <nav class="na">
+            <a href="">DO4U</a>    
+            <input type="text" placeholder="chercher une annonce par mot-clé" class="na__input">       
+            <ul class="na__list">
+                <li class="">
+                    <a href="#" class="nav-link">Annonces</a>   
+                </li> 
+                <li class="">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                </li> 
+                <li class="">
+                    <a href="#" class="nav-link">Contact</a>   
+                </li> 
+                <li class="">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-envelope"></i></a>   
+                </li> 
+                <li class="">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i></a>   
+                </li> 
+            </ul>              
+        </nav>          
     </header>
-    <main>
+    <main class="container">
+        <div>fil d'ariane</div>
+        <section id="my-infos-profile">
+            <div id="top-my-infos" class="flex-column flex-lg-row align-items-lg-center justify-content-between d-flex">
+                <div class=" d-flex flex-row align-items-center gap-3">
+                    <figure id="figure-lola" >
+                        <img src="../public/img/woman_face.jpg" alt="profil de user">
+                    </figure>
+                    <div>
+                        <div class="flex-lg-row d-flex">
+                            <p>Lola </p>
+                            <span id="profile-badge">Particulier</span>                             
+                        </div>
 
+                        <p><i class="fa-solid fa-star" id="my-star"></i> 4/5 <span>(18 avis)</span></p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="d-none d-lg-inline">Informations vérifiées :</p>
+                    <p><i class="fa-solid fa-circle-check checked-icon"></i> E-mail</p>                    
+                </div>
+                <div class="">
+                    <p><i class="fa-solid fa-location-dot"></i> Strasbourg</p>
+                    <p><i class="fa-solid fa-user"></i> Membre depuis le 08/11/2023</p>
+                </div>
+            </div>
+            <article id="my-description">
+                <h2>Présentation</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti perspiciatis laudantium quidem, modi vel repellat voluptatibus odio quis ratione tenetur, sit exercitationem, corporis laboriosam dolores provident iste illo minus voluptate.
+                Totam culpa odio consequatur ipsum sequi iure, unde atque aliquam dignissimos alias adipisci aut quod temporibus nemo ab? Ipsam possimus corrupti, ipsa dolores ipsum enim quibusdam. Minus sequi sint tempore!</p>
+            </article>
+        </section>
+        <div id="line-divider"></div>
+        <section id="mes-rubriques">
+            <ul class="nav nav-underline row text-center mt-5">
+                <li class="nav-item col-3 offset-1 offset-lg-2 col-lg-2">
+                    <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-annonces">Annonces</a>
+                </li>
+                <li class="nav-item col-2  col-lg-2">
+                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-favoris">Favoris</a>
+                </li>
+                <li class="nav-item col-2  col-lg-2">
+                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
+                </li>
+                <li class="nav-item col-2  col-lg-2">
+                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-suivis">Suivis</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-5" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-annonces" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                    <div class="row justify-content-evenly d-flex">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                          <div class="card " style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-favoris" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">les favoris</div>
+                <div class="tab-pane fade" id="pills-avis" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-suivis" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+              </div>
+        </section>
     </main>
     <footer>
 
