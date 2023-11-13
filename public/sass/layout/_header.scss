@@ -10,9 +10,8 @@
     width: 100vw;
     padding: 0 2vw;
 
-    @media (max-width: 700px){
-        background-color: red;
-    }
+    // Searchbar should be on the bottom of the nav in mobile version
+
 
     &__input{
         background-color: $searchbar-color;
@@ -25,16 +24,94 @@
 
     }
 
+    &__burger-menu span{
+        display: none;
+
+        @media (max-width: 768px){
+            display: block;
+            height: 5px;
+            width: 2rem;
+            border-top: 2px solid $dark-color;
+        }
+
+    }
+
+    &__burger-menu label{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+    }
+
+    // Bootstrap media query for medium size devices
     &__list{
         display: flex;
         list-style-type: none;
         gap: 2rem;
         margin-bottom: 0;
 
-        @media (max-width: 700px){
+        @media (max-width: 768px){
             display: none;
         }
 
     }
+
+    #dropdown-link-user,
+    #dropdown-link-annonces{
+        position: relative;
+    }
+
+    &__dropdown{
+        position: absolute;
+        display: none;
+        top: 5.2vh;   
+        list-style-type: none;
+        padding: 1rem;   
+        @media (max-width: 768px){
+            // display: inherit;
+            position: inherit;
+            top: inherit;
+        }          
+    }
+
+    &__dropdown_user{
+        right: -2vw;
+    }
+
+    &__dropdown_annonces{
+        width: 20vw;
+    }
+
+    // We don't want to visually display the checkbox
+    // Replace display none by another property for the screen readers
+    #burger-check{
+        display: none;
+    }
+
+    #dropdown-link-user a:hover ~ &__dropdown_user,
+    #dropdown-link-annonces a:hover ~ &__dropdown_annonces{
+        display: inline-block;
+        background-color: $white-color;
+        border: 1px solid $primary-color;
+        width: 100vw;
+        text-align: center;
+    }    
+
+    .show-list{
+        display: flex;
+        flex-direction: column;
+        top: 8vh;
+        position: absolute;
+        background-color: $white-color;
+        width: 100vw;
+        height: 100vh;
+        // justify-content: space-evenly;
+        gap: 2rem;
+        align-items: center;
+        padding: inherit;
+    }
+
+
 
 }
