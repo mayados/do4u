@@ -1,6 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap");
+.link {
+  color: #1D838A;
+  font-weight: 600;
+}
+
+.button-primary {
+  width: 100%;
+  color: #ffffff;
+  background-color: #1D838A;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px #1D838A;
+  align-items: center;
+}
+
+.button-primary:hover {
+  width: 100%;
+  background-color: #fff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
+.button-secondary {
+  width: 100%;
+  color: #ffffff;
+  background-color: #E65A14;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px #E65A14;
+  align-items: center;
+}
+
+.button-secondary:hover {
+  width: 100%;
+  background-color: #fff;
+  color: #E65A14;
+  font-weight: 600;
+  border: solid 2px #E65A14;
+}
+
 .na {
   height: 8vh;
   background-color: #ffffff;
@@ -69,6 +112,64 @@ p {
   font-size: 1rem;
 }
 
+.connexion {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-image: url("../img/Img_page_de_connexion/background_img.png");
+  background-size: initial;
+}
+
+.form-connexion {
+  border: dashed 2px rgb(138, 138, 138);
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+}
+
+.form {
+  width: 100%;
+}
+
+.col-1-connexion {
+  flex: 1;
+  order: 1;
+}
+
+.col-2-connexion {
+  flex: 1;
+  order: 2;
+}
+
+@media screen and (max-width: 1025px) {
+  .connexion {
+    background-image: url("../img/Img_page_de_connexion/background_img.png");
+    background-size: initial;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .col-1-connexion {
+    padding-right: 12%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .col-2-connexion {
+    padding-left: 12%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+@media (max-width: 600px) {
+  .col-1-connexion {
+    order: 2;
+    margin-top: 50px;
+  }
+  .col-2-connexion {
+    order: 1;
+  }
+  .form-connexion {
+    padding: 10px;
+  }
+}
 #figure-lola {
   width: 200px;
   height: 200px;
