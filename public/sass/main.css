@@ -75,7 +75,7 @@
   border: solid 2px #E65A14;
 }
 
-.card {
+.card-ad {
   display: block;
   top: 0px;
   position: relative;
@@ -85,14 +85,14 @@
   overflow: hidden;
   border: 1px solid #667080;
 }
-.card:hover {
+.card-ad:hover {
   transition: all 0.2s ease-out;
   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
   top: -4px;
   border: 1px solid #667080;
   background-color: white;
 }
-.card:before {
+.card-ad:before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -106,8 +106,8 @@
   transform-origin: 50% 50%;
   transition: transform 0.15s ease-out;
 }
-.card:before {
-  content: "dd";
+.card-ad:before {
+  content: "";
   color: #ffffff;
   font-size: 10px;
   align-items: center;
@@ -368,20 +368,31 @@ p {
 }
 
 .news-letter {
-  padding: 10%;
+  background-image: url("https://cdn.pixabay.com/photo/2021/04/22/17/55/flowers-6199691_1280.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.news-letter-bg {
-  background-color: #F9BB18;
+form input[type=text],
+form input[type=email],
+form button[type=submit] {
+  display: block;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
-.first-column {
-  padding: auto;
-  background-color: #F9BB18;
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
 }
 
-.second-column {
-  background-image: url("/public/img/news-letter/image1.avif");
+.social-icons a:hover {
+  color: #009688;
 }
 
 #figure-lola {
