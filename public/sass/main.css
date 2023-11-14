@@ -342,6 +342,16 @@ p {
     padding: 10px;
   }
 }
+.section-1 {
+  background-image: url("../img/Img_contact/bg-1-contact.png");
+  background-size: initial;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-top: 150px;
+}
+
 .hero {
   background: rgb(16, 200, 197);
   background: linear-gradient(90deg, rgb(16, 200, 197) 0%, rgb(110, 239, 237) 27%, rgb(234, 251, 250) 100%);
