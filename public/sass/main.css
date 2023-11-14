@@ -125,38 +125,55 @@
   z-index: 99;
   width: 100vw;
   padding: 0 2vw;
+  /* Linked to JavaScript */
 }
-.na #container-input {
-  width: 35%;
+.na__form {
+  width: 35vw;
   background-color: #ffffff;
+  position: relative;
+  display: flex;
+}
+.na__container_fields {
+  flex: 10;
 }
 @media (max-width: 768px) {
-  .na #container-input {
+  .na__form--mobile, .na__form--mobile:nth-child(1), .na__form--mobile:nth-child(2) {
     top: 7vh;
     position: absolute;
     width: 100vw;
-    height: 5vh;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
     right: 0;
     left: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 0 2% 0 2%;
+  }
+}
+@media (max-width: 768px) {
+  .na__form--none, .na__form--none:nth-child(1), .na__form--none:nth-child(2) {
+    display: none;
   }
 }
 .na__input {
   background-color: #ededed;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   border: none;
   width: 100%;
   outline: none;
-  height: 1.5rem;
+  height: 2rem;
   padding: 0 0.5rem;
+  position: relative;
+}
+.na__search-glass {
+  border: none;
+  flex: 1;
+  border-radius: 0px 5px 5px 0px;
 }
 @media (max-width: 768px) {
-  .na__input {
-    position: absolute;
-    width: 90%;
+  .na__search-glass {
+    height: 2rem;
   }
 }
 .na__burger-menu span {
@@ -198,41 +215,39 @@
 .na__dropdown {
   position: absolute;
   display: none;
-  top: 4.5vh;
+  height: 0;
+  top: 1.5rem;
   list-style-type: none;
-  padding: 1rem;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #ffffff;
 }
 @media (max-width: 768px) {
   .na__dropdown {
     position: inherit;
     top: inherit;
+    width: 100vw;
   }
 }
-.na__dropdown_user {
-  right: -2vw;
-}
-.na__dropdown_user:hover {
-  width: 5vw;
-}
-.na__dropdown_annonces {
-  width: 20vw;
-}
-.na__dropdown_annonces:hover {
-  width: 20vw;
+.na__dropdown a {
+  text-decoration: none;
+  color: #667080;
 }
 .na #burger-check {
   display: none;
 }
-#dropdown-link-user a:hover ~ .na__dropdown_user, #dropdown-link-annonces a:hover ~ .na__dropdown_annonces {
-  display: inline-block;
+.na__dropdown_annonces--active, .na__dropdown_user--active {
+  display: inherit;
   background-color: #ffffff;
   border: 1px solid #1D838A;
   text-align: center;
+  height: auto;
 }
 .na .show-list {
   display: flex;
   flex-direction: column;
-  top: 8vh;
+  text-align: center;
+  top: 7vh;
   left: 0;
   right: 0;
   position: absolute;
@@ -244,6 +259,20 @@
   padding: inherit;
 }
 
+/* We don't want issues with :hover on responsive. To avoid this kind of isues, 
+we declare all the :hover in a media. If the media doesn't correspond with :hover, it doesn't take these properties
+*/
+@media (hover: hover) {
+  #dropdown-link-annonces:hover .na__dropdown_annonces,
+  #dropdown-link-user:hover .na__dropdown_user {
+    display: inherit;
+    height: auto;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  #dropdown-link-user:hover .na__dropdown_user {
+    right: 0px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -455,6 +484,6 @@ p {
 }
 @media (max-width: 768px) {
   #main-container {
-    margin-top: 13vh;
+    margin-top: 15vh;
   }
 }/*# sourceMappingURL=main.css.map */
