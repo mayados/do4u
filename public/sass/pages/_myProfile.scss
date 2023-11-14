@@ -29,3 +29,11 @@
     color: green;
 }
 
+#main-container{
+    margin-top: 7vh;
+
+    @media (max-width: 768px){
+        margin-top: 13vh;
+    }    
+}
+

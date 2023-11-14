@@ -12,5 +12,15 @@ function displayNavList() {
   
  displayNavList();
 
- /* Display accordeon menu responsive */
- 
+ /* Display accordeon menu responsive annonces */
+ function displayAnnonces() {
+  const categories = document.querySelector('.na__list');
+  const linkAnnonces = document.querySelector('.na__dropdown_annonces');
+  console.log(burger);
+
+  burger.addEventListener('click', (event) => {    
+    categories.classList.toggle('show-categories');
+  });    
+} 
+
+displayAnnonces();
