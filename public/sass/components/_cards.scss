@@ -1,4 +1,4 @@
-.card {
+.card-ad {
     display: block;
     top: 0px;
     position: relative;
@@ -31,7 +31,7 @@
       transition: transform 0.15s ease-out;
     }
     &:before {
-        content: "dd";
+        content: "";
         color: $white-color;
         font-size: 10px;
         align-items: center;
