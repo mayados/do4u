@@ -15,39 +15,66 @@
 
     // Searchbar should be on the bottom of the nav in mobile version
 
-    #container-input{
-        width: 35%;    
+    &__form{
+        width: 35vw;    
         background-color: $white-color;    
+        position: relative; 
+        display: flex;
+    }
 
+    &__container_fields{
+        flex: 10;
+    }
+
+    &__form--mobile,
+    &__form--mobile:nth-child(1),
+    &__form--mobile:nth-child(2){
         @media (max-width: 768px){
             top: 7vh;            
             position: absolute;
             width: 100vw;
-            height: 5vh;
+            height: 8vh;
             display: flex;
             justify-content: center;
             align-items: center;
             right: 0;
             left: 0;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-        }        
+            padding: 0 2% 0 2%;
+        }  
     }
+
+
+    &__form--none,
+    &__form--none:nth-child(1),
+    &__form--none:nth-child(2){
+        @media (max-width: 768px){
+            display: none;
+        }  
+    }
+
+
 
     &__input{
         background-color: $searchbar-color;
-        border-radius: 5px;
+        border-radius: 5px 0px 0px 5px;
         border: none;
         width: 100%;
         outline: none;
-        height: 1.5rem;
+        height: 2rem;
         padding: 0 0.5rem;
+        position: relative;
+    
+    }
+
+    &__search-glass{
+        border: none;
+        flex: 1;
+        border-radius: 0px 5px 5px 0px;
 
         @media (max-width: 768px){
-            position: absolute;
-            width: 90%;
-        }        
-
-
+            height: 2rem;
+        }    
     }
 
     &__burger-menu span{
@@ -92,32 +119,25 @@
         position: relative;
     }
 
-    &__dropdown{
+     &__dropdown{
         position: absolute;
         display: none;
-        top: 4.5vh;   
+        height: 0;
+        top: 1.5rem;
         list-style-type: none;
-        padding: 1rem;   
+        // This property allows to fit the content size, in our case, the "sentences" of categories. It's compatible with the navigators (Mdn)
+        width: max-content;
+        background-color: $white-color;
         @media (max-width: 768px){
-            // display: inherit;
             position: inherit;
             top: inherit;
+            width: 100vw;
         }          
-    }
+    }   
 
-    &__dropdown_user{
-        right: -2vw;
-    }
-    &__dropdown_user:hover{
-        width: 5vw;
-    }
-
-    &__dropdown_annonces{
-        width: 20vw;
-    } 
-
-    &__dropdown_annonces:hover{
-        width: 20vw;
+    &__dropdown a{
+        text-decoration: none;
+        color: $text-color;
     }
 
     // We don't want to visually display the checkbox
@@ -126,25 +146,32 @@
         display: none;
     }
 
-    #dropdown-link-user a:hover ~ &__dropdown_user,
-    #dropdown-link-annonces a:hover ~ &__dropdown_annonces{
-        display: inline-block;
+
+    /* Linked to JavaScript */
+
+    // Classes taken after click on the links to display dropdown menus (js)
+    &__dropdown_annonces--active,
+    &__dropdown_user--active{
+        display: inherit;
         background-color: $white-color;
         border: 1px solid $primary-color;
         text-align: center;
-    }    
+        height: auto;
+        
+    }
 
+    // class to display nav links when burger menu is click - Js
     .show-list{
         display: flex;
         flex-direction: column;
-        top: 8vh;
+        text-align: center;
+        top: 7vh;
         left: 0;
         right: 0;
         position: absolute;
         background-color: $white-color;
         width: 100vw;
         height: 100vh;
-        // justify-content: space-evenly;
         gap: 2rem;
         align-items: center;
         padding: inherit;
@@ -153,3 +180,21 @@
 
 
 }
+
+    /* We don't want issues with :hover on responsive. To avoid this kind of isues, 
+    we declare all the :hover in a media. If the media doesn't correspond with :hover, it doesn't take these properties
+    */
+    @media (hover: hover){
+    
+        #dropdown-link-annonces:hover .na__dropdown_annonces,
+        #dropdown-link-user:hover .na__dropdown_user{
+            display: inherit;
+            height: auto;
+            padding: 2rem 1rem 1rem 1rem;
+    
+        }
+
+        #dropdown-link-user:hover .na__dropdown_user{
+            right: 0px;
+        }
+    }
