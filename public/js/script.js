@@ -9,11 +9,11 @@ function displayNavList() {
     burger.addEventListener('click', (event) => {    
       navList.classList.toggle('show-list');
     });    
-  }   
-}
-
+  } 
+  
   
  displayNavList();
+
 
  /* Display accordeon menu responsive annonces */
  function displayAnnonces() {
@@ -41,4 +41,9 @@ displayAnnonces();
   });    
 } 
 
-displayUserParameters();
+displayUserParameters(); 
+
+}
+
+
+
