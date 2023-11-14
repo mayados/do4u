@@ -45,25 +45,50 @@
 }
 
 .na {
-  height: 8vh;
+  height: 7vh;
   background-color: #ffffff;
   border-bottom: 1px solid #1dc9c6;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
   z-index: 99;
   width: 100vw;
   padding: 0 2vw;
+}
+.na #container-input {
+  width: 35%;
+  background-color: #ffffff;
+}
+@media (max-width: 768px) {
+  .na #container-input {
+    top: 7vh;
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
 }
 .na__input {
   background-color: #ededed;
   border-radius: 5px;
   border: none;
-  width: 25%;
+  width: 100%;
   outline: none;
   height: 1.5rem;
   padding: 0 0.5rem;
+}
+@media (max-width: 768px) {
+  .na__input {
+    position: absolute;
+    width: 90%;
+  }
 }
 .na__burger-menu span {
   display: none;
@@ -94,6 +119,9 @@
     display: none;
   }
 }
+.na #logo {
+  width: 7rem;
+}
 .na #dropdown-link-user,
 .na #dropdown-link-annonces {
   position: relative;
@@ -101,7 +129,7 @@
 .na__dropdown {
   position: absolute;
   display: none;
-  top: 5.2vh;
+  top: 4.5vh;
   list-style-type: none;
   padding: 1rem;
 }
@@ -114,7 +142,13 @@
 .na__dropdown_user {
   right: -2vw;
 }
+.na__dropdown_user:hover {
+  width: 5vw;
+}
 .na__dropdown_annonces {
+  width: 20vw;
+}
+.na__dropdown_annonces:hover {
   width: 20vw;
 }
 .na #burger-check {
@@ -124,13 +158,14 @@
   display: inline-block;
   background-color: #ffffff;
   border: 1px solid #1D838A;
-  width: 100vw;
   text-align: center;
 }
 .na .show-list {
   display: flex;
   flex-direction: column;
   top: 8vh;
+  left: 0;
+  right: 0;
   position: absolute;
   background-color: #ffffff;
   width: 100vw;
@@ -257,4 +292,13 @@ p {
 
 .checked-icon {
   color: green;
+}
+
+#main-container {
+  margin-top: 7vh;
+}
+@media (max-width: 768px) {
+  #main-container {
+    margin-top: 13vh;
+  }
 }/*# sourceMappingURL=main.css.map */
