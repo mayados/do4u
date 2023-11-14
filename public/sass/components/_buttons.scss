@@ -1,11 +1,7 @@
-.link{
-    color: $primary-color;
-    font-weight: 600;
- }
-
-.button-primary {
+// btn primary regular
+.button-primary-regular {
     width: 100%;
-    color: #ffffff;
+    color: $white-color;
     background-color: $primary-color;
     justify-content: center;
     padding: 10px; 
@@ -13,18 +9,38 @@
     border: solid 2px $primary-color;
     align-items: center;
   }
-  
-  .button-primary:hover {
+
+  .button-primary-regular:hover {
     width: 100%;
-    background-color: #fff;
+    background-color: $white-color;
     color: $primary-color;
     font-weight: 600;
     border: solid 2px $primary-color;
   }
 
-  .button-secondary {
+  // btn primary pill
+  .button-primary-pill {
+    color: $white-color;
+    background-color: $primary-color;
+    justify-content: center;
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: solid 2px $primary-color;
+    align-items: center;
+  }
+
+  .button-primary-pill:hover {
+    background-color: $white-color;
+    color: $primary-color;
+    font-weight: 600;
+    border: solid 2px $primary-color;
+  }
+
+  // btn primary regular
+  .button-secondary-regular {
     width: 100%;
-    color: #ffffff;
+    color: $white-color;
     background-color: $secondary-color;
     justify-content: center;
     padding: 10px; 
@@ -33,9 +49,28 @@
     align-items: center;
   }
   
-  .button-secondary:hover {
+  .button-secondary-regular:hover {
     width: 100%;
-    background-color: #fff;
+    background-color: $white-color;
+    color: $secondary-color;
+    font-weight: 600;
+    border: solid 2px $secondary-color;
+  }
+
+  // btn secondary pill
+  .button-secondary-pill {
+    color: $white-color;
+    background-color: $secondary-color;
+    justify-content: center;
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: solid 2px $secondary-color;
+    align-items: center;
+  }
+
+  .button-secondary-pill:hover {
+    background-color: $white-color;
     color: $secondary-color;
     font-weight: 600;
     border: solid 2px $secondary-color;
