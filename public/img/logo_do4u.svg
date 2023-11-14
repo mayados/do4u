@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.8 40.79">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 35px;
+        font-weight: 800;
+      }
+
+      .cls-2 {
+        fill: #1d838a;
+        font-family: NunitoSans-Black, 'Nunito Sans';
+      }
+
+      .cls-3 {
+        fill: #e9ad10;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: Nunito-Black, Nunito;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <text class="cls-1" transform="translate(0 29.84)"><tspan class="cls-2" x="0" y="0">Do</tspan><tspan class="cls-4" x="48.05" y="0">4</tspan><tspan class="cls-3" x="69.05" y="0">U</tspan></text>
+  </g>
+</svg>
