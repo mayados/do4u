@@ -52,7 +52,7 @@
                     </div>
                 </li> 
                 <li class="">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                    <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
                 </li> 
                 <li class="">
                     <a href="#" class="nav-link">Contact</a>   
@@ -86,8 +86,8 @@
                         <img src="../public/img/woman_face.jpg" alt="profil de user">
                     </figure>
                     <div>
-                        <div class="flex-lg-row d-flex">
-                            <p>Lola </p>
+                        <div class="flex-lg-row d-flex flex-wrap">
+                            <p>Lola</p>
                             <span id="profile-badge">Particulier</span>                             
                         </div>
 
@@ -129,15 +129,21 @@
                 <div class="tab-pane fade show active" id="pills-annonces" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <div class="row justify-content-evenly d-flex">
                         <div class="card card-ad" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <figure class="card-ad__figure">
+                                <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">  
+                                <div class="card-ad__badge">
+                                    <p>Offre</p>
+                                </div>                              
+                            </figure>
+
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                               <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                           </div>
-                          <div class="card " style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                          <div class="card card-ad" style="width: 18rem;">
+                            <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
