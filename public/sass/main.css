@@ -92,27 +92,15 @@
   border: 1px solid #3a3a3a;
   background-color: white;
 }
-.card-ad:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  right: 0px;
-  background: #00838d;
-  height: 1.6rem;
-  width: 3rem;
-  border-radius: 5px;
-  transform: scale(1.8);
-  transform-origin: 50% 50%;
-  transition: transform 0.15s ease-out;
+.card-ad:hover__figure {
+  position: relative;
 }
-.card-ad:before {
-  content: "";
-  color: #ffffff;
-  font-size: 10px;
-  align-items: center;
-  justify-content: center;
+.card-ad:hover__badge {
+  background-color: #1D838A;
+  width: 250px;
+  height: 2rem;
 }
+
 .na {
   height: 7vh;
   background-color: #ffffff;
@@ -510,12 +498,18 @@ p {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  overflow: hidden;
+}
+@media (max-width: 768px) {
+  #figure-lola {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 #figure-lola img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 
 #line-divider {
@@ -526,11 +520,11 @@ p {
 #profile-badge {
   height: 100%;
   padding: 1px 3px;
-  background-color: #F9BB18;
+  background-color: #E9AD10;
 }
 
 #my-star {
-  color: #F9BB18;
+  color: #E9AD10;
 }
 
 .checked-icon {
@@ -544,4 +538,8 @@ p {
   #main-container {
     margin-top: 15vh;
   }
+}
+
+.fa-plus {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
