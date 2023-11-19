@@ -92,27 +92,15 @@
   border: 1px solid #3a3a3a;
   background-color: white;
 }
-.card-ad:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  right: 0px;
-  background: #00838d;
-  height: 1.6rem;
-  width: 3rem;
-  border-radius: 5px;
-  transform: scale(1.8);
-  transform-origin: 50% 50%;
-  transition: transform 0.15s ease-out;
+.card-ad:hover__figure {
+  position: relative;
 }
-.card-ad:before {
-  content: "";
-  color: #ffffff;
-  font-size: 10px;
-  align-items: center;
-  justify-content: center;
+.card-ad:hover__badge {
+  background-color: #1D838A;
+  width: 250px;
+  height: 2rem;
 }
+
 .na {
   height: 7vh;
   background-color: #ffffff;
@@ -196,13 +184,26 @@
 }
 .na__list {
   display: flex;
+  align-items: center;
   list-style-type: none;
   gap: 2rem;
   margin-bottom: 0;
+  height: 7vh;
 }
 @media (max-width: 768px) {
   .na__list {
     display: none;
+  }
+}
+.na__list li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .na__list li {
+    height: auto;
+    display: initial;
   }
 }
 .na #logo {
@@ -214,40 +215,58 @@
 }
 .na__dropdown {
   position: absolute;
-  display: none;
+  left: -999999px;
   height: 0;
-  top: 1.5rem;
+  top: 7vh;
   list-style-type: none;
-  width: -moz-max-content;
-  width: max-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #ffffff;
 }
 @media (max-width: 768px) {
   .na__dropdown {
+    display: none;
     position: inherit;
     top: inherit;
     width: 100vw;
+    left: inherit;
   }
 }
 .na__dropdown a {
   text-decoration: none;
-  color: #667080;
+  color: #3a3a3a;
+}
+@media (max-width: 768px) {
+  .na__dropdown_annonces div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .na #burger-check {
   display: none;
 }
 .na__dropdown_annonces--active, .na__dropdown_user--active {
+  padding-top: 1.5rem;
   display: inherit;
   background-color: #ffffff;
-  border: 1px solid #1D838A;
   text-align: center;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.na__dropdown_user--active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
 }
 .na .show-list {
   display: flex;
   flex-direction: column;
   text-align: center;
-  top: 7vh;
+  top: 6vh;
   left: 0;
   right: 0;
   position: absolute;
@@ -257,20 +276,37 @@
   gap: 2rem;
   align-items: center;
   padding: inherit;
+  padding-top: 2rem;
 }
 
 /* We don't want issues with :hover on responsive. To avoid this kind of isues, 
 we declare all the :hover in a media. If the media doesn't correspond with :hover, it doesn't take these properties
 */
 @media (hover: hover) {
+  #dropdown-link-annonces:hover .na__dropdown_annonces {
+    display: flex;
+    gap: 3rem;
+  }
+  .na__dropdown_annonces div a:hover,
+  .na__dropdown_user a:hover {
+    color: #E65A14;
+  }
+  #dropdown-link-annonces:hover .na__dropdown_annonces div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   #dropdown-link-annonces:hover .na__dropdown_annonces,
   #dropdown-link-user:hover .na__dropdown_user {
-    display: inherit;
+    left: 0;
     height: auto;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
   #dropdown-link-user:hover .na__dropdown_user {
-    right: 0px;
+    display: flex;
+    flex-direction: column;
+    left: -4rem;
   }
 }
 * {
@@ -462,12 +498,18 @@ p {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  overflow: hidden;
+}
+@media (max-width: 768px) {
+  #figure-lola {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 #figure-lola img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 
 #line-divider {
@@ -478,11 +520,11 @@ p {
 #profile-badge {
   height: 100%;
   padding: 1px 3px;
-  background-color: #F9BB18;
+  background-color: #E9AD10;
 }
 
 #my-star {
-  color: #F9BB18;
+  color: #E9AD10;
 }
 
 .checked-icon {
@@ -496,4 +538,8 @@ p {
   #main-container {
     margin-top: 15vh;
   }
+}
+
+.fa-plus {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */

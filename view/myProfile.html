@@ -29,48 +29,30 @@
             <ul class="na__list">
                 <li id="dropdown-link-annonces">
                     <!-- Add role so screen readers canr read what it is about. In our case, it will indicate that is a button to display a menu -->
-                    <a href="#" class="nav-link link-annonces" role="button">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
-                    <ul class="na__dropdown na__dropdown_annonces">
-                        <li>
+                    <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
+                    <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
+                        <div role="menuitem">
                             <a href="">Ménage / nettoyage / services à la personne</a>
-                        </li>
-                        <li>
                             <a href="">Rénovation & construction</a> 
-                        </li>
-                        <li>
                             <a href="">Jardinage & bricolage</a> 
-                        </li>
-                        <li>
                             <a href="">Réparation & maintenance</a> 
-                        </li>
-                        <li>
+                        </div>
+                        <div role="menuitem">
                             <a href="">Informatique & administratif</a> 
-                        </li>
-                        <li>
                             <a href="">Cours & coaching</a> 
-                        </li>
-                        <li>
                             <a href="">Santé & bien-être</a> 
-                        </li>
-                        <li>
                             <a href="">Evenements & divertissements</a> 
-                        </li>
-                        <li>
+                        </div>
+                        <div role="menuitem">
                             <a href="">Animaux</a> 
-                        </li>
-                        <li>
-                            <a href="">Artisanat & création</a> 
-                        </li>
-                        <li>
+                            <a href="">Artisanat & création</a>
                             <a href="">Garde d'enfants</a> 
-                        </li>
-                        <li>
                             <a href="">Autre</a> 
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </li> 
                 <li class="">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                    <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
                 </li> 
                 <li class="">
                     <a href="#" class="nav-link">Contact</a>   
@@ -80,7 +62,7 @@
                 </li> 
                 <li class="na__link_dropdown" id="dropdown-link-user">
                     <a href="#" class="nav-link user-link" role="button"><i class="fa-solid fa-user"></i></a>
-                    <ul class="na__dropdown na__dropdown_user">
+                    <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur" role="menu">
                         <li>
                             <a href="">Mon profil</a>
                         </li>
@@ -104,8 +86,8 @@
                         <img src="../public/img/woman_face.jpg" alt="profil de user">
                     </figure>
                     <div>
-                        <div class="flex-lg-row d-flex">
-                            <p>Lola </p>
+                        <div class="flex-lg-row d-flex flex-wrap">
+                            <p>Lola</p>
                             <span id="profile-badge">Particulier</span>                             
                         </div>
 
@@ -147,15 +129,21 @@
                 <div class="tab-pane fade show active" id="pills-annonces" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <div class="row justify-content-evenly d-flex">
                         <div class="card card-ad" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <figure class="card-ad__figure">
+                                <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">  
+                                <div class="card-ad__badge">
+                                    <p>Offre</p>
+                                </div>                              
+                            </figure>
+
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                               <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                           </div>
-                          <div class="card " style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                          <div class="card card-ad" style="width: 18rem;">
+                            <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
