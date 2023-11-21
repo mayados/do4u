@@ -45,3 +45,54 @@
 .fa-plus{
     color: $white-color;
 }
+
+// Annonces
+
+.action-ad-link,
+.action-ad-link i{
+    color: $white-color;
+}
+
+.action-ad-link{
+    width: 100%;
+    text-decoration: none;
+}
+
+.action-ad-consulter{
+    background-color: $primary-color;
+
+    &:hover{
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.action-ad-modifier{
+    background-color: $secondary-color;
+    &:hover{
+        background-color: darken($secondary-color, 10%);
+    }
+}
+
+.action-ad-supprimer{
+    background-color: $danger-color;
+
+    &:hover{
+        background-color: darken($danger-color, 10%);
+    }
+}
+
+/* Avis */
+
+.figure-avis{
+    width: 100px;
+    height: 100px;
+}
+
+.figure-avis img{
+    height: 100%;
+    width: 100%;
+}
+
+.avis-commentaire{
+    border-bottom: 2px solid $light-blue;
+}
