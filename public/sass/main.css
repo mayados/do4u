@@ -92,15 +92,27 @@
   border: 1px solid #3a3a3a;
   background-color: white;
 }
-.card-ad:hover__figure {
-  position: relative;
+.card-ad:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  background: #00838d;
+  height: 1.6rem;
+  width: 3rem;
+  border-radius: 5px;
+  transform: scale(1.8);
+  transform-origin: 50% 50%;
+  transition: transform 0.15s ease-out;
 }
-.card-ad:hover__badge {
-  background-color: #1D838A;
-  width: 250px;
-  height: 2rem;
+.card-ad:before {
+  content: "";
+  color: #ffffff;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
 }
-
 .na {
   height: 7vh;
   background-color: #ffffff;
@@ -542,4 +554,50 @@ p {
 
 .fa-plus {
   color: #ffffff;
+}
+
+.action-ad-link,
+.action-ad-link i {
+  color: #ffffff;
+}
+
+.action-ad-link {
+  width: 100%;
+  text-decoration: none;
+}
+
+.action-ad-consulter {
+  background-color: #1D838A;
+}
+.action-ad-consulter:hover {
+  background-color: #145b60;
+}
+
+.action-ad-modifier {
+  background-color: #E65A14;
+}
+.action-ad-modifier:hover {
+  background-color: #b74810;
+}
+
+.action-ad-supprimer {
+  background-color: #DB0B00;
+}
+.action-ad-supprimer:hover {
+  background-color: #a80800;
+}
+
+/* Avis */
+.figure-avis {
+  width: 100px;
+  height: 100px;
+}
+
+.figure-avis img {
+  height: 100%;
+  width: 100%;
+}
+
+.avis-commentaire {
+  border-bottom: 2px solid #1dc9c6;
 }/*# sourceMappingURL=main.css.map */
