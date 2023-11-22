@@ -419,10 +419,18 @@ p {
     padding: 10px;
   }
 }
+.test2 {
+  background-color: antiquewhite;
+}
+
 .section-1 {
   background-color: rgba(29, 201, 198, 0.3333333333);
   padding-top: 120px;
   padding-bottom: 80px;
+}
+
+.test {
+  background-color: #383838;
 }
 
 .section-2 {
@@ -536,6 +544,25 @@ p {
   margin-left: 0px;
 }
 
+#main-messenger {
+  margin-top: 7vh;
+  background-image: url("../img/back_messenger.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vw;
+  width: 100vw;
+}
+@media (max-width: 768px) {
+  #main-messenger {
+    margin-top: 15vh;
+  }
+}
+
+#banniere-messenger {
+  height: 15vh;
+  background-color: #1D838A;
+}
+
 #figure-lola {
   width: 200px;
   height: 200px;
@@ -630,4 +657,53 @@ p {
 
 .avis-commentaire {
   border-bottom: 2px solid #1dc9c6;
+}
+
+#map {
+  height: 40vh;
+}
+
+.vertical-dots {
+  padding: 2px 5px;
+  border: 3px solid #1D838A;
+}
+
+.vertical-dots i {
+  color: #1D838A;
+}
+
+#ajout-avis {
+  border: 2px solid #1D838A;
+}
+
+/* CONTAINER FORM AVIS */
+#container-form-avis {
+  border: 2px solid #1D838A;
+  display: none;
+}
+
+/* RATING */
+.rating input {
+  position: absolute;
+  left: -9999px;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating label span {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+.figure-rating {
+  width: 75px;
+  height: 75px;
+}
+
+.figure-rating img {
+  height: 100%;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
