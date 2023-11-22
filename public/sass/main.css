@@ -369,7 +369,7 @@ p {
 }
 
 .form-connexion {
-  border: dashed 2px rgb(138, 138, 138);
+  border: dashed 1.5px rgb(138, 138, 138);
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
@@ -420,13 +420,43 @@ p {
   }
 }
 .section-1 {
-  background-image: url("../img/Img_contact/bg-1-contact.png");
-  background-size: initial;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding-top: 150px;
+  background-color: rgba(29, 201, 198, 0.3333333333);
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.section-2 {
+  background-color: rgba(226, 167, 18, 0.6549019608);
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.contact-form {
+  border: dashed 1.5px #383838;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+}
+
+@media (max-width: 768px) {
+  .section-1 {
+    background-image: none;
+    padding-top: 50px;
+  }
+}
+.responsive-map {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.responsive-map iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .hero {
