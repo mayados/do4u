@@ -584,4 +584,50 @@ p {
 
 .fa-plus {
   color: #ffffff;
+}
+
+.action-ad-link,
+.action-ad-link i {
+  color: #ffffff;
+}
+
+.action-ad-link {
+  width: 100%;
+  text-decoration: none;
+}
+
+.action-ad-consulter {
+  background-color: #1D838A;
+}
+.action-ad-consulter:hover {
+  background-color: #145b60;
+}
+
+.action-ad-modifier {
+  background-color: #E65A14;
+}
+.action-ad-modifier:hover {
+  background-color: #b74810;
+}
+
+.action-ad-supprimer {
+  background-color: #DB0B00;
+}
+.action-ad-supprimer:hover {
+  background-color: #a80800;
+}
+
+/* Avis */
+.figure-avis {
+  width: 100px;
+  height: 100px;
+}
+
+.figure-avis img {
+  height: 100%;
+  width: 100%;
+}
+
+.avis-commentaire {
+  border-bottom: 2px solid #1dc9c6;
 }/*# sourceMappingURL=main.css.map */
