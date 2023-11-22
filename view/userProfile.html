@@ -8,17 +8,331 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
 </head>
 <body>
     <header>
+        <nav class="na">
+            <input type="checkbox" id="burger-check">            
+        <a href="" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" id="logo"></a>   
+        <form class="na__form na__form--mobile">
+            <div class="na__container_fields">
+                <input type="text" placeholder="chercher une annonce par mot-clé" class="na__input">                    
+            </div>
+            <button class="na__search-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+        </form> 
 
+        <div class="na__burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div> 
+        <ul class="na__list">
+            <li id="dropdown-link-annonces">
+                <!-- Add role so screen readers canr read what it is about. In our case, it will indicate that is a button to display a menu -->
+                <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
+                <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
+                    <div role="menuitem">
+                        <a href="">Ménage / nettoyage / services à la personne</a>
+                        <a href="">Rénovation & construction</a> 
+                        <a href="">Jardinage & bricolage</a> 
+                        <a href="">Réparation & maintenance</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Informatique & administratif</a> 
+                        <a href="">Cours & coaching</a> 
+                        <a href="">Santé & bien-être</a> 
+                        <a href="">Evenements & divertissements</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Animaux</a> 
+                        <a href="">Artisanat & création</a>
+                        <a href="">Garde d'enfants</a> 
+                        <a href="">Autre</a> 
+                    </div>
+                </div>
+            </li> 
+            <li class="">
+                <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link">Contact</a>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link"><i class="fa-solid fa-envelope"></i></a>   
+            </li> 
+            <li class="na__link_dropdown" id="dropdown-link-user">
+                <a href="#" class="nav-link user-link" role="button"><i class="fa-solid fa-user"></i></a>
+                <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur" role="menu">
+                    <li>
+                        <a href="">Mon profil</a>
+                    </li>
+                    <li>
+                        <a href="">Paramètres</a>
+                    </li>
+                    <li>
+                        <a href="">Déconnexion</a>
+                    </li>
+                </ul>   
+            </li> 
+        </ul>              
+    </nav>       
     </header>
-    <main>
+    <main class="container" id="main-container">
+        <div><p><a href="">Accueil</a> < <a href="">Léa</a></p></div>
+        <section id="my-infos-profile">
+            <div id="top-my-infos" class="flex-column flex-lg-row align-items-lg-center justify-content-between d-flex">
+                <div class=" d-flex flex-row align-items-center gap-3">
+                    <figure id="figure-lola" >
+                        <img src="../public/img/woman_face.jpg" alt="profil de user">
+                    </figure>
+                    <div>
+                        <div class="flex-lg-row d-flex flex-wrap">
+                            <p>Lola</p>
+                            <span id="profile-badge">Particulier</span>                             
+                        </div>
 
+                        <p><i class="fa-solid fa-star" id="my-star"></i> 4/5 <span>(18 avis)</span></p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="d-none d-lg-inline">Informations vérifiées :</p>
+                    <p><i class="fa-solid fa-circle-check checked-icon"></i> E-mail</p>                    
+                </div>
+                <div class="d-flex gap-5">
+                    <a class="button-primary-regular"><i class="fa-solid fa-circle-plus"></i> Suivre</a>
+                    <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    
+                </div>
+            </div>
+            <article id="my-description">
+                <h2>Présentation</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti perspiciatis laudantium quidem, modi vel repellat voluptatibus odio quis ratione tenetur, sit exercitationem, corporis laboriosam dolores provident iste illo minus voluptate.
+                Totam culpa odio consequatur ipsum sequi iure, unde atque aliquam dignissimos alias adipisci aut quod temporibus nemo ab? Ipsam possimus corrupti, ipsa dolores ipsum enim quibusdam. Minus sequi sint tempore!</p>
+            </article>
+        </section>
+        <div id="line-divider"></div>
+        <section id="mes-rubriques">
+            <ul class="nav nav-underline display-flex justify-content-evenly mt-5">
+                <li class="nav-item ">
+                    <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-a-propos">A propos</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-annonces-user">Annonces</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-5" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-a-propos" role="tabpanel" aria-labelledby="pills-a-propos-tab" tabindex="0">
+                    <div class="pt-2">
+                        <p><i class="fa-solid fa-location-dot"></i> Strasbourg</p>
+                        <p><i class="fa-solid fa-user"></i> Membre depuis le 08/11/2023</p>
+                    </div>
+                    <div id="map">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-annonces-user" role="tabpanel" aria-labelledby="pills-annonces-tab" tabindex="0">
+                    <div class="row justify-content-evenly d-flex gap-5 gap-lg-0">
+                        <div class="card card-ad h-100" style="width: 18rem;">
+                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                                <div class="">
+                                    <i class="icon fa-regular fa-user"></i>
+                                    <span>Auto entrepreneur</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-euro-sign"></i>
+                                    <span>30€/H</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-regular fa-folder"></i>
+                                    <span>Santé et bien-etre</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-user"></i>
+                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-location-dot"></i>
+                                    <span>Strasbourg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ad h-100" style="width: 18rem;">
+                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                                <div class="">
+                                    <i class="icon fa-regular fa-user"></i>
+                                    <span>Auto entrepreneur</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-euro-sign"></i>
+                                    <span>30€/H</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-regular fa-folder"></i>
+                                    <span>Santé et bien-etre</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-user"></i>
+                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-location-dot"></i>
+                                    <span>Strasbourg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ad h-100" style="width: 18rem;">
+                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                                <div class="">
+                                    <i class="icon fa-regular fa-user"></i>
+                                    <span>Auto entrepreneur</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-euro-sign"></i>
+                                    <span>30€/H</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-regular fa-folder"></i>
+                                    <span>Santé et bien-etre</span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-user"></i>
+                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                </div>
+                                <div class="">
+                                    <i class="icon fa-solid fa-location-dot"></i>
+                                    <span>Strasbourg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-avis" role="tabpanel" aria-labelledby="pills-avis-tab" tabindex="0">
+                    <div class="mx-auto d-flex flex-column align-items-center">
+                        <p class="fs-3 mb-0"><i class="fa-solid fa-star"></i> 4/5</p>
+                        <p>18 avis</p>                            
+                    </div>
+                    <section>
+                        <div class="rounded d-flex flex-row align-items-center gap-2 p-2 mb-5" id="ajout-avis" tabindex="0" role="button">
+                            <figure class="figure-rating mb-0">
+                                <img src="../public/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="">
+                            </figure> 
+                            <p class="m-0">Lola, donnez votre avis</p>
+                        </div>
+                        <div id="container-form-avis" class="mb-5 p-2 rounded">
+                            <span class="d-flex justify-content-end">
+                                <a class="text-left text-decoration-none" id="close-avis" href="#"><i class="fa-solid fa-xmark"></i> Fermer</a>                                
+                            </span>
+                            <form id="form-avis">
+                                <span class="d-flex gap-2 mb-3">
+                                    <label for="rating">Note :</label>
+                                    <div class="rating" id="rating">
+                                        <input type="radio" id="star1" name="rating" value="1">
+                                        <label for="star1">
+                                            <span aria-hidden="true">1 étoile</span>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                            
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2">
+                                            <span aria-hidden="true">2 étoiles</span>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                            
+                                        <input type="radio" id="star3" name="rating" value="3">
+                                        <label for="star3">
+                                            <span aria-hidden="true">3 étoiles</span>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                            
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4">
+                                            <span aria-hidden="true">4 étoiles</span>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                            
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5">
+                                            <span aria-hidden="true">5 étoiles</span>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                                    </div>                                    
+                                </span>
+
+                                <div class="form-group mb-3">
+                                  <label for="textareaAvis">Mon avis</label>
+                                  <textarea class="form-control" id="textareaAvis" aria-describedby="avisHelp" placeholder="Décrivez ici votre expérience avec cet utilisateur"></textarea>
+                                  <small id="avisHelp" class="form-text text-muted">Même si vos échanges se limitent à la messagerie, n'hésitez pas à donner votre avis.</small>
+                                </div>
+                                <button type="submit" class="button-primary-regular">Publier mon avis</button>
+                              </form>         
+                        </div>
+                        <article class="avis-commentaire d-flex justify-content-between mt-3">
+                            <div>
+                                <div class="d-flex gap-2">
+                                    <figure class="figure-avis mb-0">
+                                        <img src="../public/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="">
+                                    </figure> 
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <p class="mb-0">Nolan</p>
+                                        <p class="mb-0"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+                                        <p class="mb-0">02/03/2023</p>
+                                    </div>                                   
+                                </div>
+                                <div class="mt-3">
+                                    <p>Services à la personne</p>
+                                    <p>Très satisfaite du travail de Lola pour mon grand-père</p>
+                                </div>
+                            </div>
+                            <div>
+                                <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            </div>
+                        </article>
+                        <article class="avis-commentaire d-flex justify-content-between mt-3">
+                            <div>
+                                <div class="d-flex gap-2">
+                                    <figure class="figure-avis mb-0">
+                                        <img src="../public/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="">
+                                    </figure> 
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <p class="mb-0">Jessica</p>
+                                        <p class="mb-0"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+                                        <p class="mb-0">02/03/2023</p>
+                                    </div>                                   
+                                </div>
+                                <div class="mt-3">
+                                    <p>Services à la personne</p>
+                                    <p>Très satisfaite du travail de Lola pour mon grand-père</p>
+                                </div>
+                            </div>
+                            <div>
+                                <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+              </div>
+        </section>
     </main>
     <footer>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../public/js/script.js"></script>
+    <script src="../public/js/map.js"></script>
 </body>
 </html>
