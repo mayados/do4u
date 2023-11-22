@@ -1,0 +1,17 @@
+#main-messenger{
+    margin-top: 7vh;
+    background-image: url("../img/back_messenger.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vw;
+    width: 100vw;
+
+    @media (max-width: 768px){
+        margin-top: 15vh;
+    }    
+}
+
+#banniere-messenger{
+    height: 15vh;
+    background-color: $primary-color;
+}

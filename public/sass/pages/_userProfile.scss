@@ -1,0 +1,48 @@
+#map{
+    height: 40vh;
+}
+
+.vertical-dots{
+    padding: 2px 5px;
+    border: 3px solid $primary-color;
+}
+
+.vertical-dots i{
+    color: $primary-color;    
+}
+
+
+#ajout-avis{
+    border: 2px solid $primary-color;
+}
+
+/* CONTAINER FORM AVIS */
+#container-form-avis{
+    border: 2px solid $primary-color;
+    display: none;
+}
+
+
+/* RATING */
+.rating input {
+    position: absolute;
+    left: -9999px;
+}
+.rating label {
+    cursor: pointer;
+}
+.rating  label  span {
+    position: absolute;
+    left: -9999px;
+    overflow: hidden;
+}
+
+.figure-rating{
+    width: 75px;
+    height: 75px;
+}
+
+.figure-rating img{
+    height: 100%;
+    width: 100%;
+}
