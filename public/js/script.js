@@ -2,7 +2,6 @@ function displayMobileVue() {
 
   if (window.innerWidth < 769){
   /* Display nav links on mobiles and pads */
-
   function displayNavList() {
       const navList = document.querySelector('.na__list');
       const burger = document.querySelector('.na__burger-menu');
@@ -46,10 +45,12 @@ function displayMobileVue() {
 
   }
 
+  
+
 }
 
 // When the window is resized, we call the displayMobileVue function to have a functionnal burger menu etc on mobile version
-window.onresize = displayMobileVue;
+window.onresize = displayMobileVue();
 
 
 
