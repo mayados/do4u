@@ -11,9 +11,128 @@
 </head>
 <body>
     <header>
+        <nav class="na">
+            <input type="checkbox" id="burger-check">            
+        <a href="" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" id="logo"></a>   
+        <form class="na__form na__form--none">
+            <div class="na__container_fields">
+                <input type="text" placeholder="chercher une annonce par mot-clé" class="na__input">                    
+            </div>
+            <button class="na__search-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+        </form> 
 
+        <div class="na__burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div> 
+        <ul class="na__list">
+            <li id="dropdown-link-annonces">
+                <!-- Add role so screen readers canr read what it is about. In our case, it will indicate that is a button to display a menu -->
+                <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
+                <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
+                    <div role="menuitem">
+                        <a href="">Ménage / nettoyage / services à la personne</a>
+                        <a href="">Rénovation & construction</a> 
+                        <a href="">Jardinage & bricolage</a> 
+                        <a href="">Réparation & maintenance</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Informatique & administratif</a> 
+                        <a href="">Cours & coaching</a> 
+                        <a href="">Santé & bien-être</a> 
+                        <a href="">Evenements & divertissements</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Animaux</a> 
+                        <a href="">Artisanat & création</a>
+                        <a href="">Garde d'enfants</a> 
+                        <a href="">Autre</a> 
+                    </div>
+                </div>
+            </li> 
+            <li class="">
+                <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link">Contact</a>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link"><i class="fa-solid fa-envelope"></i></a>   
+            </li> 
+            <li class="na__link_dropdown" id="dropdown-link-user">
+                <a href="#" class="nav-link user-link" role="button"><i class="fa-solid fa-user"></i></a>
+                <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur" role="menu">
+                    <li>
+                        <a href="">Mon profil</a>
+                    </li>
+                    <li>
+                        <a href="">Paramètres</a>
+                    </li>
+                    <li>
+                        <a href="">Déconnexion</a>
+                    </li>
+                </ul>   
+            </li> 
+        </ul>              
+    </nav>       
     </header>
-    <main>
+    <main id="main-conversation">
+        <div class=" container-lg container-fluid bg-white">
+            <section id="section-top-conversation" class="d-flex justify-content-between align-items-center px-5 py-2">
+                <div class="d-flex align-items-center gap-5">
+                    <a href=""><i class="fa-solid fa-arrow-left"></i></a>                      
+                    <div class="d-flex align-items-center gap-3">
+                        <figure class="figure-avis mb-0">
+                            <img src="../public/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="">
+                        </figure> 
+                        <a href="#">Lola</a>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+            </section>
+            <section id="annonce-conversation" class="d-flex align-items-center gap-3 ps-5 py-2">
+                <figure class="figure-avis mb-0">
+                    <img src="../public/img/woman_face.jpg" class="rounded object-fit-cover" alt="">
+                </figure> 
+                <a href="#">Propose services de ménage</a>
+            </section>
+            <section id="conversation-area" class="row">
+                <div class="row">
+                    <div class="correspondant-message col-6 px-2 py-4 ms-3 text-right mt-5 mt-lg-4">
+                        <p>Bonjour, je serais intéressée par votre annonce, est-elle toujours disponible </p>
+                        <p class="correspondant-message-state">Vu - 23/11/2023 11h36</p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="mon-message offset-6 col-6  px-2 py-4 me-lg-3 text-left mt-5 mt-lg-4">
+                        <p>Bonjour Lola, j'espère que vous allez bien. Oui cette annonce est toujours disponible</p>
+                        <p class="mon-message-state">Vu - 23/11/2023 11h36</p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="correspondant-message col-6 px-2 py-4 ms-3 text-right mt-5 mt-lg-4">
+                        <p>Super, dans ce cas qu'elle sont vos disponibilités du moment ? </p>
+                        <p class="correspondant-message-state">Vu - 23/11/2023 11h36</p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="mon-message offset-6 col-6 px-2 py-4 me-3 text-left mt-5 mt-lg-4">
+                        <p>Je suis généralemenrès midi</p>
+                        <p class="mon-message-state">Vu - 23/11/2023 11h36</p>
+                    </div>                    
+                </div>
+                <form action="" method="post" enctype="multipart/form-data" id="form-conversation" class="d-flex align-items-center pt-4 pb-4 mt-5">
+                    <input type="file" name="photo" class="form-control-file" id="fileInput">
+                    <label for="fileInput" class="btn ">
+                        <i class="fas fa-paperclip"></i> 
+                    </label>                                  
+                    <textarea name="message" class="form-control" placeholder="Votre message"></textarea>
+                    <button type="submit" class="btn"><i class="fa-regular fa-paper-plane"></i></button>
+                  </form>            
+            </section>
+
+        </div>
 
     </main>
     <footer>
