@@ -467,6 +467,69 @@ p {
   position: absolute;
 }
 
+#main-conversation {
+  margin-top: 7vh;
+  background-image: url("../img/back_conversation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 92vh;
+  width: 100vw;
+}
+
+#section-top-conversation {
+  background-color: #1D838A;
+}
+
+#annonce-conversation {
+  background-color: #ededed;
+}
+
+#conversation-area {
+  background-color: #ffffff;
+}
+
+.correspondant-message,
+.mon-message {
+  position: relative;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.correspondant-message {
+  background-color: #1D838A;
+}
+@media (max-width: 768px) {
+  .correspondant-message {
+    margin-right: 50%;
+  }
+}
+
+.mon-message {
+  background-color: #E65A14;
+}
+
+.correspondant-message-state,
+.mon-message-state {
+  position: absolute;
+  bottom: -3rem;
+}
+
+.correspondant-message-state {
+  left: 0;
+}
+
+.mon-message-state {
+  right: 0;
+}
+
+#form-conversation {
+  border-top: 3px solid #3a3a3a;
+}
+
+#fileInput {
+  display: none;
+}
+
 .hero {
   background: rgb(16, 200, 197);
   background: linear-gradient(90deg, rgb(16, 200, 197) 0%, rgb(110, 239, 237) 27%, rgb(234, 251, 250) 100%);
@@ -549,18 +612,32 @@ p {
   background-image: url("../img/back_messenger.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vw;
+  min-height: 92vh;
   width: 100vw;
-}
-@media (max-width: 768px) {
-  #main-messenger {
-    margin-top: 15vh;
-  }
 }
 
 #banniere-messenger {
   height: 15vh;
   background-color: #1D838A;
+}
+
+.message-card {
+  border-bottom: 2px solid #1D838A;
+}
+
+.figure-message {
+  width: 75px;
+  height: 75px;
+}
+
+.figure-message img {
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .figure-message img {
+    width: 75px;
+  }
 }
 
 #figure-lola {

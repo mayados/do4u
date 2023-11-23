@@ -1,0 +1,60 @@
+#main-conversation{
+    margin-top: 7vh;
+    background-image: url("../img/back_conversation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 92vh;
+    width: 100vw;
+}
+
+#section-top-conversation{
+    background-color: $primary-color;
+}
+
+#annonce-conversation{
+    background-color: $searchbar-color;
+}
+
+#conversation-area{
+    background-color: $white-color;
+}
+
+.correspondant-message,
+.mon-message{
+    position: relative;
+    min-width: fit-content;
+}
+
+.correspondant-message{
+    background-color: $primary-color;
+    @media (max-width: 768px){
+        margin-right: 50%;
+    }    
+
+}
+
+.mon-message{
+    background-color: $secondary-color;
+}
+
+.correspondant-message-state,
+.mon-message-state{
+    position: absolute;
+    bottom: -3rem;
+}
+
+.correspondant-message-state{
+    left: 0;
+}
+
+.mon-message-state{
+    right: 0;
+}
+
+#form-conversation{
+    border-top: 3px solid $text-color;
+}
+
+#fileInput{
+    display: none;
+}
