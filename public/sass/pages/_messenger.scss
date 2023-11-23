@@ -3,15 +3,29 @@
     background-image: url("../img/back_messenger.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vw;
+    min-height: 92vh;
     width: 100vw;
-
-    @media (max-width: 768px){
-        margin-top: 15vh;
-    }    
 }
 
 #banniere-messenger{
     height: 15vh;
     background-color: $primary-color;
+}
+
+.message-card{
+    border-bottom: 2px solid $primary-color;
+}
+
+.figure-message{
+    width: 75px;
+    height: 75px;
+}
+
+.figure-message img{
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 768px){
+        width: 75px;
+    }    
 }
