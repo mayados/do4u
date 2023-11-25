@@ -10,6 +10,7 @@
   border-radius: 5px;
   border: solid 2px #1D838A;
   align-items: center;
+  font-weight: 600;
 }
 
 .button-primary-regular:hover {
@@ -361,6 +362,32 @@ p {
   margin-right: 10px;
 }
 
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
 .connexion {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -419,8 +446,8 @@ p {
     padding: 10px;
   }
 }
-.test2 {
-  background-color: antiquewhite;
+.class-padding-head {
+  padding-top: 500px;
 }
 
 .section-1 {
@@ -605,6 +632,18 @@ p {
 .subscribe_form .input-group-btn:last-child > .btn, .subscribe_form .input-group-btn:last-child > .btn-group {
   z-index: 2;
   margin-left: 0px;
+}
+
+.h2-pc {
+  color: #1D838A;
+}
+
+.red-star {
+  color: red;
+}
+
+.insscription-container {
+  padding-top: 80;
 }
 
 #main-messenger {
