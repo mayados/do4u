@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>création d'annonce</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -19,13 +19,14 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h3>Créer une annonce</h3>
-                        <div class="mb-3">
+                        <div class="titreAnnonce">
                             <label for="exampleFormControlInput1" class="form-label"> * Titre de votre annonce</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Titre de votre annonce">
                           </div>
+                          <br>
                           <div class="Catégorie">
                             <label for="exampleFormControlInput1" class="form-label"> * Catégorie</label>
-                            <select class="form-select form-select-lg" aria-label="Large select example">
+                            <select class="form-select" aria-label="Default select example">
                               <option selected>Choisir un catégorie</option>
                               <option value="1">ménage, nettoyage, services à la personne</option>
                               <option value="2">rénovation & construction</option>
@@ -39,10 +40,30 @@
                               <option value="3">enfants</option>
                               <option value="3">autre</option>
                             </select>
-                       </div>
+                            </div>
+                       <br>
+                        <div class="typecheck">
+                            <span>Type d'annonce</span> 
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Offre</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Demande</label>
+                            </div>
+                            <br>
+                            <div class="addphoto">
+                                <span>Ajouter des photos(pas obligatoire)</span> <br>
+                                <img src="./../public/img/Img_page_ads/images.jpg" class="img-thumbnail" alt="...">
 
-
+                            </div>
+                        </div>
                     </div>
+                    
+                  
+
+                   
                     <div class="col-md-4">
                         <img src="./../public/img/Img_page_ads/leaves-2310247_640.webp" alt="">
 
