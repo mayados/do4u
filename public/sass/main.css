@@ -678,7 +678,7 @@ label {
 }
 
 .img-ins {
-  max-width: 90%;
+  max-width: 85%;
   float: inline-end;
 }
 
@@ -687,6 +687,12 @@ label {
     padding-top: 2rem;
     max-width: 100%;
     float: inline-start;
+  }
+  .nav-conx {
+    display: block;
+  }
+  .nav-item-conx {
+    padding: 0.2rem;
   }
 }
 #main-messenger {
