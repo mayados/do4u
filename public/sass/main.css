@@ -352,6 +352,17 @@ p {
   font-size: 1rem;
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #E65A14;
+  color: #ffffff;
+}
+
+.nav-pills .nav-link {
+  background-color: #1D838A;
+  color: #ffffff;
+}
+
 .link {
   color: #E65A14;
   font-weight: 600;
@@ -396,6 +407,7 @@ label {
 }
 
 .form-connexion {
+  padding: 40px;
   border: dashed 1.5px rgb(138, 138, 138);
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -634,6 +646,21 @@ label {
   margin-left: 0px;
 }
 
+.container-f-inscription {
+  background-color: rgba(173, 216, 230, 0.7); /* Light-blue color with 20% opacity */
+}
+
+.insscription-container {
+  padding-top: 9rem;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .insscription-container {
+    padding-bottom: 10rem;
+    padding-bottom: 2rem;
+  }
+}
 .h2-pc {
   color: #1D838A;
 }
@@ -642,10 +669,26 @@ label {
   color: red;
 }
 
-.insscription-container {
-  padding-top: 80;
+.form-inscription {
+  padding: 40px;
+  border: dashed 1.5px #E65A14;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
 }
 
+.img-ins {
+  max-width: 90%;
+  float: inline-end;
+}
+
+@media (max-width: 768px) {
+  .img-ins {
+    padding-top: 2rem;
+    max-width: 100%;
+    float: inline-start;
+  }
+}
 #main-messenger {
   margin-top: 7vh;
   background-image: url("../img/back_messenger.jpg");
