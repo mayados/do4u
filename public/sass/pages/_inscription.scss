@@ -31,13 +31,20 @@
 }
 
 .img-ins{
-    max-width: 90%;
+    max-width: 85%;
     float: inline-end;
+    
 }
 @media (max-width: 768px) {
     .img-ins{
         padding-top: 2rem;
         max-width: 100%;
         float: inline-start;
+    }
+    .nav-conx{
+        display: block;
+    }
+    .nav-item-conx{
+        padding: 0.2rem;
     }
   }
