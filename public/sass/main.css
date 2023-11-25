@@ -10,6 +10,7 @@
   border-radius: 5px;
   border: solid 2px #1D838A;
   align-items: center;
+  font-weight: 600;
 }
 
 .button-primary-regular:hover {
@@ -351,6 +352,17 @@ p {
   font-size: 1rem;
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #E65A14;
+  color: #ffffff;
+}
+
+.nav-pills .nav-link {
+  background-color: #1D838A;
+  color: #ffffff;
+}
+
 .link {
   color: #E65A14;
   font-weight: 600;
@@ -361,6 +373,32 @@ p {
   margin-right: 10px;
 }
 
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
 .connexion {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -369,6 +407,7 @@ p {
 }
 
 .form-connexion {
+  padding: 40px;
   border: dashed 1.5px rgb(138, 138, 138);
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -419,8 +458,8 @@ p {
     padding: 10px;
   }
 }
-.test2 {
-  background-color: antiquewhite;
+.class-padding-head {
+  padding-top: 500px;
 }
 
 .section-1 {
@@ -607,6 +646,49 @@ p {
   margin-left: 0px;
 }
 
+.container-f-inscription {
+  background-color: rgba(173, 216, 230, 0.7); /* Light-blue color with 20% opacity */
+}
+
+.insscription-container {
+  padding-top: 9rem;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .insscription-container {
+    padding-bottom: 10rem;
+    padding-bottom: 2rem;
+  }
+}
+.h2-pc {
+  color: #1D838A;
+}
+
+.red-star {
+  color: red;
+}
+
+.form-inscription {
+  padding: 40px;
+  border: dashed 1.5px #E65A14;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+}
+
+.img-ins {
+  max-width: 90%;
+  float: inline-end;
+}
+
+@media (max-width: 768px) {
+  .img-ins {
+    padding-top: 2rem;
+    max-width: 100%;
+    float: inline-start;
+  }
+}
 #main-messenger {
   margin-top: 7vh;
   background-image: url("../img/back_messenger.jpg");
