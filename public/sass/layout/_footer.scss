@@ -1,0 +1,26 @@
+.footer-element{
+    background-color: $dark-color;
+
+    li{
+        list-style-type: none;
+        }
+
+    a,
+    h3,
+    p,
+    li a{
+        text-decoration: none;   
+        color: $white-color;     
+    }
+
+    &__infos{
+        border-top: 1px solid $white-color;
+    }
+
+    &__mobile--hidden{
+        @media (max-width: 768px){
+            display: none;
+        } 
+    }
+
+}    

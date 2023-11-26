@@ -114,6 +114,28 @@
   align-items: center;
   justify-content: center;
 }
+.footer-element {
+  background-color: #000000;
+}
+.footer-element li {
+  list-style-type: none;
+}
+.footer-element a,
+.footer-element h3,
+.footer-element p,
+.footer-element li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer-element__infos {
+  border-top: 1px solid #ffffff;
+}
+@media (max-width: 768px) {
+  .footer-element__mobile--hidden {
+    display: none;
+  }
+}
+
 .na {
   height: 7vh;
   background-color: #ffffff;
