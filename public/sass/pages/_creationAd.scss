@@ -3,15 +3,27 @@
   align-items: center;
 }
 
-.cardCre {
-  background-color: $primary-color;
+.crea {
+  background-color: $light-bleu;
 }
 
 .deposer {
-  background-color: $button-primary;
+  background-color: $primary;
  
 }
 .cardBodyImg{
   width: 100%;
   height:100%;
+}
+.image-container {
+  height: 100%; /* La hauteur de la div sera égale à 100% de la hauteur de son conteneur parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /*  la colonne gauche prend 100% de la hauteur disponible */
 }
