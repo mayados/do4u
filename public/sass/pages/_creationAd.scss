@@ -1,4 +1,17 @@
-.typecheck{
+.typecheck {
   display: flex;
   align-items: center;
+}
+
+.cardCre {
+  background-color: $primary-color;
+}
+
+.deposer {
+  background-color: $button-primary;
+ 
+}
+.cardBodyImg{
+  width: 100%;
+  height:100%;
 }

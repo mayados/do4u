@@ -15,65 +15,105 @@
     </header>
     <main>
         <div class="créa p-5">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
-                        <h3>Créer une annonce</h3>
-                        <div class="titreAnnonce">
-                            <label for="exampleFormControlInput1" class="form-label"> * Titre de votre annonce</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Titre de votre annonce">
-                          </div>
-                          <br>
-                          <div class="Catégorie">
-                            <label for="exampleFormControlInput1" class="form-label"> * Catégorie</label>
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>Choisir un catégorie</option>
-                              <option value="1">ménage, nettoyage, services à la personne</option>
-                              <option value="2">rénovation & construction</option>
-                              <option value="3">réparation et maintenance</option>
-                              <option value="3">informatique & administratif</option>
-                              <option value="3">cours et coaching</option>
-                              <option value="3">santé et bien être</option>
-                              <option value="3">evénements et divertissements</option>
-                              <option value="3">animaux</option>
-                              <option value="3">artisanat & création</option>
-                              <option value="3">enfants</option>
-                              <option value="3">autre</option>
-                            </select>
-                            </div>
-                       <br>
-                        <div class="typecheck">
-                            <span>Type d'annonce</span> 
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Offre</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">Demande</label>
-                            </div>
-                            <br>
-                            <div class="addphoto">
-                                <span>Ajouter des photos(pas obligatoire)</span> <br>
-                                <img src="./../public/img/Img_page_ads/images.jpg" class="img-thumbnail" alt="...">
-
+                    <!-- Colonne gauche avec formulaire -->
+                    <div class="col-md-8 mb-5">
+                        <div class="card cardCre">
+                            <div class="card-body">
+                                <h3>Créer une annonce</h3>
+    
+                                <!-- Titre de l'annonce -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">* Titre de votre annonce</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Titre de votre annonce">
+                                </div>
+    
+                                <!-- Catégorie -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlSelect1" class="form-label">* Catégorie</label>
+                                    <select class="form-select" id="exampleFormControlSelect1">
+                                        <option selected>Choisir une catégorie</option>
+                                        <option selected>Choisir une catégorie</option>
+                                        <option value="1">ménage, nettoyage, services à la personne</option>
+                                        <option value="2">rénovation & construction</option>
+                                        <option value="3">réparation et maintenance</option>
+                                        <option value="3">informatique & administratif</option>
+                                        <option value="3">cours et coaching</option>
+                                        <option value="3">santé et bien être</option>
+                                        <option value="3">evénements et divertissements</option>
+                                        <option value="3">animaux</option>
+                                        <option value="3">artisanat & création</option>
+                                        <option value="3">enfants</option>
+                                        <option value="3">autre</option>
+                                    </select>
+                                </div>
+    
+                                <!-- Type d'annonce -->
+                                <div class="mb-3 typecheck">
+                                    <span>Type d'annonce</span>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Offre</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Demande</label>
+                                    </div>
+                                </div>
+    
+                                <!-- Ajouter des photos -->
+                                <div class="addphoto mb-3">
+                                    <span>Ajouter des photos (pas obligatoire)</span>
+                                    <div class="icone row justify-content-center">
+                                        <div class="card" style="width: 12rem; text-align: center; margin-top: 10px;">
+                                            <div class="card-body">
+                                                <i class="bi bi-image fa-5x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card" style="width: 12rem; text-align: center; margin-top: 10px;">
+                                            <div class="card-body">
+                                                <i class="bi bi-plus-lg fa-3x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Description, Prix, Lieu de service -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Description *</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInputPrix" class="form-label">Votre prix de service ? *</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInputPrix" placeholder="Votre prix de service">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInputLieu" class="form-label">Votre lieu de service ? *</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInputLieu" placeholder="Votre lieu de service">
+                                </div>
+    
+                                <!-- Bouton -->
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="button">Déposer une annonce</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                  
-
-                   
+    
+                    <!-- Colonne de l'image -->
                     <div class="col-md-4">
-                        <img src="./../public/img/Img_page_ads/leaves-2310247_640.webp" alt="">
-
+                        <div class="cardImg">
+                            <div class="cardbodyImg">
+                                <img src="./../public/img/Img_page_ads/wind-8324507_640.webp" class="img-fluid" alt="Image">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+             </div>
         </div>
-
     </main>
+        
     <footer>
 
     </footer>
