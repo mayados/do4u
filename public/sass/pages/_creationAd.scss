@@ -7,14 +7,11 @@
   background-color: $light-bleu;
 }
 
-.deposer {
+.btn btn-primary {
   background-color: $primary;
  
 }
-.cardBodyImg{
-  width: 100%;
-  height:100%;
-}
+
 .image-container {
   height: 100%; /* La hauteur de la div sera égale à 100% de la hauteur de son conteneur parent */
   display: flex;
