@@ -8,19 +8,100 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
+    
 </head>
 <body>
     <header>
+        <nav class="na">
+            <input type="checkbox" id="burger-check">            
+        <a href="" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" id="logo"></a>   
+        <form class="na__form na__form--mobile">
+            <div class="na__container_fields">
+                <input type="text" placeholder="chercher une annonce par mot-clé" class="na__input">                    
+            </div>
+            <button class="na__search-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+        </form> 
+
+        <div class="na__burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div> 
+        <ul class="na__list">
+            <li id="dropdown-link-annonces">
+                <!-- Add role so screen readers canr read what it is about. In our case, it will indicate that is a button to display a menu -->
+                <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
+                <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
+                    <div role="menuitem">
+                        <a href="">Ménage / nettoyage / services à la personne</a>
+                        <a href="">Rénovation & construction</a> 
+                        <a href="">Jardinage & bricolage</a> 
+                        <a href="">Réparation & maintenance</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Informatique & administratif</a> 
+                        <a href="">Cours & coaching</a> 
+                        <a href="">Santé & bien-être</a> 
+                        <a href="">Evenements & divertissements</a> 
+                    </div>
+                    <div role="menuitem">
+                        <a href="">Animaux</a> 
+                        <a href="">Artisanat & création</a>
+                        <a href="">Garde d'enfants</a> 
+                        <a href="">Autre</a> 
+                    </div>
+                </div>
+            </li> 
+            <li class="">
+                <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link">Contact</a>   
+            </li> 
+            <li class="">
+                <a href="#" class="nav-link"><i class="fa-solid fa-envelope"></i></a>   
+            </li> 
+            <li class="na__link_dropdown" id="dropdown-link-user">
+                <a href="#" class="nav-link user-link" role="button"><i class="fa-solid fa-user"></i></a>
+                <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur" role="menu">
+                    <li>
+                        <a href="">Mon profil</a>
+                    </li>
+                    <li>
+                        <a href="">Paramètres</a>
+                    </li>
+                    <li>
+                        <a href="">Déconnexion</a>
+                    </li>
+                </ul>   
+            </li> 
+        </ul>              
+    </nav>
 
     </header>
     <main>
-        <div>fil d'ariane</div>
         <section>
             <h1>Page de details d'une annonce</h1>
             <div class="container">
                 <div class="row">
+                    <div class="col-12 col-md-12">
+                        <ol class="breadcrumb" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                            <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                            <li class="breadcrumb-item"><a href="#">Offres</a></li>
+                            <li class="breadcrumb-item"><a href="#">Aide à
+                                domicile</a></li>
+                            <li class="breadcrumb-item"><a href="#">Service à la personne</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
                     <div class="col-12 col-md-6">
-                        <img src="../public/img/affection-spouses 546x364.jpg" alt="Soutien" width="546" height="364">
+                        <div class="image-container">
+                            <img src="../public/img/affection-spouses 546x364.jpg" alt="Soutien" width="546" height="364">
+                            <div class="overlay-text">Offre</div>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="card" style="width:400px">

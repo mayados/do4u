@@ -399,6 +399,62 @@ label {
   margin-bottom: 0.5rem;
 }
 
+h1 {
+  visibility: hidden;
+}
+
+.breadcrumb {
+  padding: 10px 10px;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: inline;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+}
+
+.breadcrumb-item a {
+  color: #E65A14;
+}
+
+.breadcrumb-item a:hover {
+  color: black;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image-container img {
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  transform: translate(454px, -37px);
+  border-radius: 10px 0px 0px 0px;
+  background-color: #1D838A;
+  color: #ffffff;
+  padding: 9px 28px;
+  font-size: 16px;
+  font-family: "Nunito Sans-Bold", Helvetica;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+  line-height: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .connexion {
   padding-top: 9rem;
   padding-bottom: 50px;
