@@ -80,8 +80,9 @@
 
     </header>
     <main>
+        <h1 id="annonceDetails">Page de details d'une annonce</h1>
         <section>
-            <h1>Page de details d'une annonce</h1>
+            
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-12">
@@ -104,29 +105,39 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="card" style="width:400px">
-                            <div class="card-header">
-                                <i class="fa-regular fa-heart"></i>
-                                <p>Publieé 25 octobre 2023</p>
+                        <div class="card">
+                            <div class="card-top">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                                <span class="card-item-date">Publieé 25 octobre 2023</span>
                             </div>
                             <div class="card-body">
-                                <h2 class="card-title">Service à la personne</h2>
+                                <h3 class="card-title">Service à la personne</h3>
                                 <p class="card-text">20 €</p>
                             </div>
                         </div>
-                        <div class="card" style="width:400px">
-                            <div class="card-body">
-                                <i class="fa-regular fa-circle-user"></i>
-                                <h2 class="card-title">Entreprise X</h2>
-                                <i class="fa-solid fa-star"></i>
-                                <p class="card-text">4/5 8 avis</p>
-                                <button type="button" class="btn">Message</button>
+                        <div class="card">
+                            <div class="card-body"> 
+                                <div class="flex-lg-row d-flex flex-wrap justify-content-between">
+                                    <figure id="photo-user">
+                                        <img src="../public/img/woman_photo.jpg" alt="Photo d'un utilisateur">
+                                    </figure>  
+                                    <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-start">
+                                        <h3 class="card-title-1">Louise</h3>
+                                        <div class="flex-lg-row d-flex flex-wrap">
+                                            <i class="fa-solid fa-star"></i>
+                                            <p class="card-text-1">4/5 8 avis</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-end offset-sm-6">
+                                        <i class="fa-solid fa-chevron-right fa-2x"></i>
+                                    </div>
+                                </div>
+                                <a href="./messenger.html" class="btn-message">Message</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
 
     </main>
