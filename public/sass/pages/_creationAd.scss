@@ -3,24 +3,26 @@
   align-items: center;
 }
 
-.crea {
-  background-color: $light-bleu;
+.cardCre {
+  background-color: rgba($light-blue, 0.2); 
 }
 
-.btn btn-primary {
-  background-color: $primary;
- 
+.d-grid {
+  gap: 2;
+
+  .btn {
+    &.btn-primary {
+      background-color: $primary-color;
+    }
+  }
 }
 
 .image-container {
-  height: 100%; /* La hauteur de la div sera égale à 100% de la hauteur de son conteneur parent */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  img {
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+    max-width: 100%; 
+  }
 }
 
-.left-column {
-  display: flex;
-  flex-direction: column;
-  height: 100%; /*  la colonne gauche prend 100% de la hauteur disponible */
-}
