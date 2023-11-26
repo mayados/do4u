@@ -31,3 +31,50 @@ p{
     font-family: 'Nunito Sans';
     font-size: 1rem;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: $secondary-color;
+  color: $white-color;
+}
+.nav-pills .nav-link {
+  background-color: $primary-color;
+  color: $white-color
+}
+
+.link{
+    color: $secondary-color;
+    font-weight: 600;
+ }
+
+ .icon{
+    color: $primary-color;
+    margin-right: 10px;
+ }
+
+
+ .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+  }
+  
+  .form-row > .col {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+  }

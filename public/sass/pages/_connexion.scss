@@ -1,12 +1,13 @@
 .connexion{
-    padding-top: 100px;
+    padding-top: 9rem;
     padding-bottom: 50px;
     background-image: url("../img/Img_page_de_connexion/background_img.png");
     background-size: initial;
     }      
 
 .form-connexion{
-    border: dashed 2px rgb(138, 138, 138);
+    padding: 40px;
+    border: dashed 1.5px rgb(138, 138, 138);
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
@@ -55,5 +56,7 @@
         padding: 10px;
     }
 }
-  
 
+.class-padding-head{
+    padding-top: 500px;
+}

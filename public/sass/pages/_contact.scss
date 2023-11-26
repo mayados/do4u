@@ -1,0 +1,49 @@
+.section-1 {
+    // background-image: url("../img/Img_contact/bg-1-contact.png");
+    background-color: #1dc9c655;
+    // background-size: initial;
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.test{
+    background-color: #383838;
+}
+
+.section-2 {
+    // background-image: url("../img/Img_contact/bg-contact-2.png");
+    background-color: #e2a712a7;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.contact-form{
+    border: dashed 1.5px #383838;
+    background-color: rgb(255, 255, 255);
+    border-radius:15px;
+    box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        background-image: none;
+        padding-top: 50px;
+    }
+}
+
+.responsive-map{
+    overflow: hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .responsive-map iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }

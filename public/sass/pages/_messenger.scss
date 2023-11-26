@@ -1,0 +1,31 @@
+#main-messenger{
+    margin-top: 7vh;
+    background-image: url("../img/back_messenger.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 92vh;
+    width: 100vw;
+}
+
+#banniere-messenger{
+    height: 15vh;
+    background-color: $primary-color;
+}
+
+.message-card{
+    border-bottom: 2px solid $primary-color;
+}
+
+.figure-message{
+    width: 75px;
+    height: 75px;
+}
+
+.figure-message img{
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 768px){
+        width: 75px;
+    }    
+}
