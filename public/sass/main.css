@@ -135,6 +135,28 @@
     display: none;
   }
 }
+.footer-element__medias li {
+  background-color: #ffffff;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.footer-element__logo {
+  height: 4rem;
+}
+@media (max-width: 768px) {
+  .footer-element__dropdown ul {
+    display: none;
+  }
+}
+.footer-element__categories i {
+  display: none;
+}
+@media (max-width: 768px) {
+  .footer-element__categories i {
+    display: inline;
+  }
+}
 
 .na {
   height: 7vh;
@@ -431,15 +453,6 @@ p {
 }
 label {
   margin-bottom: 0.5rem;
-}
-
-
-.bg-primary {
-  background-color: #1D838A;
-  color: #3a3a3a;
-  padding: 1rem;
-  align-self: end;
-  margin-top: 5rem;
 }
 
 #annonceDetails {

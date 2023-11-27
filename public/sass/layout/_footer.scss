@@ -23,4 +23,28 @@
         } 
     }
 
+    &__medias li{
+        background-color: $white-color;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+    }
+
+    &__logo{
+        height: 4rem;
+    }
+
+    &__dropdown ul{
+        @media (max-width: 768px){
+            display: none;
+        } 
+    }
+
+    &__categories i{
+        display: none;
+        @media (max-width: 768px){
+            display: inline;
+        } 
+    }
+
 }    
