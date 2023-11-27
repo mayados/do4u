@@ -417,6 +417,18 @@ p {
   padding-right: 5px;
 }
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 767px) {
+  .form-row {
+    flex-direction: column; /* Stack rows vertically on smaller screens */
+  }
+}
 label {
   margin-bottom: 0.5rem;
 }
@@ -634,7 +646,7 @@ label {
   }
 }
 @media (max-width: 600px) {
-  .col-1-connexion {
+  .form-connexion.col-1-connexion {
     order: 2;
     margin-top: 50px;
   }
@@ -642,7 +654,7 @@ label {
     order: 1;
   }
   .form-connexion {
-    padding: 10px;
+    padding: 25px;
   }
 }
 .class-padding-head {
@@ -899,6 +911,9 @@ label {
   }
   .nav-item-conx {
     padding: 0.2rem;
+  }
+  .form-inscription {
+    padding: 25px;
   }
 }
 #main-messenger {
