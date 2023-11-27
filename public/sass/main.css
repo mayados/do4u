@@ -511,14 +511,14 @@ label {
   width: fit-content;
 }
 
-.card {
+.details {
   width: 484px;
   height: 176px;
   border-radius: 15px;
   border: 1px solid #1D838A;
 }
 
-.card-top {
+.details-top {
   display: flex;
   align-items: flex-start;
   padding: 5px 8px 8px;
@@ -534,7 +534,7 @@ label {
   color: $primary-color;
 
 }*/
-.card-item-date {
+.details-date {
   position: relative;
   width: 382px;
   height: 32px;
@@ -549,7 +549,7 @@ label {
   line-height: 19px;
 }
 
-.card-title {
+.details-title {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -564,7 +564,7 @@ label {
   color: #3a3a3a;
 }
 
-.card-text {
+.details-price {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -607,9 +607,7 @@ label {
   text-decoration: none;
 }
 
-.card-body {
-  flex: 100px 1 1;
-}
+
 
 .bg-primary {
   background-color: #1D838A;
@@ -618,6 +616,7 @@ label {
   align-self: end;
   margin-top: 5rem;
 }
+
 
 .connexion {
   padding-top: 9rem;
