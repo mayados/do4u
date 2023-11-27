@@ -433,14 +433,6 @@ label {
   margin-bottom: 0.5rem;
 }
 
-
-.bg-primary {
-  background-color: #1D838A;
-  color: #3a3a3a;
-  padding: 1rem;
-  align-self: end;
-  margin-top: 5rem;
-
 #annonceDetails {
   visibility: hidden;
 }
@@ -595,14 +587,21 @@ label {
 
 .card-body {
   flex: 100px 1 1;
+}
 
+.bg-primary {
+  background-color: #1D838A;
+  color: #3a3a3a;
+  padding: 1rem;
+  align-self: end;
+  margin-top: 5rem;
 }
 
 .connexion {
   padding-top: 9rem;
   padding-bottom: 50px;
   background-image: url("../img/Img_page_de_connexion/background_img.png");
-  background-size: initial;
+  background-size: cover;
 }
 
 .form-connexion {
