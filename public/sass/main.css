@@ -433,15 +433,6 @@ label {
   margin-bottom: 0.5rem;
 }
 
-
-.bg-primary {
-  background-color: #1D838A;
-  color: #3a3a3a;
-  padding: 1rem;
-  align-self: end;
-  margin-top: 5rem;
-}
-
 #annonceDetails {
   visibility: hidden;
 }
@@ -670,9 +661,8 @@ label {
 }
 
 .section-1 {
-  background-color: rgba(29, 201, 198, 0.3333333333);
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-top: 10rem;
+  padding-bottom: 7rem;
 }
 
 .section-2 {
@@ -873,7 +863,7 @@ label {
 }
 
 .container-f-inscription {
-  background-color: rgba(173, 216, 230, 0.7); /* Light-blue color with 20% opacity */
+  background-color: rgba(173, 216, 230, 0.7);
 }
 
 .insscription-container {
