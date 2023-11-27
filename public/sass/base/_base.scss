@@ -75,6 +75,19 @@ p{
     padding-right: 5px;
   }
   
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  /* Media query for smaller screens (e.g., mobile devices) */
+  @media (max-width: 767px) {
+    .form-row {
+      flex-direction: column; /* Stack rows vertically on smaller screens */
+    }
+  }
+  
   label {
     margin-bottom: 0.5rem;
   }
