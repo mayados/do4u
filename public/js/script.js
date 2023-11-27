@@ -1,4 +1,4 @@
-function displayMobileVue() {
+function displayResponsiveVue() {
 
   if (window.innerWidth < 769){
   /* Display nav links on mobiles and pads */
@@ -43,6 +43,20 @@ function displayMobileVue() {
 
   displayUserParameters(); 
 
+  /* Display footer categories in the responsive version */
+  function displayResponsiveFooter() {
+    const footerCategoriesMenu = document.querySelector('.footer-element__categories');
+    const categoriesList = document.querySelector('.footer-element__dropdown');
+    footerCategoriesMenu.addEventListener('click', (event) => {    
+      console.log("click");
+      categoriesList.classList.toggle('show-footer-list');
+      console.log(categoriesList);
+
+    });    
+  } 
+
+  displayResponsiveFooter();
+
   }
 
   
@@ -50,7 +64,7 @@ function displayMobileVue() {
 }
 
 // When the window is resized, we call the displayMobileVue function to have a functionnal burger menu etc on mobile version
-window.onresize = displayMobileVue();
+window.onresize = displayResponsiveVue();
 
 
 

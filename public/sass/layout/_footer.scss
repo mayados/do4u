@@ -5,16 +5,24 @@
         list-style-type: none;
         }
 
+        li a:hover,
+        li a i:hover{
+            color: $secondary-color;
+        }
+
+        li a:focus,
+        li a i:focus{
+            color: $secondary-color;
+        }
+
     a,
     h3,
     p,
+    li,
+    li &__icon--white,
     li a{
         text-decoration: none;   
         color: $white-color;     
-    }
-
-    &__infos{
-        border-top: 1px solid $white-color;
     }
 
     &__mobile--hidden{
@@ -34,7 +42,7 @@
         height: 4rem;
     }
 
-    &__dropdown ul{
+    &__dropdown{
         @media (max-width: 768px){
             display: none;
         } 
@@ -45,6 +53,16 @@
         @media (max-width: 768px){
             display: inline;
         } 
+    }
+
+    &__divider{
+        height: 1px;
+        width: 100%;
+        background-color: $white-color;
+    }
+
+    .show-footer-list{
+        display: block;
     }
 
 }    
