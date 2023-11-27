@@ -32,7 +32,8 @@
                     <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
                     <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
                         <div role="menuitem">
-                            <a href="">Ménage / nettoyage / services à la personne</a>
+                            <a href="">Ménage</a>
+                            <a href="">Services à la personne</a>
                             <a href="">Rénovation & construction</a> 
                             <a href="">Jardinage & bricolage</a> 
                             <a href="">Réparation & maintenance</a> 
@@ -112,10 +113,10 @@
         <div id="line-divider"></div>
         <section id="mes-rubriques">
             <ul class="nav nav-underline row text-center mt-5">
-                <li class="nav-item col-3 offset-1 offset-lg-2 col-lg-2">
+                <li class="nav-item col-3 offset-1 offset-lg-2 col-lg-2 ms-0">
                     <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-annonces">Annonces</a>
                 </li>
-                <li class="nav-item col-2  col-lg-2">
+                <li class="nav-item col-3  col-lg-2">
                     <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-favoris">Favoris</a>
                 </li>
                 <li class="nav-item col-2  col-lg-2">
@@ -331,7 +332,74 @@
               </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer-element py-4">
+        <div class="container">
+            <section class="row ">
+                <div class="col-12 col-lg-2">
+                    <a href="" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" id="logo"></a> 
+                    <p class="text-center text-lg-start">Votre plateforme de choix de prestataires.</p>
+
+                    <h3 class="text-center text-lg-start">Retrouvez-nous sur</h3>
+                    <ul class="d-flex justify-content-evenly justify-content-lg-start gap-lg-5 ps-0">
+                        <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h3 class="text-center text-lg-start">Catégories</h3>
+                    <div class="d-flex flex-column  text-center flex-lg-row text-lg-start">
+                        <ul class="ps-0">
+                            <li class=""><a href="">Ménage</a></li>
+                            <li><a href="">Services à la personne</a></li>
+                            <li><a href="">Rénovation & construction</a></li>
+                            <li><a href="">Jardinage & bricolage</a></li>
+                            <li><a href="">Réparation & maintenance</a></li>
+                            <li><a href="">Informatique & administratif</a></li>
+                            <li><a href="">Cours & coaching</a></li>
+                            <li><a href="">Evènements & divertissements</a></li>
+                        </ul>
+                        <ul class="ps-0">
+                            <li><a href="">Santé & bien-être</a></li>
+                            <li><a href="">Animaux</a></li>
+                            <li><a href="">Artisanat & création</a></li>
+                            <li><a href="">Garde d'enfants</a></li>
+                            <li><a href="">Autre</a></li> 
+                        </ul>                        
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-2">
+                    <h3 class="footer-element__mobile--hidden">A propos de Do4U</h3>
+                    <ul class="ps-0">
+                        <li class="footer-element__mobile--hidden"><a href="">Qui sommes-nous ?</a></li>
+                        <li class="text-center text-lg-start"><a href="">Nous contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 footer-element__mobile--hidden">
+                    <h3>Liens rapides</h3>
+                    <ul class="ps-0">
+                        <li><a href="">Les offres</a></li>
+                        <li><a href="">Les demandes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 footer-element__mobile--hidden">
+                    <h3>Contact</h3>
+                    <ul class="ps-0">
+                        <li><i class="fa-solid fa-phone-volume"></i> 03 67 67 67</li>
+                        <li><i class="fa-solid fa-envelope"></i>do4u@gmail.com</li>
+                        <li><i class="fa-solid fa-map"></i>109 rue ABC, Strasbourg, France</li>
+                    </ul>
+                </div>            
+            </section>
+            <section class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex flex-column flex-lg-row ps-0 mb-0 mt-2">
+                    <li><a href="">Conditions générales d'utilisation</a></li>
+                    <li><a href="">Mentions légales</a></li>
+                </ul>
+                <p class="mb-0 mt-2">&copy; 2023, Do4U Inc. Tous droits réservés.</p>
+            </section>            
+        </div>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
