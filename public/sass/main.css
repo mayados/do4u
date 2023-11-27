@@ -135,6 +135,28 @@
     display: none;
   }
 }
+.footer-element__medias li {
+  background-color: #ffffff;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.footer-element__logo {
+  height: 4rem;
+}
+@media (max-width: 768px) {
+  .footer-element__dropdown ul {
+    display: none;
+  }
+}
+.footer-element__categories i {
+  display: none;
+}
+@media (max-width: 768px) {
+  .footer-element__categories i {
+    display: inline;
+  }
+}
 
 .na {
   height: 7vh;
