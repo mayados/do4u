@@ -621,12 +621,14 @@ label {
   text-decoration: none;
 }
 
-.bg-primary {
-  background-color: #1D838A;
-  color: #3a3a3a;
-  padding: 1rem;
-  align-self: end;
-  margin-top: 5rem;
+
+
+.annonces {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+  overflow-y: auto;
+
 }
 
 .connexion {
@@ -795,6 +797,13 @@ label {
   display: none;
 }
 
+.creation {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
 .typecheck {
   display: flex;
   align-items: center;
@@ -805,7 +814,7 @@ label {
 }
 
 .d-grid {
-  gap: 2;
+  gap: 2px;
 }
 .d-grid .btn.btn-primary {
   background-color: #1D838A;
@@ -813,7 +822,7 @@ label {
 
 .image-container img {
   width: 100%;
-  height: 100%;
+  height: 870px;
   display: block;
   max-width: 100%;
 }
