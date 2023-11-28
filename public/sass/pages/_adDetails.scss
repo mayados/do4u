@@ -44,14 +44,14 @@
     line-height: normal;
     width: fit-content;
 }
-.card {
+.details {
     width: 484px;
     height: 176px;
     border-radius: 15px;
     border: 1px solid $primary-color;
    
 }
-.card-top {
+.details-top {
     display: flex;
     align-items: flex-start;
     padding: 5px 8px 8px;
@@ -67,7 +67,7 @@
     
   }*/
   
-  .card-item-date {
+  .details-date {
     position: relative;
     width: 382px;
     height: 32px;
@@ -81,7 +81,7 @@
     letter-spacing: -0.02em;
     line-height: 19px;
   }
-  .card-title {
+  .details-title {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -95,7 +95,7 @@
     letter-spacing: -0.02em;
     color:$text-color;
   }
-  .card-text {
+  .details-price {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -136,6 +136,3 @@
     color: $white-color;
     text-decoration: none;
   }
-.card-body {
-    flex: 100px 1 1;
-}

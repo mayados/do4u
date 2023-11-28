@@ -120,15 +120,21 @@
 .footer-element li {
   list-style-type: none;
 }
+.footer-element li a:hover,
+.footer-element li a i:hover {
+  color: #E65A14;
+}
+.footer-element li a:focus,
+.footer-element li a i:focus {
+  color: #E65A14;
+}
 .footer-element a,
 .footer-element h3,
 .footer-element p,
+.footer-element li, li .footer-element__icon--white,
 .footer-element li a {
   text-decoration: none;
   color: #ffffff;
-}
-.footer-element__infos {
-  border-top: 1px solid #ffffff;
 }
 @media (max-width: 768px) {
   .footer-element__mobile--hidden {
@@ -145,7 +151,7 @@
   height: 4rem;
 }
 @media (max-width: 768px) {
-  .footer-element__dropdown ul {
+  .footer-element__dropdown {
     display: none;
   }
 }
@@ -156,6 +162,14 @@
   .footer-element__categories i {
     display: inline;
   }
+}
+.footer-element__divider {
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+}
+.footer-element .show-footer-list {
+  display: block;
 }
 
 .na {
@@ -511,14 +525,14 @@ label {
   width: fit-content;
 }
 
-.card {
+.details {
   width: 484px;
   height: 176px;
   border-radius: 15px;
   border: 1px solid #1D838A;
 }
 
-.card-top {
+.details-top {
   display: flex;
   align-items: flex-start;
   padding: 5px 8px 8px;
@@ -534,7 +548,7 @@ label {
   color: $primary-color;
 
 }*/
-.card-item-date {
+.details-date {
   position: relative;
   width: 382px;
   height: 32px;
@@ -549,7 +563,7 @@ label {
   line-height: 19px;
 }
 
-.card-title {
+.details-title {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -564,7 +578,7 @@ label {
   color: #3a3a3a;
 }
 
-.card-text {
+.details-price {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -607,15 +621,14 @@ label {
   text-decoration: none;
 }
 
-.card-body {
-  flex: 100px 1 1;
-}
+
 
 .annonces {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 20px;
   overflow-y: auto;
+
 }
 
 .connexion {
