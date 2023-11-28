@@ -90,7 +90,7 @@
                                     <!-- Titre de l'annonce -->
                                     <div class="mb-3">
                                         <label for="annonceTitle" class="form-label">* Titre de votre annonce</label>
-                                        <input type="text" class="form-control" id="annonceTitle" placeholder="Titre de votre annonce">
+                                        <input type="text" class="form-control annonceTitle" id="annonceTitle" placeholder="Titre de votre annonce">
                                     </div>
     
                                     <!-- Catégorie -->
@@ -98,25 +98,23 @@
                                         <label for="categorieSelect" class="form-label">* Catégorie</label>
                                         <select class="form-select" id="categorieSelect">
                                             <option selected>Choisir une catégorie</option>
-                                            <option selected>Choisir une catégorie</option>
-                                            <option selected>Choisir une catégorie</option>
                                             <option value="1">ménage, nettoyage, services à la personne</option>
                                             <option value="2">rénovation & construction</option>
                                             <option value="3">réparation et maintenance</option>
-                                            <option value="3">informatique & administratif</option>
-                                            <option value="3">cours et coaching</option>
-                                            <option value="3">santé et bien être</option>
-                                            <option value="3">evénements et divertissements</option>
-                                            <option value="3">animaux</option>
-                                            <option value="3">artisanat & création</option>
-                                            <option value="3">enfants</option>
-                                            <option value="3">autre</option>
+                                            <option value="4">informatique & administratif</option>
+                                            <option value="5">cours et coaching</option>
+                                            <option value="6">santé et bien être</option>
+                                            <option value="7">evénements et divertissements</option>
+                                            <option value="8">animaux</option>
+                                            <option value="9">artisanat & création</option>
+                                            <option value="10">enfants</option>
+                                            <option value="11">autre</option>
                                         </select>
                                     </div>
     
                                     <!-- Type d'annonce -->
                                     <div class="mb-3 typecheck">
-                                        <span>Type d'annonce</span>
+                                        <span>Type d'annonce &nbsp;</span>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                             <label class="form-check-label" for="inlineRadio1">Offre</label>
@@ -130,15 +128,15 @@
                                     <!-- Ajouter des photos -->
                                     <div class="addphoto mb-3">
                                         <span>Ajouter des photos (pas obligatoire)</span>
-                                        <div class="icone row justify-content-center">
-                                            <div class="card" style="width: 12rem; text-align: center; margin-top: 10px;">
+                                        <div class="icone row justify-content-evenly">
+                                            <div class="card icone-card">
                                                 <div class="card-body">
-                                                    <i class="bi bi-image fa-5x"></i>
+                                                    <i class="bi bi-image fa-5x photo-icon"></i>
                                                 </div>
                                             </div>
-                                            <div class="card" style="width: 12rem; text-align: center; margin-top: 10px;">
-                                                <div class="card-body">
-                                                    <i class="bi bi-plus-lg fa-3x"></i>
+                                            <div class="card icone-card">
+                                                <div class="card-body mt-3">
+                                                    <i class="bi bi-plus-lg fa-3x plus-icon"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,22 +149,22 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
-                                        <input type="text" class="form-control" id="annoncePrix" placeholder="Votre prix de service">
+                                        <input type="text" class="form-control annoncePrix" id="annoncePrix" placeholder="Votre prix de service">
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">Votre lieu de service ? *</label>
-                                        <input type="text" class="form-control" id="annonceLieu" placeholder="Votre lieu de service">
+                                        <input type="text" class="form-control annonceLieu" id="annonceLieu" placeholder="Votre lieu de service">
                                     </div>
     
                                     <!-- Bouton -->
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary" type="button">Déposer une annonce</button>
+                                        <button class="btn btn-depose" type="button">Déposer une annonce</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <div class="col-md-4 image-container flex-fill">
+                        <div class="col-md-4 imgcontainer flex-fill">
                             <img src="./../public/img/Img_page_ads/house-3950679_640.jpg" class="img-fluid" alt="Image">
                         </div>
                     </div>

@@ -1,7 +1,60 @@
 .annonces{
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     padding: 20px;
     overflow-y: auto;
 }
 
+.position-relative {
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; 
+  }
+  
+  .position-relative:hover {
+    transform: translateY(20px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+
+
+.bg-gr{
+    background-color: $primary-color;
+    transform: translateY(94px);
+      
+}
+.bg-ro{
+    background-color: $secondary-color;
+    transform: translateY(94px);
+}
+
+.favo{
+    color: $primary-color;
+}
+
+.icon-etoile{
+    color: $yellow-logo-color;
+}
+
+.ads {
+    &.fanye {
+      &.active {
+        .ad{
+          background-color: $primary-color;
+          border-color: $primary-color;
+          color: #fff; 
+        }
+      }
+  
+      .ad {
+        color: $primary-color;
+        &:hover {
+          background-color: $primary-color;
+          border-color: $primary-color;
+          color: #fff; 
+        }
+      }
+    }
+  }
+  

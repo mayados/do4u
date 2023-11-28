@@ -621,14 +621,55 @@ label {
   text-decoration: none;
 }
 
-
-
 .annonces {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   padding: 20px;
   overflow-y: auto;
+}
 
+.position-relative {
+  border: 1px solid #1D838A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.position-relative:hover {
+  transform: translateY(20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bg-gr {
+  background-color: #1D838A;
+  transform: translateY(94px);
+}
+
+.bg-ro {
+  background-color: #E65A14;
+  transform: translateY(94px);
+}
+
+.favo {
+  color: #1D838A;
+}
+
+.icon-etoile {
+  color: #E9AD10;
+}
+
+.ads.fanye.active .ad {
+  background-color: #1D838A;
+  border-color: #1D838A;
+  color: #fff;
+}
+.ads.fanye .ad {
+  color: #1D838A;
+}
+.ads.fanye .ad:hover {
+  background-color: #1D838A;
+  border-color: #1D838A;
+  color: #fff;
 }
 
 .connexion {
@@ -798,9 +839,9 @@ label {
 }
 
 .creation {
-  margin-top: 60px;
-  margin-bottom: 50px;
-  padding: 20px;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  padding: 10px;
   overflow-y: auto;
 }
 
@@ -814,17 +855,42 @@ label {
 }
 
 .d-grid {
-  gap: 2px;
+  gap: 1px;
 }
-.d-grid .btn.btn-primary {
+.d-grid .btn.btn-depose {
   background-color: #1D838A;
+  color: #ffffff;
 }
 
-.image-container img {
+.icone-card {
+  width: 10rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.plus-icon {
+  opacity: 0.7;
+}
+
+.photo-icon {
+  opacity: 0.7;
+}
+
+.imgcontainer img {
   width: 100%;
-  height: 870px;
+  height: 880px;
   display: block;
   max-width: 100%;
+}
+
+.annoncePrix,
+.annonceLieu,
+.annonceTitle {
+  opacity: 0.7;
+}
+
+#categorieSelect {
+  opacity: 0.7;
 }
 
 .hero {
