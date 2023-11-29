@@ -1,0 +1,11 @@
+// mixin pour les liens
+@mixin links-style{
+    text-decoration: none;
+    color: $secondary-color;
+    font-weight: bolder;
+}
+
+//mixin pour les border bottom communes
+@mixin blue-border-bottom{
+    border-bottom: 2px solid $primary-color;
+}
