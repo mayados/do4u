@@ -4,11 +4,11 @@
 .button-primary-regular {
   width: 100%;
   color: #ffffff;
-  background-color: #1d838a;
+  background-color: #1D838A;
   justify-content: center;
   padding: 10px;
   border-radius: 5px;
-  border: solid 2px #1d838a;
+  border: solid 2px #1D838A;
   align-items: center;
   font-weight: 600;
 }
@@ -16,64 +16,64 @@
 .button-primary-regular:hover {
   width: 100%;
   background-color: #ffffff;
-  color: #1d838a;
+  color: #1D838A;
   font-weight: 600;
-  border: solid 2px #1d838a;
+  border: solid 2px #1D838A;
 }
 
 .button-primary-pill {
   color: #ffffff;
-  background-color: #1d838a;
+  background-color: #1D838A;
   justify-content: center;
   padding: 10px 25px 10px 25px;
   border-radius: 30px;
   font-weight: 600;
-  border: solid 2px #1d838a;
+  border: solid 2px #1D838A;
   align-items: center;
 }
 
 .button-primary-pill:hover {
   background-color: #ffffff;
-  color: #1d838a;
+  color: #1D838A;
   font-weight: 600;
-  border: solid 2px #1d838a;
+  border: solid 2px #1D838A;
 }
 
 .button-secondary-regular {
   width: 100%;
   color: #ffffff;
-  background-color: #e65a14;
+  background-color: #E65A14;
   justify-content: center;
   padding: 10px;
   border-radius: 5px;
-  border: solid 2px #e65a14;
+  border: solid 2px #E65A14;
   align-items: center;
 }
 
 .button-secondary-regular:hover {
   width: 100%;
   background-color: #ffffff;
-  color: #e65a14;
+  color: #E65A14;
   font-weight: 600;
-  border: solid 2px #e65a14;
+  border: solid 2px #E65A14;
 }
 
 .button-secondary-pill {
   color: #ffffff;
-  background-color: #e65a14;
+  background-color: #E65A14;
   justify-content: center;
   padding: 10px 25px 10px 25px;
   border-radius: 30px;
   font-weight: 600;
-  border: solid 2px #e65a14;
+  border: solid 2px #E65A14;
   align-items: center;
 }
 
 .button-secondary-pill:hover {
   background-color: #ffffff;
-  color: #e65a14;
+  color: #E65A14;
   font-weight: 600;
-  border: solid 2px #e65a14;
+  border: solid 2px #E65A14;
 }
 
 .card-ad {
@@ -122,17 +122,16 @@
 }
 .footer-element li a:hover,
 .footer-element li a i:hover {
-  color: #e65a14;
+  color: #E65A14;
 }
 .footer-element li a:focus,
 .footer-element li a i:focus {
-  color: #e65a14;
+  color: #E65A14;
 }
 .footer-element a,
 .footer-element h3,
 .footer-element p,
-.footer-element li,
-li .footer-element__icon--white,
+.footer-element li, li .footer-element__icon--white,
 .footer-element li a {
   text-decoration: none;
   color: #ffffff;
@@ -197,9 +196,7 @@ li .footer-element__icon--white,
   flex: 10;
 }
 @media (max-width: 768px) {
-  .na__form--mobile,
-  .na__form--mobile:nth-child(1),
-  .na__form--mobile:nth-child(2) {
+  .na__form--mobile, .na__form--mobile:nth-child(1), .na__form--mobile:nth-child(2) {
     top: 7vh;
     position: absolute;
     width: 100vw;
@@ -209,15 +206,12 @@ li .footer-element__icon--white,
     align-items: center;
     right: 0;
     left: 0;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     padding: 0 2% 0 2%;
   }
 }
 @media (max-width: 768px) {
-  .na__form--none,
-  .na__form--none:nth-child(1),
-  .na__form--none:nth-child(2) {
+  .na__form--none, .na__form--none:nth-child(1), .na__form--none:nth-child(2) {
     display: none;
   }
 }
@@ -323,8 +317,7 @@ li .footer-element__icon--white,
 .na #burger-check {
   display: none;
 }
-.na__dropdown_annonces--active,
-.na__dropdown_user--active {
+.na__dropdown_annonces--active, .na__dropdown_user--active {
   padding-top: 1.5rem;
   display: inherit;
   background-color: #ffffff;
@@ -367,7 +360,7 @@ we declare all the :hover in a media. If the media doesn't correspond with :hove
   }
   .na__dropdown_annonces div a:hover,
   .na__dropdown_user a:hover {
-    color: #e65a14;
+    color: #E65A14;
   }
   #dropdown-link-annonces:hover .na__dropdown_annonces div {
     display: flex;
@@ -419,22 +412,22 @@ p {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  background-color: #e65a14;
+  background-color: #E65A14;
   color: #ffffff;
 }
 
 .nav-pills .nav-link {
-  background-color: #1d838a;
+  background-color: #1D838A;
   color: #ffffff;
 }
 
 .link {
-  color: #e65a14;
+  color: #E65A14;
   font-weight: 600;
 }
 
 .icon {
-  color: #1d838a;
+  color: #1D838A;
   margin-right: 10px;
 }
 
@@ -498,7 +491,7 @@ label {
 }
 
 .breadcrumb-item a {
-  color: #e65a14;
+  color: #E65A14;
 }
 
 .breadcrumb-item a:hover {
@@ -509,7 +502,7 @@ label {
   position: relative;
   display: inline-block;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .image-container img {
@@ -520,7 +513,7 @@ label {
   position: absolute;
   transform: translate(476px, -36px);
   border-radius: 10px 0px 0px 0px;
-  background-color: #1d838a;
+  background-color: #1D838A;
   color: #ffffff;
   padding: 9px 28px;
   font-size: 16px;
@@ -536,7 +529,7 @@ label {
   width: 484px;
   height: 176px;
   border-radius: 15px;
-  border: 1px solid #1d838a;
+  border: 1px solid #1D838A;
 }
 
 .details-top {
@@ -622,7 +615,7 @@ label {
   padding: 16px 24px;
   position: relative;
   margin-bottom: -4px;
-  background-color: #1d838a;
+  background-color: #1D838A;
   border-radius: 6px;
   color: #ffffff;
   text-decoration: none;
@@ -633,6 +626,50 @@ label {
   margin-bottom: 10px;
   padding: 20px;
   overflow-y: auto;
+}
+
+.position-relative {
+  border: 1px solid #1D838A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.position-relative:hover {
+  transform: translateY(20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bg-gr {
+  background-color: #1D838A;
+  transform: translateY(94px);
+}
+
+.bg-ro {
+  background-color: #E65A14;
+  transform: translateY(94px);
+}
+
+.favo {
+  color: #1D838A;
+}
+
+.icon-etoile {
+  color: #E9AD10;
+}
+
+.ads.fanye.active .ad {
+  background-color: #1D838A;
+  border-color: #1D838A;
+  color: #fff;
+}
+.ads.fanye .ad {
+  color: #1D838A;
+}
+.ads.fanye .ad:hover {
+  background-color: #1D838A;
+  border-color: #1D838A;
+  color: #fff;
 }
 
 .connexion {
@@ -647,8 +684,7 @@ label {
   border: dashed 1.5px rgb(138, 138, 138);
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
-  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877),
-    0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
 }
 
 .form {
@@ -714,8 +750,7 @@ label {
   border: dashed 1.5px #383838;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
-  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877),
-    0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
 }
 
 @media (max-width: 768px) {
@@ -750,7 +785,7 @@ label {
 }
 
 #section-top-conversation {
-  background-color: #1d838a;
+  background-color: #1D838A;
 }
 
 #annonce-conversation {
@@ -769,7 +804,7 @@ label {
 }
 
 .correspondant-message {
-  background-color: #1d838a;
+  background-color: #1D838A;
 }
 @media (max-width: 768px) {
   .correspondant-message {
@@ -778,7 +813,7 @@ label {
 }
 
 .mon-message {
-  background-color: #e65a14;
+  background-color: #E65A14;
 }
 
 .correspondant-message-state,
@@ -822,8 +857,23 @@ label {
 .d-grid {
   gap: 1px;
 }
-.d-grid .btn.btn-primary {
-  background-color: #1d838a;
+.d-grid .btn.btn-depose {
+  background-color: #1D838A;
+  color: #ffffff;
+}
+
+.icone-card {
+  width: 10rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.plus-icon {
+  opacity: 0.7;
+}
+
+.photo-icon {
+  opacity: 0.7;
 }
 
 .imgcontainer img {
@@ -845,12 +895,7 @@ label {
 
 .hero {
   background: rgb(16, 200, 197);
-  background: linear-gradient(
-    90deg,
-    rgb(16, 200, 197) 0%,
-    rgb(110, 239, 237) 27%,
-    rgb(234, 251, 250) 100%
-  );
+  background: linear-gradient(90deg, rgb(16, 200, 197) 0%, rgb(110, 239, 237) 27%, rgb(234, 251, 250) 100%);
 }
 
 @media (max-width: 600px) {
@@ -889,7 +934,7 @@ label {
 .subscribe_form button {
   border: none;
   height: 44px;
-  background-color: #e65a14;
+  background-color: #E65A14;
   color: #ffffff;
   margin-left: -7px;
   border-radius: 5px;
@@ -902,12 +947,9 @@ label {
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-.subscribe_form button:hover,
-.subscribe_form button:focus,
-.subscribe_form button:active,
-.subscribe_form button:visited {
+.subscribe_form button:hover, .subscribe_form button:focus, .subscribe_form button:active, .subscribe_form button:visited {
   color: #ffffff;
-  background-color: #e65a14;
+  background-color: #E65A14;
   outline: none;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
@@ -915,19 +957,15 @@ label {
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-.subscribe_form button:hover:before,
-.subscribe_form button:focus:before,
-.subscribe_form button:active:before,
-.subscribe_form button:visited:before {
-  background-color: #e65a14;
+.subscribe_form button:hover:before, .subscribe_form button:focus:before, .subscribe_form button:active:before, .subscribe_form button:visited:before {
+  background-color: #E65A14;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-.subscribe_form .input-group-btn:last-child > .btn,
-.subscribe_form .input-group-btn:last-child > .btn-group {
+.subscribe_form .input-group-btn:last-child > .btn, .subscribe_form .input-group-btn:last-child > .btn-group {
   z-index: 2;
   margin-left: 0px;
 }
@@ -948,7 +986,7 @@ label {
   }
 }
 .h2-pc {
-  color: #1d838a;
+  color: #1D838A;
 }
 
 .red-star {
@@ -957,11 +995,10 @@ label {
 
 .form-inscription {
   padding: 40px;
-  border: dashed 1.5px #e65a14;
+  border: dashed 1.5px #E65A14;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
-  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877),
-    0px 3px 6px 0px rgba(255, 255, 255, 0.724);
+  box-shadow: 2px 3px 3px 0px rgba(248, 248, 248, 0.877), 0px 3px 6px 0px rgba(255, 255, 255, 0.724);
 }
 
 .img-ins {
@@ -996,11 +1033,11 @@ label {
 
 #banniere-messenger {
   height: 15vh;
-  background-color: #1d838a;
+  background-color: #1D838A;
 }
 
 .message-card {
-  border-bottom: 2px solid #1d838a;
+  border-bottom: 2px solid #1D838A;
 }
 
 .figure-message {
@@ -1044,11 +1081,11 @@ label {
 #profile-badge {
   height: 100%;
   padding: 1px 3px;
-  background-color: #e9ad10;
+  background-color: #E9AD10;
 }
 
 #my-star {
-  color: #e9ad10;
+  color: #E9AD10;
 }
 
 .checked-icon {
@@ -1079,21 +1116,21 @@ label {
 }
 
 .action-ad-consulter {
-  background-color: #1d838a;
+  background-color: #1D838A;
 }
 .action-ad-consulter:hover {
   background-color: #145b60;
 }
 
 .action-ad-modifier {
-  background-color: #e65a14;
+  background-color: #E65A14;
 }
 .action-ad-modifier:hover {
   background-color: #b74810;
 }
 
 .action-ad-supprimer {
-  background-color: #db0b00;
+  background-color: #DB0B00;
 }
 .action-ad-supprimer:hover {
   background-color: #a80800;
@@ -1120,20 +1157,20 @@ label {
 
 .vertical-dots {
   padding: 2px 5px;
-  border: 3px solid #1d838a;
+  border: 3px solid #1D838A;
 }
 
 .vertical-dots i {
-  color: #1d838a;
+  color: #1D838A;
 }
 
 #ajout-avis {
-  border: 2px solid #1d838a;
+  border: 2px solid #1D838A;
 }
 
 /* CONTAINER FORM AVIS */
 #container-form-avis {
-  border: 2px solid #1d838a;
+  border: 2px solid #1D838A;
   display: none;
 }
 
@@ -1161,4 +1198,4 @@ label {
 .figure-rating img {
   height: 100%;
   width: 100%;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
