@@ -43,17 +43,24 @@ function displayResponsiveVue() {
 
   displayUserParameters(); 
 
-  /* Display footer categories in the responsive version */
   function displayResponsiveFooter() {
     const footerCategoriesMenu = document.querySelector('.footer-element__categories');
     const categoriesList = document.querySelector('.footer-element__dropdown');
-    footerCategoriesMenu.addEventListener('click', (event) => {    
-      console.log("click");
-      categoriesList.classList.toggle('show-footer-list');
-      console.log(categoriesList);
+  
+    function handleFooterInteraction(event) {
+      if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
 
-    });    
-  } 
+        // Logique commune pour le clic et la touche "Entrée"
+        categoriesList.classList.toggle('show-footer-list');
+        event.preventDefault();
+       
+      }
+    }
+  
+    // in function of the type of event, we redirect to the function
+    footerCategoriesMenu.addEventListener('click', handleFooterInteraction);
+    footerCategoriesMenu.addEventListener('keydown', handleFooterInteraction);
+  }
 
   displayResponsiveFooter();
 

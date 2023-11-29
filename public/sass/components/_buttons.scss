@@ -18,7 +18,9 @@
     font-weight: 600;
     border: solid 2px $primary-color;
   }
-
+  .button-primary-regular:hover i{
+    color: $primary-color;
+  }
   // btn primary pill
   .button-primary-pill {
     color: $white-color;
@@ -29,6 +31,10 @@
     font-weight: 600;
     border: solid 2px $primary-color;
     align-items: center;
+  }
+
+  .button-primary-pill:hover i{
+    color: $primary-color;
   }
 
   .button-primary-pill:hover {
