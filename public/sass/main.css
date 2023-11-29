@@ -758,6 +758,7 @@ label {
 }
 
 .contact-form {
+  padding: 40px;
   border: dashed 1.5px #383838;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -769,6 +770,9 @@ label {
     background-image: none;
     padding-top: 10rem;
     padding-bottom: 2rem;
+  }
+  .contact-form {
+    padding: 25px;
   }
 }
 .responsive-map {
