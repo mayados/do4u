@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inscription</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -133,20 +133,20 @@
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
                                           <input type="password" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
                                         </div>
-                                        <div class="mt-4">
-                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
-                                        </div>
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
                                             </label>
                                         </div>
+                                        <div class="mt-4">
+                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
+                                        </div>
                                     </form>
                                     <form class="tab-pane fade show" id="pills-entrepreneur" role="tabpanel" aria-labelledby="pills-entrepreneur-tab">
                                         <div class="form-row">
                                             <div class=" col form-group">
-                                                <label for="nom">Nom test<span class="text-danger">*</span></label>
+                                                <label for="nom">Nom<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="nom" placeholder="Votre nom">
                                               </div>
                                               <div class="col form-group">
@@ -176,14 +176,14 @@
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
                                           <input type="password" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
                                         </div>
-                                        <div class="mt-4">
-                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
-                                        </div>
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
                                             </label>
+                                        </div>
+                                        <div class="mt-4">
+                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
                                         </div>
                                     </form>
                                     <form class="tab-pane fade show" id="pills-entreprise" role="tabpanel" aria-labelledby="pills-entreprise-tab">
@@ -206,6 +206,7 @@
                                                 <label for="email">Pseudo <span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control" id="email" placeholder="Votre Adresse mail">
                                             </div>
+                        
                                         </div>
                                         <div class="form-group">
                                             <label for="pseudo">Adresse <span class="text-muted">(ville + code postal)</span> <span class="text-danger">*</span></label>
@@ -219,14 +220,14 @@
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
                                           <input type="password" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
                                         </div>
-                                        <div class="mt-4">
-                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
-                                        </div>
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
                                             </label>
+                                        </div>
+                                        <div class="mt-4">
+                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
                                         </div>
                                     </form>       
                                 </div>
@@ -239,9 +240,71 @@
             </div>
         </section>
     </main>
-    <section class="" style="height: 300px; background-color: #1E1E1E;">
-        footer
-    </section>
+    <footer class="footer-element py-4">
+        <div class="container">
+            <section class="row mb-4 container">
+                <div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                    <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
+                    <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
+
+                    <h3 class="text-center text-lg-start pb-3">Retrouvez-nous sur</h3>
+                    <ul class="footer-element__medias d-flex justify-content-evenly justify-content-lg-start gap-lg-5 ps-0">
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4 offset-lg-1">
+                    <h3 class="text-center text-lg-start footer-element__categories">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
+                    <div class="d-flex flex-column  text-center flex-lg-row text-lg-start gap-lg-3 footer-element__dropdown">
+                        <ul class="ps-0">
+                            <li class=""><a href="">Ménage</a></li>
+                            <li><a href="">Services à la personne</a></li>
+                            <li><a href="">Rénovation & construction</a></li>
+                            <li><a href="">Jardinage & bricolage</a></li>
+                            <li><a href="">Réparation & maintenance</a></li>
+                            <li><a href="">Informatique & administratif</a></li>
+                            <li><a href="">Cours & coaching</a></li>
+                            <li><a href="">Evènements & divertissements</a></li>
+                        </ul>
+                        <ul class="ps-0">
+                            <li><a href="">Santé & bien-être</a></li>
+                            <li><a href="">Animaux</a></li>
+                            <li><a href="">Artisanat & création</a></li>
+                            <li><a href="">Garde d'enfants</a></li>
+                            <li><a href="">Autre</a></li> 
+                        </ul>                        
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-2">
+                    <h3 class="footer-element__mobile--hidden">Liens rapides</h3>
+                    <ul class="ps-0">
+                        <li class="footer-element__mobile--hidden"><a href="">Qui sommes-nous ?</a></li>
+                        <li class="text-center text-lg-start"><a  href="">Nous contacter</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="">Les offres</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="">Les demandes</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 footer-element__mobile--hidden">
+                    <h3>Contact</h3>
+                    <ul class="ps-0">
+                        <li><i class="fa-solid fa-phone-volume"></i> 03 67 67 67</li>
+                        <li><i class="fa-solid fa-envelope"></i>do4u@gmail.com</li>
+                        <li><i class="fa-solid fa-map"></i>109 rue ABC, Strasbourg, France</li>
+                    </ul>
+                </div>            
+            </section>
+            <section class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex flex-column flex-lg-row ps-0 mb-0 mt-2 gap-3">
+                    <li><a href="">Conditions générales d'utilisation</a></li>
+                    <li><a href="">Mentions légales</a></li>
+                </ul>
+                <p class="mb-0 mt-2">&copy; 2023, Do4U Inc. Tous droits réservés.</p>
+            </section>            
+        </div>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
