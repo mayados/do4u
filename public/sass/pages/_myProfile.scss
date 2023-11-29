@@ -1,3 +1,9 @@
+/* fil d'ariane */
+.fil-ariane a,
+.fil-ariane p{
+    @include links-style;
+}
+
 #figure-lola{
     width: 200px;
     height: 200px;
@@ -36,6 +42,8 @@
 
 #main-container{
     margin-top: 7vh;
+    padding-bottom: 7vh;
+    min-height: 90vh;
 
     @media (max-width: 768px){
         margin-top: 15vh;
@@ -94,5 +102,5 @@
 }
 
 .avis-commentaire{
-    border-bottom: 2px solid $light-blue;
+    @include blue-border-bottom;
 }

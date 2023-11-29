@@ -79,7 +79,7 @@
         </nav>          
     </header>
     <main class="container" id="main-container">
-        <div><p><a href="">Accueil</a> < <a href="">Mon profil</a></p></div>
+        <div class="fil-ariane"><p><a href="">Accueil</a>&nbsp; < &nbsp;<a href="">Mon profil</a></p></div>
         <section id="my-infos-profile">
             <div id="top-my-infos" class="flex-column flex-lg-row align-items-lg-center justify-content-between d-flex">
                 <div class=" d-flex flex-row align-items-center gap-3">
@@ -113,7 +113,7 @@
         <div id="line-divider"></div>
         <section id="mes-rubriques">
             <ul class="nav nav-underline row text-center mt-5">
-                <li class="nav-item col-3 offset-1 offset-lg-2 col-lg-2 ">
+                <li class="nav-item col-3  offset-lg-2 col-lg-2 ">
                     <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-annonces">Annonces</a>
                 </li>
                 <li class="nav-item col-3  col-lg-2">
@@ -130,7 +130,7 @@
                 <div class="tab-pane fade show active text-center" id="pills-annonces" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <p>4 annonces publiées</p>
                     <div class="row justify-content-evenly d-flex gap-5 gap-lg-0">
-                        <div class="card card-ad" style="width: 18rem;">
+                        <div class="card card-ad mb-5" style="width: 18rem;">
                             <figure class="card-ad__figure">
                                 <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">  
                                 <div class="card-ad__badge">
@@ -147,7 +147,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="card card-ad" style="width: 18rem;">
+                          <div class="card card-ad mb-5" style="width: 18rem;">
                             <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
@@ -158,9 +158,9 @@
                               </div>
                             </div>
                           </div>
-                          <div class="card card-ad" style="width: 18rem;">
+                          <div class="card card-ad mb-5" style="width: 18rem;">
                             <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
-                            <div class="card-body ">
+                            <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
                                 <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="">Consulter <i class="fa-solid fa-eye"></i></a>
@@ -169,7 +169,29 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="card card-ad" style="width: 18rem;">
+                          <div class="card card-ad mb-5" style="width: 18rem;">
+                            <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
+                                <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="">Consulter <i class="fa-solid fa-eye"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="">Modifier <i class="fa-solid fa-pen"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-supprimer" href="">Supprimer <i class="fa-solid fa-trash"></i></a>                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card card-ad mb-5" style="width: 18rem;">
+                            <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
+                                <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="">Consulter <i class="fa-solid fa-eye"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="">Modifier <i class="fa-solid fa-pen"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-supprimer" href="">Supprimer <i class="fa-solid fa-trash"></i></a>                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card card-ad mb-5" style="width: 18rem;">
                             <img src="../public/img/cards/image1.jpg" class="card-img-top" alt="service">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
@@ -290,7 +312,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </article>
                         <article class="avis-commentaire d-flex justify-content-between mt-3">
@@ -311,7 +333,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </article>
                     </section>
@@ -332,10 +354,10 @@
               </div>
         </section>
     </main>
-    <footer class="footer-element py-4 mt-5">
+    <footer class="footer-element pt-5">
         <section class="container">
             <div class="row mb-4">
-                <div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
                     <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
                     <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
@@ -346,9 +368,9 @@
                         <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-4 offset-lg-1">
-                    <h3 class="text-center text-lg-start footer-element__categories">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
-                    <div class="flex-lg-column d-lg-flex text-center flex-lg-row text-lg-start gap-lg-3 footer-element__dropdown">
+                <div class="col-12 col-lg-4">
+                    <h3 class="text-center text-lg-start footer-element__categories"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
+                    <div class="d-lg-flex text-center flex-lg-row  text-lg-start gap-lg-3 footer-element__dropdown">
                         <ul class="ps-0">
                             <li class=""><a href="">Ménage</a></li>
                             <li><a href="">Services à la personne</a></li>
@@ -389,9 +411,9 @@
             </div>
         </section>   
         <div class="footer-element__divider"></div>
-        <section class="container">
-            <div class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
-                <ul class="d-flex flex-column flex-lg-row ps-0 mb-0 mt-2 gap-3">
+        <section class="container py-2">
+            <div class="d-flex gap-4 flex-column text-center gap-lg-0 text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex gap-4 flex-column flex-lg-row ps-0 mb-0 mt-2 gap-lg-3 pt-2">
                     <li><a href="">Conditions générales d'utilisation</a></li>
                     <li><a href="">Mentions légales</a></li>
                 </ul>

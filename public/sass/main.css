@@ -21,6 +21,10 @@
   border: solid 2px #1D838A;
 }
 
+.button-primary-regular:hover i {
+  color: #1D838A;
+}
+
 .button-primary-pill {
   color: #ffffff;
   background-color: #1D838A;
@@ -30,6 +34,10 @@
   font-weight: 600;
   border: solid 2px #1D838A;
   align-items: center;
+}
+
+.button-primary-pill:hover i {
+  color: #1D838A;
 }
 
 .button-primary-pill:hover {
@@ -168,8 +176,10 @@
   width: 100%;
   background-color: #ffffff;
 }
-.footer-element .show-footer-list {
-  display: block;
+@media (max-width: 768px) {
+  .footer-element .show-footer-list {
+    display: block;
+  }
 }
 
 .na {
@@ -1055,6 +1065,14 @@ label {
   }
 }
 
+/* fil d'ariane */
+.fil-ariane a,
+.fil-ariane p {
+  text-decoration: none;
+  color: #E65A14;
+  font-weight: bolder;
+}
+
 #figure-lola {
   width: 200px;
   height: 200px;
@@ -1094,6 +1112,8 @@ label {
 
 #main-container {
   margin-top: 7vh;
+  padding-bottom: 7vh;
+  min-height: 90vh;
 }
 @media (max-width: 768px) {
   #main-container {
@@ -1148,7 +1168,7 @@ label {
 }
 
 .avis-commentaire {
-  border-bottom: 2px solid #1dc9c6;
+  border-bottom: 2px solid #1D838A;
 }
 
 #map {
@@ -1158,6 +1178,7 @@ label {
 .vertical-dots {
   padding: 2px 5px;
   border: 3px solid #1D838A;
+  text-decoration: none;
 }
 
 .vertical-dots i {
@@ -1198,4 +1219,8 @@ label {
 .figure-rating img {
   height: 100%;
   width: 100%;
+}
+
+.follow-user i {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
