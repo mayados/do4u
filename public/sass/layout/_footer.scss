@@ -62,7 +62,8 @@
     }
 
     .show-footer-list{
-        display: block;
-    }
+        @media (max-width: 768px){
+            display: block;
+        }     }
 
 }    

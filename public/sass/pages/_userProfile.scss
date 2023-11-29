@@ -5,6 +5,7 @@
 .vertical-dots{
     padding: 2px 5px;
     border: 3px solid $primary-color;
+    text-decoration: none;
 }
 
 .vertical-dots i{
@@ -45,4 +46,8 @@
 .figure-rating img{
     height: 100%;
     width: 100%;
+}
+
+.follow-user i{
+    color: $white-color;
 }
