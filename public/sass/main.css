@@ -1200,6 +1200,10 @@ label {
   border-bottom: 2px solid #1D838A;
 }
 
+.full-star-icon {
+  color: #E9AD10;
+}
+
 #map {
   height: 40vh;
 }
