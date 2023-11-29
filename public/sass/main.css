@@ -630,7 +630,7 @@ label {
 
 .annonces {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   padding: 20px;
   overflow-y: auto;
 }
@@ -804,9 +804,9 @@ label {
 }
 
 .creation {
-  margin-top: 60px;
-  margin-bottom: 50px;
-  padding: 20px;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  padding: 10px;
   overflow-y: auto;
 }
 
@@ -820,17 +820,27 @@ label {
 }
 
 .d-grid {
-  gap: 2px;
+  gap: 1px;
 }
 .d-grid .btn.btn-primary {
   background-color: #1d838a;
 }
 
-.image-container img {
+.imgcontainer img {
   width: 100%;
-  height: 870px;
+  height: 880px;
   display: block;
   max-width: 100%;
+}
+
+.annoncePrix,
+.annonceLieu,
+.annonceTitle {
+  opacity: 0.7;
+}
+
+#categorieSelect {
+  opacity: 0.7;
 }
 
 .hero {
