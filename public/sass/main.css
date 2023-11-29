@@ -746,8 +746,9 @@ label {
 }
 
 .section-1 {
-  padding-top: 10rem;
-  padding-bottom: 7rem;
+  background-color: rgba(173, 216, 230, 0.2);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .section-2 {
@@ -766,7 +767,7 @@ label {
 @media (max-width: 768px) {
   .section-1 {
     background-image: none;
-    padding-bottom: 10rem;
+    padding-top: 10rem;
     padding-bottom: 2rem;
   }
 }
@@ -997,6 +998,16 @@ label {
 }
 .h2-pc {
   color: #1D838A;
+}
+
+.h3-pc {
+  color: #E65A14;
+  font-weight: 600;
+}
+
+.p-bold-cntact {
+  font-weight: 600;
+  color: #E65A14;
 }
 
 .red-star {
