@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
 </head>
 <body>
     <header>
@@ -138,10 +144,39 @@
                 </div>
             </div>
         </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <article class="adDescription">
+                        <h3>Service à la personne</h3>
+                        <h4 class="description">Description</h4>
+                        <p>
+                            Dame sérieuse et expérimentée, avec références, patiente, compréhensive, propose aide à personnes
+                            âgées ou nécessiteuses :
+                            - Toilette 
+                            - Préparation des repas 
+                            - Courses 
+                            - Petit ménage 
+                            - Promenade 
+                            Tarif horaire: 20 Euros 
+                            Mode de paiement: chèque emploi service (CESU), ou chèque 
+                            Disponible immédiatement du lundi au vendredi de 8h00 à 17h
+                        </p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Strasbourg</h3>
+                    <div id="map">
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../public/js/script.js"></script>
+    <script src="../public/js/map.js"></script>
 </body>
 </html>
