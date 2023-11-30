@@ -791,6 +791,7 @@ label {
 }
 .responsive-map {
   overflow: hidden;
+  padding-bottom: 80%;
   position: relative;
   height: 0;
 }
