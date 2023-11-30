@@ -415,6 +415,12 @@ h3 {
   font-size: 1.2rem;
 }
 
+h4 {
+  font-family: "Nunito Sans";
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 p {
   font-family: "Nunito Sans";
   font-size: 1rem;
