@@ -412,12 +412,12 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 h4 {
   font-family: "Nunito Sans";
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -952,6 +952,27 @@ label {
     padding-right: 2rem;
   }
 }
+.next-page {
+  padding: 10px;
+  background-color: aqua;
+}
+
+.left-side {
+  flex: 1;
+  width: 60%;
+}
+
+.right-side {
+  flex: 1;
+  width: 40%;
+  text-align: right;
+}
+
+.arrow-icon {
+  display: inline-block;
+  margin-left: 5px; /* Optional: Add some spacing between text and icon */
+}
+
 .last-section {
   padding-top: 150px;
   padding-bottom: 150px;
