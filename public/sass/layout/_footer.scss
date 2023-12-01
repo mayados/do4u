@@ -1,5 +1,5 @@
 .footer-element{
-    background-color: $dark-color;
+    background-color: $footer-color;
 
     li{
         list-style-type: none;
@@ -59,6 +59,11 @@
         height: 1px;
         width: 100%;
         background-color: $white-color;
+    }
+
+    &__title{
+        color: $white-color;
+        font-size: 1.2rem;
     }
 
     .show-footer-list{
