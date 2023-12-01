@@ -80,12 +80,12 @@
     </header>
 
     <main>
-        <section class="container-fluid container-f-inscription">
-            <div class="container insscription-container">
+        <section class="container-fluid container-f-inscription d-flex d-flex-column">
+            <div class="container insscription-container justify-content-center align-items-center">
                 <div class="row align-items-center align-content-center">
                     <div class="col-lg-6 col-12">
                         <h2 class="h2-pc fw-bold pt-3">Créez un compte</h2>
-                            <b><p class="fw-bold">Entrez les détails de votre compte ci-dessous ou <a href="" class="link"> connectez-vous</a></p></b>
+                            <b><p class="fw-bold">Entrez les détails de votre compte ci-dessous ou <a href="connexion.html" class="link"> connectez-vous</a></p></b>
                             <div class="form-inscription">
                                 <p class="link text-center fw-bolder">Vous êtes ?</p>
                                 <ul class="nav nav-pills nav-conx justify-content-around pb-4 pt-2 text-center" id="pills-tab" role="tablist">
@@ -93,7 +93,7 @@
                                       <a class="nav-link active" id="pills-particulier-tab" data-bs-toggle="pill" data-bs-target="#pills-particulier" role="tab" aria-controls="pills-particulier" aria-selected="true">Particulier</a>
                                     </li>
                                     <li class="nav-item nav-item-conx">
-                                      <a class="nav-link" id="pills-entrepreneur-tab" data-bs-toggle="pill" data-bs-target="#pills-entrepreneur" role="tab" aria-controls="pills-entrepreneur" aria-selected="false">Auto entrepreneur</a>
+                                      <a class="nav-link" id="pills-entrepreneur-tab" data-bs-toggle="pill" data-bs-target="#pills-entrepreneur" role="tab" aria-controls="pills-entrepreneur" aria-selected="false">Auto-entrepreneur</a>
                                     </li>
                                     <li class="nav-item nav-item-conx">
                                       <a class="nav-link" id="pills-entreprise-tab" data-bs-toggle="pill" data-bs-target="#pills-entreprise" role="tab" aria-controls="pills-entreprise" aria-selected="false">Entreprise</a>
@@ -101,7 +101,7 @@
                                   </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <form class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="nom">Nom <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="nom" placeholder="Votre nom">
@@ -111,7 +111,7 @@
                                                   <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
                                             </div>
                                         </div>
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="pseudo">Pseudo <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo">
@@ -136,7 +136,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
+                                                En cochant cette case vous acceptez les <a class="link" href=""> conditions générales d'utilisation </a> et la <a class="link" href=""> politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
@@ -144,7 +144,7 @@
                                         </div>
                                     </form>
                                     <form class="tab-pane fade show" id="pills-entrepreneur" role="tabpanel" aria-labelledby="pills-entrepreneur-tab">
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="nom">Nom<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="nom" placeholder="Votre nom">
@@ -154,7 +154,7 @@
                                                   <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
                                             </div>
                                         </div>
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="pseudo">Pseudo <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo">
@@ -179,7 +179,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
+                                                En cochant cette case vous acceptez les <a class="link" href=""> conditions générales d'utilisation </a> et la <a class="link" href=""> politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
@@ -187,9 +187,9 @@
                                         </div>
                                     </form>
                                     <form class="tab-pane fade show" id="pills-entreprise" role="tabpanel" aria-labelledby="pills-entreprise-tab">
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
-                                                <label for="nom">Nom de entreprise <span class="text-danger">*</span></label>
+                                                <label for="nom">Nom de l'entreprise <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="nom" placeholder="Nom de entreprise">
                                               </div>
                                               <div class="col form-group">
@@ -197,7 +197,7 @@
                                                   <input type="text" class="form-control" id="prenom" placeholder="Prénom contact">
                                             </div>
                                         </div>
-                                        <div class="form-row">
+                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="pseudo">Nom de famille contact  <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo">
@@ -223,7 +223,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les conditions générales d'utilisation et la politique de confidentialité du site
+                                                En cochant cette case vous acceptez les <a class="link" href=""> conditions générales d'utilisation </a> et la <a class="link" href=""> politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
@@ -240,10 +240,10 @@
             </div>
         </section>
     </main>
-    <footer class="footer-element py-4 mt-5">
+    <footer class="footer-element pt-5">
         <section class="container">
             <div class="row mb-4">
-                <div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
                     <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
                     <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
@@ -254,9 +254,9 @@
                         <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-4 offset-lg-1">
-                    <h3 class="text-center text-lg-start footer-element__categories">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
-                    <div class="flex-lg-column d-lg-flex text-center flex-lg-row text-lg-start gap-lg-3 footer-element__dropdown">
+                <div class="col-12 col-lg-4">
+                    <h3 class="text-center text-lg-start footer-element__categories"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
+                    <div class="d-lg-flex text-center flex-lg-row  text-lg-start gap-lg-3 footer-element__dropdown">
                         <ul class="ps-0">
                             <li class=""><a href="">Ménage</a></li>
                             <li><a href="">Services à la personne</a></li>
@@ -297,9 +297,9 @@
             </div>
         </section>   
         <div class="footer-element__divider"></div>
-        <section class="container">
-            <div class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
-                <ul class="d-flex flex-column flex-lg-row ps-0 mb-0 mt-2 gap-3">
+        <section class="container py-2">
+            <div class="d-flex gap-4 flex-column text-center gap-lg-0 text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex gap-4 flex-column flex-lg-row ps-0 mb-0 mt-2 gap-lg-3 pt-2">
                     <li><a href="">Conditions générales d'utilisation</a></li>
                     <li><a href="">Mentions légales</a></li>
                 </ul>

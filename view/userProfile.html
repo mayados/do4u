@@ -28,7 +28,7 @@
             <button class="na__search-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>                  
         </form> 
 
-        <div class="na__burger-menu">
+        <div class="na__burger-menu" tabindex="0" role="button" aria-label="Cliquez ici pour afficher le menu de navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -85,56 +85,56 @@
     </nav>       
     </header>
     <main class="container" id="main-container">
-        <div><p><a href="">Accueil</a> < <a href="">Léa</a></p></div>
-        <section id="my-infos-profile">
-            <div id="top-my-infos" class="flex-column flex-lg-row align-items-lg-center justify-content-between d-flex">
-                <div class=" d-flex flex-row align-items-center gap-3">
-                    <figure id="figure-lola" >
-                        <img src="../public/img/woman_face.jpg" alt="profil de user">
+        <div class="fil-ariane"><p><a href="">Accueil</a> < <a href="">Léa</a></p></div>
+        <section>
+            <div class="row d-flex flex-lg-row align-items-lg-center">
+                <div class="col-12 col-lg-6 d-flex flex-column gap-2 flex-lg-row align-items-lg-center  gap-lg-3">
+                    <figure class="mx-auto m-lg-0 figure-user-profile-style">
+                        <img src="../public/img/woman_face.jpg" alt="Photo de profil de Léa">
                     </figure>
                     <div>
-                        <div class="flex-lg-row d-flex flex-wrap">
-                            <p>Lola</p>
-                            <span id="profile-badge">Particulier</span>                             
+                        <div class="d-flex flex-column gap-1 flex-lg-row align-items-lg-center flex-lg-wrap">
+                            <h1 class="title-profile text-center text-lg-start m-0">Léa</h1>
+                            <span class="fw-bold text-white rounded mx-auto mx-lg-0 profile-badge">Particulier</span>                             
                         </div>
 
-                        <p><i class="fa-solid fa-star" id="my-star"></i> 4/5 <span>(18 avis)</span></p>
+                        <p class="mt-4 mt-lg-2 mb-0"><i class="fa-solid fa-star full-star-icon"></i> 4/5 <span>(18 avis)</span></p>
                     </div>
                 </div>
-                <div class="">
+                <div class="col-12 col-lg-3">
                     <p class="d-none d-lg-inline">Informations vérifiées :</p>
                     <p><i class="fa-solid fa-circle-check checked-icon"></i> E-mail</p>                    
                 </div>
-                <div class="d-flex gap-5">
-                    <a class="button-primary-regular"><i class="fa-solid fa-circle-plus"></i> Suivre</a>
-                    <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                <div class="col-12 col-lg-3 d-flex gap-5">
+                    <a href="" class="button-primary-regular text-decoration-none follow-user text-center"><i class="fa-solid fa-circle-plus"></i> Suivre</a>
+                    <a href="" class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     
                 </div>
             </div>
-            <article id="my-description">
+            <article class="mt-4">
                 <h2>Présentation</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti perspiciatis laudantium quidem, modi vel repellat voluptatibus odio quis ratione tenetur, sit exercitationem, corporis laboriosam dolores provident iste illo minus voluptate.
                 Totam culpa odio consequatur ipsum sequi iure, unde atque aliquam dignissimos alias adipisci aut quod temporibus nemo ab? Ipsam possimus corrupti, ipsa dolores ipsum enim quibusdam. Minus sequi sint tempore!</p>
             </article>
         </section>
-        <div id="line-divider"></div>
-        <section id="mes-rubriques">
+        <div class="line-divider"></div>
+        <section>
             <ul class="nav nav-underline display-flex justify-content-evenly mt-5">
                 <li class="nav-item ">
-                    <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-a-propos">A propos</a>
+                    <a href="" class="nav-link active profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-a-propos">A propos</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-annonces-user">Annonces</a>
+                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-annonces-user">Annonces</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
+                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
                 </li>
             </ul>
             <div class="tab-content mt-5" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-a-propos" role="tabpanel" aria-labelledby="pills-a-propos-tab" tabindex="0">
                     <div class="pt-2">
-                        <p><i class="fa-solid fa-location-dot"></i> Strasbourg</p>
-                        <p><i class="fa-solid fa-user"></i> Membre depuis le 08/11/2023</p>
+                        <p><i class="fa-solid fa-location-dot primary-icon"></i> Strasbourg</p>
+                        <p><i class="fa-solid fa-user primary-icon"></i> Membre depuis le 08/11/2023</p>
                     </div>
                     <div id="map">
                     </div>
@@ -223,7 +223,7 @@
                 </div>
                 <div class="tab-pane fade" id="pills-avis" role="tabpanel" aria-labelledby="pills-avis-tab" tabindex="0">
                     <div class="mx-auto d-flex flex-column align-items-center">
-                        <p class="fs-3 mb-0"><i class="fa-solid fa-star"></i> 4/5</p>
+                        <p class="fs-3 mb-0"><i class="fa-solid fa-star full-star-icon"></i> 4/5</p>
                         <p>18 avis</p>                            
                     </div>
                     <section>
@@ -235,7 +235,7 @@
                         </div>
                         <div id="container-form-avis" class="mb-5 p-2 rounded">
                             <span class="d-flex justify-content-end">
-                                <a class="text-left text-decoration-none" id="close-avis" href="#"><i class="fa-solid fa-xmark"></i> Fermer</a>                                
+                                <a class="text-left text-decoration-none" id="close-avis" aria-label="Fermer le formulaire d'ajout d'avis" href="#"><i class="fa-solid fa-xmark"></i> Fermer</a>                                
                             </span>
                             <form id="form-avis">
                                 <span class="d-flex gap-2 mb-3">
@@ -289,7 +289,7 @@
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
                                         <p class="mb-0">Nolan</p>
-                                        <p class="mb-0"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+                                        <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
@@ -299,7 +299,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </article>
                         <article class="avis-commentaire d-flex justify-content-between mt-3">
@@ -310,7 +310,7 @@
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
                                         <p class="mb-0">Jessica</p>
-                                        <p class="mb-0"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+                                        <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
@@ -320,7 +320,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </article>
                     </section>
@@ -328,8 +328,72 @@
               </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer-element pt-5">
+        <section class="container">
+            <div class="row mb-4">
+                <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
+                    <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
+                    <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
+                    <h3 class="text-center text-lg-start pb-3">Retrouvez-nous sur</h3>
+                    <ul class="footer-element__medias d-flex justify-content-evenly justify-content-lg-start gap-lg-5 ps-0">
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h3 class="text-center text-lg-start footer-element__categories"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
+                    <div class="d-lg-flex text-center flex-lg-row  text-lg-start gap-lg-3 footer-element__dropdown">
+                        <ul class="ps-0">
+                            <li class=""><a href="">Ménage</a></li>
+                            <li><a href="">Services à la personne</a></li>
+                            <li><a href="">Rénovation & construction</a></li>
+                            <li><a href="">Jardinage & bricolage</a></li>
+                            <li><a href="">Réparation & maintenance</a></li>
+                            <li><a href="">Informatique & administratif</a></li>
+                            <li><a href="">Cours & coaching</a></li>
+                            <li><a href="">Evènements & divertissements</a></li>
+                        </ul>
+                        <ul class="ps-0">
+                            <li><a href="">Santé & bien-être</a></li>
+                            <li><a href="">Animaux</a></li>
+                            <li><a href="">Artisanat & création</a></li>
+                            <li><a href="">Garde d'enfants</a></li>
+                            <li><a href="">Autre</a></li> 
+                        </ul>                        
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-2">
+                    <h3 class="footer-element__mobile--hidden">Liens rapides</h3>
+                    <ul class="ps-0">
+                        <li class="footer-element__mobile--hidden"><a href="">Qui sommes-nous ?</a></li>
+                        <li class="text-center text-lg-start mt-5 mt-lg-0"><a  href="">Nous contacter</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="">Les offres</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="">Les demandes</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 footer-element__mobile--hidden">
+                    <h3>Contact</h3>
+                    <ul class="ps-0">
+                        <li><i class="fa-solid fa-phone-volume footer-element__icon--white"></i>&nbsp; 03 67 67 67</li>
+                        <li><i class="fa-solid fa-envelope footer-element__icon--white"></i>&nbsp; do4u@gmail.com</li>
+                        <li><i class="fa-solid fa-map footer-element__icon--white"></i>&nbsp; 109 rue ABC, Strasbourg, France</li>
+                    </ul>
+                </div>            
+            </div>
+        </section>   
+        <div class="footer-element__divider"></div>
+        <section class="container py-2">
+            <div class="d-flex gap-4 flex-column text-center gap-lg-0 text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex gap-4 flex-column flex-lg-row ps-0 mb-0 gap-lg-3 pt-2">
+                    <li><a href="">Conditions générales d'utilisation</a></li>
+                    <li><a href="">Mentions légales</a></li>
+                </ul>
+                <p class="mb-0 mt-2">&copy; 2023, Do4U Inc. Tous droits réservés.</p>
+            </div>                
+        </section>         
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/js/script.js"></script>
