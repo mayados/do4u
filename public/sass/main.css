@@ -123,7 +123,7 @@
   justify-content: center;
 }
 .footer-element {
-  background-color: #000000;
+  background-color: #1E1E1E;
 }
 .footer-element li {
   list-style-type: none;
@@ -175,6 +175,10 @@
   height: 1px;
   width: 100%;
   background-color: #ffffff;
+}
+.footer-element__title {
+  color: #ffffff;
+  font-size: 1.2rem;
 }
 @media (max-width: 768px) {
   .footer-element .show-footer-list {
@@ -804,6 +808,22 @@ label {
   position: absolute;
 }
 
+.figure-user-conversation {
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 768px) {
+  .figure-user-conversation {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.figure-user-conversation img {
+  height: 100%;
+  width: 100%;
+}
+
 #main-conversation {
   margin-top: 7vh;
   background-image: url("../img/back_conversation.jpg");
@@ -834,10 +854,11 @@ label {
 
 .correspondant-message {
   background-color: #1D838A;
+  margin-right: 50%;
 }
 @media (max-width: 768px) {
   .correspondant-message {
-    margin-right: 50%;
+    margin-right: 80%;
   }
 }
 
@@ -865,6 +886,25 @@ label {
 
 #fileInput {
   display: none;
+}
+
+@media (max-width: 768px) {
+  #user-conversation {
+    font-size: 1.2rem;
+  }
+}
+
+#annonce-conversation {
+  font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+  #annonce-conversation {
+    font-size: 1.1rem;
+  }
+}
+
+.user-conversation-top-icon {
+  font-size: 1.5rem;
 }
 
 .creation {
@@ -1063,7 +1103,7 @@ label {
 }
 #main-messenger {
   margin-top: 7vh;
-  background-image: url("../img/back_messenger.jpg");
+  background-image: url("../img/back_messaging.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 92vh;
@@ -1086,7 +1126,6 @@ label {
 
 .figure-message img {
   height: 100%;
-  width: 100%;
 }
 @media (max-width: 768px) {
   .figure-message img {
@@ -1099,40 +1138,37 @@ label {
 .fil-ariane p {
   text-decoration: none;
   color: #E65A14;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-#figure-lola {
-  width: 200px;
-  height: 200px;
+.figure-user-profile-style {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 @media (max-width: 768px) {
-  #figure-lola {
+  .figure-user-profile-style {
     width: 150px;
     height: 150px;
   }
 }
 
-#figure-lola img {
-  width: 100%;
+.figure-user-profile-style img {
   height: 100%;
   border-radius: 50%;
 }
 
-#line-divider {
+.line-divider {
   width: 100%;
   border-bottom: 3px solid #ededed;
 }
 
-#profile-badge {
+.profile-badge {
   height: 100%;
   padding: 1px 3px;
-  background-color: #E9AD10;
-}
-
-#my-star {
-  color: #E9AD10;
+  background-color: #E65A14;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .checked-icon {
@@ -1204,8 +1240,21 @@ label {
   color: #E9AD10;
 }
 
+.title-profile {
+  font-size: 1.5rem;
+}
+
+.primary-icon {
+  color: #1D838A;
+}
+
+.profile-tab-links {
+  color: #E65A14;
+}
+
 #map {
   height: 40vh;
+  z-index: 2;
 }
 
 .vertical-dots {
