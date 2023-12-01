@@ -60,3 +60,14 @@
 .class-padding-head{
     padding-top: 500px;
 }
+.modal-header button.close[data-dismiss="modal"] {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.modal-header, .modal-footer {
+    border: none;
+}
+.modal-body input {
+    padding-left: 25px;
+    padding-right: 25px;
+}
