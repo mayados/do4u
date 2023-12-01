@@ -1,7 +1,7 @@
 
 .container-f-inscription{
     background-color: rgba(173, 216, 230, 0.70);
-
+    
 }
 .insscription-container{
     padding-top: 9rem;
@@ -17,7 +17,14 @@
 .h2-pc{
     color: $primary-color;
 }
-
+.h3-pc{
+    color: $secondary-color;
+    font-weight: 600;
+}
+.p-bold-cntact{
+    font-weight: 600;
+    color: $secondary-color;
+}
 .red-star{
     color: red;
 }

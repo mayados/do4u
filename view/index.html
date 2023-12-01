@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="path/to/animate.css">
+
 </head>
 <body>
     <header> 
@@ -78,30 +81,39 @@
         </nav>          
     </header>
     <main>
-        <section class="container-fluid hero">
-                <div class="container">
-                    <div class="row d-flex align-items-center align-content-center ">
-                        <div class="col-md-6 float-center">
-                            <h1 class=" h1">Location de services et de matériel</h1>
-                            <h3 class="mt-5 h3 ">Votre plateforme de choix de prestataires</h3>
-                            <button class="mt-2 button-primary-pill">En savoir plus</button>
-                        </div>
-                        <div class="col-md-6 ">
-                            <img class="img-fluid test mx-auto" src="../public/img/Img_home_page/hero-img.svg" alt="">
-                        </div>
+        <section class="container-fluid container-f-index">
+            <div class="container hero">
+                <div class="row d-flex align-items-center align-content-center ">
+                    <div class="col-md-6 float-center">
+                        <h2 class="invisible"></h2>
+                        <!-- <h2 class=" h1">Votre plateforme de choix de prestataires et d'offres de services ! </h2> -->
+                        <h2 class="pb-5 animate__animated animate__fadeInDownBig">Votre plateforme de choix de prestataires et d'offres de services !</h2>
+                        <h4 class="scale-up-center">Profitez de la tranquillité d'esprit en sachant que vous faites appel à des individus passionnés par la fourniture de services de qualité.</h4>
+                        <button class="mt-2 button-primary-pill">En savoir plus</button>
+                    </div>
+                    <div class="col-md-6 ">
+                        <img class="kenburns-top img-fluid test mx-auto"  src="../public/img/Img_home_page/hero-img.svg" alt="">
                     </div>
                 </div>
+            </div>
         </section>
 
         <section class="container section ">
-            <h2 class="h2 text-center mb-5">Les dernières offres</h2>
-            <div class="row  row-cols-1 row-cols-md-4 g-4">
-
+            <!-- <h4 class="h4 mb-4">Les dernières offres</h4> -->
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="left-side">
+                    <h3 class="slide-fwd-center">Les dernières offres</h3>
+                </div>
+                <div class="right-side">
+                    <p><a href="another-page.html"><span class="arrow-icon link"> Voir toutes les offres ➔</span></a></p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-md-5 g-4">
                 <div class="col">
                   <div class="card card-ad h-100">
                     <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                         <div class="">
                             <i class="icon fa-regular fa-user"></i>
                             <span>Auto entrepreneur</span>
@@ -132,7 +144,38 @@
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                          <div class="">
+                              <i class="icon fa-regular fa-user"></i>
+                              <span>Auto entrepreneur</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-euro-sign"></i>
+                              <span>30€/H</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-regular fa-folder"></i>
+                              <span>Santé et bien-etre</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-user"></i>
+                              <span>Rosie</span> <span> 4.5(19 avis) </span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-location-dot"></i>
+                              <span>Strasbourg</span>
+                          </div>
+                      </div>
+                      <!-- <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light text-white rounded-1">Offre
+                          <span class="visually-hidden"></span>
+                      </span> -->
+                    </div>
+                  </div>
+                <div class="col">
+                    <div class="card card-ad h-100">
+                      <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                      <div class="card-body">
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -163,7 +206,7 @@
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -191,7 +234,7 @@
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -224,14 +267,24 @@
               
         </section>
         <section class="container section ">
-            <h2 class="h2 text-center mb-5">Les dernières demandes</h2>
-            <div class="row  row-cols-1 row-cols-md-4 g-4">
-
+            <!-- <div class="d-flex d-inline-block">
+                <h4 class="h4 mb-4">Les dernières demandes</h4>
+                <i class="fa-file justify-item-end next-page"> see more</i>
+            </div> -->
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="left-side">
+                    <h3 class="">Les dernières demandes</h3>
+                </div>
+                <div class="right-side">
+                    <p><a href="another-page.html"><span class="arrow-icon link"> Voir toutes les demandes ➔</span></a></p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-md-5 g-4">
                 <div class="col">
                   <div class="card h-100">
                     <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                         <div class="">
                             <i class="icon fa-regular fa-user"></i>
                             <span>Auto entrepreneur</span>
@@ -259,10 +312,41 @@
                   </div>
                 </div>
                 <div class="col">
+                    <div class="card h-100">
+                      <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                      <div class="card-body">
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                          <div class="">
+                              <i class="icon fa-regular fa-user"></i>
+                              <span>Auto entrepreneur</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-euro-sign"></i>
+                              <span>30€/H</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-regular fa-folder"></i>
+                              <span>Santé et bien-etre</span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-user"></i>
+                              <span>Rosie</span> <span> 4.5(19 avis) </span>
+                          </div>
+                          <div class="">
+                              <i class="icon fa-solid fa-location-dot"></i>
+                              <span>Strasbourg</span>
+                          </div>
+                      </div>
+                      <!-- <span class="position-absolute top-0 start-100 translate-middle p-2 bg-dark border border-light text-white rounded-1">Offre
+                          <span class="visually-hidden"></span>
+                      </span> -->
+                    </div>
+                </div>
+                <div class="col">
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -293,7 +377,7 @@
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -321,7 +405,7 @@
                     <div class="card card-ad h-100">
                       <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
+                          <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
                           <div class="">
                               <i class="icon fa-regular fa-user"></i>
                               <span>Auto entrepreneur</span>
@@ -368,10 +452,10 @@
         </section>
 
     </main>
-    <footer class="footer-element py-4 mt-5">
+    <footer class="footer-element pt-5">
         <section class="container">
             <div class="row mb-4">
-                <div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
                     <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
                     <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
@@ -382,9 +466,9 @@
                         <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-4 offset-lg-1">
-                    <h3 class="text-center text-lg-start footer-element__categories">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
-                    <div class="flex-lg-column d-lg-flex text-center flex-lg-row text-lg-start gap-lg-3 footer-element__dropdown">
+                <div class="col-12 col-lg-4">
+                    <h3 class="text-center text-lg-start footer-element__categories"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
+                    <div class="d-lg-flex text-center flex-lg-row  text-lg-start gap-lg-3 footer-element__dropdown">
                         <ul class="ps-0">
                             <li class=""><a href="">Ménage</a></li>
                             <li><a href="">Services à la personne</a></li>
@@ -425,9 +509,9 @@
             </div>
         </section>   
         <div class="footer-element__divider"></div>
-        <section class="container">
-            <div class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
-                <ul class="d-flex flex-column flex-lg-row ps-0 mb-0 mt-2 gap-3">
+        <section class="container py-2">
+            <div class="d-flex gap-4 flex-column text-center gap-lg-0 text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
+                <ul class="d-flex gap-4 flex-column flex-lg-row ps-0 mb-0 mt-2 gap-lg-3 pt-2">
                     <li><a href="">Conditions générales d'utilisation</a></li>
                     <li><a href="">Mentions légales</a></li>
                 </ul>

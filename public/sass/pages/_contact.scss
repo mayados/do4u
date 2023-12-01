@@ -1,7 +1,7 @@
 .section-1 {
-    // background-color: rgba(173, 216, 230, 0.70);
-    padding-top: 10rem;
-    padding-bottom: 7rem;
+    background-color: rgba(173, 216, 230, 0.20);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .section-2 {
@@ -12,6 +12,7 @@
 }
 
 .contact-form{
+    padding: 40px;
     border: dashed 1.5px #383838;
     background-color: rgb(255, 255, 255);
     border-radius:15px;
@@ -21,15 +22,17 @@
 @media (max-width: 768px) {
     .section-1 {
         background-image: none;
-        padding-bottom: 10rem;
+        padding-top: 10rem;
         padding-bottom: 2rem;
     }
-
+    .contact-form{
+        padding: 25px;
+    }
 }
 
 .responsive-map{
     overflow: hidden;
-    padding-bottom:56.25%;
+    padding-bottom:80%;
     position:relative;
     height:0;
     }
