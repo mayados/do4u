@@ -1,6 +1,6 @@
 #main-messenger{
     margin-top: 7vh;
-    background-image: url("../img/back_messenger.jpg");
+    background-image: url("../img/back_messaging.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 92vh;
@@ -23,7 +23,7 @@
 
 .figure-message img{
     height: 100%;
-    width: 100%;
+    // width: 100%;
 
     @media (max-width: 768px){
         width: 75px;
