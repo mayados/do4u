@@ -1,3 +1,17 @@
+.figure-user-conversation{
+    width: 100px;
+    height: 100px;
+    @media (max-width: 768px){
+        width: 50px;
+        height: 50px;
+    }    
+}
+
+.figure-user-conversation img{
+    height: 100%;
+    width: 100%;
+}
+
 #main-conversation{
     margin-top: 7vh;
     background-image: url("../img/back_conversation.jpg");
@@ -27,8 +41,9 @@
 
 .correspondant-message{
     background-color: $primary-color;
+    margin-right: 50%;
     @media (max-width: 768px){
-        margin-right: 50%;
+        margin-right: 80%;
     }    
 
 }
@@ -57,4 +72,21 @@
 
 #fileInput{
     display: none;
+}
+
+#user-conversation{
+    @media (max-width: 768px){
+        font-size: 1.2rem;
+    }  
+}
+
+#annonce-conversation{
+    font-size: 1.3rem;
+    @media (max-width: 768px){
+        font-size: 1.1rem;
+    }  
+}
+
+.user-conversation-top-icon{
+    font-size: 1.5rem;
 }
