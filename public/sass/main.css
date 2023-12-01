@@ -6,7 +6,7 @@
   color: #ffffff;
   background-color: #1D838A;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: solid 2px #1D838A;
   align-items: center;
@@ -29,7 +29,7 @@
   color: #ffffff;
   background-color: #1D838A;
   justify-content: center;
-  padding: 10px 25px 10px 25px;
+  padding: 5px 15px 5px 15px;
   border-radius: 30px;
   font-weight: 600;
   border: solid 2px #1D838A;
@@ -52,7 +52,7 @@
   color: #ffffff;
   background-color: #E65A14;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: solid 2px #E65A14;
   align-items: center;
@@ -70,7 +70,7 @@
   color: #ffffff;
   background-color: #E65A14;
   justify-content: center;
-  padding: 10px 25px 10px 25px;
+  padding: 5px 15px 5px 15px;
   border-radius: 30px;
   font-weight: 600;
   border: solid 2px #E65A14;
@@ -416,7 +416,13 @@ h2 {
 }
 
 h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-family: "Nunito Sans";
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 p {
@@ -795,7 +801,7 @@ label {
 }
 .responsive-map {
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-bottom: 80%;
   position: relative;
   height: 0;
 }
@@ -962,21 +968,44 @@ label {
   opacity: 0.7;
 }
 
-.hero {
+.container-f-index {
   background: rgb(16, 200, 197);
   background: linear-gradient(90deg, rgb(16, 200, 197) 0%, rgb(110, 239, 237) 27%, rgb(234, 251, 250) 100%);
 }
 
-@media (max-width: 600px) {
-  .hero {
-    padding-top: 100px;
-  }
-}
 .section {
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-left: 4rem;
+  padding-right: 4rem;
   align-items: center;
   justify-items: center;
   align-content: center;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 12rem;
+    padding-bottom: 0;
+  }
+  .section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.left-side {
+  flex: 1;
+  width: 60%;
+}
+
+.right-side {
+  flex: 1;
+  width: 40%;
+  text-align: right;
+}
+
+.arrow-icon {
+  display: inline-block;
+  margin-left: 5px; /* Optional: Add some spacing between text and icon */
 }
 
 .last-section {
