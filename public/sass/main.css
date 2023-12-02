@@ -169,6 +169,12 @@
   color: aliceblue;
 }
 
+.profil-pic {
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+}
+
 .footer-element {
   background-color: #1E1E1E;
 }
