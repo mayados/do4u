@@ -92,36 +92,69 @@
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 0.5px solid #3a3a3a;
 }
 .card-ad:hover {
   transition: all 0.2s ease-out;
   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-  top: -4px;
-  border: 1px solid #3a3a3a;
+  top: 4px;
+  border: 0.5px solid #3a3a3a;
   background-color: white;
 }
-.card-ad:before {
-  content: "";
+
+.heart-icon {
   position: absolute;
-  z-index: 1;
-  top: 0px;
-  right: 0px;
-  background: #00838d;
-  height: 1.6rem;
-  width: 3rem;
-  border-radius: 5px;
-  transform: scale(1.8);
-  transform-origin: 50% 50%;
-  transition: transform 0.15s ease-out;
-}
-.card-ad:before {
-  content: "";
-  color: #ffffff;
-  font-size: 10px;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+.heart-icon::before, .heart-icon::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.heart-icon::before {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  z-index: -1;
+}
+.heart-icon::after {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  top: 0px;
+  right: 2px;
+  z-index: 1;
+}
+.heart-icon i {
+  color: red;
+  position: relative;
+  z-index: 2;
+}
+
+.offer-badge {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: #1D838A;
+  font-weight: 600;
+  color: rgb(255, 255, 255) !important;
+  padding: 0px 15px;
+  border-radius: 5px 0px 0px 0px;
+}
+.offer-badgespan-badge {
+  color: aliceblue;
+}
+
+.card-link {
+  text-decoration: none !important;
+}
+
 .footer-element {
   background-color: #1E1E1E;
 }
@@ -650,18 +683,6 @@ label {
   overflow-y: auto;
 }
 
-.position-relative {
-  border: 1px solid #1D838A;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.position-relative:hover {
-  transform: translateY(20px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 .bg-gr {
   background-color: #1D838A;
   transform: translateY(94px);
@@ -932,11 +953,7 @@ label {
 }
 
 .d-grid {
-  gap: 1px;
-}
-.d-grid .btn.btn-depose {
-  background-color: #1D838A;
-  color: #ffffff;
+  display: grid;
 }
 
 .icone-card {
@@ -955,19 +972,9 @@ label {
 
 .imgcontainer img {
   width: 100%;
-  height: 880px;
+  height: 885px;
   display: block;
   max-width: 100%;
-}
-
-.annoncePrix,
-.annonceLieu,
-.annonceTitle {
-  opacity: 0.7;
-}
-
-#categorieSelect {
-  opacity: 0.7;
 }
 
 .container-f-index {
@@ -1116,6 +1123,79 @@ label {
   margin-left: 0px;
 }
 
+.card-ad {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.card-icons {
+  margin-bottom: 10px;
+}
+
+.icon-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.icon-container i {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container .fa-heart {
+  color: red;
+}
+
+.badge-container {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.badge-container .badge {
+  background-color: green;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.rating-container .fa-user {
+  margin-right: 5px;
+}
+
+.offre-badge {
+  position: absolute;
+  top: 0;
+  start: 100%;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.offre-badge .visually-hidden {
+  display: none;
+}
+
 .container-f-inscription {
   background-color: rgba(173, 216, 230, 0.7);
 }
@@ -1208,6 +1288,47 @@ label {
   .figure-message img {
     width: 75px;
   }
+}
+
+.creation {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.typecheck {
+  display: flex;
+  align-items: center;
+}
+
+.cardCre {
+  background-color: rgba(29, 201, 198, 0.2);
+}
+
+.d-grid {
+  display: grid;
+}
+
+.icone-card {
+  width: 10rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.plus-icon {
+  opacity: 0.7;
+}
+
+.photo-icon {
+  opacity: 0.7;
+}
+
+.imgcontainer img {
+  width: 100%;
+  height: 885px;
+  display: block;
+  max-width: 100%;
 }
 
 /* fil d'ariane */
