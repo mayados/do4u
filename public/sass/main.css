@@ -142,7 +142,6 @@
   bottom: 0px;
   right: 0px;
   background-color: #1D838A;
-  font-weight: 400;
   color: rgb(255, 255, 255) !important;
   padding: 0px 8px;
   border-radius: 10px 0px 0px 0px;
@@ -153,6 +152,19 @@
 
 .card-link {
   text-decoration: none !important;
+}
+
+.demande-badge {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: #E65A14;
+  color: rgb(255, 255, 255) !important;
+  padding: 0px 8px;
+  border-radius: 10px 0px 0px 0px;
+}
+.demande-badgespan-badge {
+  color: aliceblue;
 }
 
 .footer-element {
