@@ -153,3 +153,76 @@ button {
 }
 }
 
+// card
+.card-ad {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.card-icons {
+  margin-bottom: 10px;
+}
+
+.icon-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.icon-container i {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container .fa-heart {
+  color: red;
+}
+
+.badge-container {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.badge-container .badge {
+  background-color: green;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.rating-container .fa-user {
+  margin-right: 5px;
+}
+
+.offre-badge {
+  position: absolute;
+  top: 0;
+  start: 100%;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.offre-badge .visually-hidden {
+  display: none;
+}
