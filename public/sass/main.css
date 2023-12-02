@@ -127,14 +127,16 @@
   width: 30px;
   height: 30px;
   background-color: white;
-  top: 0px;
-  right: 2px;
+  top: -4px;
+  right: -2px;
   z-index: 1;
 }
 .heart-icon i {
   color: red;
   position: relative;
   z-index: 2;
+  top: -2px;
+  right: -4px;
 }
 
 .offer-badge {
