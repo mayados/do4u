@@ -5,17 +5,15 @@
     overflow-y: auto;
 }
 
-// .position-relative {
-//     border: 1px solid $primary-color;
-//     border-radius: 10px;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//     transition: transform 0.3s, box-shadow 0.3s; 
-//   }
-  
-//   .position-relative:hover {
-//     transform: translateY(20px);
-//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-//   }
+ .classperso {
+    border: 1px solid $primary-color;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s, box-shadow 0.3s; 
+ }
+    .classperso:hover {
+    transform: translateY(20px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  }
  
 
 
