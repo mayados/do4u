@@ -127,14 +127,16 @@
   width: 30px;
   height: 30px;
   background-color: white;
-  top: 0px;
-  right: 2px;
+  top: -4px;
+  right: -2px;
   z-index: 1;
 }
 .heart-icon i {
   color: red;
   position: relative;
   z-index: 2;
+  top: -2px;
+  right: -4px;
 }
 
 .offer-badge {
@@ -142,7 +144,6 @@
   bottom: 0px;
   right: 0px;
   background-color: #1D838A;
-  font-weight: 400;
   color: rgb(255, 255, 255) !important;
   padding: 0px 8px;
   border-radius: 10px 0px 0px 0px;
@@ -153,6 +154,25 @@
 
 .card-link {
   text-decoration: none !important;
+}
+
+.demande-badge {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: #E65A14;
+  color: rgb(255, 255, 255) !important;
+  padding: 0px 8px;
+  border-radius: 10px 0px 0px 0px;
+}
+.demande-badgespan-badge {
+  color: aliceblue;
+}
+
+.profil-pic {
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
 }
 
 .footer-element {
