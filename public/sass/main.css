@@ -602,13 +602,6 @@ label {
   height: 45px;
 }
 
-.fa-regular .fa-heart {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  color: #1D838A;
-}
-
 .details-date {
   position: relative;
   width: 382px;
@@ -685,6 +678,7 @@ label {
 .user-type {
   display: flex;
   box-sizing: border-box;
+  height: 40px;
   border: 1px solid #3A3A3A;
   border-radius: 6px;
   justify-content: center;
@@ -698,6 +692,17 @@ label {
   margin-bottom: 10px;
   padding: 20px;
   overflow-y: auto;
+}
+
+.classperso {
+  border: 1px solid #1D838A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.classperso:hover {
+  transform: translateY(20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .bg-gr {
