@@ -1313,6 +1313,21 @@ label {
   border-bottom: 2px solid #1D838A;
 }
 
+.full-star-icon {
+  color: #E9AD10;
+}
+
+.title-profile {
+  font-size: 1.5rem;
+}
+
+.primary-icon {
+  color: #1D838A;
+}
+
+.profile-tab-links {
+  color: #E65A14;
+}
 
 #main-parametres {
   margin-top: 7vh;
@@ -1350,22 +1365,6 @@ label {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-
-.full-star-icon {
-  color: #E9AD10;
-}
-
-.title-profile {
-  font-size: 1.5rem;
-}
-
-.primary-icon {
-  color: #1D838A;
-}
-
-.profile-tab-links {
-  color: #E65A14;
-
 }
 
 #map {
