@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 .button-primary-regular {
   width: 100%;
   color: #ffffff;
@@ -1581,7 +1582,9 @@ label {
 }
 
 #title-parametres {
+  font-family: Monserrat;
   font-size: 24px;
+  font-weight: bold;
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -1607,13 +1610,14 @@ label {
   border-radius: 50%;
 }
 
-/*#username-parametres {
-
-}*/
 #choose-photo {
-  text-decoration: none;
-  padding: 3px;
-  border: 1px sold #3a3a3a;
+  color: #3a3a3a;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  height: 42px;
+  width: 146px;
 }
 
 .parametres-content {
@@ -1627,6 +1631,14 @@ label {
 
 .btn-parametres {
   width: 298px;
+  color: #ffffff;
+  background-color: #1D838A;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 2px #1D838A;
+  align-items: center;
+  font-weight: 600;
 }
 
 #map {
