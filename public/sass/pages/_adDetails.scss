@@ -7,21 +7,9 @@
     list-style: none;
 }
 .breadcrumb-item {
-    display: inline;
-    width: fit-content;
-    font-family: 'Nunito Sans';
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: -0.02em;
-    text-decoration-line: underline;   
+  @include links-style;
 }
-.breadcrumb-item a {
-    color: $secondary-color;
-}
-.breadcrumb-item a:hover {
-    color: black;
-}
+
 .image-container {
     position: relative;
     display: inline-block;
@@ -29,6 +17,8 @@
   }
 .image-container img {
     display: block;
+    width: 569px;
+    height: 364px;
 }
 .overlay-text {
     position: absolute;
@@ -58,13 +48,13 @@
     width: 474px;
     height: 45px;  
   }
-    /*.fa-regular .fa-heart {
+   /* .fa-regular .fa-heart {
     position: relative;
     width: 32px;
     height: 32px;
     color: $primary-color;
-    
-  }*/
+    */
+  }
   
   .details-date {
     position: relative;
@@ -129,9 +119,21 @@
     gap: 16px;
     padding: 16px 24px;
     position: relative;
-    margin-bottom: -4px;
+    margin: 10px 0px;
     background-color: $primary-color;
     border-radius: 6px;
     color: $white-color;
     text-decoration: none;
   }
+  .user-type {
+    display: flex;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+  }
+  

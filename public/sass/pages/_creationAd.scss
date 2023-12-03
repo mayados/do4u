@@ -16,15 +16,9 @@
 }
 
 .d-grid {
-  gap: 1px;
-
-  .btn {
-    &.btn-depose {
-      background-color: $primary-color;
-      color: $white-color;
-    }
-  }
+  display: grid;
 }
+
 .icone-card {
   width: 10rem;
   text-align: center;
@@ -39,22 +33,13 @@
   opacity: 0.7;
 }
 
-
-
 .imgcontainer {
   img {
     width: 100%; 
-    height: 880px; 
+    height: 885px; 
     display: block; 
     max-width: 100%; 
   }
 }
 
-.annoncePrix,
-.annonceLieu ,
-.annonceTitle{
-  opacity: 0.7;
-}
-#categorieSelect {
-  opacity: 0.7;
-}
+
