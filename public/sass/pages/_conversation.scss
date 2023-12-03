@@ -33,6 +33,11 @@
     background-color: $white-color;
 }
 
+#conversation-scrollable{
+    height: 50vh; /* Hauteur fixe de la section */
+    overflow-y: auto; /* Activation du défilement vertical si nécessaire */    
+}
+
 .correspondant-message,
 .mon-message{
     position: relative;
@@ -71,7 +76,16 @@
 }
 
 #fileInput{
-    display: none;
+    position: absolute;
+    top: 0;
+    right: -999;
+}
+
+
+#container-input-file:focus-within label,
+#container-submit-message:focus-within{
+    background-color: $secondary-color;
+    border-radius: 5px;
 }
 
 #user-conversation{
@@ -89,4 +103,8 @@
 
 .user-conversation-top-icon{
     font-size: 1.5rem;
+}
+
+#container-dots-action-conversation{
+    position: relative;
 }
