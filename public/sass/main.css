@@ -1598,6 +1598,19 @@ label {
   border: 1px sold #3a3a3a;
 }
 
+.parametres-content {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+#bio {
+  height: 152px;
+}
+
+.btn-parametres {
+  width: 298px;
+}
+
 #map {
   height: 40vh;
   z-index: 2;
