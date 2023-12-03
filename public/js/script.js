@@ -71,7 +71,7 @@ function displayResponsiveVue() {
 }
 
 // When the window is resized, we call the displayMobileVue function to have a functionnal burger menu etc on mobile version
-window.onresize = displayResponsiveVue();
+window.onresize = displayResponsiveVue;
 
 
 
@@ -124,4 +124,21 @@ console.log(avis)
         formulaireAvis.style.display='none';
         avis.classList.remove("d-none");
     })        
+}
+
+let signalements = document.querySelectorAll('.signalement');
+console.log(signalements)
+
+if(signalements){
+  signalements.forEach(function(signalement) {
+    signalement.addEventListener('click', function() {
+
+    let signalementId = signalement.id;
+    let action = document.getElementById('signalement_avis' + signalementId.substring('signalement'.length));
+    console.log(action)
+    action.classList.toggle('signalement-action--active');
+
+
+    });
+  });  
 }
