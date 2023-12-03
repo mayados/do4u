@@ -18,14 +18,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#profile-block {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+}
 #photo-parametres {
     width: 128px;
     height: 128 px;
     border-radius: 50%;
-    position: absolute;
-    top: 80%;
-    left: 5%;
-    
     
 }
 #photo-parametres img {
@@ -33,3 +34,11 @@
     height: 100%;
     border-radius: 50%;
     }
+/*#username-parametres {
+    
+}*/
+#choose-photo {
+    text-decoration: none;
+    padding: 3px;
+    border: 1px sold $text-color;
+}

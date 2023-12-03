@@ -643,7 +643,6 @@ label {
   height: 45px;
 }
 
-
 /* .fa-regular .fa-heart {
   position: relative;
   width: 32px;
@@ -651,7 +650,6 @@ label {
   color: $primary-color;
 
 } */
-
 .details-date {
   position: relative;
   width: 382px;
@@ -1573,19 +1571,31 @@ label {
   transform: translate(-50%, -50%);
 }
 
+#profile-block {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+}
+
 #photo-parametres {
   width: 128px;
   height: 128 px;
   border-radius: 50%;
-  position: absolute;
-  top: 80%;
-  left: 5%;
 }
 
 #photo-parametres img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+/*#username-parametres {
+
+}*/
+#choose-photo {
+  text-decoration: none;
+  padding: 3px;
+  border: 1px sold #3a3a3a;
 }
 
 #map {
