@@ -117,3 +117,29 @@
 .profile-tab-links{
     color: $secondary-color;
 }
+
+.container-dots-action{
+    position: relative;
+}
+
+.signalement-action,
+.signalement-action--active,
+.signalement-action:hover,
+.signalement-action--active:hover{
+    width: fit-content;
+}
+
+.signalement-action{
+    position: absolute;
+    top: 0;
+    right: -9999px;
+    
+}
+
+.signalement-action--active{
+    right: 2rem;  
+}
+
+.categorie-avis-links{
+    @include links-style;
+}

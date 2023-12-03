@@ -125,3 +125,20 @@ console.log(avis)
         avis.classList.remove("d-none");
     })        
 }
+
+let signalements = document.querySelectorAll('.signalement');
+console.log(signalements)
+
+if(signalements){
+  signalements.forEach(function(signalement) {
+    signalement.addEventListener('click', function() {
+
+    let signalementId = signalement.id;
+    let action = document.getElementById('signalement_avis' + signalementId.substring('signalement'.length));
+    console.log(action)
+    action.classList.toggle('signalement-action--active');
+
+
+    });
+  });  
+}
