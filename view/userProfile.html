@@ -17,75 +17,124 @@
      crossorigin=""></script>
 </head>
 <body>
-    <header>
+    <header> 
         <nav class="na">
             <input type="checkbox" id="burger-check">            
-        <a href="" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" id="logo"></a>   
-        <form class="na__form na__form--mobile">
-            <div class="na__container_fields">
-                <input type="text" placeholder="chercher une annonce par mot-clé" class="na__input">                    
-            </div>
-            <button class="na__search-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>                  
-        </form> 
-
-        <div class="na__burger-menu" tabindex="0" role="button" aria-label="Cliquez ici pour afficher le menu de navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-        </div> 
-        <ul class="na__list">
-            <li id="dropdown-link-annonces">
-                <!-- Add role so screen readers canr read what it is about. In our case, it will indicate that is a button to display a menu -->
-                <a href="#" class="nav-link link-annonces" role="button"  aria-haspopup="true" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></a>   
-                <div class="na__dropdown na__dropdown_annonces" aria-label="Sous-menu annonces" role="menu">
-                    <div role="menuitem">
-                        <a href="">Ménage / nettoyage / services à la personne</a>
-                        <a href="">Rénovation & construction</a> 
-                        <a href="">Jardinage & bricolage</a> 
-                        <a href="">Réparation & maintenance</a> 
-                    </div>
-                    <div role="menuitem">
-                        <a href="">Informatique & administratif</a> 
-                        <a href="">Cours & coaching</a> 
-                        <a href="">Santé & bien-être</a> 
-                        <a href="">Evenements & divertissements</a> 
-                    </div>
-                    <div role="menuitem">
-                        <a href="">Animaux</a> 
-                        <a href="">Artisanat & création</a>
-                        <a href="">Garde d'enfants</a> 
-                        <a href="">Autre</a> 
-                    </div>
+            <a href="index.html" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a> 
+            <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </button>               
+            <form class="na__form na__form--mobile">
+                <div class="na__container_fields">
+                    <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
                 </div>
-            </li> 
-            <li class="">
-                <button class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</button>   
-            </li> 
-            <li class="">
-                <a href="#" class="nav-link">Contact</a>   
-            </li> 
-            <li class="">
-                <a href="#" class="nav-link"><i class="fa-solid fa-envelope"></i></a>   
-            </li> 
-            <li class="na__link_dropdown" id="dropdown-link-user">
-                <a href="#" class="nav-link user-link" role="button"><i class="fa-solid fa-user"></i></a>
-                <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur" role="menu">
-                    <li>
-                        <a href="">Mon profil</a>
-                    </li>
-                    <li>
-                        <a href="">Paramètres</a>
-                    </li>
-                    <li>
-                        <a href="">Déconnexion</a>
-                    </li>
-                </ul>   
-            </li> 
-        </ul>              
-    </nav>       
+                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+            </form> 
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
+                <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.html"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body small">
+                    <ul class="na__list--mobile">
+                        <li>
+                            <button class="link-annonces bg-transparent border-0" role="button"  aria-haspopup="true" aria-expanded="false" aria-label="Afficher les catégories d'annonces">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
+                            <ul role="menuitem" class="p-0 na__dropdown na__dropdown_annonces">
+                                <li><a href="ads.html">Ménage</a></li>
+                                <li><a href="ads.html">Services à la personne</a></li>
+                                <li><a href="ads.html">Rénovation & construction</a> </li>
+                                <li><a href="ads.html">Jardinage & bricolage</a> </li>
+                                <li><a href="ads.html">Réparation & maintenance</a></li> 
+                                <li><a href="ads.html">Informatique & administratif</a> </li>
+                                <li><a href="ads.html">Cours & coaching</a> </li>
+                                <li><a href="ads.html">Santé & bien-être</a> </li>
+                                <li><a href="ads.html">Evenements & divertissements</a> </li>
+                                <li><a href="ads.html">Animaux</a> </li>
+                                <li><a href="ads.html">Artisanat & création</a></li>
+                                <li><a href="ads.html">Garde d'enfants</a> </li>
+                                <li><a href="ads.html">Autre</a></li> 
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                        </li> 
+                        <li>
+                            <a href="contact.html" class="nav-link">Contact</a>   
+                        </li> 
+                        <li>
+                            <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
+                        </li> 
+                        <li class="na__link_dropdown" id="dropdown-link-user">
+                            <button class="border-0 bg-transparent user-link" role="button" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur"><i class="fa-solid fa-user"></i></button>
+                            <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
+                                <li>
+                                    <a href="myProfile.html">Mon profil</a>
+                                </li>
+                                <li>
+                                    <a href="parameters.html">Paramètres</a>
+                                </li>
+                                <li>
+                                    <a href="connexion.html">Déconnexion</a>
+                                </li>
+                            </ul>   
+                        </li> 
+                    </ul>   
+                </div>
+            </div>
+            <ul class="na__list p-0">
+                <li class="dropdown-link-annonces">
+                    <button  class="bg-transparent border-0 link-annonces" aria-haspopup="true" aria-label="Ouvrir le sous-menu" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
+                    <ul role="menuitem" class="na__dropdown na__dropdown_annonces">
+                        <li><a href="ads.html">Ménage</a></li>
+                        <li><a href="ads.html">Services à la personne</a></li>
+                        <li><a href="ads.html">Rénovation & construction</a> </li>
+                        <li><a href="ads.html">Jardinage & bricolage</a> </li>
+                        <li><a href="ads.html">Réparation & maintenance</a></li> 
+                        <li><a href="ads.html">Informatique & administratif</a> </li>
+                        <li><a href="ads.html">Cours & coaching</a> </li>
+                        <li><a href="ads.html">Santé & bien-être</a> </li>
+                        <li><a href="ads.html">Evenements & divertissements</a> </li>
+                        <li><a href="ads.html">Animaux</a> </li>
+                        <li><a href="ads.html">Artisanat & création</a></li>
+                        <li><a href="ads.html">Garde d'enfants</a> </li>
+                        <li><a href="ads.html">Autre</a></li> 
+                    </ul>
+                </li> 
+                <li>
+                    <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                </li> 
+                <li>
+                    <a href="contact.html" class="nav-link">Contact</a>   
+                </li> 
+                <li>
+                    <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
+                </li> 
+                <li class="na__link_dropdown" id="dropdown-link-user">
+                    <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
+                    <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
+                        <li>
+                            <a href="myProfile.html">Mon profil</a>
+                        </li>
+                        <li>
+                            <a href="parameters.html">Paramètres</a>
+                        </li>
+                        <li>
+                            <a href="connexion.html">Déconnexion</a>
+                        </li>
+                    </ul>   
+                </li> 
+            </ul>              
+        </nav>          
     </header>
     <main class="container" id="main-container">
-        <div class="fil-ariane"><p><a href="">Accueil</a> < <a href="">Léa</a></p></div>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb fil-ariane">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Léa</li>
+            </ol>
+        </nav>
         <section>
             <div class="row d-flex flex-lg-row align-items-lg-center">
                 <div class="col-12 col-lg-6 d-flex flex-column gap-2 flex-lg-row align-items-lg-center  gap-lg-3">
@@ -107,8 +156,33 @@
                 </div>
                 <div class="col-12 col-lg-3 d-flex gap-5">
                     <a href="" class="button-primary-regular text-decoration-none follow-user text-center"><i class="fa-solid fa-circle-plus"></i> Suivre</a>
-                    <a href="" class="vertical-dots d-flex align-items-center rounded"><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                    
+                    <div class="container-dots-action h-100">
+                        <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement2" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button class="signalement-action button-secondary-regular" id="signalement_avis2" data-bs-toggle="modal" data-bs-target="#signalement_modal2">Signaler</button>
+                        <div class="modal fade modal-z-index" id="signalement_modal2" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h2 class="modal-title fs-5 text-center" id="signalerAvis1">Signaler l'utilisateur</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                          <label for="motif">Motif du signalement</label>
+                                          <input type="text" class="form-control" id="motif" aria-describedby="motifSignalement" placeholder="Motif du signalement">
+                                        </div>
+                                        <div class="form-group d-flex flex-column">
+                                          <label for="explication-signalement">Explication du signalement</label>
+                                          <textarea name="" id="explication-signalement" placeholder="Expliquez ici pourquoi vous souhaitez signaler cet utilisateur"></textarea>
+                                        </div>
+                                        <button type="submit" class="button-primary-regular">Signaler</button>
+                                      </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <article class="mt-4">
@@ -141,83 +215,179 @@
                 </div>
                 <div class="tab-pane fade" id="pills-annonces-user" role="tabpanel" aria-labelledby="pills-annonces-tab" tabindex="0">
                     <div class="row justify-content-evenly d-flex gap-5 gap-lg-0">
-                        <div class="card card-ad h-100" style="width: 18rem;">
-                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                                <div class="">
-                                    <i class="icon fa-regular fa-user"></i>
-                                    <span>Auto entrepreneur</span>
+                        <div class="col-12 col-lg-3">
+                            <a href="" class="card-link">
+                                <div class="card h-100 card-ad">
+                                    <div class="position-relative">
+                                        <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <div class="offer-badge">
+                                            <span class="offer-badge">Offre</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="heart-icon fa-lg">
+                                            <i class="icon fa-regular fa-heart"></i>
+                                        </div>
+                                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Auto entrepreneur</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-euro-sign"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>30€/H</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-folder"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Santé et bien-etre</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Strasbourg</span>
+                                            </div>
+                                        </div>
+                                    </div>                            
                                 </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-euro-sign"></i>
-                                    <span>30€/H</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-regular fa-folder"></i>
-                                    <span>Santé et bien-etre</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-user"></i>
-                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-location-dot"></i>
-                                    <span>Strasbourg</span>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="card card-ad h-100" style="width: 18rem;">
-                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                                <div class="">
-                                    <i class="icon fa-regular fa-user"></i>
-                                    <span>Auto entrepreneur</span>
+                        <div class="col-12 col-lg-3">
+                            <a href="" class="card-link">
+                                <div class="card h-100 card-ad">
+                                    <div class="position-relative">
+                                        <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <div class="offer-badge">
+                                            <span class="offer-badge">Offre</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="heart-icon fa-lg">
+                                            <i class="icon fa-regular fa-heart"></i>
+                                        </div>
+                                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Auto entrepreneur</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-euro-sign"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>30€/H</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-folder"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Santé et bien-etre</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Strasbourg</span>
+                                            </div>
+                                        </div>
+                                    </div>                            
                                 </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-euro-sign"></i>
-                                    <span>30€/H</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-regular fa-folder"></i>
-                                    <span>Santé et bien-etre</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-user"></i>
-                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-location-dot"></i>
-                                    <span>Strasbourg</span>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="card card-ad h-100" style="width: 18rem;">
-                            <img  src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                                <div class="">
-                                    <i class="icon fa-regular fa-user"></i>
-                                    <span>Auto entrepreneur</span>
+                        <div class="col-12 col-lg-3">
+                            <a href="" class="card-link">
+                                <div class="card h-100 card-ad">
+                                    <div class="position-relative">
+                                        <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <div class="offer-badge">
+                                            <span class="offer-badge">Offre</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="heart-icon fa-lg">
+                                            <i class="icon fa-regular fa-heart"></i>
+                                        </div>
+                                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Auto entrepreneur</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-euro-sign"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>30€/H</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-folder"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Santé et bien-etre</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Strasbourg</span>
+                                            </div>
+                                        </div>
+                                    </div>                            
                                 </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-euro-sign"></i>
-                                    <span>30€/H</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-regular fa-folder"></i>
-                                    <span>Santé et bien-etre</span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-user"></i>
-                                    <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                </div>
-                                <div class="">
-                                    <i class="icon fa-solid fa-location-dot"></i>
-                                    <span>Strasbourg</span>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -294,12 +464,36 @@
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <p>Services à la personne</p>
+                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>
-                            <div>
-                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            <div class="container-dots-action">
+                                <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement3" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis3" data-bs-toggle="modal" data-bs-target="#signalement_modal3">Signaler</button>
+                                <div class="modal fade modal-z-index" id="signalement_modal3" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h2 class="modal-title fs-5 text-center" id="signalerAvis3">Signaler l'avis</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                  <label for="motif">Motif du signalement</label>
+                                                  <input type="text" class="form-control" id="motif" aria-describedby="motifSignalement" placeholder="Motif du signalement">
+                                                </div>
+                                                <div class="form-group d-flex flex-column">
+                                                  <label for="explication-signalement">Explication du signalement</label>
+                                                  <textarea name="" id="explication-signalement" placeholder="Expliquez ici pourquoi vous souhaitez signaler cet avis"></textarea>
+                                                </div>
+                                                <button type="submit" class="button-primary-regular">Signaler</button>
+                                              </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <article class="avis-commentaire d-flex justify-content-between mt-3">
@@ -315,12 +509,36 @@
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <p>Services à la personne</p>
+                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>
-                            <div>
-                                <a class="vertical-dots d-flex align-items-center rounded" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            <div class="container-dots-action">
+                                <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement4" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis4" data-bs-toggle="modal" data-bs-target="#signalement_modal4">Signaler</button>
+                                <div class="modal fade modal-z-index" id="signalement_modal4" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h2 class="modal-title fs-5 text-center" id="signalerAvis1">Signaler l'avis</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                  <label for="motif">Motif du signalement</label>
+                                                  <input type="text" class="form-control" id="motif" aria-describedby="motifSignalement" placeholder="Motif du signalement">
+                                                </div>
+                                                <div class="form-group d-flex flex-column">
+                                                  <label for="explication-signalement">Explication du signalement</label>
+                                                  <textarea name="" id="explication-signalement" placeholder="Expliquez ici pourquoi vous souhaitez signaler cet avis"></textarea>
+                                                </div>
+                                                <button type="submit" class="button-primary-regular">Signaler</button>
+                                              </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                     </section>
@@ -332,54 +550,48 @@
         <section class="container">
             <div class="row mb-4">
                 <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
-                    <a href="" id="link-logo"><img src="../public/img/logo_do4u_footer.svg" alt="logo Do4U" class="footer-element__logo"></a> 
+                    <img src="../public/img/logo_do4u_footer.svg" alt="logo de Do4U" class="footer-element__logo">
                     <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
-                    <h3 class="text-center text-lg-start pb-3">Retrouvez-nous sur</h3>
-                    <ul class="footer-element__medias d-flex justify-content-evenly justify-content-lg-start gap-lg-5 ps-0">
-                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li class="d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    <h2 class="text-center text-lg-start pb-3 footer-element__title">Retrouvez-nous sur</h2>
+                    <ul class="footer-element__medias d-flex justify-content-center justify-content-lg-start gap-2 ps-0" aria-label="Réseaux sociaux">
+                        <li class="d-flex justify-content-center align-items-center"><a href="https://twitter.com" aria-label="Notre compte x (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href="https://www.facebook.com" aria-label="Notre page Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="d-flex justify-content-center align-items-center"><a href="https://www.instagram.com/" aria-label="Notre compte Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <h3 class="text-center text-lg-start footer-element__categories"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down"></i></h3>
-                    <div class="d-lg-flex text-center flex-lg-row  text-lg-start gap-lg-3 footer-element__dropdown">
-                        <ul class="ps-0">
-                            <li class=""><a href="">Ménage</a></li>
-                            <li><a href="">Services à la personne</a></li>
-                            <li><a href="">Rénovation & construction</a></li>
-                            <li><a href="">Jardinage & bricolage</a></li>
-                            <li><a href="">Réparation & maintenance</a></li>
-                            <li><a href="">Informatique & administratif</a></li>
-                            <li><a href="">Cours & coaching</a></li>
-                            <li><a href="">Evènements & divertissements</a></li>
-                        </ul>
-                        <ul class="ps-0">
-                            <li><a href="">Santé & bien-être</a></li>
-                            <li><a href="">Animaux</a></li>
-                            <li><a href="">Artisanat & création</a></li>
-                            <li><a href="">Garde d'enfants</a></li>
-                            <li><a href="">Autre</a></li> 
-                        </ul>                        
-                    </div>
-
+                    <h2 class="text-center text-lg-start footer-element__categories footer-element__title"  role="button" tabindex="0" aria-label="Sur mobile ou tablette, cliquez ici pour obtenir la liste des catégories d'annonces">Catégories &nbsp;<i class="fa-solid fa-caret-down text-white"></i></h2>
+                    <ul class="ps-0 footer-element__dropdown" aria-label="Catégories d'annonces">
+                        <li><a href="ads.html" class="small">Ménage</a></li>
+                        <li><a href="ads.html" class="small">Services à la personne</a></li>
+                        <li><a href="ads.html" class="small">Rénovation & construction</a></li>
+                        <li><a href="ads.html" class="small">Jardinage & bricolage</a></li>
+                        <li><a href="ads.html" class="small">Réparation & maintenance</a></li>
+                        <li><a href="ads.html" class="small">Informatique & administratif</a></li>
+                        <li><a href="ads.html" class="small">Cours & coaching</a></li>
+                        <li><a href="ads.html" class="small">Santé & bien-être</a></li>
+                        <li><a href="ads.html" class="small">Animaux</a></li>
+                        <li><a href="ads.html" class="small">Artisanat & création</a></li>
+                        <li><a href="ads.html" class="small">Garde d'enfants</a></li>
+                        <li><a href="ads.html" class="small">Autre</a></li> 
+                    </ul>                        
                 </div>
-                <div class="col-12 col-lg-2">
-                    <h3 class="footer-element__mobile--hidden">Liens rapides</h3>
+                <div class="col-12 col-lg-2 footer-element__container-nous-contacter">
+                    <h2 class="footer-element__mobile--hidden footer-element__title">Liens rapides</h2>
                     <ul class="ps-0">
-                        <li class="footer-element__mobile--hidden"><a href="">Qui sommes-nous ?</a></li>
-                        <li class="text-center text-lg-start mt-5 mt-lg-0"><a  href="">Nous contacter</a></li>
-                        <li class="footer-element__mobile--hidden"><a href="">Les offres</a></li>
-                        <li class="footer-element__mobile--hidden"><a href="">Les demandes</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="contact.html" class="small">Qui sommes-nous ?</a></li>
+                        <li class="text-center text-lg-start footer-element__nous-contacter-link"><a href="contact.html" class="small">Nous contacter</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="ads.html" class="small">Les offres</a></li>
+                        <li class="footer-element__mobile--hidden"><a href="ads.html" class="small">Les demandes</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-2 footer-element__mobile--hidden">
-                    <h3>Contact</h3>
+                    <h2 class="footer-element__title">Contact</h2>
                     <ul class="ps-0">
-                        <li><i class="fa-solid fa-phone-volume footer-element__icon--white"></i>&nbsp; 03 67 67 67</li>
-                        <li><i class="fa-solid fa-envelope footer-element__icon--white"></i>&nbsp; do4u@gmail.com</li>
-                        <li><i class="fa-solid fa-map footer-element__icon--white"></i>&nbsp; 109 rue ABC, Strasbourg, France</li>
+                        <li class="small mb-1"><i class="fa-solid fa-phone-volume footer-element__icon--white"></i>&nbsp; 03 67 67 67</li>
+                        <li class="small mb-1"><i class="fa-solid fa-envelope footer-element__icon--white"></i>&nbsp; do4u@gmail.com</li>
+                        <li class="small mb-1"><i class="fa-solid fa-map footer-element__icon--white"></i>&nbsp; 109 rue ABC, Strasbourg, France</li>
                     </ul>
                 </div>            
             </div>
@@ -388,10 +600,10 @@
         <section class="container py-2">
             <div class="d-flex gap-4 flex-column text-center gap-lg-0 text-lg-start flex-lg-row justify-content-lg-between mb-0 footer-element__infos">
                 <ul class="d-flex gap-4 flex-column flex-lg-row ps-0 mb-0 gap-lg-3 pt-2">
-                    <li><a href="">Conditions générales d'utilisation</a></li>
-                    <li><a href="">Mentions légales</a></li>
+                    <li><a href="cgu.html" class="small">Conditions générales d'utilisation</a></li>
+                    <li><a href="politique.html" class="small">Politique de confidentialité</a></li>
                 </ul>
-                <p class="mb-0 mt-2">&copy; 2023, Do4U Inc. Tous droits réservés.</p>
+                <p class="mb-0 mt-2 small">&copy; 2023, Do4U Inc. Tous droits réservés.</p>
             </div>                
         </section>         
     </footer>
