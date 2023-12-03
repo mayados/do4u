@@ -29,7 +29,7 @@
     &__form--mobile,
     &__form--mobile:nth-child(1),
     &__form--mobile:nth-child(2){
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             top: 7vh;            
             position: absolute;
             width: 100vw;
@@ -48,7 +48,7 @@
     &__form--none,
     &__form--none:nth-child(1),
     &__form--none:nth-child(2){
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             display: none;
         }  
     }
@@ -72,15 +72,20 @@
         flex: 1;
         border-radius: 0px 5px 5px 0px;
 
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             height: 2rem;
         }    
+    }
+
+    &__burger-menu{
+        border: none;
+        background-color: $white-color;
     }
 
     &__burger-menu span{
         display: none;
 
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             display: block;
             height: 5px;
             width: 2rem;
@@ -106,65 +111,70 @@
         margin-bottom: 0;
         height: 7vh;
         // Bootstrap media query for medium size devices
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             display: none;
         }
 
     }
 
 
-    &__list li{
+    &__list > li{
         height: 100%;
         display: flex;
         align-items: center;
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             height: auto;
             display: initial;
         }         
     }
 
-    #logo{
+    .logo{
         width: 7rem;
     }
 
     #dropdown-link-user,
-    #dropdown-link-annonces{
+    .dropdown-link-annonces{
         position: relative;
+        text-align: center;
     }
 
      &__dropdown{
         position: absolute;
         // For accessibility, beacause display: none is non accessible
         left: -999999px;
-        height: 0;
         top: 7vh;
         list-style-type: none;
         width: fit-content;
         background-color: $white-color;
-        @media (max-width: 768px){
+        @media (max-width: 992px){
             display: none;
             position: inherit;
             top: inherit;
-            width: 100vw;
             left: inherit;
         }          
     }   
 
-    &__dropdown a{
+    // &__dropdown ul li a
+    &__dropdown li a{
         text-decoration: none;
         color: $text-color;
     }
 
-    &__dropdown_annonces div{
-        @media (max-width: 768px){
-            display: flex;
+    // &__dropdown ul li
+    &__dropdown li{
+        list-style-type: none;
+    }
+
+    // &__dropdown_annonces ul
+    &__dropdown_annonces {
+        @media (max-width: 992px){
+            // display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
         }     
     }
 
     // We don't want to visually display the checkbox
-    // Replace display none by another property for the screen readers
     #burger-check{
         display: none;
     }
@@ -175,41 +185,46 @@
     // Classes taken after click on the links to display dropdown menus (js)
     &__dropdown_annonces--active,
     &__dropdown_user--active{
-        padding-top: 1.5rem;
+        margin-top: 2rem;
         display: inherit;
         background-color: $white-color;
         text-align: center;
         height: auto;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        // gap: 2rem;
     }
 
     &__dropdown_user--active{
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
         align-items: center;
         padding-left: 0;
     }
 
     // class to display nav links when burger menu is click - Js
-    .show-list{
+    &__list--mobile{
         display: flex;
         flex-direction: column;
         text-align: center;
-        top: 6vh;
+        align-items: center;
+
+        justify-content: space-evenly;
+        // top: 6vh;
         left: 0;
         right: 0;
-        position: absolute;
+        position: relative;
+        z-index: 555;
         background-color: $white-color;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        min-height: 90vh;
         gap: 2rem;
-        align-items: center;
-        padding: inherit;
-        padding-top: 2rem;
+        padding: 0;
     }
 
+    &__list--mobile li{
+        list-style-type: none;
+    }
 
 
 }
@@ -219,35 +234,65 @@
     */
     @media (hover: hover){
 
-        #dropdown-link-annonces:hover .na__dropdown_annonces{
-            display: flex;
-            gap: 3rem;
+        .na__list li:hover,
+        .na__list li:hover i{
+            color: $primary-color;
         }
 
-        .na__dropdown_annonces div a:hover,
+        // .dropdown-link-annonces:hover .na__dropdown_annonces,
+        // .dropdown-link-annonces:focus-within .na__dropdown_annonces{
+        //     display: flex;
+        //     gap: 3rem;
+        // }
+
+        .na__dropdown_annonces li a:hover,
         .na__dropdown_user a:hover{
             color: $secondary-color;
         }
 
-        #dropdown-link-annonces:hover .na__dropdown_annonces div {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            
+        // .dropdown-link-annonces:hover .na__dropdown_annonces ul,
+        .dropdown-link-annonces:hover .na__dropdown_annonces,
+        .dropdown-link-annonces:focus-within .na__dropdown_annonces {
+            // flex-wrap: wrap;
+            top: 7.1vh;
+            height: auto;
+            // width: auto;
+            column-count: 2;
+            column-gap: 2rem;
+            min-width: 20vw; 
+            padding: 1rem 1rem 1rem 1rem;
         }
 
-        #dropdown-link-annonces:hover .na__dropdown_annonces,
-        #dropdown-link-user:hover .na__dropdown_user{
-            // display: inherit;
+        .dropdown-link-annonces:hover .na__dropdown_annonces  li,
+        .dropdown-link-annonces:focus-within .na__dropdown_annonces  li {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .dropdown-link-annonces:hover .na__dropdown_annonces,
+        // #dropdown-link-user:hover .na__dropdown_user,
+        .dropdown-link-annonces:focus-within .na__dropdown_annonces,
+        #dropdown-link-user:focus-within .na__dropdown_user{
             left: 0;
             height: auto;
-            padding: 1rem 1rem 1rem 1rem;
+            padding: 1rem;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
 
-        #dropdown-link-user:hover .na__dropdown_user{
+        #dropdown-link-user:hover .na__dropdown_user,
+        #dropdown-link-user:focus-within .na__dropdown_user{
+            top: 7.1vh;
+            left: 7rem;
+            height: auto;
+            padding: 1rem 2rem 1rem 1rem;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            text-align: center;
+        }
+
+        #dropdown-link-user:hover .na__dropdown_user,
+        #dropdown-link-user:focus-within .na__dropdown_user{
             display: flex;
             flex-direction: column;
-            left: -4rem;
+            left: -5rem;   
         }
     }
