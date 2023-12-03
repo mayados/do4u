@@ -72,7 +72,7 @@ function displayResponsiveVue() {
 
 // When the window is resized, we call the displayMobileVue function to have a functionnal burger menu etc on mobile version
 window.onresize = displayResponsiveVue;
-
+displayResponsiveVue();
 
 
 let etoilesLabel = document.querySelectorAll('.rating label');
