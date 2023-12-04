@@ -527,7 +527,7 @@ we declare all the :hover in a media. If the media doesn't correspond with :hove
 
 h1 {
   font-family: "Montserrat";
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2,
@@ -536,7 +536,7 @@ h3 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
