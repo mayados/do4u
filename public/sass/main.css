@@ -257,6 +257,11 @@
     display: none;
   }
 }
+@media (max-width: 992px) {
+  .footer-element__dropdown li a {
+    font-size: 1.2rem;
+  }
+}
 .footer-element__categories i {
   display: none;
 }
@@ -481,6 +486,7 @@
 }
 .na__list--mobile li {
   list-style-type: none;
+  font-size: 1.2rem;
 }
 
 /* We don't want issues with :hover on responsive. To avoid this kind of isues, 
@@ -1571,6 +1577,10 @@ label {
 
 .avis-commentaire {
   border-bottom: 2px solid #1D838A;
+}
+
+.avis-commentaire a:first-child {
+  color: #3a3a3a;
 }
 
 .full-star-icon {
