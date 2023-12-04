@@ -674,12 +674,11 @@ label {
 }
 
 /* .fa-regular .fa-heart {
- position: relative;
- width: 32px;
- height: 32px;
- color: $primary-color;
- */
-
+  position: relative;
+  width: 32px;
+  height: 32px;
+  color: $primary-color;  
+} */
 .details-date {
   position: relative;
   width: 382px;
