@@ -91,6 +91,10 @@
     @include blue-border-bottom;
 }
 
+.avis-commentaire a:first-child{
+    color: $text-color;
+}
+
 .full-star-icon{
     color: $yellow-logo-color;
 }
