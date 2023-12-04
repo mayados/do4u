@@ -689,7 +689,8 @@ label {
 
 .overlay-text {
   position: absolute;
-  transform: translate(476px, -36px);
+  bottom: 55px;
+  right: 0px;
   border-radius: 10px 0px 0px 0px;
   background-color: #1D838A;
   color: #ffffff;
@@ -704,62 +705,27 @@ label {
 }
 
 .details {
-  width: 484px;
   height: 176px;
   border-radius: 15px;
   border: 1px solid #1D838A;
 }
 
-.details-top {
-  display: flex;
-  align-items: flex-start;
-  padding: 5px 8px 8px;
-  gap: 43px;
-  width: 474px;
-  height: 45px;
-}
-
-.details-date {
-  position: relative;
-  width: 382px;
-  height: 32px;
-  margin-top: -1px;
-  font-family: "Nunito Sans";
-  font-style: normal;
-  font-weight: 400;
-  color: #3a3a3a;
-  font-size: 14px;
-  text-align: right;
-  letter-spacing: -0.02em;
-  line-height: 19px;
-}
-
 .details-title {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
   font-family: "Voces";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
-  text-align: center;
   letter-spacing: -0.02em;
   color: #3a3a3a;
 }
 
 .details-price {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
   font-family: "Voces";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
-  text-align: center;
   letter-spacing: -0.02em;
   color: #3a3a3a;
 }
@@ -777,19 +743,7 @@ label {
 }
 
 .btn-message {
-  display: flex;
-  width: 450px;
-  height: 44px;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 16px 24px;
-  position: relative;
-  margin: 10px 0px;
-  background-color: #1D838A;
-  border-radius: 6px;
-  color: #ffffff;
-  text-decoration: none;
+  margin: 15px 0px;
 }
 
 .user-type {
@@ -808,6 +762,7 @@ label {
   display: none;
 }
 
+/*btn Voir plus */
 #myBtn {
   border: none;
   background-color: #ffffff;
