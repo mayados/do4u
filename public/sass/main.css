@@ -1376,6 +1376,10 @@ label {
     padding: 25px;
   }
 }
+.tab-button:focus {
+  resize: 1.2;
+}
+
 #main-messenger {
   margin-top: 7vh;
   padding-bottom: 7vh;
