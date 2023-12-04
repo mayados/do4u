@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 .button-primary-regular {
   width: 100%;
   color: #ffffff;
@@ -16,6 +15,14 @@
 }
 
 .button-primary-regular:hover {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
+.button-primary-regular:focus {
   width: 100%;
   background-color: #ffffff;
   color: #1D838A;
@@ -43,6 +50,13 @@
 }
 
 .button-primary-pill:hover {
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
+.button-primary-pill:focus {
   background-color: #ffffff;
   color: #1D838A;
   font-weight: 600;
@@ -571,6 +585,13 @@ p {
 .link {
   color: #E65A14;
   font-weight: 600;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #E65A14;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .icon {
@@ -614,6 +635,22 @@ p {
 }
 label {
   margin-bottom: 0.5rem;
+}
+
+.p-orange {
+  color: #E65A14;
+  font-weight: 600;
+}
+
+#main-details {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  overflow-x: hidden;
+}
+@media (max-width: 992px) {
+  #main-details {
+    margin-top: 15vh;
+  }
 }
 
 #annonceDetails {
@@ -930,7 +967,7 @@ label {
 }
 .responsive-map {
   overflow: hidden;
-  padding-bottom: 80%;
+  padding-bottom: 76%;
   position: relative;
   height: 0;
 }
@@ -1174,19 +1211,6 @@ label {
 .subscribe_form input {
   border: none;
   height: 44px;
-}
-.subscribe_form .kenburns-top {
-  animation: kenburns-top 5s ease-out both;
-}
-@keyframes kenburns-top {
-  0% {
-    transform: scale(1) translateY(0);
-    transform-origin: 50% 16%;
-  }
-  100% {
-    transform: scale(1.25) translateY(-15px);
-    transform-origin: top;
-  }
 }
 .subscribe_form .scale-up-center {
   animation: scale-up-center 0.4s both;
@@ -1642,10 +1666,13 @@ label {
 
 #main-parametres {
   margin-top: 7vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 92vh;
-  width: 100vw;
+  padding-bottom: 7vh;
+  overflow-x: hidden;
+}
+@media (max-width: 992px) {
+  #main-parametres {
+    margin-top: 15vh;
+  }
 }
 
 .bannerParametres {
@@ -1668,7 +1695,7 @@ label {
 #profile-block {
   position: absolute;
   top: 80%;
-  left: 5%;
+  left: 11%;
 }
 
 #photo-parametres {
