@@ -447,6 +447,9 @@
 .na #burger-check {
   display: none;
 }
+.na__dropdown_annonces li a:focus {
+  color: #E65A14;
+}
 .na__dropdown_annonces--active, .na__dropdown_user--active {
   margin-top: 2rem;
   display: inherit;
@@ -1530,12 +1533,6 @@ label {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-}
-@media (max-width: 768px) {
-  .figure-user-profile-style {
-    width: 150px;
-    height: 150px;
-  }
 }
 
 .figure-user-profile-style img {
