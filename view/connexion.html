@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="../public/sass/main.css">
 </head>
 <body>
-    <header> 
+    <header>
         <nav class="na">
             <input type="checkbox" id="burger-check">            
-            <a href="index.html" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a> 
+            <a href="index.html" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a>
             <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
                     <span></span>
                     <span></span>
                     <span></span>
-            </button>               
-            <form class="na__form na__form--mobile">
+            </button>              
+            <form class="na__form na__form--mobile na__form--unconnected">
                 <div class="na__container_fields">
                     <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
                 </div>
                 <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
-            </form> 
+            </form>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
                 <div class="offcanvas-header">
                 <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.html"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
@@ -33,13 +33,13 @@
                 <div class="offcanvas-body small">
                     <ul class="na__list--mobile">
                         <li>
-                            <button class="link-annonces bg-transparent border-0" role="button"  aria-haspopup="true" aria-expanded="false" aria-label="Afficher les catégories d'annonces">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
+                            <button class="link-annonces bg-transparent border-0" role="button"  aria-haspopup="true" aria-expanded="false" aria-label="Afficher les catégories d'annonces">Annonces <i class="fa-solid fa-chevron-down"></i></button>  
                             <ul role="menuitem" class="p-0 na__dropdown na__dropdown_annonces">
                                 <li><a href="ads.html">Ménage</a></li>
                                 <li><a href="ads.html">Services à la personne</a></li>
                                 <li><a href="ads.html">Rénovation & construction</a> </li>
                                 <li><a href="ads.html">Jardinage & bricolage</a> </li>
-                                <li><a href="ads.html">Réparation & maintenance</a></li> 
+                                <li><a href="ads.html">Réparation & maintenance</a></li>
                                 <li><a href="ads.html">Informatique & administratif</a> </li>
                                 <li><a href="ads.html">Cours & coaching</a> </li>
                                 <li><a href="ads.html">Santé & bien-être</a> </li>
@@ -47,44 +47,33 @@
                                 <li><a href="ads.html">Animaux</a> </li>
                                 <li><a href="ads.html">Artisanat & création</a></li>
                                 <li><a href="ads.html">Garde d'enfants</a> </li>
-                                <li><a href="ads.html">Autre</a></li> 
+                                <li><a href="ads.html">Autre</a></li>
                             </ul>
-                        </li> 
+                        </li>
                         <li>
-                            <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
-                        </li> 
+                            <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>  
+                        </li>
                         <li>
-                            <a href="contact.html" class="nav-link">Contact</a>   
-                        </li> 
+                            <a href="contact.html" class="nav-link">Contact</a>  
+                        </li>
                         <li>
-                            <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
-                        </li> 
-                        <li class="na__link_dropdown" id="dropdown-link-user">
-                            <button class="border-0 bg-transparent user-link" role="button" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur"><i class="fa-solid fa-user"></i></button>
-                            <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
-                                <li>
-                                    <a href="myProfile.html">Mon profil</a>
-                                </li>
-                                <li>
-                                    <a href="parameters.html">Paramètres</a>
-                                </li>
-                                <li>
-                                    <a href="connexion.html">Déconnexion</a>
-                                </li>
-                            </ul>   
-                        </li> 
-                    </ul>   
+                            <a href="connexion.html" class="nav-link button-primary-pill">Connexion</a>
+                        </li>
+                        <li>
+                            <a href="inscription.html" class="nav-link button-primary-pill">Inscription</a>
+                        </li>
+                    </ul>  
                 </div>
             </div>
             <ul class="na__list p-0">
                 <li class="dropdown-link-annonces">
-                    <button  class="bg-transparent border-0 link-annonces" aria-haspopup="true" aria-label="Ouvrir le sous-menu" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
+                    <button  class="bg-transparent border-0 link-annonces" aria-haspopup="true" aria-label="Ouvrir le sous-menu" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></button>  
                     <ul role="menuitem" class="na__dropdown na__dropdown_annonces">
                         <li><a href="ads.html">Ménage</a></li>
                         <li><a href="ads.html">Services à la personne</a></li>
                         <li><a href="ads.html">Rénovation & construction</a> </li>
                         <li><a href="ads.html">Jardinage & bricolage</a> </li>
-                        <li><a href="ads.html">Réparation & maintenance</a></li> 
+                        <li><a href="ads.html">Réparation & maintenance</a></li>
                         <li><a href="ads.html">Informatique & administratif</a> </li>
                         <li><a href="ads.html">Cours & coaching</a> </li>
                         <li><a href="ads.html">Santé & bien-être</a> </li>
@@ -92,32 +81,21 @@
                         <li><a href="ads.html">Animaux</a> </li>
                         <li><a href="ads.html">Artisanat & création</a></li>
                         <li><a href="ads.html">Garde d'enfants</a> </li>
-                        <li><a href="ads.html">Autre</a></li> 
+                        <li><a href="ads.html">Autre</a></li>
                     </ul>
-                </li> 
+                </li>
                 <li>
-                    <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
-                </li> 
+                    <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>  
+                </li>
                 <li>
-                    <a href="contact.html" class="nav-link">Contact</a>   
-                </li> 
+                    <a href="contact.html" class="nav-link">Contact</a>  
+                </li>
                 <li>
-                    <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
-                </li> 
-                <li class="na__link_dropdown" id="dropdown-link-user">
-                    <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
-                    <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
-                        <li>
-                            <a href="myProfile.html">Mon profil</a>
-                        </li>
-                        <li>
-                            <a href="parameters.html">Paramètres</a>
-                        </li>
-                        <li>
-                            <a href="connexion.html">Déconnexion</a>
-                        </li>
-                    </ul>   
-                </li> 
+                    <a href="connexion.html" class="nav-link button-primary-outline"></i>Connexion</a>
+                </li>
+                <li>
+                    <a href="inscription.html" class="nav-link button-primary-pill"></i>Inscription</a>
+                </li>
             </ul>              
         </nav>          
     </header>
@@ -169,7 +147,7 @@
                     <i class="fa fa-close" data-dismiss="modal" aria-label="Close"></i>
                 </div>
                 <div class="modal-body">
-                    <input type="email" class="form-control small" id="forgotPasswordEmail" placeholder="Votre adresse e-mail">
+                    <input type="email" class="form-control small" id="forgotPasswordEmail" placeholder="Votre adresse mail">
                 </div>
                 <div class="modal-footer align-item-center">
                     <button type="button" class="btn button-primary-regular" onclick="sendResetLink()">Envoyer le lien de réinitialisation</button>

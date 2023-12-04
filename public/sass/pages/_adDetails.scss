@@ -53,10 +53,8 @@
     position: relative;
     width: 32px;
     height: 32px;
-    color: $primary-color;
-    
+    color: $primary-color;  
   } */
-
   
   .details-date {
     position: relative;
@@ -137,4 +135,8 @@
     align-items: center;
     padding: 8px;
     gap: 10px;
+  }
+  #more {
+    display: none;
+    
   }
