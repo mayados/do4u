@@ -78,53 +78,82 @@ displayResponsiveVue();
 let etoilesLabel = document.querySelectorAll('.rating label');
 
 if(etoilesLabel){
-    // For each label element of class .rating, we add an eventlistener
-    etoilesLabel.forEach(function(etoileLabel) {
-        etoileLabel.addEventListener('click', function() {
 
-        //We get the "for" attributes value, which indicates which star it is. We replace my suffix "star" with an empty string to only get the number
-        let value = etoileLabel.getAttribute('for').replace('star', '');
+    function ratingProfile(){
+          etoilesLabel.forEach(function(etoileLabel) {
 
-            // We get the container of all the stars
-            let ratingContainer = document.getElementById('rating');
-            // Then, we select all the stars of this container
-            let stars = ratingContainer.querySelectorAll('label i');
+            function handleRating(event) {
+              if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
+                let value = etoileLabel.getAttribute('for').replace('star', '');
+                event.preventDefault();
 
-            // We loop on the number of stars
-            for (let i = 0; i < stars.length; i++) {
-            // In case the loop value is smaller than the value of the star, we fill the star matching the index [i]
-                if (i < value) {
-                    stars[i].style.color = '#FFD700';
-                } else {
-                // If i is greater than the star's value, we do not fill it
-                    stars[i].style.color = ''; 
+                // We get the container of all the stars
+                let ratingContainer = document.getElementById('rating');
+                // Then, we select all the stars of this container
+                let stars = ratingContainer.querySelectorAll('label i');
+
+                // We loop on the number of stars
+                for (let i = 0; i < stars.length; i++) {
+                // In case the loop value is smaller than the value of the star, we fill the star matching the index [i]
+                    if (i < value) {
+                        stars[i].style.color = '#FFD700';
+                    } else {
+                    // If i is greater than the star's value, we do not fill it
+                        stars[i].style.color = ''; 
+                    }
                 }
+              }
             }
-        });
-    });    
+
+            etoileLabel.addEventListener('click', handleRating);
+            etoileLabel.addEventListener('keydown', handleRating);
+
+        });    
+    }
+
+    ratingProfile();
+
 }
 
-let avis = document.querySelector('#ajout-avis');
+  let avis = document.querySelector('#ajout-avis');  
 
-if(avis){
-    let formulaireAvis = document.querySelector('#container-form-avis');
-    let close = document.querySelector('#close-avis');
-    console.log(formulaireAvis)
-    console.log(close)
-console.log(avis)
-    avis.addEventListener('click', e =>{
-        e.preventDefault();
-        formulaireAvis.style.display='block';
-        // Like Bootstrap is used, there is a conflict with class d-flex and display none property, so we add bootstrap class d-none and remove it later
-        avis.classList.add("d-none");
-    })
+  if(avis){
 
-    close.addEventListener('click', e =>{
-        e.preventDefault();
-        formulaireAvis.style.display='none';
-        avis.classList.remove("d-none");
-    })        
-}
+    function displayAvis(){
+
+      let formulaireAvis = document.querySelector('#container-form-avis');
+      let close = document.querySelector('#close-avis');
+      
+      function handleAvisInterraction(event) {
+        if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
+          // event.preventDefault();
+          console.log("click avis")
+          formulaireAvis.style.display='block';
+          // Like Bootstrap is used, there is a conflict with class d-flex and display none property, so we add bootstrap class d-none and remove it later
+          avis.classList.add("d-none");
+        }
+      }
+
+      function handleCloseInterraction(event){
+
+        if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
+
+            formulaireAvis.style.display='none';
+            avis.classList.remove("d-none");
+        }
+      }
+
+      avis.addEventListener('click', handleAvisInterraction);
+      avis.addEventListener('keydown', handleAvisInterraction);
+      close.addEventListener('click', handleCloseInterraction);
+      close.addEventListener('keydown', handleCloseInterraction);
+
+    }
+
+    displayAvis();
+
+  }
+
 
 let signalements = document.querySelectorAll('.signalement');
 console.log(signalements)
@@ -137,6 +166,7 @@ if(signalements){
     let action = document.getElementById('signalement_avis' + signalementId.substring('signalement'.length));
     console.log(action)
     action.classList.toggle('signalement-action--active');
+    action.tabIndex = 0;
 
 
     });
