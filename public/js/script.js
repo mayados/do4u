@@ -1,6 +1,6 @@
 function displayResponsiveVue() {
 
-  if (window.innerWidth < 769){
+  if (window.innerWidth < 992){
 
     /* Display accordeon menu responsive annonces */
     function displayAnnonces() {
