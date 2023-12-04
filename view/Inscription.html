@@ -10,117 +10,95 @@
     <link rel="stylesheet" href="../public/sass/main.css">
 </head>
 <body >
-    <header> 
-        <nav class="na">
-            <input type="checkbox" id="burger-check">            
-            <a href="index.html" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a> 
-            <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-            </button>               
-            <form class="na__form na__form--mobile">
-                <div class="na__container_fields">
-                    <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
-                </div>
-                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
-            </form> 
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
-                <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.html"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body small">
-                    <ul class="na__list--mobile">
-                        <li>
-                            <button class="link-annonces bg-transparent border-0" role="button"  aria-haspopup="true" aria-expanded="false" aria-label="Afficher les catégories d'annonces">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
-                            <ul role="menuitem" class="p-0 na__dropdown na__dropdown_annonces">
-                                <li><a href="ads.html">Ménage</a></li>
-                                <li><a href="ads.html">Services à la personne</a></li>
-                                <li><a href="ads.html">Rénovation & construction</a> </li>
-                                <li><a href="ads.html">Jardinage & bricolage</a> </li>
-                                <li><a href="ads.html">Réparation & maintenance</a></li> 
-                                <li><a href="ads.html">Informatique & administratif</a> </li>
-                                <li><a href="ads.html">Cours & coaching</a> </li>
-                                <li><a href="ads.html">Santé & bien-être</a> </li>
-                                <li><a href="ads.html">Evenements & divertissements</a> </li>
-                                <li><a href="ads.html">Animaux</a> </li>
-                                <li><a href="ads.html">Artisanat & création</a></li>
-                                <li><a href="ads.html">Garde d'enfants</a> </li>
-                                <li><a href="ads.html">Autre</a></li> 
-                            </ul>
-                        </li> 
-                        <li>
-                            <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
-                        </li> 
-                        <li>
-                            <a href="contact.html" class="nav-link">Contact</a>   
-                        </li> 
-                        <li>
-                            <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
-                        </li> 
-                        <li class="na__link_dropdown" id="dropdown-link-user">
-                            <button class="border-0 bg-transparent user-link" role="button" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur"><i class="fa-solid fa-user"></i></button>
-                            <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
-                                <li>
-                                    <a href="myProfile.html">Mon profil</a>
-                                </li>
-                                <li>
-                                    <a href="parameters.html">Paramètres</a>
-                                </li>
-                                <li>
-                                    <a href="connexion.html">Déconnexion</a>
-                                </li>
-                            </ul>   
-                        </li> 
-                    </ul>   
-                </div>
-            </div>
-            <ul class="na__list p-0">
-                <li class="dropdown-link-annonces">
-                    <button  class="bg-transparent border-0 link-annonces" aria-haspopup="true" aria-label="Ouvrir le sous-menu" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></button>   
-                    <ul role="menuitem" class="na__dropdown na__dropdown_annonces">
-                        <li><a href="ads.html">Ménage</a></li>
-                        <li><a href="ads.html">Services à la personne</a></li>
-                        <li><a href="ads.html">Rénovation & construction</a> </li>
-                        <li><a href="ads.html">Jardinage & bricolage</a> </li>
-                        <li><a href="ads.html">Réparation & maintenance</a></li> 
-                        <li><a href="ads.html">Informatique & administratif</a> </li>
-                        <li><a href="ads.html">Cours & coaching</a> </li>
-                        <li><a href="ads.html">Santé & bien-être</a> </li>
-                        <li><a href="ads.html">Evenements & divertissements</a> </li>
-                        <li><a href="ads.html">Animaux</a> </li>
-                        <li><a href="ads.html">Artisanat & création</a></li>
-                        <li><a href="ads.html">Garde d'enfants</a> </li>
-                        <li><a href="ads.html">Autre</a></li> 
-                    </ul>
-                </li> 
-                <li>
-                    <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
-                </li> 
-                <li>
-                    <a href="contact.html" class="nav-link">Contact</a>   
-                </li> 
-                <li>
-                    <a href="messenger.html" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
-                </li> 
-                <li class="na__link_dropdown" id="dropdown-link-user">
-                    <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
-                    <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
-                        <li>
-                            <a href="myProfile.html">Mon profil</a>
-                        </li>
-                        <li>
-                            <a href="parameters.html">Paramètres</a>
-                        </li>
-                        <li>
-                            <a href="connexion.html">Déconnexion</a>
-                        </li>
-                    </ul>   
-                </li> 
-            </ul>              
-        </nav>          
-    </header>
+    <header>
+           <nav class="na">
+               <input type="checkbox" id="burger-check">            
+               <a href="index.html" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a>
+               <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+               </button>              
+               <form class="na__form na__form--mobile na__form--unconnected">
+                   <div class="na__container_fields">
+                       <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
+                   </div>
+                   <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+               </form>
+               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
+                   <div class="offcanvas-header">
+                   <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.html"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
+                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                   </div>
+                   <div class="offcanvas-body small">
+                       <ul class="na__list--mobile">
+                           <li>
+                               <button class="link-annonces bg-transparent border-0" role="button"  aria-haspopup="true" aria-expanded="false" aria-label="Afficher les catégories d'annonces">Annonces <i class="fa-solid fa-chevron-down"></i></button>  
+                               <ul role="menuitem" class="p-0 na__dropdown na__dropdown_annonces">
+                                   <li><a href="ads.html">Ménage</a></li>
+                                   <li><a href="ads.html">Services à la personne</a></li>
+                                   <li><a href="ads.html">Rénovation & construction</a> </li>
+                                   <li><a href="ads.html">Jardinage & bricolage</a> </li>
+                                   <li><a href="ads.html">Réparation & maintenance</a></li>
+                                   <li><a href="ads.html">Informatique & administratif</a> </li>
+                                   <li><a href="ads.html">Cours & coaching</a> </li>
+                                   <li><a href="ads.html">Santé & bien-être</a> </li>
+                                   <li><a href="ads.html">Evenements & divertissements</a> </li>
+                                   <li><a href="ads.html">Animaux</a> </li>
+                                   <li><a href="ads.html">Artisanat & création</a></li>
+                                   <li><a href="ads.html">Garde d'enfants</a> </li>
+                                   <li><a href="ads.html">Autre</a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>  
+                           </li>
+                           <li>
+                               <a href="contact.html" class="nav-link">Contact</a>  
+                           </li>
+                           <li>
+                               <a href="connexion.html" class="nav-link button-primary-pill">Connexion</a>
+                           </li>
+                           <li>
+                               <a href="inscription.html" class="nav-link button-primary-pill">Inscription</a>
+                           </li>
+                       </ul>  
+                   </div>
+               </div>
+               <ul class="na__list p-0">
+                   <li class="dropdown-link-annonces">
+                       <button  class="bg-transparent border-0 link-annonces" aria-haspopup="true" aria-label="Ouvrir le sous-menu" aria-expanded="false">Annonces <i class="fa-solid fa-chevron-down"></i></button>  
+                       <ul role="menuitem" class="na__dropdown na__dropdown_annonces">
+                           <li><a href="ads.html">Ménage</a></li>
+                           <li><a href="ads.html">Services à la personne</a></li>
+                           <li><a href="ads.html">Rénovation & construction</a> </li>
+                           <li><a href="ads.html">Jardinage & bricolage</a> </li>
+                           <li><a href="ads.html">Réparation & maintenance</a></li>
+                           <li><a href="ads.html">Informatique & administratif</a> </li>
+                           <li><a href="ads.html">Cours & coaching</a> </li>
+                           <li><a href="ads.html">Santé & bien-être</a> </li>
+                           <li><a href="ads.html">Evenements & divertissements</a> </li>
+                           <li><a href="ads.html">Animaux</a> </li>
+                           <li><a href="ads.html">Artisanat & création</a></li>
+                           <li><a href="ads.html">Garde d'enfants</a> </li>
+                           <li><a href="ads.html">Autre</a></li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a href="creationAd.html" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>  
+                   </li>
+                   <li>
+                       <a href="contact.html" class="nav-link">Contact</a>  
+                   </li>
+                   <li>
+                       <a href="connexion.html" class="nav-link button-primary-outline"></i>Connexion</a>
+                   </li>
+                   <li>
+                       <a href="inscription.html" class="nav-link button-primary-pill"></i>Inscription</a>
+                   </li>
+               </ul>              
+           </nav>          
+       </header>
     <main>
         <section class="container-fluid container-f-inscription d-flex d-flex-column">
             <div class="container insscription-container justify-content-center align-items-center">
@@ -132,15 +110,15 @@
                                 <p class="link text-center fw-bolder">Vous êtes ?</p>
                                 <ul class="nav nav-pills nav-conx justify-content-around pb-4 pt-2 text-center" id="pills-tab" role="tablist">
                                     <li class="nav-item nav-item-conx">
-                                      <a class="nav-link active" id="pills-particulier-tab" data-bs-toggle="pill" data-bs-target="#pills-particulier" role="tab" aria-controls="pills-particulier" aria-selected="true">Particulier</a>
+                                      <a class="nav-link active" id="pills-particulier-tab" data-bs-toggle="pill" data-bs-target="#pills-particulier" tabindex="1" role="tab" aria-controls="pills-particulier" aria-selected="true">Particulier</a>
                                     </li>
                                     <li class="nav-item nav-item-conx">
-                                      <a class="nav-link" id="pills-entrepreneur-tab" data-bs-toggle="pill" data-bs-target="#pills-entrepreneur" role="tab" aria-controls="pills-entrepreneur" aria-selected="false">Auto-entrepreneur</a>
+                                      <a class="nav-link" id="pills-entrepreneur-tab" data-bs-toggle="pill" data-bs-target="#pills-entrepreneur" tabindex="1" role="tab" aria-controls="pills-entrepreneur" aria-selected="false">Auto-entrepreneur</a>
                                     </li>
                                     <li class="nav-item nav-item-conx">
-                                      <a class="nav-link" id="pills-entreprise-tab" data-bs-toggle="pill" data-bs-target="#pills-entreprise" role="tab" aria-controls="pills-entreprise" aria-selected="false">Entreprise</a>
+                                      <a class="nav-link" id="pills-entreprise-tab" data-bs-toggle="pill" data-bs-target="#pills-entreprise" tabindex="1" role="tab" aria-controls="pills-entreprise" aria-selected="false">Entreprise</a>
                                     </li>
-                                  </ul>
+                                </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <form class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                         <div class="form-row mb-0">
@@ -245,7 +223,7 @@
                                                 <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo">
                                             </div>
                                             <div class="col form-group">
-                                                <label for="email">Pseudo <span class="text-danger">*</span></label>
+                                                <label for="email">Adresse mail <span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control" id="email" placeholder="Votre Adresse mail">
                                             </div>
                                         </div>
