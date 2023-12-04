@@ -1,0 +1,12 @@
+#banniere-politique{
+    @include banniere-style;
+}
+
+#main-politique{
+    @include main-common-style;
+    min-height: 90vh;
+}
+
+#main-politique ul{
+    list-style-type: none;
+}
