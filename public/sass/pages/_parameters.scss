@@ -1,10 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
+
 #main-parametres {
-    margin-top: 7vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 92vh;
-    width: 100vw;
+    @include main-common-style;
 }
 .bannerParametres {
     height: 12vh;

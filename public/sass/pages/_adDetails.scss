@@ -1,3 +1,6 @@
+#main-details {
+  @include main-common-style;
+}
 #annonceDetails  {
     visibility: hidden;
 }
