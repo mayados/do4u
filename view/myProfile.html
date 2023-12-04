@@ -122,7 +122,7 @@
             </ul>              
         </nav>          
     </header>
-    <main class="container" id="main-container">
+    <main class="container" id="main-container-mine">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb fil-ariane">
               <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
@@ -163,16 +163,16 @@
         <section>
             <ul class="nav nav-underline row text-center mt-5">
                 <li class="nav-item col-3  offset-lg-2 col-lg-2 ">
-                    <a href="" class="nav-link active profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-annonces">Annonces</a>
+                    <button class="nav-link active profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-annonces">Annonces</button>
                 </li>
                 <li class="nav-item col-3  col-lg-2">
-                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-favoris">Favoris</a>
+                    <button  class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-favoris">Favoris</button>
                 </li>
                 <li class="nav-item col-2  col-lg-2">
-                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
+                    <button class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</button>
                 </li>
                 <li class="nav-item col-2  col-lg-2">
-                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-suivis">Suivis</a>
+                    <button class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-suivis">Suivis</button>
                 </li>
             </ul>
             <div class="tab-content mt-5" id="pills-tabContent">
@@ -537,7 +537,7 @@
                             </div>
                             <div class="container-dots-action">
                                 <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement1" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                <button class="signalement-action button-secondary-regular" id="signalement_avis1" data-bs-toggle="modal" data-bs-target="#signalement_modal1">Signaler</button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis1" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal1">Signaler</button>
                                 <div class="modal fade modal-z-index" id="signalement_modal1" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
@@ -582,7 +582,7 @@
                             </div>
                             <div class="container-dots-action">
                                 <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement2" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                <button class="signalement-action button-secondary-regular" id="signalement_avis2" data-bs-toggle="modal" data-bs-target="#signalement_modal2">Signaler</button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis2" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal2">Signaler</button>
                                 <div class="modal fade modal-z-index" id="signalement_modal2" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
