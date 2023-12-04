@@ -22,6 +22,14 @@
   border: solid 2px #1D838A;
 }
 
+.button-primary-regular:focus {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
 .button-primary-regular:hover i {
   color: #1D838A;
 }
@@ -42,6 +50,13 @@
 }
 
 .button-primary-pill:hover {
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
+.button-primary-pill:focus {
   background-color: #ffffff;
   color: #1D838A;
   font-weight: 600;
@@ -310,7 +325,7 @@
     align-items: center;
     right: 0;
     left: 0;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.125);
     padding: 0 2% 0 2%;
   }
 }
@@ -526,7 +541,7 @@ we declare all the :hover in a media. If the media doesn't correspond with :hove
 
 h1 {
   font-family: "Montserrat";
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2,
@@ -535,7 +550,7 @@ h3 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
@@ -567,6 +582,13 @@ p {
 .link {
   color: #E65A14;
   font-weight: 600;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #E65A14;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .icon {
@@ -612,6 +634,7 @@ label {
   margin-bottom: 0.5rem;
 }
 
+
 #main-details {
   margin-top: 7vh;
   padding-bottom: 7vh;
@@ -620,6 +643,11 @@ label {
   #main-details {
     margin-top: 15vh;
   }
+
+.p-orange {
+  color: #E65A14;
+  font-weight: 600;
+
 }
 
 #annonceDetails {
@@ -952,6 +980,7 @@ label {
 #main-conversation {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
   background-image: url("../img/back_conversation.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -1389,9 +1418,14 @@ label {
     padding: 25px;
   }
 }
+.tab-button:focus {
+  resize: 1.2;
+}
+
 #main-messenger {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
   background-image: url("../img/back_messaging.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -1539,13 +1573,14 @@ label {
   color: green;
 }
 
-#main-container {
+#main-container-mine {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
   min-height: 90vh;
 }
-@media (max-width: 768px) {
-  #main-container {
+@media (max-width: 992px) {
+  #main-container-mine {
     margin-top: 15vh;
   }
 }
@@ -1618,6 +1653,7 @@ label {
 
 .container-dots-action {
   position: relative;
+  height: 100%;
 }
 
 .signalement-action,
@@ -1721,6 +1757,18 @@ label {
   font-weight: 600;
 }
 
+#main-container-user {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  overflow-x: hidden;
+  min-height: 90vh;
+}
+@media (max-width: 992px) {
+  #main-container-user {
+    margin-top: 15vh;
+  }
+}
+
 #map {
   height: 40vh;
   z-index: 2;
@@ -1730,6 +1778,7 @@ label {
   padding: 2px 5px;
   border: 3px solid #1D838A;
   text-decoration: none;
+  height: 100%;
 }
 
 .vertical-dots i {
@@ -1740,6 +1789,15 @@ label {
   border: 2px solid #1D838A;
 }
 
+#ajout-avis:hover {
+  background-color: #1D838A;
+  border: 2px solid #1D838A;
+}
+
+#ajout-avis:hover p {
+  color: #ffffff;
+}
+
 /* CONTAINER FORM AVIS */
 #container-form-avis {
   border: 2px solid #1D838A;
@@ -1747,6 +1805,10 @@ label {
 }
 
 /* RATING */
+.rating input:focus-within .rating label i {
+  color: #E65A14;
+}
+
 .rating input {
   position: absolute;
   left: -9999px;
@@ -1789,9 +1851,10 @@ label {
 #main-cgu {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
   min-height: 90vh;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #main-cgu {
     margin-top: 15vh;
   }
@@ -1814,9 +1877,10 @@ label {
 #main-politique {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
   min-height: 90vh;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #main-politique {
     margin-top: 15vh;
   }
