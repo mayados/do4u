@@ -129,7 +129,7 @@
             </ul>              
         </nav>          
     </header>
-    <main class="container" id="main-container">
+    <main class="container" id="main-container-user">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="fil d'ariane">
             <ol class="breadcrumb fil-ariane">
               <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
@@ -159,11 +159,11 @@
                     <a href="" class="button-primary-regular text-decoration-none follow-user text-center"><i class="fa-solid fa-circle-plus"></i> Suivre</a>
                     <div class="container-dots-action h-100">
                         <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement2" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <button class="signalement-action button-secondary-regular" id="signalement_avis2" data-bs-toggle="modal" data-bs-target="#signalement_modal2">Signaler</button>
+                        <button class="signalement-action button-secondary-regular" id="signalement_avis2" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal2">Signaler</button>
                         <div class="modal fade modal-z-index" id="signalement_modal2" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header"> 
                                 <h2 class="modal-title fs-5 text-center" id="signalerAvis1">Signaler l'utilisateur</h2>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                                 </div>
@@ -196,13 +196,13 @@
         <section>
             <ul class="nav nav-underline display-flex justify-content-evenly mt-5">
                 <li class="nav-item ">
-                    <a href="" class="nav-link active profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-a-propos">A propos</a>
+                    <button class="nav-link active profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-a-propos">A propos</button>
                 </li>
                 <li class="nav-item ">
-                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-annonces-user">Annonces</a>
+                    <button class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-annonces-user">Annonces</button>
                 </li>
                 <li class="nav-item ">
-                    <a href="" class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</a>
+                    <button class="nav-link profile-tab-links fw-bold" data-bs-toggle="pill" data-bs-target="#pills-avis">Avis</button>
                 </li>
             </ul>
             <div class="tab-content mt-5" id="pills-tabContent">
@@ -412,32 +412,32 @@
                                 <span class="d-flex gap-2 mb-3">
                                     <label for="rating">Note :</label>
                                     <div class="rating" id="rating">
-                                        <input type="radio" id="star1" name="rating" value="1">
-                                        <label for="star1">
+                                        <input type="radio" id="star1" name="rating" value="1" tabindex="-1">
+                                        <label for="star1" role="button" tabindex="0">
                                             <span aria-hidden="true">1 étoile</span>
                                             <i class="fas fa-star"></i>
                                         </label>
                             
-                                        <input type="radio" id="star2" name="rating" value="2">
-                                        <label for="star2">
+                                        <input type="radio" id="star2" name="rating" value="2" tabindex="-1">
+                                        <label for="star2" role="button" tabindex="0">
                                             <span aria-hidden="true">2 étoiles</span>
                                             <i class="fas fa-star"></i>
                                         </label>
                             
-                                        <input type="radio" id="star3" name="rating" value="3">
-                                        <label for="star3">
+                                        <input type="radio" id="star3" name="rating" value="3" tabindex="-1">
+                                        <label for="star3" role="button" tabindex="0">
                                             <span aria-hidden="true">3 étoiles</span>
                                             <i class="fas fa-star"></i>
                                         </label>
                             
-                                        <input type="radio" id="star4" name="rating" value="4">
-                                        <label for="star4">
+                                        <input type="radio" id="star4" name="rating" value="4" tabindex="-1">
+                                        <label for="star4" role="button" tabindex="0">
                                             <span aria-hidden="true">4 étoiles</span>
                                             <i class="fas fa-star"></i>
                                         </label>
                             
-                                        <input type="radio" id="star5" name="rating" value="5">
-                                        <label for="star5">
+                                        <input type="radio" id="star5" name="rating" value="5" tabindex="-1">
+                                        <label for="star5" role="button" tabindex="0">
                                             <span aria-hidden="true">5 étoiles</span>
                                             <i class="fas fa-star"></i>
                                         </label>
@@ -471,7 +471,7 @@
                             </div>
                             <div class="container-dots-action">
                                 <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement3" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                <button class="signalement-action button-secondary-regular" id="signalement_avis3" data-bs-toggle="modal" data-bs-target="#signalement_modal3">Signaler</button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis3" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal3">Signaler</button>
                                 <div class="modal fade modal-z-index" id="signalement_modal3" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
@@ -516,7 +516,7 @@
                             </div>
                             <div class="container-dots-action">
                                 <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement4" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                <button class="signalement-action button-secondary-regular" id="signalement_avis4" data-bs-toggle="modal" data-bs-target="#signalement_modal4">Signaler</button>
+                                <button class="signalement-action button-secondary-regular" id="signalement_avis4" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal4">Signaler</button>
                                 <div class="modal fade modal-z-index" id="signalement_modal4" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
