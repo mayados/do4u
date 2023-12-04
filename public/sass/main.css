@@ -768,6 +768,16 @@ label {
   display: none;
 }
 
+#main-details {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+}
+@media (max-width: 768px) {
+  #main-details {
+    margin-top: 15vh;
+  }
+}
+
 .annonces {
   margin-top: 60px;
   margin-bottom: 10px;
