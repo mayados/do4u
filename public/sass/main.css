@@ -1,6 +1,8 @@
+/* mixins for main margin-top an padding bottom */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 .button-primary-regular {
   width: 100%;
   color: #ffffff;
@@ -292,6 +294,9 @@
   position: relative;
   display: flex;
 }
+.na__form--unconnected {
+  width: 25vw;
+}
 .na__container_fields {
   flex: 10;
 }
@@ -338,6 +343,12 @@
 .na__burger-menu {
   border: none;
   background-color: #ffffff;
+  display: none;
+}
+@media (max-width: 992px) {
+  .na__burger-menu {
+    display: block;
+  }
 }
 .na__burger-menu span {
   display: none;
@@ -668,6 +679,7 @@ label {
  height: 32px;
  color: $primary-color;
  */
+
 .details-date {
   position: relative;
   width: 382px;
@@ -925,6 +937,17 @@ label {
   position: absolute;
 }
 
+#main-conversation {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  background-image: url("../img/back_conversation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 92vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .figure-user-conversation {
   width: 100px;
   height: 100px;
@@ -941,15 +964,6 @@ label {
   width: 100%;
 }
 
-#main-conversation {
-  margin-top: 7vh;
-  background-image: url("../img/back_conversation.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 92vh;
-  width: 100vw;
-}
-
 #section-top-conversation {
   background-color: #1D838A;
 }
@@ -960,6 +974,11 @@ label {
 
 #conversation-area {
   background-color: #ffffff;
+}
+
+#conversation-scrollable {
+  height: 50vh;
+  overflow-y: auto;
 }
 
 .correspondant-message,
@@ -1002,7 +1021,15 @@ label {
 }
 
 #fileInput {
-  display: none;
+  position: absolute;
+  top: 0;
+  right: -999;
+}
+
+#container-input-file:focus-within label,
+#container-submit-message:focus-within {
+  background-color: #E65A14;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -1022,6 +1049,10 @@ label {
 
 .user-conversation-top-icon {
   font-size: 1.5rem;
+}
+
+#container-dots-action-conversation {
+  position: relative;
 }
 
 .creation {
@@ -1348,6 +1379,7 @@ label {
 }
 #main-messenger {
   margin-top: 7vh;
+  padding-bottom: 7vh;
   background-image: url("../img/back_messaging.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -1356,12 +1388,37 @@ label {
 }
 
 #banniere-messenger {
-  height: 15vh;
+  min-height: 15vh;
   background-color: #1D838A;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+@media (max-width: 992px) {
+  #banniere-messenger {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+}
+
+.menu-actions-messenger li a:hover {
+  color: #E65A14;
+}
+
+.menu-actions-messenger {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.125);
 }
 
 .message-card {
   border-bottom: 2px solid #1D838A;
+}
+
+.message-card:hover {
+  border-bottom: 2px solid #E65A14;
 }
 
 .figure-message {
@@ -1375,6 +1432,15 @@ label {
 @media (max-width: 768px) {
   .figure-message img {
     width: 75px;
+  }
+}
+
+#back-banniere-messenger {
+  background-color: rgba(255, 0, 0, 0);
+}
+@media (max-width: 992px) {
+  #back-banniere-messenger {
+    background-color: white;
   }
 }
 
@@ -1538,6 +1604,34 @@ label {
   color: #E65A14;
 }
 
+.container-dots-action {
+  position: relative;
+}
+
+.signalement-action,
+.signalement-action--active,
+.signalement-action:hover,
+.signalement-action--active:hover {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.signalement-action {
+  position: absolute;
+  top: 0;
+  right: -9999px;
+}
+
+.signalement-action--active {
+  right: 2rem;
+}
+
+.categorie-avis-links {
+  text-decoration: none;
+  color: #E65A14;
+  font-weight: bold;
+}
+
 #main-parametres {
   margin-top: 7vh;
   background-repeat: no-repeat;
@@ -1553,7 +1647,9 @@ label {
 }
 
 #title-parametres {
+  font-family: Monserrat;
   font-size: 24px;
+  font-weight: bold;
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -1561,19 +1657,54 @@ label {
   transform: translate(-50%, -50%);
 }
 
+#profile-block {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+}
+
 #photo-parametres {
   width: 128px;
   height: 128 px;
   border-radius: 50%;
-  position: absolute;
-  top: 80%;
-  left: 5%;
 }
 
 #photo-parametres img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+#choose-photo {
+  color: #3a3a3a;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  height: 42px;
+  width: 146px;
+}
+
+.parametres-content {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+#bio {
+  height: 152px;
+}
+
+.btn-parametres {
+  width: 298px;
+  height: 44px;
+  color: #ffffff;
+  background-color: #1D838A;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 2px #1D838A;
+  align-items: center;
+  font-weight: 600;
 }
 
 #map {
@@ -1629,4 +1760,54 @@ label {
 
 .follow-user i {
   color: #ffffff;
+}
+
+#banniere-cgu {
+  min-height: 15vh;
+  background-color: #1D838A;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#main-cgu {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  min-height: 90vh;
+}
+@media (max-width: 768px) {
+  #main-cgu {
+    margin-top: 15vh;
+  }
+}
+
+#main-cgu ul {
+  list-style-type: none;
+}
+
+#banniere-politique {
+  min-height: 15vh;
+  background-color: #1D838A;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#main-politique {
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  min-height: 90vh;
+}
+@media (max-width: 768px) {
+  #main-politique {
+    margin-top: 15vh;
+  }
+}
+
+#main-politique ul {
+  list-style-type: none;
 }/*# sourceMappingURL=main.css.map */

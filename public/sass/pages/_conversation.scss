@@ -1,3 +1,13 @@
+#main-conversation{
+    @include main-without-mobile-searchbar;
+    background-image: url("../img/back_conversation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 92vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 .figure-user-conversation{
     width: 100px;
     height: 100px;
@@ -12,15 +22,6 @@
     width: 100%;
 }
 
-#main-conversation{
-    margin-top: 7vh;
-    background-image: url("../img/back_conversation.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 92vh;
-    width: 100vw;
-}
-
 #section-top-conversation{
     background-color: $primary-color;
 }
@@ -31,6 +32,11 @@
 
 #conversation-area{
     background-color: $white-color;
+}
+
+#conversation-scrollable{
+    height: 50vh; 
+    overflow-y: auto;   
 }
 
 .correspondant-message,
@@ -71,7 +77,16 @@
 }
 
 #fileInput{
-    display: none;
+    position: absolute;
+    top: 0;
+    right: -999;
+}
+
+
+#container-input-file:focus-within label,
+#container-submit-message:focus-within{
+    background-color: $secondary-color;
+    border-radius: 5px;
 }
 
 #user-conversation{
@@ -89,4 +104,8 @@
 
 .user-conversation-top-icon{
     font-size: 1.5rem;
+}
+
+#container-dots-action-conversation{
+    position: relative;
 }

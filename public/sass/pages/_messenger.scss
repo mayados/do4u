@@ -1,5 +1,5 @@
 #main-messenger{
-    margin-top: 7vh;
+    @include main-without-mobile-searchbar;
     background-image: url("../img/back_messaging.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,12 +8,29 @@
 }
 
 #banniere-messenger{
-    height: 15vh;
-    background-color: $primary-color;
+    @include banniere-style;
+    border-bottom-left-radius: 25%; 
+    border-bottom-right-radius: 25%; 
+    @media (max-width: 992px){
+        border-bottom-left-radius: 50%; 
+        border-bottom-right-radius: 50%; 
+    } 
+}
+
+.menu-actions-messenger li a:hover{
+    color: $secondary-color;
+}
+
+.menu-actions-messenger {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.125); 
 }
 
 .message-card{
     @include blue-border-bottom;
+}
+
+.message-card:hover{
+    border-bottom: 2px solid $secondary-color;
 }
 
 .figure-message{
@@ -28,4 +45,11 @@
     @media (max-width: 768px){
         width: 75px;
     }    
+}
+
+#back-banniere-messenger{
+    background-color: rgba(255, 0, 0, 0);
+    @media (max-width: 992px){
+        background-color: white;
+    }   
 }

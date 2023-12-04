@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
 #main-parametres {
     margin-top: 7vh;
     background-repeat: no-repeat;
@@ -11,21 +12,24 @@
     position: relative;
 }
 #title-parametres {
+    font-family: Monserrat  ;
     font-size: 24px;
+    font-weight: bold;
     color: $white-color;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#profile-block {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+}
 #photo-parametres {
     width: 128px;
     height: 128 px;
     border-radius: 50%;
-    position: absolute;
-    top: 80%;
-    left: 5%;
-    
     
 }
 #photo-parametres img {
@@ -33,3 +37,33 @@
     height: 100%;
     border-radius: 50%;
     }
+
+#choose-photo {
+    color: $text-color;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid $text-color;
+    border-radius: 8px;
+    height: 42px;
+    width: 146px;
+}
+.parametres-content {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+   
+}
+#bio {
+    height: 152px;
+}
+.btn-parametres {
+    width: 298px;
+    height: 44px;
+    color: $white-color;
+    background-color: $primary-color;
+    justify-content: center;
+    padding: 5px; 
+    border-radius: 5px;
+    border: solid 2px $primary-color;
+    align-items: center;
+    font-weight: 600;
+  }

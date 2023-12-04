@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Politique de confidentialité</title>
+    <link rel="icon" href="../public/img/logo_do4u.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/sass/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
 </head>
 <body>
     <header> 
@@ -123,215 +129,80 @@
             </ul>              
         </nav>          
     </header>
-    <main id="main-details">
-        <h1 id="annonceDetails">Page de details d'une annonce</h1>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-12">
-                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a class="link" href="../view/index.html">Accueil</a></li>
-                              <li class="breadcrumb-item"><a class="link" href="../view/ads.html">Offres</a></li>
-                              <li class="breadcrumb-item"><a class="link" href="#">Aide à
-                                domicile</a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Service à la personne</li>
-                            </ol>
-                          </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="image-container">
-                            <img src="../public/img/affection-spouses 546x364.jpg" alt="Soutien">
-                            <div class="overlay-text">Offre</div>                            
-                        </div>
-                        <div class="d-flex flex-row justify-content-between align-items-center" style="width: 569px;">
-                            <span class="user-type">Particulier</span>
-                            <div class="report" role="alert">
-                                <a class="text-decoration-none" href="../view/contact.html">
-                                    <i class="fa-regular fa-flag fa-xl"></i>
-                                </a>  
-                                <span class="badge text-wrap" style="width: 5rem;">
-                                    <a class="alert-link link-danger text-decoration-none" href="../view/contact.html">Signaler un problème</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="card details">
-                            <div class="details-top">
-                                <i class="fa-regular fa-heart fa-2x" style="color: #1D838A;"></i>
-                                <span class="details-date">Publieé 25 octobre 2023</span>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title details-title">Service à la personne</h3>
-                                <p class="card-text details-price">20 €</p>
-                            </div>
-                        </div>
-                        <div class="card details mt-2">
-                            <div class="card-body"> 
-                                <div class="flex-lg-row d-flex flex-wrap justify-content-between">
-                                    <figure id="photo-user">
-                                        <a href="../view/myProfile.html">
-                                            <img src="../public/img/woman_face.jpg" alt="Photo d'un utilisateur">
-                                        </a>
-                                    </figure>  
-                                    <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-start">
-                                        <h3 class="card-title-1">Lola</h3>
-                                        <p><i class="fa-solid fa-star" style="color: #E9AD10;"></i> 4/5 8 avis</p>
-                                    </div>
-                                    <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-end offset-sm-6">
-                                        <a href="../view/myProfile.html"><i class="fa-solid fa-chevron-right fa-2x"></i></a>
-                                    </div>
-                                </div>
-                                <a href="../view/messenger.html" class="btn-message">Message</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <hr class="border-1 mt-3 mb-3">
-                </div>
-            </div>
+    <main id="main-politique">
+        <div id="banniere-politique">
+            <h1>Politique de confidentialité</h1>            
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <article class="adDescription">
-                        <h3>Service à la personne</h3>
-                        <h4>Description</h4>
-                        <p class="text-wrap">
-                            Dame sérieuse et expérimentée, avec références, patiente, compréhensive, propose aide à personnes
-                            âgées ou nécessiteuses :
-                        </p>
-                        <p>- Toilette </p>
-                        <p>- Préparation des repas</p> 
-                        <p>- Courses </p>
-                        <p>- Petit ménage </p>
-                        <p>- Promenade </p>
-                        <p>Tarif horaire: 20 Euros </p>
-                        <p>Mode de paiement: chèque emploi service (CESU), ou chèque</p>
-                        <p>Disponible immédiatement du lundi au vendredi de 8h00 à 17h</p>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <p><i class="fa-solid fa-location-dot"></i> Strasbourg</p>
-                    <div class="google-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84483.99339057549!2d7.6796785820062246!3d48.56915859869495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg!5e0!3m2!1sen!2sfr!4v1701556481657!5m2!1sen!2sfr" width="383" height="197" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- section with ads cards-->
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-12">
-                        <div class="line-divider mt-3 mb-4"></div>
-                        <div class="d-flex justify-content-end align-items-center mt-3 mb-3 p-2 gap-2">
-                            <a class="link" href="../view/ads.html">Voir plus d'offres</a>
-                            <i class="fa-solid fa-arrow-right fa-xl"></i>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                    <!-- Card 1 -->
-                    <div class="col mb-4">
-                      <div class="card position-relative">
-                          <img src="../public/img/Img_page_ads/soin.jpg" class="card-img-top" alt="...">
-                          <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute ">Offre</p>
-                          </div>
-                          <div class="card-body">
-                              <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                              <p><i class="bi bi-person"></i> Entreprise</p>
-                              <p><i class="bi bi-currency-euro"></i> 40€/H</p>
-                              <p><i class="bi bi-folder"></i> Santé et bien-être</p>
-                              <p>
-                                  <img src="../public/img/Img_page_ads/avatar9.webp" class="rounded-circle" width="30" alt="Avatar">
-                                  Margaux <i class="bi bi-star icon-etoile"></i> 4/5 19 avis
-                              </p>
-                              <p><i class="bi bi-geo-alt"></i> Strasbourg</p>
-                          </div>
-                      </div>
-                  </div>
-                    <!-- Card 2 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/chien.jpg" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-ro p-1 text-white mt-5 align-self-end position-absolute">Demande</p>
-                          </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Faire garder mon chien par une aide à domicile</h5>
-                              <p><i class="bi bi-person"></i> Paticulier</p>
-                              <p><i class="bi bi-currency-euro"></i>20€/H</p>
-                              <p><i class="bi bi-folder"></i> Animaux</p>
-                              <p> <img src="../public/img/Img_page_ads/avatar7.webp" class="rounded-circle" width="30"> Hugo <i class="bi bi-star icon-etoile"></i> 4/5 2avis</p> 
-                              <p> <i class="bi bi-geo-alt"></i>  Lyon</p>
-                              </div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/cuisine.jpg" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                          </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Un chef privé s'occupe de tout pour vous</h5>
-                                <p><i class="bi bi-person"></i> Paticulier</p>
-                                <p><i class="bi bi-currency-euro"></i>50€/H</p>
-                                <p><i class="bi bi-folder"></i>  Service à la personne</p>
-                                <p> <img src="../public/img/Img_page_ads/avatar6.webp" class="rounded-circle" width="30"> Eric  <i class="bi bi-star icon-etoile"></i> 5/5 23 avis</p> 
-                                <p> <i class="bi bi-geo-alt"></i>  Nice</p>
-                              </div>
-                          </div>
-                        </div>
-                    <!-- Card 4 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/enfant.webp" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                          </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Jeune etudiante cherche à garder vos enfants</h5>
-                                <p><i class="bi bi-person"></i> Paticulier</p>
-                                <p><i class="bi bi-currency-euro"></i> 20€/H</p>
-                                <p><i class="bi bi-folder"></i> Enfant</p>
-                                <p> <img src="../public/img/Img_page_ads/avatar1.webp" class="rounded-circle" width="30">  Claire  <i class="bi bi-star icon-etoile"></i> 4/5 8 avis</p> 
-                                <p> <i class="bi bi-geo-alt"></i> Montpeillier</p>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="container pt-2">
+            <p>Date de la dernière mise à jour : 4 décembre 2023</p>
+            <h2>Introduction</h2>
+            <p>
+                Bienvenue sur Do4U ("nous", "notre", "nos"). Nous accordons une grande importance à la protection de la vie privée de nos utilisateurs. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous utilisez Do4U (le "Service").
+            </p>
+            <h2>Informations Personnelles Collectées à l'Inscription</h2>
+            <h3>1. Particuliers</h3>
+            <p>Les particuliers fournissent les informations suivantes à l'inscription :</p>
+            <ul>
+                <li>Nom</li>
+                <li>Prénom</li>
+                <li>Mot de passe</li>
+                <li>Adresse e-mail</li>
+                <li>Pseudo</li>
+                <li>Lieu de vie</li>
+            </ul>
+            <p>
+                Ces informations permettent aux utilisateurs de voir si d'autres personnes sont proches géographiquement lorsqu'elles se contactent par messagerie.
+            </p>
+            <h3>2. Auto-entrepreneurs</h3>
+            <p>Les auto-entrepreneurs fournissent les mêmes informations que les particuliers à l'inscription.</p>
+            <h3>3. Entreprises</h3>
+            <p>Les entreprises fournissent les informations suivantes à l'inscription :</p>
+            <ul>
+                <li>Nom de l'entreprise</li>
+                <li>Nom de contact</li>
+                <li>Prénom de contact</li>
+                <li>Adresse e-mail</li>
+            </ul>
+            <h2>Utilisation des Informations</h2>
+            <p>
+                Nous utilisons les informations collectées pour fournir, maintenir, protéger et améliorer notre Service, ainsi que pour développer de nouveaux services.
+            </p>
+            <h2>Partage des Informations</h2>
+            <p>
+                Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers sans votre consentement, sauf dans les cas décrits dans cette politique de confidentialité.
+            </p>
+            <h2>Images Libres de Droits</h2>
+            <p>
+                Certaines images utilisées sur notre site sont des images libres de droits fournies par Freepik.
+            </p>
+            <h2>Sécurité des Informations</h2>
+            <p>
+                Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos informations personnelles contre la perte, l'accès non autorisé, la divulgation, l'altération et la destruction.
+            </p>
+            <h2>Cookies et Technologies Similaires</h2>
+            <p>
+                Notre Service peut utiliser des cookies et des technologies similaires pour collecter et stocker des informations lorsque vous visitez notre site.
+            </p>
+            <h2>Liens vers des Sites Tiers</h2>
+            <p>
+                Notre Service peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables des pratiques de confidentialité de ces sites. Nous vous encourageons à consulter les politiques de confidentialité de ces sites.
+            </p>
+            <h2>Exercice des Droits RGPD</h2>
+            <p>
+                Les utilisateurs peuvent utiliser notre page de contact pour faire valoir leurs droits en vertu du Règlement Général sur la Protection des Données (RGPD).
+            </p>
+            <h2>Modifications de la Politique de Confidentialité</h2>
+            <p>
+                Nous nous réservons le droit de mettre à jour ou de modifier notre politique de confidentialité à tout moment. Les modifications prendront effet dès leur publication sur le site.
+            </p>
+
+            <ul>
+                <li>Mentions légales</li>
+                <li>Do4U</li>
+                <li>109 rue ABC, Strasbourg, France</li>
+                <li>03 67 67 67</li>
+                <li>do4u@gmail.com</li>
+            </ul>
         </section>
     </main>
     <footer class="footer-element pt-5">
@@ -397,6 +268,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/js/script.js"></script>
-    
-</body>
+    </body>
 </html>
