@@ -50,7 +50,17 @@ p{
 .link{
     color: $secondary-color;
     font-weight: 600;
+    text-decoration: underline;
  }
+ .link:hover{
+  color: $secondary-color;
+  font-weight: 600;
+  text-decoration: underline;
+ }
+
+// .link:visited{
+//   color: $primary-color;
+// }
 
  .icon{
     color: $primary-color;
@@ -95,4 +105,8 @@ p{
   
   label {
     margin-bottom: 0.5rem;
+  }
+  .p-orange{
+    color: $secondary-color;
+    font-weight: 600;
   }
