@@ -1,16 +1,16 @@
-// mixin pour les liens
+// mixin for links
 @mixin links-style{
     text-decoration: none;
     color: $secondary-color;
     font-weight: bold;
 }
 
-//mixin pour les border bottom communes
+//mixin for common border bottom
 @mixin blue-border-bottom{
     border-bottom: 2px solid $primary-color;
 }
 
-//mixin pour les bannieres
+//mixin for banners
 @mixin banniere-style{
     min-height: 15vh;
     background-color: $primary-color;

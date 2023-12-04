@@ -50,7 +50,7 @@ function displayResponsiveVue() {
     function handleFooterInteraction(event) {
       if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
 
-        // Logique commune pour le clic et la touche "Entrée"
+        // Common logical for the clic and "enter" key
         categoriesList.classList.toggle('show-footer-list');
         event.preventDefault();
        
@@ -65,8 +65,6 @@ function displayResponsiveVue() {
   displayResponsiveFooter();
 
   }
-
-  
 
 }
 
@@ -104,15 +102,11 @@ if(etoilesLabel){
                 }
               }
             }
-
             etoileLabel.addEventListener('click', handleRating);
             etoileLabel.addEventListener('keydown', handleRating);
-
         });    
     }
-
     ratingProfile();
-
 }
 
   let avis = document.querySelector('#ajout-avis');  
@@ -126,7 +120,6 @@ if(etoilesLabel){
       
       function handleAvisInterraction(event) {
         if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
-          // event.preventDefault();
           console.log("click avis")
           formulaireAvis.style.display='block';
           // Like Bootstrap is used, there is a conflict with class d-flex and display none property, so we add bootstrap class d-none and remove it later
