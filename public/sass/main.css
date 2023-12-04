@@ -23,6 +23,14 @@
   border: solid 2px #1D838A;
 }
 
+.button-primary-regular:focus {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
 .button-primary-regular:hover i {
   color: #1D838A;
 }
@@ -43,6 +51,13 @@
 }
 
 .button-primary-pill:hover {
+  background-color: #ffffff;
+  color: #1D838A;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
+.button-primary-pill:focus {
   background-color: #ffffff;
   color: #1D838A;
   font-weight: 600;
@@ -568,6 +583,13 @@ p {
 .link {
   color: #E65A14;
   font-weight: 600;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #E65A14;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .icon {
@@ -611,6 +633,11 @@ p {
 }
 label {
   margin-bottom: 0.5rem;
+}
+
+.p-orange {
+  color: #E65A14;
+  font-weight: 600;
 }
 
 #annonceDetails {
@@ -766,16 +793,6 @@ label {
 
 #more {
   display: none;
-}
-
-#main-details {
-  margin-top: 7vh;
-  padding-bottom: 7vh;
-}
-@media (max-width: 768px) {
-  #main-details {
-    margin-top: 15vh;
-  }
 }
 
 .annonces {
