@@ -142,7 +142,7 @@ if(signalements){
     });
   });  
 }
-
+// Sevilia: function to display btn Voir plus - page adDetails
 function voirPlus() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
