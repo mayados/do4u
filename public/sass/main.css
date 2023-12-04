@@ -713,12 +713,6 @@ label {
   height: 45px;
 }
 
-/* .fa-regular .fa-heart {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  color: $primary-color;  
-} */
 .details-date {
   position: relative;
   width: 382px;
@@ -806,6 +800,11 @@ label {
 
 #more {
   display: none;
+}
+
+#myBtn {
+  border: none;
+  background-color: #ffffff;
 }
 
 .annonces {
