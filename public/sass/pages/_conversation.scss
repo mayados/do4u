@@ -1,3 +1,13 @@
+#main-conversation{
+    @include main-without-mobile-searchbar;
+    background-image: url("../img/back_conversation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 92vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 .figure-user-conversation{
     width: 100px;
     height: 100px;
@@ -10,15 +20,6 @@
 .figure-user-conversation img{
     height: 100%;
     width: 100%;
-}
-
-#main-conversation{
-    margin-top: 7vh;
-    background-image: url("../img/back_conversation.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 92vh;
-    width: 100vw;
 }
 
 #section-top-conversation{
@@ -34,8 +35,8 @@
 }
 
 #conversation-scrollable{
-    height: 50vh; /* Hauteur fixe de la section */
-    overflow-y: auto; /* Activation du défilement vertical si nécessaire */    
+    height: 50vh; 
+    overflow-y: auto;   
 }
 
 .correspondant-message,
