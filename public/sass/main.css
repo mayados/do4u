@@ -634,20 +634,20 @@ label {
   margin-bottom: 0.5rem;
 }
 
+.p-orange {
+  color: #E65A14;
+  font-weight: 600;
+}
 
 #main-details {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #main-details {
     margin-top: 15vh;
   }
-
-.p-orange {
-  color: #E65A14;
-  font-weight: 600;
-
 }
 
 #annonceDetails {
@@ -1683,8 +1683,9 @@ label {
 #main-parametres {
   margin-top: 7vh;
   padding-bottom: 7vh;
+  overflow-x: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #main-parametres {
     margin-top: 15vh;
   }
@@ -1710,7 +1711,7 @@ label {
 #profile-block {
   position: absolute;
   top: 80%;
-  left: 5%;
+  left: 11%;
 }
 
 #photo-parametres {
