@@ -37,14 +37,9 @@
     color: green;
 }
 
-#main-container{
-    margin-top: 7vh;
-    padding-bottom: 7vh;
+#main-container-mine{
+    @include main-common-style;
     min-height: 90vh;
-
-    @media (max-width: 768px){
-        margin-top: 15vh;
-    }    
 }
 
 .fa-plus{
@@ -120,6 +115,7 @@
 
 .container-dots-action{
     position: relative;
+    height: 100%;
 }
 
 .signalement-action,
