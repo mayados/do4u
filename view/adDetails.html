@@ -218,7 +218,9 @@
                         <p>- Promenade </p>
                         <p>Tarif horaire: 20 Euros </p>
                         <p>Mode de paiement: chèque emploi service (CESU), ou chèque</p>
-                        <p>Disponible immédiatement du lundi au vendredi de 8h00 à 17h</p>
+                        <p>Disponible immédiatement du lundi au vendredi de 8h00 à 17h
+                            <span id="dots">...</span><span id="more">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                        <button onclick="voirPlus()" id="myBtn" class="link">Voir plus</button>
                     </article>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -242,93 +244,242 @@
                         
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <!-- Card 1 -->
-                    <div class="col mb-4">
-                      <div class="card position-relative">
-                          <img src="../public/img/Img_page_ads/soin.jpg" class="card-img-top" alt="...">
-                          <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute ">Offre</p>
-                          </div>
-                          <div class="card-body">
-                              <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                              <p><i class="bi bi-person"></i> Entreprise</p>
-                              <p><i class="bi bi-currency-euro"></i> 40€/H</p>
-                              <p><i class="bi bi-folder"></i> Santé et bien-être</p>
-                              <p>
-                                  <img src="../public/img/Img_page_ads/avatar9.webp" class="rounded-circle" width="30" alt="Avatar">
-                                  Margaux <i class="bi bi-star icon-etoile"></i> 4/5 19 avis
-                              </p>
-                              <p><i class="bi bi-geo-alt"></i> Strasbourg</p>
-                          </div>
-                      </div>
-                  </div>
+                    <div class="col">
+                        <a href="" class="card-link">
+                            <div class="card h-100 card-ad">
+                                <div class="position-relative">
+                                    <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                    <div class="offer-badge">
+                                        <span class="offer-badge">Offer</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="heart-icon fa-lg">
+                                        <i class="icon fa-regular fa-heart"></i>
+                                    </div>
+                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Auto entrepreneur</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-euro-sign"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>30€/H</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-folder"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Santé et bien-etre</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Strasbourg</span>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
+                    </div>
                     <!-- Card 2 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/chien.jpg" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-ro p-1 text-white mt-5 align-self-end position-absolute">Demande</p>
-                          </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Faire garder mon chien par une aide à domicile</h5>
-                              <p><i class="bi bi-person"></i> Paticulier</p>
-                              <p><i class="bi bi-currency-euro"></i>20€/H</p>
-                              <p><i class="bi bi-folder"></i> Animaux</p>
-                              <p> <img src="../public/img/Img_page_ads/avatar7.webp" class="rounded-circle" width="30"> Hugo <i class="bi bi-star icon-etoile"></i> 4/5 2avis</p> 
-                              <p> <i class="bi bi-geo-alt"></i>  Lyon</p>
-                              </div>
-                        </div>
+                    <div class="col">
+                        <a href="" class="card-link">
+                            <div class="card h-100 card-ad">
+                                <div class="position-relative">
+                                    <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                    <div class="offer-badge">
+                                        <span class="offer-badge">Offer</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="heart-icon fa-lg">
+                                        <i class="icon fa-regular fa-heart"></i>
+                                    </div>
+                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Auto entrepreneur</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-euro-sign"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>30€/H</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-folder"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Santé et bien-etre</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Strasbourg</span>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
                     </div>
                     <!-- Card 3 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/cuisine.jpg" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                          </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Un chef privé s'occupe de tout pour vous</h5>
-                                <p><i class="bi bi-person"></i> Paticulier</p>
-                                <p><i class="bi bi-currency-euro"></i>50€/H</p>
-                                <p><i class="bi bi-folder"></i>  Service à la personne</p>
-                                <p> <img src="../public/img/Img_page_ads/avatar6.webp" class="rounded-circle" width="30"> Eric  <i class="bi bi-star icon-etoile"></i> 5/5 23 avis</p> 
-                                <p> <i class="bi bi-geo-alt"></i>  Nice</p>
-                              </div>
-                          </div>
-                        </div>
+                    <div class="col">
+                        <a href="" class="card-link">
+                            <div class="card h-100 card-ad">
+                                <div class="position-relative">
+                                    <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                    <div class="offer-badge">
+                                        <span class="offer-badge">Offer</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="heart-icon fa-lg">
+                                        <i class="icon fa-regular fa-heart"></i>
+                                    </div>
+                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Auto entrepreneur</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-euro-sign"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>30€/H</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-folder"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Santé et bien-etre</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Strasbourg</span>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
+                    </div>
                     <!-- Card 4 -->
-                    <div class="col mb-4">
-                        <div class="card position-relative">
-                            <img src="../public/img/Img_page_ads/enfant.webp" class="card-img-top" alt="...">
-                            <div class="card-img-overlay d-flex flex-column">
-                              <!-- Contenu de la carte -->
-                              <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                  <i class="bi bi-heart favo"></i>
-                              </div>
-                              <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                          </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Jeune etudiante cherche à garder vos enfants</h5>
-                                <p><i class="bi bi-person"></i> Paticulier</p>
-                                <p><i class="bi bi-currency-euro"></i> 20€/H</p>
-                                <p><i class="bi bi-folder"></i> Enfant</p>
-                                <p> <img src="../public/img/Img_page_ads/avatar1.webp" class="rounded-circle" width="30">  Claire  <i class="bi bi-star icon-etoile"></i> 4/5 8 avis</p> 
-                                <p> <i class="bi bi-geo-alt"></i> Montpeillier</p>
-                              </div>
-                        </div>
+                    <div class="col">
+                        <a href="" class="card-link">
+                            <div class="card h-100 card-ad">
+                                <div class="position-relative">
+                                    <img src="../public/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                    <div class="offer-badge">
+                                        <span class="offer-badge">Offer</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="heart-icon fa-lg">
+                                        <i class="icon fa-regular fa-heart"></i>
+                                    </div>
+                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Auto entrepreneur</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-euro-sign"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>30€/H</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-regular fa-folder"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Santé et bien-etre</span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="">
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-1">
+                                            <i class="icon fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="col ps-3">
+                                            <span>Strasbourg</span>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
