@@ -9,3 +9,32 @@
 @mixin blue-border-bottom{
     border-bottom: 2px solid $primary-color;
 }
+
+//mixin pour les bannieres
+@mixin banniere-style{
+    min-height: 15vh;
+    background-color: $primary-color;
+    color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* mixins for main margin-top an padding bottom */
+
+// main with common header
+@mixin main-common-style{
+    margin-top: 7vh;
+    padding-bottom: 7vh;
+
+    @media (max-width: 768px){
+        margin-top: 15vh;
+    } 
+}
+
+//main without searchbar on responsive
+@mixin main-without-mobile-searchbar{
+    margin-top: 7vh;
+    padding-bottom: 7vh;
+}
