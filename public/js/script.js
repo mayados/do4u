@@ -1,68 +1,55 @@
 function displayResponsiveVue() {
 
-  if (window.innerWidth < 769){
-  /* Display nav links on mobiles and pads */
-  function displayNavList() {
-      const navList = document.querySelector('.na__list');
-      const burger = document.querySelector('.na__burger-menu');
-      console.log(burger);
-    
-      burger.addEventListener('click', (event) => {    
-        navList.classList.toggle('show-list');
+  if (window.innerWidth < 992){
+
+    /* Display accordeon menu responsive annonces */
+    function displayAnnonces() {
+      const categories = document.querySelector('.na__dropdown_annonces');
+      const linkAnnonces = document.querySelector('.link-annonces');
+      console.log(linkAnnonces);
+
+      linkAnnonces.addEventListener('click', (event) => {    
+        console.log("click");
+        categories.classList.toggle('na__dropdown_annonces--active');
       });    
     } 
+
+    displayAnnonces();
+
+    /* Display accordeon menu responsive user parameters */
+    function displayUserParameters() {
+      const user = document.querySelector('.user-link');
+      const dropdownUser = document.querySelector('.na__dropdown_user');
+      console.log(dropdownUser);
+
+      user.addEventListener('click', (event) => {    
+        console.log("click");
+        dropdownUser.classList.toggle('na__dropdown_user--active');
+      });    
+    } 
+
+    displayUserParameters(); 
+
+    function displayResponsiveFooter() {
+      const footerCategoriesMenu = document.querySelector('.footer-element__categories');
+      const categoriesList = document.querySelector('.footer-element__dropdown');
     
-  displayNavList();
+      function handleFooterInteraction(event) {
+        if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
 
-
-  /* Display accordeon menu responsive annonces */
-  function displayAnnonces() {
-    const categories = document.querySelector('.na__dropdown_annonces');
-    const linkAnnonces = document.querySelector('.link-annonces');
-    console.log(linkAnnonces);
-
-    linkAnnonces.addEventListener('click', (event) => {    
-      console.log("click");
-      categories.classList.toggle('na__dropdown_annonces--active');
-    });    
-  } 
-
-  displayAnnonces();
-
-  /* Display accordeon menu responsive user parameters */
-  function displayUserParameters() {
-    const user = document.querySelector('.user-link');
-    const dropdownUser = document.querySelector('.na__dropdown_user');
-    console.log(dropdownUser);
-
-    user.addEventListener('click', (event) => {    
-      console.log("click");
-      dropdownUser.classList.toggle('na__dropdown_user--active');
-    });    
-  } 
-
-  displayUserParameters(); 
-
-  function displayResponsiveFooter() {
-    const footerCategoriesMenu = document.querySelector('.footer-element__categories');
-    const categoriesList = document.querySelector('.footer-element__dropdown');
-  
-    function handleFooterInteraction(event) {
-      if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
-
-        // Common logical for the clic and "enter" key
-        categoriesList.classList.toggle('show-footer-list');
-        event.preventDefault();
-       
+          // Common logical for the clic and "enter" key
+          categoriesList.classList.toggle('show-footer-list');
+          event.preventDefault();
+        
+        }
       }
+    
+      // in function of the type of event, we redirect to the function
+      footerCategoriesMenu.addEventListener('click', handleFooterInteraction);
+      footerCategoriesMenu.addEventListener('keydown', handleFooterInteraction);
     }
-  
-    // in function of the type of event, we redirect to the function
-    footerCategoriesMenu.addEventListener('click', handleFooterInteraction);
-    footerCategoriesMenu.addEventListener('keydown', handleFooterInteraction);
-  }
 
-  displayResponsiveFooter();
+    displayResponsiveFooter();
 
   }
 
