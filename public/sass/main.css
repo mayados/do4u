@@ -2031,7 +2031,7 @@ li {
 
 .footer {
   height: 5vh;
-  background-image: url("./img/BO_background.png");
+  background-image: url("../img/BO_background.png");
 }
 
 #content nav a {
@@ -2115,6 +2115,7 @@ li {
 
 #content nav .profile img {
   width: 36px;
+  justify-content: end;
   height: 36px;
   -o-object-fit: cover;
      object-fit: cover;
