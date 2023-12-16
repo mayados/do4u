@@ -1958,7 +1958,8 @@ li {
   z-index: -1;
 }
 
-.side-menu li a {
+#sidebar .side-menu li a {
+  color: #1d838a;
   width: 100%;
   height: 100%;
   background: var(--light);
@@ -1966,13 +1967,32 @@ li {
   align-items: center;
   border-radius: 48px;
   font-size: 16px;
-  color: #1d838a;
   white-space: nowrap;
   overflow-x: hidden;
 }
 
-#sidebar .side-menu.top li.active a {
+#sidebar .side-menu li a i {
+  color: var(--blue);
+}
+
+#sidebar .side-menu li.active a i {
   color: white;
+  font-weight: inherit;
+}
+
+#sidebar .side-menu li a span {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+#sidebar .side-menu li.active a span {
+  color: white;
+  font-weight: inherit;
+  font-weight: inherit;
+}
+
+#sidebar .side-menu li.active a {
+  color: white !important;
   background-color: #1d838a;
 }
 
@@ -2031,7 +2051,7 @@ li {
 
 .footer {
   height: 5vh;
-  background-image: url("./img/BO_background.png");
+  background-image: url("../img/BO_background.png");
 }
 
 #content nav a {
@@ -2115,6 +2135,7 @@ li {
 
 #content nav .profile img {
   width: 36px;
+  justify-content: end;
   height: 36px;
   -o-object-fit: cover;
      object-fit: cover;
