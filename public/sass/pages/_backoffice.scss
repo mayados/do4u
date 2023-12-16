@@ -444,3 +444,6 @@ li {
 .table-responsive {
   border-radius: 10px;
 }
+#sidebar .side-menu.top li {
+  transition: background-color 0.00001s ease;
+}
