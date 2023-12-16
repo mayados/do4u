@@ -1840,10 +1840,6 @@ label {
   list-style-type: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
 }
@@ -1864,6 +1860,7 @@ li {
 }
 
 .b-body {
+  height: 100%;
   background: var(--grey);
   overflow-x: hidden;
 }
@@ -2333,4 +2330,105 @@ li {
 
 #sidebar .side-menu.top li {
   transition: background-color 0.00001s ease;
+}
+
+.categorie-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.categorie-num {
+  position: relative;
+  display: inline-block;
+  padding: 3vh;
+  background-color: rgba(249, 187, 24, 0.3);
+  border-radius: 10px 0px 0px 10px;
+  max-width: 50%;
+}
+
+.categorie-num i {
+  font-size: 24px;
+  color: #1D838A;
+}
+
+.categorie-name {
+  margin-left: 0px;
+  background-color: #ffffff;
+  padding: 3vh;
+  font-weight: 800;
+  border-radius: 0px 10px 10px 0px;
+  flex: 1; /* Grow and shrink equally */
+  align-self: stretch; /* Ensure equal height */
+}
+
+.annonce-num {
+  position: relative;
+  display: inline-block;
+  padding: 3vh;
+  background-color: rgba(29, 131, 138, 0.6);
+  border-radius: 10px 0px 0px 10px;
+  max-width: 50%;
+}
+
+.annonce-num i {
+  font-size: 24px;
+  color: white;
+}
+
+.annonce-name {
+  margin-left: 0px;
+  background-color: #ffffff;
+  padding: 3vh;
+  font-weight: 800;
+  border-radius: 0px 10px 10px 0px;
+  flex: 1; /* Grow and shrink equally */
+  align-self: stretch; /* Ensure equal height */
+}
+
+.uti-num {
+  position: relative;
+  display: inline-block;
+  padding: 3vh;
+  background-color: rgba(230, 90, 20, 0.7);
+  border-radius: 10px 0px 0px 10px;
+  max-width: 50%;
+}
+
+.uti-num i {
+  font-size: 24px;
+  color: white;
+}
+
+.uti-name {
+  margin-left: 0px;
+  background-color: #ffffff;
+  padding: 3vh;
+  font-weight: 800;
+  border-radius: 0px 10px 10px 0px;
+  flex: 1; /* Grow and shrink equally */
+  align-self: stretch; /* Ensure equal height */
+}
+
+.sin-num {
+  position: relative;
+  display: inline-block;
+  padding: 3vh;
+  background-color: rgb(89, 84, 84);
+  border-radius: 10px 0px 0px 10px;
+  max-width: 50%;
+}
+
+.sin-num i {
+  font-size: 24px;
+  color: white;
+}
+
+.sin-name {
+  margin-left: 0px;
+  background-color: #ffffff;
+  padding: 3vh;
+  font-weight: 800;
+  border-radius: 0px 10px 10px 0px;
+  flex: 1; /* Grow and shrink equally */
+  align-self: stretch; /* Ensure equal height */
 }/*# sourceMappingURL=main.css.map */
