@@ -185,10 +185,8 @@ li {
   color: #1d838a;
 }
 .d-footer {
-  position: fixed;
-  bottom: 0;
-  height: 5vh;
-  width: calc(100% - 280px);
+  position: relative;
+  height: 4.3vh;
   background-image: url("../img/BO_background.png");
 }
 #content nav a {
@@ -440,6 +438,10 @@ li {
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: rgb(29, 131, 138, 0.15); // Choose your own color here
+}
+
+.table-striped tr {
+  font-size: 14px;
 }
 .table-responsive {
   border-radius: 10px;
