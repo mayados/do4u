@@ -184,8 +184,11 @@ li {
 .fa-pen-to-square {
   color: #1d838a;
 }
-.footer {
+.d-footer {
+  position: fixed;
+  bottom: 0;
   height: 5vh;
+  width: calc(100% - 280px);
   background-image: url("../img/BO_background.png");
 }
 #content nav a {
