@@ -2047,10 +2047,8 @@ li {
 }
 
 .d-footer {
-  position: fixed;
-  bottom: 0;
-  height: 5vh;
-  width: calc(100% - 280px);
+  position: relative;
+  height: 4.3vh;
   background-image: url("../img/BO_background.png");
 }
 
@@ -2325,6 +2323,10 @@ li {
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: rgba(29, 131, 138, 0.15);
+}
+
+.table-striped tr {
+  font-size: 14px;
 }
 
 .table-responsive {
