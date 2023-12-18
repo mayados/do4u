@@ -10,36 +10,61 @@ CREATE DATABASE do4u
     COLLATE utf8mb4_general_ci;
 USE do4u;
 
+
 -- Structure de la table Utilisateur
 
 DROP TABLE IF EXISTS Utilisateur;
 CREATE TABLE Utilisateur (
-    idUtilisateur INT(11) NOT NULL AUTO_INCREMENT,
-    nomUtilisateur VARCHAR(50) NOT NULL,
-    prenomUtilisateur VARCHAR(30) NOT NULL,
+    idUtilisateur INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,    
+    nomUtilisateur VARCHAR(100) NOT NULL,
+    prenomUtilisateur VARCHAR(50) NOT NULL,
     villeUtilisateur VARCHAR(50) NOT NULL,
-    codePostalUtilisateur VARCHAR(10) NOT NULL,
-    roleUtilisateur VARCHAR(50) NOT NULL,
+    codePostalUtilisateur VARCHAR(5) NOT NULL,
     dateInscription DATE NOT NULL,
     motDePasse VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    isBanned BOOLEAN,
-    latitude VARCHAR(30) DEFAULT NULL,
-    longitude VARCHAR(30) DEFAULT NULL,
+    estBanni BOOLEAN,
+    latitude VARCHAR(10) DEFAULT NULL,
+    longitude VARCHAR(10) DEFAULT NULL,
     PRIMARY KEY (idUtilisateur)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Contenu de la table Utilisateur
 
+
+-- Structure de la table Role
+DROP TABLE IF EXISTS Role;
+CREATE TABLE Role (
+    idRole INT  UNSIGNED NOT NULL AUTO_INCREMENT,
+    nomRole VARCHAR(30) NOT NULL,
+    PRIMARY KEY (idRole)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Contenu de la table Role
+
+
+-- Structure de la table AvoirPourRole
+--
+DROP TABLE IF EXISTS AvoirPourRole;
+CREATE TABLE AvoirPourRole (
+    utilisateurId INT UNSIGNED,
+    roleId INT UNSIGNED,
+    KEY utilisateurId (utilisateurId),
+    KEY roleId (roleId),
+    PRIMARY KEY (utilisateurId,roleId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Contenu de la table AvoirPourRole
+
 -- Structure de la table Entreprise
 --
 DROP TABLE IF EXISTS Entreprise;
 CREATE TABLE Entreprise (
-    idEntreprise INT(11) NOT NULL AUTO_INCREMENT,
+    idEntreprise INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nomEntreprise VARCHAR(50) NOT NULL,
-    utilisateur_id INT,
+    utilisateurId INT UNSIGNED,
     PRIMARY KEY (idEntreprise),
-    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur)
+    KEY utilisateurId (utilisateurId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Contenu de la table Entreprise
@@ -48,11 +73,11 @@ CREATE TABLE Entreprise (
 --
 DROP TABLE IF EXISTS AutoEntrepreneur;
 CREATE TABLE AutoEntrepreneur (
-    idAutoEntrepreneur INT(11) NOT NULL AUTO_INCREMENT,
+    idAutoEntrepreneur INT UNSIGNED NOT NULL AUTO_INCREMENT,
     pseudo VARCHAR(20) UNIQUE NOT NULL,
-    utilisateur_id INT,
+    utilisateurId INT UNSIGNED,
     PRIMARY KEY (idAutoEntrepreneur),
-    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur)
+    KEY utilisateurId (utilisateurId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Contenu de la table AutoEntrepreneur
@@ -61,11 +86,11 @@ CREATE TABLE AutoEntrepreneur (
 --
 DROP TABLE IF EXISTS Particulier;
 CREATE TABLE Particulier (
-    idParticulier INT(11) NOT NULL AUTO_INCREMENT,
+    idParticulier INT UNSIGNED NOT NULL AUTO_INCREMENT,
     pseudo VARCHAR(20) UNIQUE NOT NULL,
-    utilisateur_id INT,
+    utilisateurId INT UNSIGNED,
     PRIMARY KEY (idParticulier),
-    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur)
+    KEY utilisateurId (utilisateurId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Contenu de la table Particulier
@@ -75,14 +100,14 @@ CREATE TABLE Particulier (
 --
 DROP TABLE IF EXISTS Avis;
 CREATE TABLE Avis (
-    idAvis INT(11) NOT NULL AUTO_INCREMENT,
-    nombreEtoiles INT(11) NOT NULL DEFAULT 0,
+    idAvis INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nombreEtoiles INT  NOT NULL DEFAULT 0,
     texte TEXT DEFAULT NULL,
-    emetteur INT,
-    recepteur INT,
+    destinataireId INT UNSIGNED,
+    redacteurId INT UNSIGNED,
     PRIMARY KEY (idAvis),
-    FOREIGN KEY (emetteur) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (recepteur) REFERENCES Utilisateur(idUtilisateur)
+    KEY destinataireId (destinataireId),
+    KEY redacteurId (redacteurId) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -92,8 +117,8 @@ CREATE TABLE Avis (
 --
 DROP TABLE IF EXISTS Categorie;
 CREATE TABLE Categorie (
-    idCategorie INT(11) NOT NULL AUTO_INCREMENT,
-    nombreEtoiles INT(11) NOT NULL DEFAULT 0,
+    idCategorie INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nombreEtoiles INT  NOT NULL DEFAULT 0,
     nomCategorie VARCHAR(50) UNIQUE NOT NULL,
     PRIMARY KEY (idCategorie)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -105,7 +130,7 @@ CREATE TABLE Categorie (
 --
 DROP TABLE IF EXISTS TypeAnnonce;
 CREATE TABLE TypeAnnonce (
-    idTypeAnnonce INT(11) NOT NULL AUTO_INCREMENT,
+    idTypeAnnonce INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nomTypeAnnonce VARCHAR(50) UNIQUE NOT NULL,
     PRIMARY KEY (idTypeAnnonce)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -117,21 +142,22 @@ CREATE TABLE TypeAnnonce (
 --
 DROP TABLE IF EXISTS Annonce;
 CREATE TABLE Annonce (
-    idAnnonce INT(11) NOT NULL AUTO_INCREMENT,
+    idAnnonce INT UNSIGNED NOT NULL AUTO_INCREMENT,
     titre VARCHAR(50) NOT NULL,
-    datePublication VARCHAR(50) NOT NULL,
-    photo VARCHAR(50) NOT NULL,
+    datePublication DATETIME NOT NULL,
+    photo VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     ville VARCHAR(50) NOT NULL,
-    codePostal VARCHAR(50) NOT NULL,
-    latitude VARCHAR(50) NOT NULL,
-    longitude VARCHAR(50) NOT NULL,
-    createur INT,
-    typeAnnonce INT,
-    categorie_id INT,
+    codePostal VARCHAR(5) NOT NULL,
+    latitude VARCHAR(10) NOT NULL,
+    longitude VARCHAR(10) NOT NULL,
+    createurId INT UNSIGNED,
+    typeAnnonceId INT UNSIGNED,
+    categorieId INT UNSIGNED,
     PRIMARY KEY (idAnnonce),
-    FOREIGN KEY (createur) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (typeAnnonce) REFERENCES TypeAnnonce(idTypeAnnonce),
-    FOREIGN KEY (categorie_id) REFERENCES Categorie(idCategorie)
+    KEY createurId (createurId),
+    KEY typeAnnonceId (typeAnnonceId),
+    KEY categorieId (categorieId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -141,11 +167,9 @@ CREATE TABLE Annonce (
 --
 DROP TABLE IF EXISTS Favoris;
 CREATE TABLE Favoris (
-    utilisateur_id INT,
-    annonce_id INT,
-    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (annonce_id) REFERENCES Annonce(idAnnonce),
-    PRIMARY KEY (utilisateur_id,annonce_id)
+    utilisateurId INT UNSIGNED,
+    annonceId INT UNSIGNED,
+    PRIMARY KEY (utilisateurId,annonceId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -156,14 +180,12 @@ CREATE TABLE Favoris (
 --
 DROP TABLE IF EXISTS Conversation;
 CREATE TABLE Conversation (
-    idConversation INT(11) NOT NULL AUTO_INCREMENT,
+    idConversation INT UNSIGNED NOT NULL AUTO_INCREMENT,
     conversationSupprimeeInitiateur BOOLEAN,
     conversationSupprimeeContact BOOLEAN,
-    annonce_id INT,
-    initiateur_id INT,
-    PRIMARY KEY (idConversation),
-    FOREIGN KEY (annonce_id) REFERENCES Annonce(idAnnonce),
-    FOREIGN KEY (initiateur_id) REFERENCES Utilisateur(idUtilisateur)
+    annonceId INT UNSIGNED,
+    initiateurId INT UNSIGNED,
+    PRIMARY KEY (idConversation)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -174,11 +196,11 @@ CREATE TABLE Conversation (
 --
 DROP TABLE IF EXISTS Participer;
 CREATE TABLE Participer (
-    participant_id INT,
-    conversation_id INT,
-    FOREIGN KEY (participant_id) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (conversation_id) REFERENCES Conversation(idConversation),
-    PRIMARY KEY (participant_id,conversation_id)
+    participantId INT UNSIGNED,
+    conversationId INT UNSIGNED,
+    KEY participantId (participantId),
+    KEY conversationId (conversationId),
+    PRIMARY KEY (participantId,conversationId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -189,15 +211,15 @@ CREATE TABLE Participer (
 --
 DROP TABLE IF EXISTS Message;
 CREATE TABLE Message (
-    idMessage INT(11) NOT NULL AUTO_INCREMENT,
+    idMessage INT UNSIGNED NOT NULL AUTO_INCREMENT,
     dateCreation DATETIME NOT NULL,
     texte TEXT NOT NULL,
-    isRead BOOLEAN,
-    emetteur_id INT,
-    conversation_id INT,
+    estLu BOOLEAN,
+    expediteurId INT UNSIGNED,
+    conversationId INT UNSIGNED,
     PRIMARY KEY (idMessage),
-    FOREIGN KEY (emetteur_id) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (conversation_id) REFERENCES Conversation(idConversation)
+    FOREIGN KEY (expediteurId) REFERENCES Utilisateur(idUtilisateur),
+    FOREIGN KEY (conversationId) REFERENCES Conversation(idConversation)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -207,23 +229,21 @@ CREATE TABLE Message (
 
 DROP TABLE IF EXISTS Signalement;
 CREATE TABLE Signalement (
-    idSignalement INT(11) NOT NULL AUTO_INCREMENT,
+    idSignalement INT UNSIGNED NOT NULL AUTO_INCREMENT,
     dateSignalement DATETIME NOT NULL,
-    motif VARCHAR(150) NOT NULL,
+    motif VARCHAR(255) NOT NULL,
     commentaire TEXT NOT NULL,
-    isTreated BOOLEAN,
-    typeEntiteSignalee VARCHAR(50) NOT NULL,
-    avis_id INT,
-    conversation_id INT,
-    annonce_id INT,
-    utilisateur_id INT,
-    signaleur_id INT,
+    messageId INT UNSIGNED,
+    avisId INT UNSIGNED,
+    annonceId INT UNSIGNED,
+    utilisateurId INT UNSIGNED,
+    signaleurId INT UNSIGNED,
     PRIMARY KEY (idSignalement),
-    FOREIGN KEY (avis_id) REFERENCES Avis(idAvis),
-    FOREIGN KEY (conversation_id) REFERENCES Conversation(idConversation),
-    FOREIGN KEY (annonce_id) REFERENCES Annonce(idAnnonce),
-    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (signaleur_id) REFERENCES Utilisateur(idUtilisateur)
+    KEY avisId (avisId),
+    KEY messageId (messageId),
+    KEY annonceId (annonceId),
+    KEY utilisateurId (utilisateurId),
+    KEY signaeurId (signaleurId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -234,15 +254,58 @@ CREATE TABLE Signalement (
 --
 DROP TABLE IF EXISTS Suivre;
 CREATE TABLE Suivre (
-    suivi_id INT,
-    abonne_id INT,
-    FOREIGN KEY (suivi_id) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (abonne_id) REFERENCES Utilisateur(idUtilisateur),
-    PRIMARY KEY (suivi_id,abonne_id)
+    suiviId INT UNSIGNED,
+    abonneId INT UNSIGNED,
+    PRIMARY KEY (suiviId,abonneId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Contenu de la table Signalement
 
+-- Contraintes des différentes tables
+ALTER TABLE AvoirPourRole
+    ADD CONSTRAINT fk_avoirpourrole_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur),
+    ADD CONSTRAINT roleId FOREIGN KEY (roleId) REFERENCES Role(idRole);
+
+ALTER TABLE Entreprise
+    ADD CONSTRAINT fk_entreprise_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+
+ALTER TABLE AutoEntrepreneur
+    ADD CONSTRAINT fk_autoentrepreneur_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+
+ALTER TABLE Particulier
+    ADD CONSTRAINT fk_particulier_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+
+ALTER TABLE Avis
+    ADD CONSTRAINT destinataireId FOREIGN KEY (destinataireId) REFERENCES Utilisateur(idUtilisateur),
+    ADD CONSTRAINT redacteurId FOREIGN KEY (redacteurId) REFERENCES Utilisateur(idUtilisateur);
+
+ALTER TABLE Annonce
+    ADD CONSTRAINT createurId FOREIGN KEY (createurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+    ADD CONSTRAINT typeAnnonceId FOREIGN KEY (typeAnnonceId) REFERENCES TypeAnnonce(idTypeAnnonce),
+    ADD CONSTRAINT categorieId FOREIGN KEY (categorieId) REFERENCES Categorie(idCategorie) ON DELETE CASCADE;
+
+ALTER TABLE Favoris
+    ADD CONSTRAINT fk_favoris_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+    ADD CONSTRAINT fk_favoris_annonceid FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce) ON DELETE CASCADE;
+
+ALTER TABLE Conversation
+    ADD CONSTRAINT fk_conversation_annonceid FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce),
+    ADD CONSTRAINT fk_conversation_initiateurid FOREIGN KEY (initiateurId) REFERENCES Utilisateur(idUtilisateur);
+
+ALTER TABLE Participer
+    ADD CONSTRAINT participantId FOREIGN KEY (participantId) REFERENCES Utilisateur(idUtilisateur),
+    ADD CONSTRAINT conversationId FOREIGN KEY (conversationId) REFERENCES Conversation(idConversation);
+
+ALTER TABLE Signalement
+    ADD CONSTRAINT avisId FOREIGN KEY (avisId) REFERENCES Avis(idAvis),
+    ADD CONSTRAINT messageId FOREIGN KEY (messageId) REFERENCES Message(idMessage),
+    ADD CONSTRAINT annonceId FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce),
+    ADD CONSTRAINT utilisateurId FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur),
+    ADD CONSTRAINT signaleurId FOREIGN KEY (signaleurId) REFERENCES Utilisateur(idUtilisateur);
+
+
+ALTER TABLE Suivre
+    ADD CONSTRAINT fk_suivre_suiviid FOREIGN KEY (suiviId) REFERENCES Utilisateur(idUtilisateur),
+    ADD CONSTRAINT fk_suivre_abonneid FOREIGN KEY (abonneId) REFERENCES Utilisateur(idUtilisateur);
 
 COMMIT;
 SET AUTOCOMMIT = 1;
