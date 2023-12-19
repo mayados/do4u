@@ -19,6 +19,8 @@ CREATE TABLE Utilisateur (
     email VARCHAR(255) NOT NULL,    
     nomUtilisateur VARCHAR(100) NOT NULL,
     prenomUtilisateur VARCHAR(50) NOT NULL,
+    description TEXT DEFAULT NULL,
+    photo VARCHAR(255) NOT NULL,
     villeUtilisateur VARCHAR(50) NOT NULL,
     codePostalUtilisateur VARCHAR(5) NOT NULL,
     dateInscription DATE NOT NULL,
@@ -31,27 +33,27 @@ CREATE TABLE Utilisateur (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Contenu de la table Utilisateur
-INSERT INTO Utilisateur (idUtilisateur, email, nomUtilisateur, prenomUtilisateur, villeUtilisateur, codePostalUtilisateur, dateInscription, motDePasse, estBanni, latitude,longitude) VALUES
-    (1, 'johndoe@gmail.com', 'Doe', 'John', 'Paris', '75001', '2023-01-01', 'motdepasse1', 0, 48.8566, 2.3522),
-    (2, 'jane.smith@gmail.com', 'Smith', 'Jane', 'Lyon', '69001', '2023-02-01', 'motdepasse2', 1, 45.75, 4.85),
-    (3, 'johnsonb@gmail.com', 'Johnson', 'Bob', 'Marseille', '13001', '2023-03-01', 'motdepasse3', 0, 43.2965, 5.3698),
-    (4, 'alicebrwn@gmail.com', 'Brown', 'Alice', 'Toulouse', '31000', '2023-04-01', 'motdepasse4', 0, 43.6045, 1.4442),
-    (5, 'leetom@gmail.com', 'Lee', 'Tom', 'Nice', '06000', '2023-05-01', 'motdepasse5', 1, 43.7102, 7.2620),
-    (6, 'kims@gmail.com', 'Kim', 'Sara', 'Bordeaux', '33000', '2023-06-01', 'motdepasse6', 0, 44.8378, -0.5792),
-    (7, 'garcia.c@gmail.com', 'Garcia', 'Carlos', 'Lille', '59000', '2023-07-01', 'motdepasse7', 0, 50.6292, 3.0573),
-    (8, 'martinez.lna@gmail.com', 'Martinez', 'Elena', 'Nantes', '44000', '2023-08-01', 'motdepasse8', 1, 47.2184, -1.5536),
-    (9, 'raul@gmail.com', 'Lopez', 'Raul', 'Strasbourg', '67000', '2023-09-01', 'motdepasse9', 0, 48.5734, 7.7521),
-    (10, 'liwang@gmail.com', 'Wang', 'Li', 'Rennes', '35000', '2023-10-01', 'motdepasse10', 1, 48.1173, -1.6778),
-    (11, 'soso@gmail.com', 'Dubois', 'Sophie', 'Montpellier', '34000', '2023-11-01', 'motdepasse11', 0, 43.6116, 3.8770),
-    (12, 'fischer.mrc@gmail.com', 'Fischer', 'Mark', 'Nancy', '54000', '2023-12-01', 'motdepasse12', 0, 48.6921, 6.1844),
-    (13, 'wuhui@gmail.com', 'Wu', 'Hui', 'Metz', '57000', '2024-01-01', 'motdepasse13', 1, 49.1193, 6.1755),
-    (14, 'emmabkr@gmail.com', 'Baker', 'Emma', 'Dijon', '21000', '2024-02-01', 'motdepasse14', 0, 47.3220, 5.0415),
-    (15, 'minhie@gmail.com', 'Nguyen', 'Minh', 'Grenoble', '38000', '2024-03-01', 'motdepasse15', 0, 45.1885, 5.7245),
-    (16, 'chn@gmail.com', 'Cohen', 'David', 'Angers', '49000', '2024-04-01', 'motdepasse16', 1, 47.4784, -0.5632),
-    (17, 'olivia?collins@gmail.com', 'Collins', 'Olivia', 'Avignon', '84000', '2024-05-01', 'motdepasse17', 0, 43.9493, 4.8055),
-    (18, 'lukasmlr@gmail.com', 'Müller', 'Lukas', 'Caen', '14000', '2024-06-01', 'motdepasse18', 0, 49.1829, -0.3707),
-    (19, 'yanchen@gmail.com', 'Chen', 'Yan', 'Amiens', '80000', '2024-07-01', 'motdepasse19', 1, 49.8941, 2.3028),
-    (20, 'gonzam@gmail.com', 'Gonzalez', 'Maria', 'Limoges', '87000', '2024-08-01', 'motdepasse20', 0, 45.8336, 1.2620);
+INSERT INTO Utilisateur (idUtilisateur, email, nomUtilisateur, prenomUtilisateur,description,photo, villeUtilisateur, codePostalUtilisateur, dateInscription, motDePasse, estBanni, latitude,longitude) VALUES
+    (1, 'johndoe@gmail.com', 'Doe', 'John', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Paris', '75001', '2023-01-01', 'motdepasse1', 0, 48.8566, 2.3522),
+    (2, 'jane.smith@gmail.com', 'Smith', 'Jane', "Aimable, intentionnée et ayant plus de 3 ans d'expérience dans le domaine de l'aide à domicile', je vous propose mes services",'monimage.jpg','Lyon', '69001', '2023-02-01', 'motdepasse2', 1, 45.75, 4.85),
+    (3, 'johnsonb@gmail.com', 'Johnson', 'Bob',"Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la plomberie, je vous propose mes services",'monimage.jpg' ,'Marseille', '13001', '2023-03-01', 'motdepasse3', 0, 43.2965, 5.3698),
+    (4, 'alicebrwn@gmail.com', 'Brown', 'Alice',"Sérieuse, aimable et ayant plus de 3 ans d'expérience dans le domaine de l'animation', je vous propose mes services",'monimage.jpg' ,'Toulouse', '31000', '2023-04-01', 'motdepasse4', 0, 43.6045, 1.4442),
+    (5, 'leetom@gmail.com', 'Lee', 'Tom', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Nice', '06000', '2023-05-01', 'motdepasse5', 1, 43.7102, 7.2620),
+    (6, 'kims@gmail.com', 'Kim', 'Sara', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Bordeaux', '33000', '2023-06-01', 'motdepasse6', 0, 44.8378, -0.5792),
+    (7, 'garcia.c@gmail.com', 'Garcia', 'Carlos', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Lille', '59000', '2023-07-01', 'motdepasse7', 0, 50.6292, 3.0573),
+    (8, 'martinez.lna@gmail.com', 'Martinez', 'Elena', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Nantes', '44000', '2023-08-01', 'motdepasse8', 1, 47.2184, -1.5536),
+    (9, 'raul@gmail.com', 'Lopez', 'Raul', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Strasbourg', '67000', '2023-09-01', 'motdepasse9', 0, 48.5734, 7.7521),
+    (10, 'liwang@gmail.com', 'Wang', 'Li', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Rennes', '35000', '2023-10-01', 'motdepasse10', 1, 48.1173, -1.6778),
+    (11, 'soso@gmail.com', 'Dubois', 'Sophie', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Montpellier', '34000', '2023-11-01', 'motdepasse11', 0, 43.6116, 3.8770),
+    (12, 'fischer.mrc@gmail.com', 'Fischer', 'Mark', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Nancy', '54000', '2023-12-01', 'motdepasse12', 0, 48.6921, 6.1844),
+    (13, 'wuhui@gmail.com', 'Wu', 'Hui', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Metz', '57000', '2024-01-01', 'motdepasse13', 1, 49.1193, 6.1755),
+    (14, 'emmabkr@gmail.com', 'Baker', 'Emma', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Dijon', '21000', '2024-02-01', 'motdepasse14', 0, 47.3220, 5.0415),
+    (15, 'minhie@gmail.com', 'Nguyen', 'Minh', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Grenoble', '38000', '2024-03-01', 'motdepasse15', 0, 45.1885, 5.7245),
+    (16, 'chn@gmail.com', 'Cohen', 'David', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Angers', '49000', '2024-04-01', 'motdepasse16', 1, 47.4784, -0.5632),
+    (17, 'olivia?collins@gmail.com', 'Collins', 'Olivia', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Avignon', '84000', '2024-05-01', 'motdepasse17', 0, 43.9493, 4.8055),
+    (18, 'lukasmlr@gmail.com', 'Müller', 'Lukas', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Caen', '14000', '2024-06-01', 'motdepasse18', 0, 49.1829, -0.3707),
+    (19, 'yanchen@gmail.com', 'Chen', 'Yan', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Amiens', '80000', '2024-07-01', 'motdepasse19', 1, 49.8941, 2.3028),
+    (20, 'gonzam@gmail.com', 'Gonzalez', 'Maria', "Aimable, intentionné et ayant plus de 3 ans d'expérience dans le domaine de la construction, je vous propose mes services",'monimage.jpg','Limoges', '87000', '2024-08-01', 'motdepasse20', 0, 45.8336, 1.2620);
 
 -- Structure de la table Role
 DROP TABLE IF EXISTS Role;
@@ -256,6 +258,7 @@ CREATE TABLE Annonce (
     datePublication DATETIME NOT NULL,
     photo VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
+    prix DECIMAL(10, 2) NOT NULL,
     ville VARCHAR(50) NOT NULL,
     codePostal VARCHAR(5) NOT NULL,
     latitude VARCHAR(10) NOT NULL,
@@ -271,28 +274,28 @@ CREATE TABLE Annonce (
 --
 
 -- Contenu de la table Annonce
-INSERT INTO Annonce (idAnnonce, titre, datePublication, photo, description, ville, codePostal, latitude, longitude, createurId, typeAnnonceId, categorieId)
+INSERT INTO Annonce (idAnnonce, titre, datePublication, photo, description, prix, ville, codePostal, latitude, longitude, createurId, typeAnnonceId, categorieId)
 VALUES
-(1, "Service de réparation d'ordinateurs", '2024-09-01 10:30:00', 'image1.jpg', 'Réparation rapide et professionnelle d\'ordinateurs.', 'Paris', '75001', '48.8566', '2.3522', 1, 1, 6),
-(2, "Cours de yoga en plein air", '2024-09-02 12:45:00', 'image2.jpg', 'Cours de yoga pour tous les niveaux.', 'Lyon', '69001', '45.75', '4.85', 5, 2, 4),
-(3, "Services de jardinage", '2024-09-03 15:20:00', 'image3.jpg', 'Entretien de jardins, tonte de pelouse, taille d\'arbustes.', 'Marseille', '13001', '43.2965', '5.3698', 12, 1, 3),
-(4, "Cours de guitare pour débutants", '2024-09-04 14:10:00', 'image4.jpg', 'Cours de guitare pour apprendre les bases.', 'Toulouse', '31000', '43.6045', '1.4442', 7, 2, 8),
-(5, "Service de traiteur pour événements", '2024-09-05 18:00:00', 'image5.jpg', 'Traiteur professionnel pour mariages, anniversaires, etc.', 'Nice', '06000', '43.7102', '7.2620', 15, 1, 11),
-(6, "Cours de cuisine à domicile", '2024-09-06 11:00:00', 'image6.jpg', 'Apprenez à cuisiner de délicieux plats chez vous.', 'Bordeaux', '33000', '44.8378', '-0.5792', 2, 2, 11),
-(7, "Service de réparation de vélos", '2024-09-07 16:30:00', 'image7.jpg', 'Réparation et entretien de vélos à domicile.', 'Lille', '59000', '50.6292', '3.0573', 19, 1, 4),
-(8, "Cours de peinture pour enfants", '2024-09-08 13:15:00', 'image8.jpg', 'Cours de peinture artistique pour les enfants.', 'Nantes', '44000', '47.2184', '-1.5536', 11, 2, 7),
-(9, "Service de dépannage automobile", '2024-09-09 17:45:00', 'image9.jpg', 'Dépannage rapide en cas de panne automobile.', 'Strasbourg', '67000', '48.5734', '7.7521', 8, 1, 9),
-(10, "Cours de danse latine", '2024-09-10 19:00:00', 'image10.jpg', 'Apprenez à danser la salsa, la bachata, et plus encore.', 'Rennes', '35000', '48.1173', '-1.6778', 14, 2, 10),
-(11, "Service de coiffure à domicile", '2024-09-11 10:00:00', 'image11.jpg', 'Coiffure professionnelle dans le confort de votre foyer.', 'Montpellier', '34000', '43.6116', '3.8770', 3, 1, 7),
-(12, "Cours de langues étrangères", '2024-09-12 14:30:00', 'image12.jpg', 'Cours de français, anglais, espagnol, etc.', 'Nancy', '54000', '48.6921', '6.1844', 18, 2, 13),
-(13, "Service de photographie pour événements", '2024-09-13 16:50:00', 'image13.jpg', 'Photographe professionnel pour vos mariages, fêtes, etc.', 'Metz', '57000', '49.1193', '6.1755', 10, 1, 8),
-(14, "Cours de natation pour enfants", '2024-09-14 11:20:00', 'image14.jpg', 'Apprenez à nager de manière ludique.', 'Dijon', '21000', '47.3220', '5.0415', 6, 2, 5),
-(15, "Service de coaching sportif à domicile", '2024-09-15 09:30:00', 'image15.jpg', 'Entraînement personnalisé dans le confort de votre maison.', 'Grenoble', '38000', '45.1885', '5.7245', 17, 1, 4),
-(16, "Cours de théâtre pour adolescents", '2024-09-16 12:00:00', 'image16.jpg', 'Cours de théâtre pour développer les compétences d\'expression.', 'Angers', '49000', '47.4784', '-0.5632', 4, 2, 2),
-(17, "Service de décoration d'intérieur", '2024-09-17 14:40:00', 'image17.jpg', 'Conseils et services de décoration pour votre intérieur.', 'Avignon', '84000', '43.9493', '4.8055', 9, 1, 12),
-(18, "Cours de musique pour adultes", '2024-09-18 18:20:00', 'image18.jpg', 'Apprenez à jouer d\'un instrument de musique.', 'Caen', '14000', '49.1829', '-0.3707', 16, 2, 8),
-(19, "Service de baby-sitting", '2024-09-19 16:15:00', 'image19.jpg', 'Garde d\'enfants professionnelle et attentionnée.', 'Amiens', '80000', '49.8941', '2.3028', 12, 1, 1),
-(20, "Cours de photographie pour débutants", '2024-09-20 14:00:00', 'image20.jpg', 'Apprenez les bases de la photographie avec un professionnel.', 'Lorient', '56100', '47.7486', '-3.3660', 5, 2, 13);
+(1, "Service de réparation d'ordinateurs", '2024-09-01 10:30:00', 'image1.jpg', 'Réparation rapide et professionnelle d\'ordinateurs.', 10,'Paris', '75001', '48.8566', '2.3522', 1, 1, 6),
+(2, "Cours de yoga en plein air", '2024-09-02 12:45:00', 'image2.jpg', 'Cours de yoga pour tous les niveaux.', 13,'Lyon', '69001', '45.75', '4.85', 5, 2, 4),
+(3, "Services de jardinage", '2024-09-03 15:20:00', 'image3.jpg', 'Entretien de jardins, tonte de pelouse, taille d\'arbustes.',11, 'Marseille', '13001', '43.2965', '5.3698', 12, 1, 3),
+(4, "Cours de guitare pour débutants", '2024-09-04 14:10:00', 'image4.jpg', 'Cours de guitare pour apprendre les bases.', 10.5,'Toulouse', '31000', '43.6045', '1.4442', 7, 2, 8),
+(5, "Service de traiteur pour événements", '2024-09-05 18:00:00', 'image5.jpg', 'Traiteur professionnel pour mariages, anniversaires, etc.', 25,'Nice', '06000', '43.7102', '7.2620', 15, 1, 11),
+(6, "Cours de cuisine à domicile", '2024-09-06 11:00:00', 'image6.jpg', 'Apprenez à cuisiner de délicieux plats chez vous.',30, 'Bordeaux', '33000', '44.8378', '-0.5792', 2, 2, 11),
+(7, "Service de réparation de vélos", '2024-09-07 16:30:00', 'image7.jpg', 'Réparation et entretien de vélos à domicile.',15 ,'Lille', '59000', '50.6292', '3.0573', 19, 1, 4),
+(8, "Cours de peinture pour enfants", '2024-09-08 13:15:00', 'image8.jpg', 'Cours de peinture artistique pour les enfants.',18, 'Nantes', '44000', '47.2184', '-1.5536', 11, 2, 7),
+(9, "Service de dépannage automobile", '2024-09-09 17:45:00', 'image9.jpg', 'Dépannage rapide en cas de panne automobile.',48, 'Strasbourg', '67000', '48.5734', '7.7521', 8, 1, 9),
+(10, "Cours de danse latine", '2024-09-10 19:00:00', 'image10.jpg', 'Apprenez à danser la salsa, la bachata, et plus encore.',32, 'Rennes', '35000', '48.1173', '-1.6778', 14, 2, 10),
+(11, "Service de coiffure à domicile", '2024-09-11 10:00:00', 'image11.jpg', 'Coiffure professionnelle dans le confort de votre foyer.',50, 'Montpellier', '34000', '43.6116', '3.8770', 3, 1, 7),
+(12, "Cours de langues étrangères", '2024-09-12 14:30:00', 'image12.jpg', 'Cours de français, anglais, espagnol, etc.',11, 'Nancy', '54000', '48.6921', '6.1844', 18, 2, 13),
+(13, "Service de photographie pour événements", '2024-09-13 16:50:00', 'image13.jpg', 'Photographe professionnel pour vos mariages, fêtes, etc.',102, 'Metz', '57000', '49.1193', '6.1755', 10, 1, 8),
+(14, "Cours de natation pour enfants", '2024-09-14 11:20:00', 'image14.jpg', 'Apprenez à nager de manière ludique.',36, 'Dijon', '21000', '47.3220', '5.0415', 6, 2, 5),
+(15, "Service de coaching sportif à domicile", '2024-09-15 09:30:00', 'image15.jpg', 'Entraînement personnalisé dans le confort de votre maison.',42, 'Grenoble', '38000', '45.1885', '5.7245', 17, 1, 4),
+(16, "Cours de théâtre pour adolescents", '2024-09-16 12:00:00', 'image16.jpg', 'Cours de théâtre pour développer les compétences d\'expression.',27, 'Angers', '49000', '47.4784', '-0.5632', 4, 2, 2),
+(17, "Service de décoration d'intérieur", '2024-09-17 14:40:00', 'image17.jpg', 'Conseils et services de décoration pour votre intérieur.',17, 'Avignon', '84000', '43.9493', '4.8055', 9, 1, 12),
+(18, "Cours de musique pour adultes", '2024-09-18 18:20:00', 'image18.jpg', 'Apprenez à jouer d\'un instrument de musique.',18, 'Caen', '14000', '49.1829', '-0.3707', 16, 2, 8),
+(19, "Service de baby-sitting", '2024-09-19 16:15:00', 'image19.jpg', 'Garde d\'enfants professionnelle et attentionnée.',25, 'Amiens', '80000', '49.8941', '2.3028', 12, 1, 1),
+(20, "Cours de photographie pour débutants", '2024-09-20 14:00:00', 'image20.jpg', 'Apprenez les bases de la photographie avec un professionnel.',26, 'Lorient', '56100', '47.7486', '-3.3660', 5, 2, 13);
 
 
 
@@ -609,7 +612,7 @@ ALTER TABLE Suivre
 
 -- Création de l'utilisateur pour l'administration de la base de données
 CREATE USER 'admin_bdd'@'localhost' IDENTIFIED BY 'adminbdd*1';
-GRANT ALL PRIVILEGES ON do4u.* TO 'admin_bdd'@'localhost';
+GRANT ALL PRIVILEGES ON do4u.* TO 'admin_bdd'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 COMMIT;
