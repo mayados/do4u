@@ -31,96 +31,9 @@
     <title>Do4U</title>
   </head>
   <body class="b-body d-flex flex-column">
-    <section id="sidebar" class="col-lg-3">
-      <a href="#" class="brand d-flex justify-content-center pt-lg-2">
-        <h1 class="fw-bolder small">Do4U</h1>
-      </a>
-      <ul class="side-menu top ps-0">
-        <li class="">
-          <a href="index.html" class="icon-sidebar">
-            <i class="bx bxs-dashboard"></i>
-            <span class="text side-text">Backoffice</span>
-          </a>
-        </li>
-        <li>
-          <a href="utilisatuer.html">
-            <i class="bx bx-group"></i>
-            <span class="text">Utilisatuer</span>
-          </a>
-        </li>
-        <li>
-          <a href="annonce.html">
-            <i class="bx bxs-chart"></i>
-            <span class="text">Annonces</span>
-          </a>
-        </li>
-        <li>
-          <a href="categorie.html">
-            <i class="bx bx-chart"></i>
-            <span class="text">Catégorie</span>
-          </a>
-        </li>
-        <li>
-          <a href="typeAnnoce.html">
-            <i class="bx bx-doughnut-chart"></i>
-            <span class="text">TypeAnnonce</span>
-          </a>
-        </li>
-        <li>
-          <a
-            data-toggle="collapse"
-            href="#conversation"
-            role="button"
-            aria-expanded="false"
-            aria-controls="conversation"
-          >
-            <i class="bx bx-message-dots"></i>
-            <span class="text">Conversation</span>
-            <i class="bx bx-down-arrow align-items-end"></i>
-          </a>
-        </li>
-        <div class="collapse" id="conversation">
-          <li><a class="text ps-5" href="conversation.html">Message</a></li>
-        </div>
-        <li>
-          <a href="avis.html">
-            <i class="bx bx-conversation"></i>
-            <span class="text">Avis</span>
-          </a>
-        </li>
-        <li>
-          <a href="signalement.html">
-            <i class="bx bx-conversation"></i>
-            <span class="text">Signalement</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="side-menu ps-0">
-        <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="text">Paramètres</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="logout">
-            <i class="bx bx-log-out-circle"></i>
-            <span class="text">Déconnexion</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="content" class="col-lg-9 flex-grow-1">
-      <nav>
-        <i class="bx bx-menu" style="color: white; padding-left: 10px"></i>
-        <form action="#">
-          <div class="form-input"></div>
-        </form>
-        <a href="#" class="profile">
-          <img src="../../public/img/woman_photo.jpg" />
-        </a>
-      </nav>
+    <?php include('sidebar.php'); ?>
+    <section id="content" class="col-lg-9">
+      <?php include('nav.php'); ?>
 
       <main>
         <div class="head-title">
@@ -176,13 +89,7 @@
           </div>
         </div>
       </main>
-      <footer>
-        <div class="footer d-footer mt-auto">
-          <div class="d-flex align-items-center justify-content-center">
-            <p class="small text-center text-light pt-2">Do4U - 2023</p>
-          </div>
-        </div>
-      </footer>
+      <?php include('footer.php'); ?>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
