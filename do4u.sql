@@ -258,7 +258,7 @@ CREATE TABLE Annonce (
     datePublication DATETIME NOT NULL,
     photo VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    prix DECIMAL(10, 2) NOT NULL,
+    prix FLOAT NOT NULL,
     ville VARCHAR(50) NOT NULL,
     codePostal VARCHAR(5) NOT NULL,
     latitude VARCHAR(10) NOT NULL,
