@@ -4,49 +4,49 @@
     </a>
     <ul class="side-menu top ps-0">
     <li class="">
-        <a href="index.html" class="icon-sidebar">
+        <a href="index.php" class="icon-sidebar">
         <i class="bx bxs-dashboard"></i>
         <span class="text side-text">Backoffice</span>
         </a>
     </li>
     <li>
-        <a href="utilisatuer.html">
+        <a href="utilisatuer.php">
         <i class="bx bx-group"></i>
         <span class="text">Utilisatuer</span>
         </a>
     </li>
     <li>
-        <a href="annonce.html">
+        <a href="annonce.php">
         <i class="bx bxs-chart"></i>
         <span class="text">Annonces</span>
         </a>
     </li>
     <li>
-        <a href="categorie.html">
+        <a href="categorie.php">
         <i class="bx bx-chart"></i>
         <span class="text">Catégorie</span>
         </a>
     </li>
     <li>
-        <a href="typeAnnoce.html">
+        <a href="typeAnnoce.php">
         <i class="bx bx-doughnut-chart"></i>
         <span class="text">TypeAnnonce</span>
         </a>
     </li>
     <li>
-        <a href="conversation.html">
+        <a href="conversation.php">
         <i class="bx bx-message-dots"></i>
         <span class="text">Conversation</span>
         </a>
     </li>
     <li>
-        <a href="avis.html">
+        <a href="avis.php">
         <i class="bx bx-conversation"></i>
         <span class="text">Avis</span>
         </a>
     </li>
     <li>
-        <a href="signalement.html">
+        <a href="signalement.php">
         <i class="bx bx-conversation"></i>
         <span class="text">Signalement</span>
         </a>

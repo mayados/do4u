@@ -89,13 +89,7 @@
           </div>
         </div>
       </main>
-      <footer>
-        <div class="footer">
-          <div class="d-flex align-items-center justify-content-center pt-2">
-            <p class="text-center text-light">Do4U - 2023</p>
-          </div>
-        </div>
-      </footer>
+      <?php include('footer.php'); ?>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
