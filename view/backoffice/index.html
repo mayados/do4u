@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       type="text/css"
       href="//fonts.googleapis.com/css?family=Nunito"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link
       href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
@@ -27,7 +30,7 @@
 
     <title>Do4U</title>
   </head>
-  <body class="b-body">
+  <body class="b-body d-flex flex-column">
     <section id="sidebar" class="col-lg-3">
       <a href="#" class="brand d-flex justify-content-center pt-lg-2">
         <h1 class="fw-bolder small">Do4U</h1>
@@ -64,11 +67,21 @@
           </a>
         </li>
         <li>
-          <a href="conversation.html">
+          <a
+            data-toggle="collapse"
+            href="#conversation"
+            role="button"
+            aria-expanded="false"
+            aria-controls="conversation"
+          >
             <i class="bx bx-message-dots"></i>
             <span class="text">Conversation</span>
+            <i class="bx bx-down-arrow align-items-end"></i>
           </a>
         </li>
+        <div class="collapse" id="conversation">
+          <li><a class="text ps-5" href="conversation.html">Message</a></li>
+        </div>
         <li>
           <a href="avis.html">
             <i class="bx bx-conversation"></i>
@@ -98,7 +111,7 @@
       </ul>
     </section>
 
-    <section id="content" class="col-lg-9">
+    <section id="content" class="col-lg-9 flex-grow-1">
       <nav>
         <i class="bx bx-menu" style="color: white; padding-left: 10px"></i>
         <form action="#">
@@ -127,50 +140,46 @@
           <p>date : 12/10/2023</p>
         </div>
         <div class="container mt-5">
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nom</th>
-                  <th scope="col">Prénom</th>
-                  <th scope="col">Role</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>AHMADI</td>
-                  <td>Zahra</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td class="action">
-                    <i class="fa-regular fa-trash-can pe-2"></i>
-                    <i class="fa-regular fa-pen-to-square"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>AHMADI</td>
-                  <td>Zahra</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td class="action">
-                    <i class="fa-regular fa-trash-can pe-2"></i>
-                    <i class="fa-regular fa-pen-to-square"></i>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="row align-items-stretch">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="categorie-container p-2">
+                <div class="categorie-num">
+                  <i class="fa fa-xl fa-list"></i>
+                </div>
+                <div class="categorie-name fa-small">28 Catégories</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="categorie-container p-2">
+                <div class="annonce-num">
+                  <i class="fa fa-xl fa-list"></i>
+                </div>
+                <div class="annonce-name fa-small">142 Annonces</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="categorie-container p-2">
+                <div class="uti-num">
+                  <i class="fa fa-xl fa-list"></i>
+                </div>
+                <div class="uti-name fa-small">300 Utilisateurs</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="categorie-container p-2">
+                <div class="sin-num">
+                  <i class="fa fa-xl fa-list"></i>
+                </div>
+                <div class="sin-name fa-small">10 Signalements</div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
       <footer>
-        <div class="footer">
-          <div class="d-flex align-items-center justify-content-center pt-2">
-            <p class="text-center text-light">Do4U - 2023</p>
+        <div class="footer d-footer mt-auto">
+          <div class="d-flex align-items-center justify-content-center">
+            <p class="small text-center text-light pt-2">Do4U - 2023</p>
           </div>
         </div>
       </footer>
