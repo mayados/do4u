@@ -411,8 +411,8 @@ CREATE TABLE Message (
     expediteurId INT UNSIGNED,
     conversationId INT UNSIGNED,
     PRIMARY KEY (idMessage),
-    FOREIGN KEY (expediteurId) REFERENCES Utilisateur(idUtilisateur),
-    FOREIGN KEY (conversationId) REFERENCES Conversation(idConversation)
+    FOREIGN KEY (expediteurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE SET NULL,
+    FOREIGN KEY (conversationId) REFERENCES Conversation(idConversation) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
@@ -568,21 +568,21 @@ ALTER TABLE AvoirPourRole
     ADD CONSTRAINT roleId FOREIGN KEY (roleId) REFERENCES Role(idRole);
 
 ALTER TABLE Entreprise
-    ADD CONSTRAINT fk_entreprise_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT fk_entreprise_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE;
 
 ALTER TABLE AutoEntrepreneur
-    ADD CONSTRAINT fk_autoentrepreneur_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT fk_autoentrepreneur_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE;
 
 ALTER TABLE Particulier
-    ADD CONSTRAINT fk_particulier_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT fk_particulier_utilisateurid FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE;
 
 ALTER TABLE Avis
-    ADD CONSTRAINT destinataireId FOREIGN KEY (destinataireId) REFERENCES Utilisateur(idUtilisateur),
-    ADD CONSTRAINT redacteurId FOREIGN KEY (redacteurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT destinataireId FOREIGN KEY (destinataireId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+    ADD CONSTRAINT redacteurId FOREIGN KEY (redacteurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE SET NULL;
 
 ALTER TABLE Annonce
     ADD CONSTRAINT createurId FOREIGN KEY (createurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
-    ADD CONSTRAINT typeAnnonceId FOREIGN KEY (typeAnnonceId) REFERENCES TypeAnnonce(idTypeAnnonce),
+    ADD CONSTRAINT typeAnnonceId FOREIGN KEY (typeAnnonceId) REFERENCES TypeAnnonce(idTypeAnnonce) ON DELETE SET NULL,
     ADD CONSTRAINT categorieId FOREIGN KEY (categorieId) REFERENCES Categorie(idCategorie) ON DELETE CASCADE;
 
 ALTER TABLE Favoris
@@ -590,24 +590,24 @@ ALTER TABLE Favoris
     ADD CONSTRAINT fk_favoris_annonceid FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce) ON DELETE CASCADE;
 
 ALTER TABLE Conversation
-    ADD CONSTRAINT fk_conversation_annonceid FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce),
-    ADD CONSTRAINT fk_conversation_initiateurid FOREIGN KEY (initiateurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT fk_conversation_annonceid FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce) ON DELETE SET NULL,
+    ADD CONSTRAINT fk_conversation_initiateurid FOREIGN KEY (initiateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE SET NULL;
 
 ALTER TABLE Participer
     ADD CONSTRAINT participantId FOREIGN KEY (participantId) REFERENCES Utilisateur(idUtilisateur),
     ADD CONSTRAINT conversationId FOREIGN KEY (conversationId) REFERENCES Conversation(idConversation);
 
 ALTER TABLE Signalement
-    ADD CONSTRAINT avisId FOREIGN KEY (avisId) REFERENCES Avis(idAvis),
-    ADD CONSTRAINT messageId FOREIGN KEY (messageId) REFERENCES Message(idMessage),
-    ADD CONSTRAINT annonceId FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce),
-    ADD CONSTRAINT utilisateurId FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur),
-    ADD CONSTRAINT signaleurId FOREIGN KEY (signaleurId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT avisId FOREIGN KEY (avisId) REFERENCES Avis(idAvis) ON DELETE CASCADE,
+    ADD CONSTRAINT messageId FOREIGN KEY (messageId) REFERENCES Message(idMessage) ON DELETE CASCADE,
+    ADD CONSTRAINT annonceId FOREIGN KEY (annonceId) REFERENCES Annonce(idAnnonce) ON DELETE CASCADE,
+    ADD CONSTRAINT utilisateurId FOREIGN KEY (utilisateurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+    ADD CONSTRAINT signaleurId FOREIGN KEY (signaleurId) REFERENCES Utilisateur(idUtilisateur) ON DELETE SET NULL;
 
 
 ALTER TABLE Suivre
-    ADD CONSTRAINT fk_suivre_suiviid FOREIGN KEY (suiviId) REFERENCES Utilisateur(idUtilisateur),
-    ADD CONSTRAINT fk_suivre_abonneid FOREIGN KEY (abonneId) REFERENCES Utilisateur(idUtilisateur);
+    ADD CONSTRAINT fk_suivre_suiviid FOREIGN KEY (suiviId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+    ADD CONSTRAINT fk_suivre_abonneid FOREIGN KEY (abonneId) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE;
 
 
 -- Création de l'utilisateur pour l'administration de la base de données
