@@ -2395,4 +2395,8 @@ li {
 
 .sin-num {
   background-color: rgb(89, 84, 84);
+}
+
+.side-menu a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
