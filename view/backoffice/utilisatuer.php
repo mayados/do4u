@@ -56,8 +56,16 @@
                   <th scope="col">ID</th>
                   <th scope="col">Nom</th>
                   <th scope="col">Prénom</th>
-                  <th scope="col">Role</th>
+                  <th scope="col">Ville</th>
+                  <th scope="col">Code Postal</th>
+                  <th scope="col">Inscription date</th>
+                  <th scope="col">description</th>
+                  <th scope="col">photo</th>
+                  <th scope="col">Mot de pass</th>
+                  <th scope="col">Adresse mail</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Latitude</th>
+                  <th scope="col">Longtitude</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -67,7 +75,15 @@
                   <td>AHMADI</td>
                   <td>Zahra</td>
                   <td>Admin</td>
-                  <td>Active</td>
+                  <td>Strasbourg</td>
+                  <td>67000</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
                   <td class="action">
                     <i class="fa-regular fa-trash-can pe-2"></i>
                     <i class="fa-regular fa-pen-to-square"></i>
@@ -78,7 +94,15 @@
                   <td>AHMADI</td>
                   <td>Zahra</td>
                   <td>Admin</td>
-                  <td>Active</td>
+                  <td>Strasbourg</td>
+                  <td>67000</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
+                  <td>no text</td>
                   <td class="action">
                     <i class="fa-regular fa-trash-can pe-2"></i>
                     <i class="fa-regular fa-pen-to-square"></i>
