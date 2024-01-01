@@ -41,7 +41,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="utilisatuer.html">Utilisatuer</a>
+                <a class="active" href="utilisateur.html">Utilisateur</a>
               </li>
             </ul>
           </div>

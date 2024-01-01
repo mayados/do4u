@@ -38,9 +38,9 @@
             </a>
         </li>
         <li>
-            <a href="utilisatuer.php">
+            <a href="utilisateur.php">
             <i class="bx bx-group"></i>
-            <span class="text">Utilisatuer</span>
+            <span class="text">Utilisateur</span>
             </a>
         </li>
         <li>
@@ -69,7 +69,6 @@
                 <span class="text">Communication</span>
                 <i class="d-flex bx bx-down-arrow" data-bs-toggle="collapse" href="#message" role="button" aria-expanded="false" aria-controls="message"></i>
             </a>
-            
         </li>
         <li class="ps-3 collapse" id="message">
             <a href="conversation.php">
@@ -78,7 +77,7 @@
             </a>
         </li>
         <li class=" ps-3 collapse" id="message">
-            <a href="conversation.php">
+            <a href="message.php">
                 <i class="bx bx-file"></i>
                 <span class="text">Message</span>
             </a>

@@ -42,28 +42,30 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="conversation.html">Conversation</a>
+                <a class="active" href="categorie.html">Message</a>
               </li>
             </ul>
           </div>
           <p>date : 12/10/2023</p>
         </div>
         <div class="container mt-5">
-                    <div class="table-responsive">
+          <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">estSupPourInit</th>
-                  <th scope="col">estSupPourContact</th>
+                  <th scope="col">Date de Creation</th>
+                  <th scope="col">Text</th>
+                  <th scope="col">estLu</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>non</td>
-                  <td>non</td>
+                  <td>Label</td>
+                  <td>22/12/2023</td>
+                  <td>Oui</td>
                   <td class="action">
                     <i class="fa-regular fa-trash-can pe-2"></i>
                     <i class="fa-regular fa-pen-to-square"></i>
@@ -71,8 +73,9 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>non</td>
-                  <td>non</td>
+                  <td>Label</td>
+                  <td>22/12/2023</td>
+                  <td>Oui</td>
                   <td class="action">
                     <i class="fa-regular fa-trash-can pe-2"></i>
                     <i class="fa-regular fa-pen-to-square"></i>
