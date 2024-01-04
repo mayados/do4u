@@ -23,13 +23,13 @@
             <div class="row">
                 <div class="col-12 col-lg-3 px-0">
                     <ul class="list-group text-center d-flex flex-row justify-content-evenly py-4 p-lg-5 bg-white flex-lg-column menu-actions-messenger">
-                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.html">Tout</a></li>
-                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.html">Non lu</a></li>
-                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.html">Actualiser</a></li>
+                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.php">Tout</a></li>
+                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.php">Non lu</a></li>
+                        <li class="list-group-item border-0"><a class="list-group-item-action link-underline link-underline-opacity-0 bg-transparent" href="messenger.php">Actualiser</a></li>
                     </ul>
                 </div>            
                 <section class="mt-5 col-12 offset-lg-2 col-lg-7 d-flex flex-column gap-2 mt-lg-0">
-                    <a href ="conversation.html" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
+                    <a href ="conversation.php" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
                         <div class="card-body d-flex flex-column  flex-lg-row justify-content-lg-between">
                             <div class="d-flex  align-items-center gap-2">
                                 <figure class="figure-message mb-0">
@@ -45,7 +45,7 @@
                             <p class="mb-0 mt-2">23/11/2023</p>
                         </div>
                     </a >
-                    <a href="conversation.html" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
+                    <a href="conversation.php" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
                         <div class="card-body d-flex flex-column flex-lg-row justify-content-lg-between ">
                             <div class="d-flex  align-items-center gap-2">
                                 <figure class="figure-message mb-0">
@@ -61,7 +61,7 @@
                             <p class="mb-0 mt-2">23/11/2023</p>
                         </div>
                     </a >
-                    <a href="conversation.html" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
+                    <a href="conversation.php" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
                         <div class="card-body d-flex flex-column flex-lg-row justify-content-lg-between ">
                             <div class="d-flex  align-items-center gap-2">
                                 <figure class="figure-message mb-0">
@@ -77,7 +77,7 @@
                             <p class="mb-0 mt-2">23/11/2023</p>
                         </div>
                     </a >
-                    <a href="conversation.html" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
+                    <a href="conversation.php" class="message-card card border-top-0 border-start-0 border-end-0 shadow link-underline link-underline-opacity-0" role="link" tabindex="0">
                         <div class="card-body d-flex flex-column flex-lg-row justify-content-lg-between ">
                             <div class="d-flex align-items-center gap-2">
                                 <figure class="figure-message mb-0">

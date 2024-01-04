@@ -42,7 +42,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="signalement.html">Signalement</a>
+                <a class="active" href="signalement.php">Signalement</a>
               </li>
             </ul>
           </div>

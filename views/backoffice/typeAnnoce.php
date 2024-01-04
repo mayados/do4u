@@ -42,7 +42,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="typeAnnoce.html">typeAnnoce</a>
+                <a class="active" href="typeAnnoce.php">typeAnnoce</a>
               </li>
             </ul>
           </div>

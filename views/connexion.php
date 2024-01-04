@@ -21,8 +21,8 @@
                     <!-- col-1-connexion float-center -->
                     <img class="mx-auto img-fluid img-conx d-block " src="../public/assets/img/Img_page_de_connexion/personne.png" alt="" />
                     <p>Votre confidentialité et votre sécurité sont nos principales priorités !<br />
-                        Consultez notre <a class="link" href="politique.html">politique de confidentialité</a><br />
-                        Besoin d’aide ? <a class="link" href="./contact.html">contactez-nous</a><br />
+                        Consultez notre <a class="link" href="politique.php">politique de confidentialité</a><br />
+                        Besoin d’aide ? <a class="link" href="./contact.php">contactez-nous</a><br />
                     </p>
                 </div>
                 <div class="offset-lg-2 col-12 col-lg-5 order-1 order-lg-2 pb-5">
@@ -30,7 +30,7 @@
                     <div class="form-connexion">
                         <form>
                             <h3 class="fw-bolder">Bienvenue !</h3>
-                            <p>Connectez-vous ou <a class="link" href="Inscription.html">créez un compte</a></p>
+                            <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">
                                 <label for="adresseMail">Adresse mail</label>
                                 <input type="text" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">

@@ -45,7 +45,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="index.html">Backoffice</a>
+                <a class="active" href="index.php">Backoffice</a>
               </li>
             </ul>
           </div>
