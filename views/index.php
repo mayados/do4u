@@ -18,7 +18,7 @@
     <?php require_once base_path('views/components/menu.php'); ?>
     <?php displayErrorsAndMessages() ?>
     <main>
-        <section class="container-fluid container-f-index">
+        <section class="container-fluid container-f-index index-home">
             <div class="container hero">
                 <div class="row d-flex align-items-center align-content-center ">
                     <div class="col-md-6 float-center">
