@@ -1,40 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Voces&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&family=Pacifico&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: $text-color;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $text-color;
 }
 
 h1 {
-    font-family: 'Montserrat';
-    font-size: 2rem;
+  font-family: "Montserrat";
+  font-size: 2rem;
 }
 
 h2,
 h3 {
-    font-family: 'Voces';
+  font-family: "Voces";
 }
 
 h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-h3{
-    font-size: 1.3rem;
+h3 {
+  font-size: 1.3rem;
 }
 
 h4 {
-  font-family: 'Nunito Sans';
+  font-family: "Nunito Sans";
   font-size: 1.2rem;
   font-weight: 600;
 }
-p{
-    font-family: 'Nunito Sans';
-    font-size: 1rem;
+p {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
 }
 
 .nav-pills .nav-link.active,
@@ -44,69 +44,68 @@ p{
 }
 .nav-pills .nav-link {
   background-color: $primary-color;
-  color: $white-color
+  color: $white-color;
 }
 
-.link{
-    color: $secondary-color;
-    font-weight: 600;
-    text-decoration: underline;
- }
- .link:hover{
+.link {
   color: $secondary-color;
   font-weight: 600;
   text-decoration: underline;
- }
+}
+.link:hover {
+  color: $secondary-color;
+  font-weight: 600;
+  text-decoration: underline;
+}
 
 // .link:visited{
 //   color: $primary-color;
 // }
 
- .icon{
-    color: $primary-color;
-    margin-right: 10px;
- }
+.icon {
+  color: $primary-color;
+  margin-right: 10px;
+}
 
+.form-group {
+  margin-bottom: 1rem;
+}
 
- .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-inline .form-control {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
-  }
-  
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 767px) {
   .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -5px;
-    margin-left: -5px;
+    flex-direction: column; /* Stack rows vertically on smaller screens */
   }
-  
-  .form-row > .col {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  
-  .form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
+}
 
-  /* Media query for smaller screens (e.g., mobile devices) */
-  @media (max-width: 767px) {
-    .form-row {
-      flex-direction: column; /* Stack rows vertically on smaller screens */
-    }
-  }
-  
-  label {
-    margin-bottom: 0.5rem;
-  }
-  .p-orange{
-    color: $secondary-color;
-    font-weight: 600;
-  }
+label {
+  margin-bottom: 0.5rem;
+}
+.p-orange {
+  color: $secondary-color;
+  font-weight: 600;
+}

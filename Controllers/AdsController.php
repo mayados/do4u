@@ -31,7 +31,7 @@ class AdsController
 
     public function showDetails()
     {
-        require_once base_path('views/adDtails.php');
+        require_once base_path('views/adDetails.php');
     }
 
 

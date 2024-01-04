@@ -22,8 +22,8 @@
                     <div class="col-12 col-lg-12">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a class="link" href="../view/index.php">Accueil</a></li>
-                              <li class="breadcrumb-item"><a class="link" href="../view/ads.php">Offres</a></li>
+                              <li class="breadcrumb-item"><a class="link" href="index.php">Accueil</a></li>
+                              <li class="breadcrumb-item"><a class="link" href="ads.php">Offres</a></li>
                               <li class="breadcrumb-item"><a class="link" href="#">Aide à
                                 domicile</a></li>
                               <li class="breadcrumb-item active" aria-current="page">Service à la personne</li>
@@ -31,6 +31,7 @@
                           </nav>
                     </div>
                 </div>
+                
             </div>
             <div class="container">
                 <div class="row ">
@@ -41,11 +42,11 @@
                             <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-2">
                                 <span class="user-type">Particulier</span>
                                 <div class="report" role="alert">
-                                    <a class="text-decoration-none" href="../view/contact.php">
+                                    <a class="text-decoration-none" href="contact.php">
                                         <i class="fa-regular fa-flag fa-xl"></i>
                                     </a>  
                                     <span class="badge text-wrap" style="width: 5rem;">
-                                        <a class="alert-link link-danger text-decoration-none" href="../view/contact.php">Signaler un problème</a>
+                                        <a class="alert-link link-danger text-decoration-none" href="contact.php">Signaler un problème</a>
                                     </span>
                                 </div>
                             </div>
@@ -67,7 +68,7 @@
                             <div class="card-body"> 
                                 <div class="flex-lg-row d-flex flex-wrap justify-content-between">
                                     <figure id="photo-user">
-                                        <a href="../view/myProfile.php">
+                                        <a href="myProfile.php">
                                             <img src="../public/assets/img/woman_face.jpg" alt="Photo d'un utilisateur">
                                         </a>
                                     </figure>  
@@ -76,10 +77,10 @@
                                         <p><i class="fa-solid fa-star" style="color: #E9AD10;"></i> 4/5 8 avis</p>
                                     </div>
                                     <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-end offset-sm-6">
-                                        <a href="../view/myProfile.php"><i class="fa-solid fa-chevron-right fa-2x"></i></a>
+                                        <a href="myProfile.php"><i class="fa-solid fa-chevron-right fa-2x"></i></a>
                                     </div>
                                 </div>
-                                <a href="../view/messenger.php" class="btn button-primary-regular btn-message">Message</a>
+                                <a href="messenger.php" class="btn button-primary-regular btn-message">Message</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,7 @@
                     <div class="col-12 col-lg-12">
                         <div class="line-divider mt-3 mb-4"></div>
                         <div class="d-flex justify-content-end align-items-center mt-3 mb-3 p-2 gap-2">
-                            <a class="link" href="../view/ads.php">Voir plus d'offres</a>
+                            <a class="link" href="ads.php">Voir plus d'offres</a>
                             <i class="fa-solid fa-arrow-right fa-xl"></i>
                         </div>
                         
