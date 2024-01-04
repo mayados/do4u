@@ -67,7 +67,7 @@
             <a>
                 <i class="bx bx-message-dots"></i>
                 <span class="text">Communication</span>
-                <i class="d-flex bx bx-down-arrow" data-bs-toggle="collapse" href="#message" role="button" aria-expanded="false" aria-controls="message"></i>
+                <i class="d-flex bx bx-chevrons-right" data-bs-toggle="collapse" href="#message" role="button" aria-expanded="false" aria-controls="message"></i>
             </a>
         </li>
         <li class="ps-3 collapse" id="message">
