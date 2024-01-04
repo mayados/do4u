@@ -23,7 +23,7 @@
     <main class="container" id="main-container-user">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="fil d'ariane">
             <ol class="breadcrumb fil-ariane">
-              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
               <li class="breadcrumb-item active" aria-current="page">Léa</li>
             </ol>
         </nav>
@@ -108,7 +108,7 @@
                 <div class="tab-pane fade" id="pills-annonces-user" role="tabpanel" aria-labelledby="pills-annonces-tab" tabindex="0">
                     <div class="row justify-content-evenly d-flex gap-5 gap-lg-0">
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -166,7 +166,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -224,7 +224,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -350,13 +350,13 @@
                                         <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Nolan">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
-                                        <a href="userProfile.html" class="mb-0 text-decoration-none">Nolan</a>
+                                        <a href="userProfile.php" class="mb-0 text-decoration-none">Nolan</a>
                                         <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
+                                    <a href="ads.php" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>
@@ -395,13 +395,13 @@
                                         <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Jessica">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
-                                        <a href="userProfile.html" class="mb-0 text-decoration-none">Jessica</a>
+                                        <a href="userProfile.php" class="mb-0 text-decoration-none">Jessica</a>
                                         <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
+                                    <a href="ads.php" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>

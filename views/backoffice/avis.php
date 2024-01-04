@@ -42,7 +42,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="avis.html">Avis</a>
+                <a class="active" href="avis.php">Avis</a>
               </li>
             </ul>
           </div>

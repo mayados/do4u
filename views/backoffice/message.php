@@ -42,7 +42,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="categorie.html">Message</a>
+                <a class="active" href="categorie.php">Message</a>
               </li>
             </ul>
           </div>

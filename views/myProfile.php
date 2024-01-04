@@ -16,7 +16,7 @@
     <main class="container" id="main-container-mine">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb fil-ariane">
-              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
               <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
             </ol>
         </nav>
@@ -81,8 +81,8 @@
                                     <div class="card-body">
                                         <p class="card-title fw-bold text-start">Spécialiste de soin et de la mise en beauté</p>
                                         <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                            <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.html">Consulter <i class="fa-solid fa-eye"></i></a>
-                                            <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.html">Modifier <i class="fa-solid fa-pen"></i></a>
+                                            <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php">Consulter <i class="fa-solid fa-eye"></i></a>
+                                            <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
                                             <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
             
                                         </div>
@@ -119,8 +119,8 @@
                                 <div class="card-body">
                                     <p class="card-title fw-bold text-start">Spécialiste de soin et de la mise en beauté</p>
                                     <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.html">Consulter <i class="fa-solid fa-eye"></i></a>
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.html">Modifier <i class="fa-solid fa-pen"></i></a>
+                                        <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php">Consulter <i class="fa-solid fa-eye"></i></a>
+                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
                                         <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
                                     </div>
                                 </div>                            
@@ -137,8 +137,8 @@
                             <div class="card-body">
                                 <p class="card-title fw-bold text-start">Spécialiste de soin et de la mise en beauté</p>
                                 <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                    <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.html">Consulter <i class="fa-solid fa-eye"></i></a>
-                                    <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.html">Modifier <i class="fa-solid fa-pen"></i></a>
+                                    <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php">Consulter <i class="fa-solid fa-eye"></i></a>
+                                    <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
                                     <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
     
                                 </div>
@@ -156,8 +156,8 @@
                         <div class="card-body">
                             <p class="card-title fw-bold text-start">Spécialiste de soin et de la mise en beauté</p>
                             <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.html">Consulter <i class="fa-solid fa-eye"></i></a>
-                                <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.html">Modifier <i class="fa-solid fa-pen"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php">Consulter <i class="fa-solid fa-eye"></i></a>
+                                <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
                                 <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
                             </div>
                         </div>                            
@@ -169,7 +169,7 @@
                     <!-- The div with class row is also display with flex because elements will be dynamics, so if there is only 1 element, it should be centered -->
                     <div class="row justify-content-evenly d-flex gap-5 gap-lg-0">
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -227,7 +227,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -285,7 +285,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -343,7 +343,7 @@
                             </a>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <a href="adDetails.html" class="card-link">
+                            <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
@@ -417,13 +417,13 @@
                                         <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Rosie">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
-                                        <a href="userProfile.html" class="mb-0 text-decoration-none">Nolan</a>
+                                        <a href="userProfile.php" class="mb-0 text-decoration-none">Nolan</a>
                                         <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
+                                    <a href="ads.php" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>
@@ -462,13 +462,13 @@
                                         <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Jessica">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
-                                        <a href="userProfile.html" class="mb-0 text-decoration-none">Jessica</a>
+                                        <a href="userProfile.php" class="mb-0 text-decoration-none">Jessica</a>
                                         <p class="mb-0"><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-solid fa-star full-star-icon"></i><i class="fa-regular fa-star"></i></p>
                                         <p class="mb-0">02/03/2023</p>
                                     </div>                                   
                                 </div>
                                 <div class="mt-3">
-                                    <a href="ads.html" class="categorie-avis-links">Services à la personne</a>
+                                    <a href="ads.php" class="categorie-avis-links">Services à la personne</a>
                                     <p>Très satisfaite du travail de Lola pour mon grand-père</p>
                                 </div>
                             </div>
@@ -509,7 +509,7 @@
                             </figure> 
                             <p>Joel_obp</p>
                             <p><i class="fa-solid fa-star full-star-icon"></i> 4/5 <span>(18 avis)</span></p>
-                            <a href="userProfile.html" class="button-primary-pill text-decoration-none">Voir le profil</a>
+                            <a href="userProfile.php" class="button-primary-pill text-decoration-none">Voir le profil</a>
                         </article>
                     </div>
                 </div>

@@ -17,12 +17,12 @@
         <div class=" container-fluid container-lg  bg-white p-0">
             <section id="section-top-conversation" class="d-flex justify-content-between align-items-center px-3 px-lg-5 py-2">
                 <div class="d-flex align-items-center gap-2 gap-lg-5 ">
-                    <a href="messenger.html"><i class="fa-solid fa-arrow-left text-white user-conversation-top-icon"></i></a>                      
+                    <a href="messenger.php"><i class="fa-solid fa-arrow-left text-white user-conversation-top-icon"></i></a>                      
                     <div class="d-flex gap-1 align-items-center gap-lg-3">
                         <figure class="figure-user-conversation mb-0">
                             <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Lola">
                         </figure> 
-                        <h2><a href="userProfile.html" id="user-conversation" class="text-white text-decoration-none">Lola</a></h2>
+                        <h2><a href="userProfile.php" id="user-conversation" class="text-white text-decoration-none">Lola</a></h2>
                     </div>
                 </div>
                 <div class="container-dots-action h-100">
@@ -80,7 +80,7 @@
                 <figure class="figure-user-conversation mb-0">
                     <img src="../public/assets/img/affection-spouses 546x364.jpg" class="rounded object-fit-cover" alt="Détail photo de l'annonce Propose services de ménage">
                 </figure> 
-                <h2><a href="adDetails.html" class="text-dark text-decoration-none" id="annonce-conversation">Propose services de ménage</a></h2>
+                <h2><a href="adDetails.php" class="text-dark text-decoration-none" id="annonce-conversation">Propose services de ménage</a></h2>
             </section>
             <section id="conversation-area">
                 <div id="conversation-scrollable">

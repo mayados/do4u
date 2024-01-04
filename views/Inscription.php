@@ -20,7 +20,7 @@
                 <div class="row align-items-center align-content-center">
                     <div class="col-12 col-lg-6">
                         <h2 class="h2-pc fw-bold pt-3">Créez un compte</h2>
-                            <b><p class="fw-bold">Entrez les détails de votre compte ci-dessous ou <a href="connexion.html" class="link"> connectez-vous</a></p></b>
+                            <b><p class="fw-bold">Entrez les détails de votre compte ci-dessous ou <a href="connexion.php" class="link"> connectez-vous</a></p></b>
                             <div class="form-inscription">
                                 <p class="p-orange text-center fw-bolder">Vous êtes ?</p>
                                 <ul class="nav nav-pills nav-conx justify-content-around pb-4 pt-2 text-center" id="pills-tab" role="tablist">
@@ -71,7 +71,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les <a class="link" href="cgu.html" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.html" target="_blank" rel="noopener noreferrer"    > politique de confidentialité</a> du site
+                                                En cochant cette case vous acceptez les <a class="link" href="cgu.php" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.php" target="_blank" rel="noopener noreferrer"    > politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
@@ -114,7 +114,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les <a class="link" href="cgu.html" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.html" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a> du site
+                                                En cochant cette case vous acceptez les <a class="link" href="cgu.php" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.php" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
@@ -157,7 +157,7 @@
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les <a class="link" href="cgu.html" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.html" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a> du site
+                                                En cochant cette case vous acceptez les <a class="link" href="cgu.php" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.php" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a> du site
                                             </label>
                                         </div>
                                         <div class="mt-4">
