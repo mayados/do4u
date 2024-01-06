@@ -15,7 +15,9 @@
 </head>
 <body>
 
-    <?php require_once base_path('views/components/menu.php'); ?>
+<!-- 
+    <?php require_once base_path('views/components/menu.php'); ?>   -->
+ 
     <?php displayErrorsAndMessages() ?>
     <main>
         <section class="container-fluid container-f-index index-home">
