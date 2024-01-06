@@ -13,5 +13,14 @@ require_once __DIR__.'/../helpers/class/App.php';
 require_once __DIR__.'/../helpers/class/DB.php';
 require_once __DIR__.'/../helpers/class/Auth.php';
 
+// Import models
+require_once __DIR__.'/../Models/CategorieModel.php';
+
+// Import controllers
+require_once __DIR__.'/../Controllers/CategorieController.php';
+
+
+// ... other includes
+
 // Start sessions
 session_start();
