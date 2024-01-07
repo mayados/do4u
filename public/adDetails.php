@@ -1,4 +1,7 @@
 <?php
+namespace Public\handlers;
+namespace helpers\class;
+use Controllers;
 require_once __DIR__.'/../bootstrap/app.php';
 
 // Check only if guest

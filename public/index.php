@@ -1,13 +1,19 @@
 <?php
-namespace Public\Handlers;
-namespace Helpers\class;
+namespace Public\handlers;
 use Controllers;
+use Helpers\class\App;
+use Helpers\path_functions;
 
 
+require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once __DIR__.'/../bootstrap/app.php';
+use Controllers\AdsController;
+use Controllers\ComponentController;
 
-// Guest or Auth allowed
+$componentController = new ComponentController();
+$adsController = new AdsController($componentController);
+$adsController->showAdsByCategorie();
+
 
 
 $controller = new Controllers\HomeController();

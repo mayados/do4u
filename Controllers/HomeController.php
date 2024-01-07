@@ -2,31 +2,31 @@
 
 namespace Controllers;
 
-require_once 'Controller.php';
-
-use DB;
 
 class HomeController extends Controller
 {
-
-    public function index() : void
+    public function index(): void
     {
-        require_once base_path('views/index.php');
+        $this->render('views/index.php');
+        // Le reste du code...
     }
 
-    public function showContactPage() : void
+    public function showContactPage(): void
     {
-        require_once base_path('views/contact.php');
+        $this->render('views/contact.php');
+        // Le reste du code...
     }
 
-    public function showCguPage() : void
+    public function showCguPage(): void
     {
-        require_once base_path('views/cgu.php');
+        $this->render('views/cgu.php');
+        // Le reste du code...
     }
 
-    public function showPolitiquePage() : void
+    public function showPolitiquePage(): void
     {
-        require_once base_path('views/politique.php');
+        $this->render('views/politique.php');
+        // Le reste du code...
     }
-
 }
+

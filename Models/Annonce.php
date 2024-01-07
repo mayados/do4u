@@ -46,7 +46,11 @@ class Annonce
     }
 
 
+    public function getAnnoncesByCategorie($categorie): void
+    {
 
+
+    }
     
 
 

@@ -3,7 +3,7 @@
         'name' => 'php-cours/php-cours',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '310ade3d327206c4313600948c13ed89429de26b',
+        'reference' => '2101b3716d423c34fd058c2bb6c1d96e7e57ec15',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'php-cours/php-cours' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '310ade3d327206c4313600948c13ed89429de26b',
+            'reference' => '2101b3716d423c34fd058c2bb6c1d96e7e57ec15',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

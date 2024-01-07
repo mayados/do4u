@@ -1,6 +1,7 @@
 <?php
 use Models\Categorie;
 
+
 require_once __DIR__.'../../../helpers/class/DB.php';
 
 // Instantiate the DB class

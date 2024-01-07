@@ -19,6 +19,26 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'P' => 
+        array (
+            'Public\\' => 7,
+        ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
+        'H' => 
+        array (
+            'Helpers\\' => 8,
+        ),
+        'C' => 
+        array (
+            'Controllers\\' => 12,
+        ),
+        'B' => 
+        array (
+            'Boostrap\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -34,10 +54,26 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => '/',
+        'Public\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/public',
+        ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
+        'Helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/helpers',
+        ),
+        'Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Controllers',
+        ),
+        'Boostrap\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/bootstrap',
+        ),
     );
 
     public static $classMap = array (
@@ -54,7 +90,6 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d::$classMap;
 
         }, null, ClassLoader::class);
