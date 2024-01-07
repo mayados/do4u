@@ -41,16 +41,18 @@ function ec(string $text) : void
     echo e($text);
 }
 
-function dump(...$args)
-{
-    foreach ($args as $arg) {
-        var_dump($arg);
-        echo "\n<br>";
-    }
-}
 
-function dd(...$args)
-{
-    dump($args);
-    exit();
-}
+// no need to use this function anymore becuase we have composer autoloader
+// function dump(...$args)
+// {
+//     foreach ($args as $arg) {
+//         var_dump($arg);
+//         echo "\n<br>";
+//     }
+// }
+
+// function dd(...$args)
+// {
+//     dump($args);
+//     exit();
+// }

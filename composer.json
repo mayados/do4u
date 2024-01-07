@@ -1,0 +1,11 @@
+{
+  "name": "do4u/do4u",
+  "require-dev": {
+    "symfony/var-dumper": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "/"
+    }
+  }
+}
