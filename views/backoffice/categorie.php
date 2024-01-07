@@ -1,4 +1,25 @@
+<?php
 
+require_once __DIR__.'/../../helpers/class/DB.php';
+
+// Instantiate the DB class
+$db = DB::getDB();
+
+// Pagination settings
+$recordsPerPage = 10; // Number of records to display on each page
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Current page
+
+// Calculate the offset for the SQL query
+$offset = ($page - 1) * $recordsPerPage;
+
+// Example query to get paginated data from the categorie table
+$sql = "SELECT idCategorie, nomCategorie FROM categorie ORDER BY idCategorie ASC LIMIT $recordsPerPage OFFSET $offset";
+$categories = DB::fetch($sql);
+
+// Get the total number of records for pagination
+$totalRecords = DB::fetch("SELECT COUNT(*) as count FROM categorie")[0]['count'];
+$totalPages = ceil($totalRecords / $recordsPerPage);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
