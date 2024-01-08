@@ -14,11 +14,6 @@
 
 </head>
 <body>
-
- 
-    
- 
-    
     <main>
         <section class="container-fluid container-f-index index-home">
             <div class="container hero">
