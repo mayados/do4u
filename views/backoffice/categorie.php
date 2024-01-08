@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../../helpers/class/DB.php';
+
 
 function getCategories($page, $recordsPerPage) {
     // Instantiate the DB class

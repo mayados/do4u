@@ -1,32 +1,51 @@
 <?php
 
 namespace Controllers;
+use Controllers\ComponentController;
 
-require_once 'Controller.php';
-
-use DB;
 
 class HomeController extends Controller
 {
+    private $componentController;
 
-    public function index() : void
-    {
-        require_once base_path('views/index.php');
+
+    public function __construct(ComponentController $componentController) {
+        $this->componentController = $componentController;
+    }
+  
+
+    public function showMenu() {
+        
+        $this->componentController->renderHeader();
+        
+    }  
+    public function index() {
+   
+        require_once __DIR__ . '/../views/index.php';
+       
+    }
+    public function showFooter(){
+        $this->componentController->renderFooter();
     }
 
-    public function showContactPage() : void
+
+
+    public function showContactPage(): void
     {
-        require_once base_path('views/contact.php');
+        $this->render('views/contact.php');
+        // Le reste du code...
     }
 
-    public function showCguPage() : void
+    public function showCguPage(): void
     {
-        require_once base_path('views/cgu.php');
+        $this->render('views/cgu.php');
+        // Le reste du code...
     }
 
-    public function showPolitiquePage() : void
+    public function showPolitiquePage(): void
     {
-        require_once base_path('views/politique.php');
+        $this->render('views/politique.php');
+        // Le reste du code...
     }
-
 }
+

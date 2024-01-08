@@ -1,11 +1,21 @@
 <?php
 
-function base_path(string $path = '') : string
+namespace helpers;
+
+function base_path(string $path = ''): string
 {
-    // Add auto /
+    // Ajouter automatiquement un /
     if ($path && $path[0] !== '/') {
-        $path = '/'.$path;
+        $path = '/' . $path;
     }
 
-    return APP_BASE_PATH.$path;
+    // Utiliser la constante APP_BASE_PATH s'il est défini
+    if (defined('APP_BASE_PATH')) {
+        return APP_BASE_PATH . $path;
+    } else {
+        // Utiliser __DIR__ si APP_BASE_PATH n'est pas défini
+        return __DIR__ . $path;
+    }
 }
+
+

@@ -1,12 +1,16 @@
 <?php
-require_once __DIR__.'/../bootstrap/app.php';
 
-// Check only if guest
-Auth::isGuestOrRedirect();
+require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+use helpers\class\App;
+use Controllers\AuthController;
+use Controllers\ComponentController;
 
-require_once base_path('Controllers/AuthController.php');
-$controller = new Controllers\AuthController();
-$controller->login();
+$componentController = new ComponentController();
 
-// Remove errors, success and old data
+$authController = new AuthController($componentController);
+$authController->showMenu();
+$authController->login();
+$authController->showFooter();
+
+// Remove errors, success, and old data
 App::terminate();

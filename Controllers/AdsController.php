@@ -1,38 +1,61 @@
 <?php
 
 namespace Controllers;
+use Controllers\ComponentController;
 
-require_once __DIR__.'/../Models/Annonce.php';
 
-use DB;
-use Models\Annonce;
 
 class AdsController
 {
-    const URL_CREATE = '';
-    const URL_INDEX = '';
+    const URL_CREATE = '/views/creationAd.php';
+    const URL_INDEX = '/views/index.php';
     const URL_HANDLER = '/handlers/ad-handler.php';
+    private $componentController;
 
 
-    public function showAdsByCategorie()
-    {
-        require_once base_path('views/ads.php');
+    public function __construct(ComponentController $componentController) {
+        $this->componentController = $componentController;
     }
+
+    public function showAdsByCategorie() {
+        // Your main content logic goes here
+
+        // Assuming ads.php is in the views directory
+        require_once __DIR__ . '/../views/ads.php';
+    }
+
+    public function showMenu() {
+        
+        $this->componentController->renderHeader();
+        
+    }
+    public function showFooter(){
+        $this->componentController->renderFooter();
+    }
+
+
+
 
     public function showCreationPage()
     {
-        require_once base_path('views/creationAd.php');
+        require_once __DIR__ .'/../../views/creationAd.php' ;
     }
 
     public function showModificationPage()
     {
-        require_once base_path('views/modificationAd.php');
+        require_once __DIR__ . '/../../views/modificationAd.php';
     }
 
     public function showDetails()
     {
-        require_once base_path('views/adDetails.php');
+        require_once __DIR__ . '/../../views/adDetails.php';
     }
 
+   
+ 
+    }
+    
+  
+    
 
-}
+

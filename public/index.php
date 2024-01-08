@@ -1,11 +1,16 @@
 <?php
-require_once __DIR__.'/../bootstrap/app.php';
 
-// Guest or Auth allowed
+require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+use helpers\class\App;
+use Controllers\HomeController;
+use Controllers\ComponentController;
 
-require_once base_path('Controllers/HomeController.php');
-$controller = new Controllers\HomeController();
-$controller->index();
+$componentController = new ComponentController();
 
-// Remove errors, success and old data
+$homeController = new HomeController($componentController);
+$homeController->showMenu();
+$homeController->index();
+$homeController->showFooter();
+
+// Remove errors, success, and old data
 App::terminate();

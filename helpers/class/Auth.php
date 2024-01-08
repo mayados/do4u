@@ -1,4 +1,5 @@
 <?php
+namespace helpers\class;
 
 class Auth {
     const SESSION_KEY = 'current_user_id';
