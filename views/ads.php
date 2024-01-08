@@ -1,3 +1,9 @@
+<?php
+use Models\Annonce;
+$annonces = Annonce::getAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,6 +19,8 @@
    
    
     <main>
+
+
     <section class="annonces">
         <div class="container p-5">
             <!-- Filtres de recherche -->
@@ -57,34 +65,51 @@
                     </div>
                 </div>
             </div>
-    
-            <!-- Annonces -->
+
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <!-- Card 1 -->
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                      <img src="../public/assets/img/Img_page_ads/soin.jpg" class="card-img-top" alt="...">
-                      <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                      <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                          <p><i class="bi bi-person"></i> Entreprise</p>
-                          <p><i class="bi bi-currency-euro"></i> 40€/H</p>
-                          <p><i class="bi bi-folder"></i> Santé et bien-être</p>
-                          <p>
-                              <img src="../public/assets/img/Img_page_ads/avatar9.webp" class="rounded-circle" width="30" alt="Avatar">
-                              Margaux <i class="bi bi-star icon-etoile"></i> 4/5 19 avis
-                          </p>
-                          <p><i class="bi bi-geo-alt"></i> Strasbourg</p>
-                      </div>
-                  </div>
-              </div>
-    
+                    <!-- Card 1 -->
+                    <!-- Début de la boucle foreach -->
+
+                    <?php
+                    var_dump($annonces); die();
+                    foreach ($annonces as $annonce): ?>
+    <div class="col">
+        <a href="#" class="card-link">
+            <div class="card h-100 card-ad">
+                <div class="position-relative">
+                    <?php if (isset($annonce['photo'])): ?>
+                        <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                    <?php endif; ?>
+                    <div class="offer-badge">
+                        <?php if (isset($annonce['type'])): ?>
+                            <span class="offer-badge"><?php echo $annonce['type']; ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Le reste de votre contenu avec des variables dynamiques -->
+                    <?php if (isset($annonce['titre'])): ?>
+                        <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
+                    <?php endif; ?>
+                    <div class="row align-items-center">
+                        <div class="col-1">
+                            <i class="icon fa-regular fa-user"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <?php if (isset($annonce['prix'])): ?>
+                                <span><?php echo $annonce['prix']; ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <!-- ... Autres informations dynamiques -->
+                </div>
+            </div>
+        </a>
+    </div>
+<?php endforeach; ?>
+
+<!-- Fin de la boucle foreach -->
+
                 <!-- Card 2 -->
                 <div class="col mb-4">
                     <div class="card classperso position-relative">

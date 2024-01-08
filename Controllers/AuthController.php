@@ -14,32 +14,12 @@ class AuthController extends Controller
     const URL_AFTER_LOGIN = '/ads.php';
     const URL_AFTER_LOGOUT = '/index.php';
 
-    private $componentController;
-
-
-    public function __construct(ComponentController $componentController) {
-        $this->componentController = $componentController;
-    }
-  
-
-    public function showMenu() {
-        
-        $this->componentController->renderHeader();
-        
-    }  
     public function login() 
     {
         $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../views/connexion.php';
     }
-    public function showFooter(){
-        $this->componentController->renderFooter();
-    }
-
-
-
-    
-  
+ 
 
     public function register() : void
     {

@@ -1,7 +1,5 @@
 <?php
-
 namespace Models;
-namespace Helpers;
 use helpers\class\DB;
 
 //require_once __DIR__.'/../bootstrap/app.php';
@@ -9,70 +7,70 @@ use helpers\class\DB;
 
 class Annonce
 {
-    public ?int $idAnnonce;
+    public ?int $id;
     public ?string $titre;
     public ?string $datePublication;
     public ?string $photo;
     public ?string $description;
     protected ?float $prix;
     public ?string $ville;
-    public ?int $codePostal;
-    public ?float $latitude;
-    public ?float $longitude;
+
+
 
     // Constructeur
     public function __construct(
-        ?int $idAnnonce = null,
-        ?string $titre = null,
-        ?string $datePublication = null,
-        ?string $photo = null,
-        ?string $description = null,
-        ?float $prix = null,
-        ?string $ville = null,
-        ?int $codePostal = null,
-        ?float $latitude = null,
-        ?float $longitude = null
+        ?string $titre ,
+        ?string $datePublication,
+        ?string $photo,
+        ?string $description,
+        ?float $prix,
+        ?string $ville,
+
     ) {
-        $this->idAnnonce = $idAnnonce;
         $this->titre = $titre;
         $this->datePublication = $datePublication;
         $this->photo = $photo;
         $this->description = $description;
         $this->prix = $prix;
         $this->ville = $ville;
-        $this->codePostal = $codePostal;
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
+
     }
 
-
-    public function getAnnoncesByCategorie($categorie): void
-    {
-
-
+    public static function getAll() {
+        $sql = "SELECT * FROM annonce";
+        $result = DB::statement($sql);
+    
+        // Vérifier si la requête a réussi et que le résultat est un tableau ou un objet
+        if ($result !== false && is_iterable($result)) {
+            return $result;
+        }
+    
+        // Gérer les cas où la requête échoue ou le résultat n'est pas itérable
+        return [];
     }
     
 
-
-
-    public function addAnnonce() : int|false
+    public function addAnnonce()
     {
         return DB::statement(
-            "INSERT INTO annonce (idAnnonce, titre, datePublication, photo, description, prix, ville, codePostal, latitude, longitude)"
-            ." VALUES (:idAnnonce, :titre, :datePublication, :photo, :description, :prix, :ville, :codePostal, :latitude, :longitude )",
+            "INSERT INTO annonces ( titre, datePublication, photo, description, prix, ville)"
+            . " VALUES ( :titre, :datePublication, :photo, :description, :prix, :ville)",
             [
-                'idAnnonce' => $this->idAnnonce,
+               
                 'titre' => $this->titre,
                 'datePublication' => $this->datePublication,
                 'photo' => $this->photo,
                 'description' => $this->description,
                 'prix' => $this->prix,
                 'ville' => $this->ville,
-                'codePostal' => $this->codePostal,
-                'latitude' => $this->latitude,
-                'longitude' => $this->longitude,
+
             ],
         );
     }
 
+    public function getAnnoncesByCategorie($categorie): void
+    {
+        // À implémenter
+        // Vous pouvez ajouter la logique pour récupérer les annonces par catégorie ici
+    }
 }

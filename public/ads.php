@@ -8,7 +8,7 @@ $componentController = new ComponentController();
 
 $adsController = new AdsController($componentController);
 $adsController->showMenu();
-$adsController->showAdsByCategorie();
+$adsController->getAll();
 $adsController->showFooter();
 
 // Remove errors, success, and old data

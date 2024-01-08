@@ -1,30 +1,28 @@
 <?php
-namespace Public\handlers; 
+namespace Public\handlers;
 
-use Controller\AuthController;
-use Controller\HomeController;
+use helpers\class\Auth;
+use helpers\class\App;
+use Controllers\AuthController;
+use Controllers;
 
-session_start();
+require_once 'path/to/helpers/redirect_functions.php';
 
-$aCtrl = new AuthController();
-$hCtrl = new HomeController();
+if (!empty($_POST['action'])) {
+    $controller = new Controllers\AuthController($componentController);
 
-if(isset($_GET["action"])) {
-    switch($_GET["action"]) {
-
-        // afficher les formulaires
-        case "formRegister" : $sCtrl->formRegister(); break;
-        case "formLogin" : $sCtrl->formLogin(); break;
-
-        // actions du SecurityController
-        case "register" : $sCtrl->register(); break;
-        case "login" : $sCtrl->login(); break;
-        case "logout" : $sCtrl->logout(); break;
-
-        // actions du HomeController
-        case "home" : $hCtrl->home(); break;
-        default : $hCtrl->home(); break;
-    } 
-} else {
-    $hCtrl->home();
+    if ($_POST['action'] === 'store') {
+        Auth::isGuestOrRedirect();
+        $controller->store();
+    } elseif ($_POST['action'] === 'check') {
+        Auth::isGuestOrRedirect();
+        $controller->check();
+    } elseif ($_POST['action'] === 'logout') {
+        Auth::isAuthOrRedirect();
+        $controller->logout();
+    }
 }
+
+App::terminate();
+
+redirectAndExit(AuthController::URL_AFTER_LOGOUT);
