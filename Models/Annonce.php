@@ -38,7 +38,7 @@ class Annonce
 
     public static function getAll() {
         $sql = "SELECT * FROM annonce";
-        $result = DB::statement($sql);
+        $result = DB::fetch($sql);
     
         // Vérifier si la requête a réussi et que le résultat est un tableau ou un objet
         if ($result !== false && is_iterable($result)) {
@@ -53,7 +53,7 @@ class Annonce
     public function addAnnonce()
     {
         return DB::statement(
-            "INSERT INTO annonces ( titre, datePublication, photo, description, prix, ville)"
+            "INSERT INTO annonce ( titre, datePublication, photo, description, prix, ville)"
             . " VALUES ( :titre, :datePublication, :photo, :description, :prix, :ville)",
             [
                
