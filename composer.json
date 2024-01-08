@@ -7,9 +7,10 @@
         "psr-4": {
             "Controllers\\": "Controllers/",
             "Models\\": "Models/",
-            "Helpers\\": "helpers/",
+            "helpers\\": "helpers/",
             "Public\\": "public/",
-            "Boostrap\\": "bootstrap/"
+            "Boostrap\\": "bootstrap/",
+            "helpers\\class\\": "/"
         }
     }
 }

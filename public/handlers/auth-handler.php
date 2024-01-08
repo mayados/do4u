@@ -1,14 +1,30 @@
 <?php
 namespace Public\handlers; 
 
-/** 
-require_once __DIR__.'/../../bootstrap/app.php';
-require_once base_path('Controllers/AuthController.php');
+use Controller\AuthController;
+use Controller\HomeController;
 
+session_start();
 
+$aCtrl = new AuthController();
+$hCtrl = new HomeController();
 
-// Remove errors, success and old data
-App::terminate();
+if(isset($_GET["action"])) {
+    switch($_GET["action"]) {
 
-// Unknown action
-redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT); */
+        // afficher les formulaires
+        case "formRegister" : $sCtrl->formRegister(); break;
+        case "formLogin" : $sCtrl->formLogin(); break;
+
+        // actions du SecurityController
+        case "register" : $sCtrl->register(); break;
+        case "login" : $sCtrl->login(); break;
+        case "logout" : $sCtrl->logout(); break;
+
+        // actions du HomeController
+        case "home" : $hCtrl->home(); break;
+        default : $hCtrl->home(); break;
+    } 
+} else {
+    $hCtrl->home();
+}

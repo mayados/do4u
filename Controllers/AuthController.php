@@ -44,7 +44,7 @@ class AuthController extends Controller
     public function register() : void
     {
         $actionUrl = self::URL_HANDLER;
-        require_once __DIR__ . '/../../views/inscription.php';
+        require_once __DIR__ . '/../views/inscription.php';
     }
 
     public function store() : void
@@ -65,11 +65,11 @@ class AuthController extends Controller
             errors("Le champs nom doit avoir au moins 2 charactères.");
             errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
             errors("Le champs de mot de passe doit avoir au moins 8 charactères");
-            redirectAndExit('/register.php');
+            redirectAndExit('/inscription.php');
         }
 
         // Check User
-        $users = DB::fetch("SELECT * FROM users WHERE email = :login;", ['login' => $login]);
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
         if ($users === false) {
             errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
             redirectAndExit(self::URL_REGISTER);
@@ -83,7 +83,7 @@ class AuthController extends Controller
 
         // Create new user
         $result = DB::statement(
-            "INSERT INTO utilisateur(email, password, name)"
+            "INSERT INTO utilisateur(login, password, name)"
             ." VALUE(:login, :password, :name);",
             [
                 'login' => $login,
@@ -120,7 +120,7 @@ class AuthController extends Controller
         }
 
         // Check DB
-        $users = DB::fetch("SELECT * FROM users WHERE email = :login;", ['login' => $login]);
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
         if ($users === false) {
             errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
             redirectAndExit(self::URL_LOGIN);
