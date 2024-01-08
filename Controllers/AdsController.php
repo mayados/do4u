@@ -33,14 +33,15 @@ class AdsController
         $this->componentController->renderFooter();
     }
 
-
-
-
     public function showCreationPage()
     {
         require_once __DIR__ .'/../../views/creationAd.php' ;
     }
 
+    public function showAdDetails()
+    {
+        require_once __DIR__ . '/../views/adDetails.php';
+    }
     public function showModificationPage()
     {
         require_once __DIR__ . '/../../views/modificationAd.php';

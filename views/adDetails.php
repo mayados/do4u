@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"> 
 </head>
 <body>
-  
     <main id="main-details">
         <h1 id="annonceDetails">Page de details d'une annonce</h1>
         <section>
