@@ -1,12 +1,21 @@
 <?php
 require_once __DIR__.'/../bootstrap/app.php';
 
-// Check only if guest
-Auth::isGuestOrRedirect();
+require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+use helpers\class\App;
+use Controllers\HomeController;
+use Controllers\ComponentController;
 
-require_once base_path('Controllers/HomeController.php');
-$controller = new Controllers\HomeController();
-$controller->showCguPage();
+// Check only if guest 
+// should be solve the error Auth is not recognized
+// Auth::isGuestOrRedirect();
+
+$componentController = new ComponentController();
+
+$adsController = new HomeController($componentController);
+$adsController->showMenu();
+$adsController->cguPage();
+$adsController->showFooter();
 
 // Remove errors, success and old data
 App::terminate();
