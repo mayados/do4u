@@ -1,7 +1,9 @@
 <?php
-namespace bootstrap;
+
 
 require_once __DIR__.'/../vendor/autoload.php';
+
+
 
 define('APP_BASE_PATH', realpath(__DIR__.'/../'));
 

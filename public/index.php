@@ -1,23 +1,16 @@
 <?php
-namespace Public\handlers;
-use Controllers;
-use Helpers\class\App;
-use Helpers\path_functions;
 
-
-require_once __DIR__ . '/../vendor/autoload.php';
-
-use Controllers\AdsController;
+require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+use helpers\class\App;
+use Controllers\HomeController;
 use Controllers\ComponentController;
 
 $componentController = new ComponentController();
-$adsController = new AdsController($componentController);
-$adsController->showAdsByCategorie();
 
+$homeController = new HomeController($componentController);
+$homeController->showMenu();
+$homeController->index();
+$homeController->showFooter();
 
-
-$controller = new Controllers\HomeController();
-$controller->index();
-
-// Remove errors, success and old data
+// Remove errors, success, and old data
 App::terminate();

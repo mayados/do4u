@@ -1,7 +1,7 @@
 <?php
 
 namespace Controllers;
-use Models\Annonce;
+use Controllers\ComponentController;
 
 
 
@@ -12,22 +12,33 @@ class AdsController
     const URL_HANDLER = '/handlers/ad-handler.php';
     private $componentController;
 
-    public function __construct(ComponentController $componentController)
-    {
+
+    public function __construct(ComponentController $componentController) {
         $this->componentController = $componentController;
     }
 
-    public function showAdsByCategorie()
-    {
+    public function showAdsByCategorie() {
+        // Your main content logic goes here
+
+        // Assuming ads.php is in the views directory
+        require_once __DIR__ . '/../views/ads.php';
+    }
+
+    public function showMenu() {
+        
         $this->componentController->renderHeader();
-        require_once __DIR__ . '/../../views/ads.php';
+        
+    }
+    public function showFooter(){
         $this->componentController->renderFooter();
     }
 
 
+
+
     public function showCreationPage()
     {
-        require_once __DIR__ . '/../../views/creationAd.php';
+        require_once __DIR__ .'/../../views/creationAd.php' ;
     }
 
     public function showModificationPage()
