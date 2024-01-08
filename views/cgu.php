@@ -19,7 +19,6 @@
      crossorigin=""></script>
 </head>
 <body>
-    <?php displayErrorsAndMessages() ?>
     <main id="main-cgu">
         <div id="banniere-cgu">
             <h1>Conditions générales d'utilisation</h1>            

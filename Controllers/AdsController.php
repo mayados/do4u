@@ -35,7 +35,7 @@ class AdsController
 
     public function showCreationPage()
     {
-        require_once __DIR__ .'/../../views/creationAd.php' ;
+        require_once __DIR__ .'/../views/creationAd.php' ;
     }
 
     public function showAdDetails()
@@ -44,12 +44,12 @@ class AdsController
     }
     public function showModificationPage()
     {
-        require_once __DIR__ . '/../../views/modificationAd.php';
+        require_once __DIR__ . '/../views/modificationAd.php';
     }
 
     public function showDetails()
     {
-        require_once __DIR__ . '/../../views/adDetails.php';
+        require_once __DIR__ . '/../views/adDetails.php';
     }
 
    

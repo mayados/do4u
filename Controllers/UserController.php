@@ -1,17 +1,7 @@
 <?php
 
 namespace Controllers;
-
-require_once __DIR__.'/../Models/Utilisateur.php';
-require_once __DIR__.'/../Models/AutoEntrepreneur.php';
-require_once __DIR__.'/../Models/Entreprise.php';
-require_once __DIR__.'/../Models/Particulier.php';
-
-use DB;
-use Models\Utilisateur;
-use Models\AutoEntrepreneur;
-use Models\Entreprise;
-use Models\Particulier;
+use Controllers\ComponentController;
 
 class UserController
 {
@@ -19,20 +9,33 @@ class UserController
     const URL_INDEX = '';
     const URL_HANDLER = '/handlers/user-handler.php';
 
+    private $componentController;
 
+    public function __construct(ComponentController $componentController) {
+        $this->componentController = $componentController;
+    }
+    
     public function showMyProfile()
     {
-        require_once base_path('views/myProfile.php');
+        require_once __DIR__.'/../views/myProfile.php';
     }
     
     public function showUserProfile()
     {
-        require_once base_path('views/userProfile.php');
+        require_once __DIR__.'/../views/userProfile.php';
     }
 
     public function showMyParameters()
     {
-        require_once base_path('views/parameters.php');
+        require_once __DIR__. '/../views/parameters.php';
+    }
+    public function showMenu() {
+        
+        $this->componentController->renderHeader();
+        
+    }
+    public function showFooter(){
+        $this->componentController->renderFooter();
     }
 
 

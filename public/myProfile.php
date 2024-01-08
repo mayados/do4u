@@ -4,8 +4,11 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using
 use helpers\class\App;
 use Controllers\MyProfileController;
 use Controllers\ComponentController;
+use helpers\class\Auth;
 
-// Auth::isGuestOrRedirect();
+// Check only if guest
+Auth::isGuestOrRedirect();
+
 $componentController = new ComponentController();
 
 $adsController = new MyProfileController($componentController);

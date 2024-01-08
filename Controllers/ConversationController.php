@@ -12,7 +12,7 @@ class ConversationController
     public function __construct(ComponentController $componentController) {
         $this->componentController = $componentController;
     }
-    public function showMyProfile() {
+    public function showConversationPage() {
         require_once __DIR__ . '/../views/conversation.php';
     }
     public function showMenu() {

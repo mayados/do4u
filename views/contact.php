@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
     <main class="container-fluid section-1 d-flex flex-column">
         <div class="container">
             <div class="row align-items-center">
@@ -73,8 +72,6 @@
             </div>
         </section>
     </div>
-
-   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/assets/js/script.js"></script>
 </html>
