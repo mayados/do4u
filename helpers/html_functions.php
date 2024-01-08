@@ -41,7 +41,6 @@ function ec(string $text) : void
     echo e($text);
 }
 
-/**function dump(...$args)
 {
     foreach ($args as $arg) {
         var_dump($arg);
