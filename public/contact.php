@@ -3,10 +3,10 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using
 use helpers\class\App;
 use Controllers\ContactController;
 use Controllers\ComponentController;
+use helpers\class\Auth;
 
 // Check only if guest 
-// should be solve the error Auth is not recognized
-// Auth::isGuestOrRedirect();
+Auth::isGuestOrRedirect();
 
 $componentController = new ComponentController();
 

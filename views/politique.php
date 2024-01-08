@@ -19,8 +19,6 @@
      crossorigin=""></script>
 </head>
 <body>
-    <?php require_once base_path('views/components/menu.php'); ?>
-    <?php displayErrorsAndMessages() ?>
     <main id="main-politique">
         <div id="banniere-politique">
             <h1>Politique de confidentialité</h1>            
@@ -97,7 +95,6 @@
             </ul>
         </section>
     </main>
-    <?php require_once base_path('views/components/footer.php'); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/js/script.js"></script>
     </body>
