@@ -41,15 +41,15 @@ function ec(string $text) : void
     echo e($text);
 }
 
-{
-    foreach ($args as $arg) {
-        var_dump($arg);
-        echo "\n<br>";
-    }
-} 
+// {
+//     foreach ($args as $arg) {
+//         var_dump($arg);
+//         echo "\n<br>";
+//     }
+// } 
 
-function dd(...$args)
-{
-    dump($args);
-    exit();
-}*/
+// function dd(...$args)
+// {
+//     dump($args);
+//     exit();
+// }

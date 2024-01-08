@@ -1,12 +1,17 @@
 <?php
-require_once __DIR__.'/../bootstrap/app.php';
 
-// Check only if guest
-Auth::isGuestOrRedirect();
+require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+use helpers\class\App;
+use Controllers\MyProfileController;
+use Controllers\ComponentController;
 
-require_once base_path('Controllers/UserController.php');
-$controller = new Controllers\UserController();
-$controller->showMyProfile();
+// Auth::isGuestOrRedirect();
+$componentController = new ComponentController();
 
-// Remove errors, success and old data
+$adsController = new MyProfileController($componentController);
+$adsController->showMenu();
+$adsController->showMyProfile();
+$adsController->showFooter();
+
+// Remove errors, success, and old data
 App::terminate();
