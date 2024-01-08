@@ -1,33 +1,63 @@
 <?php
-use Models\Categorie;
 
 
-require_once __DIR__.'../../../helpers/class/DB.php';
 
-// Instantiate the DB class
-$db = DB::getDB();
+function getCategories($page, $recordsPerPage) {
+    // Instantiate the DB class
+    $db = DB::getDB();
+
+    // Calculate the offset for the SQL query
+    $offset = ($page - 1) * $recordsPerPage;
+
+    // Example query to get paginated data from the categorie table
+    $sql = "SELECT idCategorie, nomCategorie FROM categorie ORDER BY idCategorie ASC LIMIT $recordsPerPage OFFSET $offset";
+    return DB::fetch($sql);
+}
+
+function getTotalPages($recordsPerPage) {
+    // Get the total number of records for pagination
+    $totalRecords = DB::fetch("SELECT COUNT(*) as count FROM categorie")[0]['count'];
+    return ceil($totalRecords / $recordsPerPage);
+}
 
 // Pagination settings
 $recordsPerPage = 10; // Number of records to display on each page
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Current page
 
-// Calculate the offset for the SQL query
-$offset = ($page - 1) * $recordsPerPage;
+$categories = getCategories($page, $recordsPerPage);
+$totalPages = getTotalPages($recordsPerPage);
 
-// Example query to get paginated data from the categorie table
-$sql = "SELECT idCategorie, nomCategorie FROM categorie ORDER BY idCategorie ASC LIMIT $recordsPerPage OFFSET $offset";
-$result = DB::fetch($sql);
-
-// Get the total number of records for pagination
-$totalRecords = DB::fetch("SELECT COUNT(*) as count FROM categorie")[0]['count'];
-$totalPages = ceil($totalRecords / $recordsPerPage);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Your head content -->
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Nunito"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../../public/assets/sass/main.css" />
+
+    <title>Do4U</title>
+  </head>    
 <body class="b-body">
     <?php include('sidebar.php'); ?>
     <section id="content" class="col-lg-9">
@@ -35,7 +65,19 @@ $totalPages = ceil($totalRecords / $recordsPerPage);
 
         <main>
             <div class="head-title">
-                <!-- Your header content -->
+                <div class="left">
+                    <h1>Backoffice</h1>
+                    <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Backoffice</a>
+                    </li>
+                    <li><i class="bx bx-chevron-right"></i></li>
+                    <li>
+                        <a class="active" href="conversation.php">Conversation</a>
+                    </li>
+                    </ul>
+                </div>
+                <p>date : 12/10/2023</p>
             </div>
             <div class="container mt-5">
                 <div class="table-responsive">
@@ -48,7 +90,7 @@ $totalPages = ceil($totalRecords / $recordsPerPage);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($result as $cat): ?>
+                            <?php foreach ($categories as $cat): ?>
                                 <tr>
                                     <td><?php echo $cat['idCategorie']; ?></td>
                                     <td><?php echo $cat['nomCategorie']; ?></td>
@@ -76,6 +118,9 @@ $totalPages = ceil($totalRecords / $recordsPerPage);
         </main>
         <?php include('footer.php'); ?>
     </section>
-    <!-- Your script includes -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../public/assets/js/backoffice.js"></script>
 </body>
 </html>
