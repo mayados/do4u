@@ -1,15 +1,16 @@
 {
-    "name": "php-cours/php",
-    "require-dev": {
-        "symfony/var-dumper": "^5.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Controllers\\": "Controllers/",
-            "Models\\": "Models/",
-            "Helpers\\": "helpers/",
-            "Public\\": "public/",
-            "Boostrap\\": "bootstrap/"
-        }
+  "name": "php-cours/php",
+  "require-dev": {
+    "symfony/var-dumper": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controllers\\": "Controllers/",
+      "Models\\": "Models/",
+      "helpers\\": "helpers/",
+      "Public\\": "public/",
+      "Boostrap\\": "bootstrap/",
+      "helpers\\class\\": "/"
     }
+  }
 }
