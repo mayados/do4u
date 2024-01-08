@@ -1,11 +1,8 @@
 <?php
 
 namespace Models;
-
-require_once __DIR__.'/../bootstrap/app.php';
-include_once(__DIR__ . './../helpers/class/DB.php');
-
-use DB;
+namespace Helpers;
+use helpers\class\DB;
 
 class CategorieModel
 {   
