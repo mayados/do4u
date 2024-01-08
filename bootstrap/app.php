@@ -2,9 +2,6 @@
 
 define('APP_BASE_PATH', realpath(__DIR__.'/../'));
 
-// composer autoloader -- this was added by Zahra
-require_once __DIR__.'/../vendor/autoload.php';
-
 // test 
 // dd('test');
 
