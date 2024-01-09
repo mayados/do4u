@@ -3,7 +3,7 @@
 namespace Controllers;
 use Controllers\ComponentController;
 
-class UserController
+class UserController extends Controller
 {
     const URL_CREATE = '';
     const URL_INDEX = '';
@@ -17,17 +17,17 @@ class UserController
     
     public function showMyProfile()
     {
-        require_once __DIR__.'/../views/myProfile.php';
+        $this->render('myProfile');
     }
     
     public function showUserProfile()
     {
-        require_once __DIR__.'/../views/userProfile.php';
+        $this->render('userProfile');
     }
 
     public function showMyParameters()
     {
-        require_once __DIR__. '/../views/parameters.php';
+        $this->render('parameters');
     }
     public function showMenu() {
         
@@ -38,5 +38,9 @@ class UserController
         $this->componentController->renderFooter();
     }
 
+    public function showInscription() : void
+    {
+        $this->render('inscription');
+    }
 
 }
