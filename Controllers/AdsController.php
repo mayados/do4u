@@ -45,7 +45,10 @@ class AdsController extends Controller
         require_once __DIR__ . '/../views/modificationAd.php';
     }
 
-
+    public function showOffre(){
+        $annonceOffre = Annonce::getOffre();
+        require_once __DIR__ . '/../views/index.php';
+    }
 }
 
     
