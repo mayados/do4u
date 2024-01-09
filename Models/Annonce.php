@@ -1,9 +1,9 @@
 <?php
 namespace Models;
 use helpers\class\DB;
-
-//require_once __DIR__.'/../bootstrap/app.php';
-
+use PDO;
+use Exception;
+use PDOException;
 
 class Annonce
 {
@@ -49,7 +49,6 @@ class Annonce
         return [];
     }
     
-
     public function addAnnonce()
     {
         return DB::statement(
@@ -74,15 +73,31 @@ class Annonce
         // Vous pouvez ajouter la logique pour récupérer les annonces par catégorie ici
     }
 
-    public static function getOffre(){
-        $sql = "SELECT * FROM annonce";
-        $result = DB::fetch($sql);
-        
-        if ($result !== false && is_iterable($result)) {
+    public static function getOffre() {
+        try {
+            $db = DB::getDB();
+            $query = $db->query("SELECT * FROM annonce where typeAnnonceId = 1 ORDER BY idAnnonce DESC LIMIT 4");
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            // var_dump($result); // Debugging line
             return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
         }
-        return [];
     }
-    public function getDemmande(){
+    
+    public static function getDemmande(){
+        try {
+            $db = DB::getDB();
+            $query = $db->query("SELECT * FROM annonce where typeAnnonceId = 2 ORDER BY idAnnonce DESC LIMIT 4");
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            // var_dump($result); // Debugging line
+            return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
     }
 }
