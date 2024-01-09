@@ -26,9 +26,11 @@ class AuthController extends Controller
     }
 
     public function store() : void
+
     {
         require_once __DIR__ . '/../helpers/redirect_functions.php';// Prepare POST
       
+
         $login = $_POST['login'] ?? '';
         $password = $_POST['password'] ?? '';
 
@@ -39,6 +41,7 @@ class AuthController extends Controller
         ];
 
         // Validation
+
         if (!$this->validateCredentials($login, $password)) {
             $errors = [];
         
@@ -57,16 +60,17 @@ class AuthController extends Controller
                 }
                 redirectAndExit(self::URL_REGISTER);
             }
+
         }
         
 
         // Check User
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
         if ($users === false) {
-            errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
+            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
             redirectAndExit(self::URL_REGISTER);
         } elseif (count($users) >= 1) {
-            errors('Cette adresse email est déjà utilisée.');
+            $this->errors('Cette adresse email est déjà utilisée.');
             redirectAndExit(self::URL_REGISTER);
         }
 
@@ -83,7 +87,7 @@ class AuthController extends Controller
             ]
         );
         if ($result === false) {
-            errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
+            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
             redirectAndExit(self::URL_REGISTER);
         }
 
@@ -105,15 +109,15 @@ class AuthController extends Controller
 
         // Validation
         if (!$this->validateCredentials($login, $password)) {
-            errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
-            errors("Le champs de mot de passe doit avoir au moins 8 charactères");
+            $this->errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
+            $this->errors("Le champs de mot de passe doit avoir au moins 8 charactères");
             redirectAndExit(self::URL_LOGIN);
         }
 
         // Check DB
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
         if ($users === false) {
-            errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
+            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
             redirectAndExit(self::URL_LOGIN);
         }
 
@@ -128,7 +132,7 @@ class AuthController extends Controller
             }
         }
 
-        errors("Les identifiants ne correspondes pas.");
+        $this->errors("Les identifiants ne correspondes pas.");
         redirectAndExit(self::URL_LOGIN);
     }
 
@@ -146,6 +150,10 @@ class AuthController extends Controller
     {
         session_destroy();
         redirectAndExit(self::URL_AFTER_LOGOUT);
+    }
+    public function showInscription() : void
+    {
+        $this->render('inscription');
     }
 }
 
