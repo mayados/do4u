@@ -76,9 +76,17 @@ class Annonce
     public static function getOffre() {
         try {
             $db = DB::getDB();
-            $query = $db->query("SELECT * FROM annonce where typeAnnonceId = 1 ORDER BY idAnnonce DESC LIMIT 4");
+            $query = $db->query("SELECT annonce.*, 
+                                    categorie.nomCategorie AS nomCategorie, 
+                                    utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                    utilisateur.villeUtilisateur AS villeUtilisateur
+                                FROM annonce 
+                                JOIN categorie ON annonce.idAnnonce = categorie.idCategorie
+                                JOIN utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                WHERE annonce.typeAnnonceId = 1 
+                                ORDER BY annonce.idAnnonce ASC LIMIT 4");
+        
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            // var_dump($result); // Debugging line
             return $result;
         } catch (PDOException $e) {
             // Log PDO exceptions
@@ -90,9 +98,17 @@ class Annonce
     public static function getDemmande(){
         try {
             $db = DB::getDB();
-            $query = $db->query("SELECT * FROM annonce where typeAnnonceId = 2 ORDER BY idAnnonce DESC LIMIT 4");
+            $query = $db->query("SELECT annonce.*, 
+                                    categorie.nomCategorie AS nomCategorie, 
+                                    utilisateur.nomUtilisateur AS nomUtilisateur,
+                                    utilisateur.nomUtilisateur AS nomUtilisateur,
+                                    utilisateur.villeUtilisateur AS villeUtilisateur
+                                FROM annonce 
+                                JOIN categorie ON annonce.idAnnonce = categorie.idCategorie
+                                JOIN utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                WHERE annonce.typeAnnonceId = 2 
+                                ORDER BY annonce.idAnnonce ASC LIMIT 4");
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            // var_dump($result); // Debugging line
             return $result;
         } catch (PDOException $e) {
             // Log PDO exceptions
