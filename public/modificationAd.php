@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
 
-// namespace Public\handlers;
-
 use helpers\class\Auth;
 use helpers\class\App;
 use Controllers\AdsController;

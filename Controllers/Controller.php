@@ -4,7 +4,7 @@ namespace Controllers;
 
 
 abstract class Controller {
-    
+    const URL_HANDLER = '/handlers/auth-handler.php';
     private $componentController;
 
     public function __construct(ComponentController $componentController) {
@@ -27,6 +27,11 @@ abstract class Controller {
             // Handle the case where the view file doesn't exist
             echo "Error: View file not found - " . $viewPath;
         }
+    }
+    public function renderView(string $view): void
+    {
+        $actionUrl = self::URL_HANDLER;
+        require_once __DIR__ . "/../views/{$view}";
     }
     
     public function showFooter() {
