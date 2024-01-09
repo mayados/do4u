@@ -44,13 +44,13 @@
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <!-- Card 1 -->
-                    <div class="col">
-                        <?php if (!empty($annonceOffre)) : ?>
-                            <?php foreach ($annonceOffre as $offre) : ?>
+                    <?php if (!empty($annonceOffre)) : ?>
+                        <?php foreach ($annonceOffre as $offre): ?>
+                            <div class="col">
                                 <a href="" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                            <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                            <img src="../public/assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                             <div class="offer-badge">
                                                 <span class="offer-badge">Offre</span>
                                             </div>
@@ -59,7 +59,7 @@
                                             <div class="heart-icon fa-lg">
                                                 <i class="icon fa-regular fa-heart"></i>
                                             </div>
-                                            <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                            <p class="card-title fw-bold"><?php echo $offre['titre']; ?></p>
                                             <div class="row align-items-center">
                                                 <div class="col-1">
                                                     <i class="icon fa-regular fa-user"></i>
@@ -73,7 +73,7 @@
                                                     <i class="icon fa-solid fa-euro-sign"></i>
                                                 </div>
                                                 <div class="col ps-3">
-                                                    <span>30€/H</span>
+                                                    <span><?php echo $offre['prix']; ?></span>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center">
@@ -102,12 +102,12 @@
                                             </div>
                                         </div>                            
                                     </div>
-                                </a>
-                            <?php endforeach; ?>
-                            <?php else : ?>
-                                <p>No data available</p>
-                            <?php endif; ?>    
-                    </div>
+                                </a>    
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <p>No data available</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
@@ -122,6 +122,8 @@
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
+                    <?php if (!empty($annonceDemande)) : ?>
+                        <?php foreach ($annonceDemande as $offre): ?>
                     <!-- Card 1 -->
                     <div class="col">
                         <a href="" class="card-link">
@@ -181,6 +183,10 @@
                             </div>
                         </a>
                     </div>
+                    <?php endforeach; ?>
+                    <?php else : ?>
+                        <p>No data available</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
