@@ -1,10 +1,9 @@
 <?php
 
 namespace Models;
-namespace Helpers;
 use helpers\class\DB;
 
-class CategorieModel
+class CategorieModel extends Model
 {   
     public function getPaginatedCategories($page, $recordsPerPage)
     {
