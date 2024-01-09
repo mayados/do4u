@@ -45,239 +45,64 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <!-- Card 1 -->
                     <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                    <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                    <div class="offer-badge">
-                                        <span class="offer-badge">Offre</span>
+                        <?php foreach ($annonceOffre as $offre) : ?>
+                            <a href="" class="card-link">
+                                <div class="card h-100 card-ad">
+                                    <div class="position-relative">
+                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <div class="offer-badge">
+                                            <span class="offer-badge">Offre</span>
+                                        </div>
                                     </div>
+                                    <div class="card-body">
+                                        <div class="heart-icon fa-lg">
+                                            <i class="icon fa-regular fa-heart"></i>
+                                        </div>
+                                        <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Auto entrepreneur</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-euro-sign"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>30€/H</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-regular fa-folder"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Santé et bien-etre</span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Rosie</span> <span> 4.5(19 avis) </span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-1">
+                                                <i class="icon fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <span>Strasbourg</span>
+                                            </div>
+                                        </div>
+                                    </div>                            
                                 </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                    <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                    <div class="offer-badge">
-                                        <span class="offer-badge">Offre</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                    <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                    <div class="offer-badge">
-                                        <span class="offer-badge">Offre</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                    <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                    <div class="offer-badge">
-                                        <span class="offer-badge">Offre</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
+                            </a>
+                        <?php endforeach; ?>    
                     </div>
                 </div>
             </div>
@@ -294,183 +119,6 @@
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <!-- Card 1 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                <div class="demande-badge">
-                                    <span class="demande-badge">Demande</span>
-                                </div>
-                            </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                    <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                    <div class="demande-badge">
-                                        <span class="demande-badge">Demande</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col">
-                        <a href="" class="card-link">
-                            <div class="card h-100 card-ad">
-                                <div class="position-relative">
-                                <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
-                                <div class="demande-badge">
-                                    <span class="demande-badge">Demande</span>
-                                </div>
-                            </div>
-                                <div class="card-body">
-                                    <div class="heart-icon fa-lg">
-                                        <i class="icon fa-regular fa-heart"></i>
-                                    </div>
-                                    <p class="card-title fw-bold">Spécialiste de soin et de la mise en beauté</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-user"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Auto entrepreneur</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-euro-sign"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>30€/H</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-regular fa-folder"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Santé et bien-etre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Rosie</span> <span> 4.5(19 avis) </span>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-1">
-                                            <i class="icon fa-solid fa-location-dot"></i>
-                                        </div>
-                                        <div class="col ps-3">
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card 4 -->
                     <div class="col">
                         <a href="" class="card-link">
                             <div class="card h-100 card-ad">

@@ -73,4 +73,16 @@ class Annonce
         // À implémenter
         // Vous pouvez ajouter la logique pour récupérer les annonces par catégorie ici
     }
+
+    public static function getOffre(){
+        $sql = "SELECT * FROM annonce";
+        $result = DB::fetch($sql);
+        
+        if ($result !== false && is_iterable($result)) {
+            return $result;
+        }
+        return [];
+    }
+    public function getDemmande(){
+    }
 }
