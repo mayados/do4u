@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="../public/assets/sass/main.css">
 </head>
 <body>
-   
-   
     <main>
-
-
     <section class="annonces">
         <div class="container p-5">
             <!-- Filtres de recherche -->
@@ -62,46 +58,41 @@
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                    <!-- Card 1 -->
-                    <!-- Début de la boucle foreach -->
-
-                    <?php
-               
-                    foreach ($annonces as $annonce): ?>
-    <div class="col">
-        <a href="#" class="card-link">
-            <div class="card h-100 card-ad">
-                <div class="position-relative">
-                    <?php if (isset($annonce['photo'])): ?>
-                        <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
-                    <?php endif; ?>
-                    <div class="offer-badge">
-                        <?php if (isset($annonce['type'])): ?>
-                            <span class="offer-badge"><?php echo $annonce['type']; ?></span>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Le reste de votre contenu avec des variables dynamiques -->
-                    <?php if (isset($annonce['titre'])): ?>
-                        <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
-                    <?php endif; ?>
-                    <div class="row align-items-center">
-                        <div class="col-1">
-                            <i class="icon fa-regular fa-user"></i>
+            <?php foreach ($annonces as $annonce): ?>
+                <div class="col">
+                    <a href="#" class="card-link">
+                        <div class="card h-100 card-ad">
+                            <div class="position-relative">
+                                <?php if (isset($annonce['photo'])): ?>
+                                    <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                <?php endif; ?>
+                                <div class="offer-badge">
+                                    <?php if (isset($annonce['type'])): ?>
+                                        <span class="offer-badge"><?php echo $annonce['type']; ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Le reste de votre contenu avec des variables dynamiques -->
+                                <?php if (isset($annonce['titre'])): ?>
+                                    <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
+                                <?php endif; ?>
+                                <div class="row align-items-center">
+                                    <div class="col-1">
+                                        <i class="icon fa-regular fa-user"></i>
+                                    </div>
+                                    <div class="col ps-3">
+                                        <?php if (isset($annonce['prix'])): ?>
+                                            <span><?php echo $annonce['prix']; ?></span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <!-- ... Autres informations dynamiques -->
+                            </div>
                         </div>
-                        <div class="col ps-3">
-                            <?php if (isset($annonce['prix'])): ?>
-                                <span><?php echo $annonce['prix']; ?></span>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <!-- ... Autres informations dynamiques -->
+                    </a>
                 </div>
-            </div>
-        </a>
-    </div>
-<?php endforeach; ?>
+            <?php endforeach; ?>
 
 <!-- Fin de la boucle foreach -->
 

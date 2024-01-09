@@ -1,11 +1,9 @@
 <?php
 
 namespace Controllers;
-require_once 'Controller.php';
-
 use Models\CategorieModel;
 
-class CategorieController
+class CategorieController extends Controller
 {
     public function index()
     {
