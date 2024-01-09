@@ -1,8 +1,3 @@
-<?php
-use Models\Annonce;
-$annonces = Annonce::getAll();
-
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
