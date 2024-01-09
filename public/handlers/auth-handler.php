@@ -1,14 +1,28 @@
 <?php
-namespace Public\handlers; 
+namespace Public\handlers;
 
-/** 
-require_once __DIR__.'/../../bootstrap/app.php';
-require_once base_path('Controllers/AuthController.php');
+use helpers\class\Auth;
+use helpers\class\App;
+use Controllers\AuthController;
+use Controllers;
 
+require_once 'path/to/helpers/redirect_functions.php';
 
+if (!empty($_POST['action'])) {
+    $controller = new Controllers\AuthController($componentController);
 
-// Remove errors, success and old data
+    if ($_POST['action'] === 'store') {
+        Auth::isGuestOrRedirect();
+        $controller->store();
+    } elseif ($_POST['action'] === 'check') {
+        Auth::isGuestOrRedirect();
+        $controller->check();
+    } elseif ($_POST['action'] === 'logout') {
+        Auth::isAuthOrRedirect();
+        $controller->logout();
+    }
+}
+
 App::terminate();
 
-// Unknown action
-redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT); */
+redirectAndExit(AuthController::URL_AFTER_LOGOUT);

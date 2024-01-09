@@ -1,3 +1,9 @@
+<?php
+use Models\Annonce;
+$annonces = Annonce::getAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,6 +19,8 @@
    
    
     <main>
+
+
     <section class="annonces">
         <div class="container p-5">
             <!-- Filtres de recherche -->
@@ -57,359 +65,53 @@
                     </div>
                 </div>
             </div>
-    
-            <!-- Annonces -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <!-- Card 1 -->
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                      <img src="../public/assets/img/Img_page_ads/soin.jpg" class="card-img-top" alt="...">
-                      <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                      <div class="card-body">
-                          <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                          <p><i class="bi bi-person"></i> Entreprise</p>
-                          <p><i class="bi bi-currency-euro"></i> 40€/H</p>
-                          <p><i class="bi bi-folder"></i> Santé et bien-être</p>
-                          <p>
-                              <img src="../public/assets/img/Img_page_ads/avatar9.webp" class="rounded-circle" width="30" alt="Avatar">
-                              Margaux <i class="bi bi-star icon-etoile"></i> 4/5 19 avis
-                          </p>
-                          <p><i class="bi bi-geo-alt"></i> Strasbourg</p>
-                      </div>
-                  </div>
-              </div>
-    
-                <!-- Card 2 -->
-                <div class="col mb-4">
-                    <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/chien.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-ro p-1 text-white mt-5 align-self-end position-absolute">Demande</p>
-                      </div>
-                        <div class="card-body">
-                          <h5 class="card-title">Faire garder mon chien par une aide à domicile</h5>
-                          <p><i class="bi bi-person"></i> Particulier</p>
-                          <p><i class="bi bi-currency-euro"></i>20€/H</p>
-                          <p><i class="bi bi-folder"></i> Animaux</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar7.webp" class="rounded-circle" width="30"> Hugo <i class="bi bi-star icon-etoile"></i> 4/5 2avis</p> 
-                          <p> <i class="bi bi-geo-alt"></i>  Lyon</p>
-                          </div>
-                    </div>
-                </div>
-    
-                <!-- Card 3 -->
-                <div class="col mb-4">
-                    <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/cuisine.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Un chef privé s'occupe de tout pour vous</h5>
-                            <p><i class="bi bi-person"></i> Particulier</p>
-                            <p><i class="bi bi-currency-euro"></i>50€/H</p>
-                            <p><i class="bi bi-folder"></i>  Service à la personne</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar6.webp" class="rounded-circle" width="30"> Eric  <i class="bi bi-star icon-etoile"></i> 5/5 23 avis</p> 
-                            <p> <i class="bi bi-geo-alt"></i>  Nice</p>
-                          </div>
-                      </div>
-                    </div>
-                
-    
-                <!-- Card 4 -->
-                <div class="col mb-4">
-                    <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/enfant.webp" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Jeune etudiante cherche à garder vos enfants</h5>
-                            <p><i class="bi bi-person"></i> Particulier</p>
-                            <p><i class="bi bi-currency-euro"></i> 20€/H</p>
-                            <p><i class="bi bi-folder"></i> Enfant</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar1.webp" class="rounded-circle" width="30">  Claire  <i class="bi bi-star icon-etoile"></i> 4/5 8 avis</p> 
-                            <p> <i class="bi bi-geo-alt"></i> Montpeillier</p>
-                          </div>
-                    </div>
-                </div>
 
-                        <!-- Card 5 -->
-                        <div class="col mb-4">
-                          <div class="card classperso position-relative">
-                              <img src="../public/assets/img/Img_page_ads/informatique.webp" class="card-img-top" alt="...">
-                              <div class="card-img-overlay d-flex flex-column">
-                                <!-- Contenu de la carte -->
-                                <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                    <i class="bi bi-heart favo"></i>
-                                </div>
-                                <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                            </div>
-                              <div class="card-body">
-                                  <h5 class="card-title">Informaticien propose ses services</h5>
-                                  <p><i class="bi bi-person"></i> Auto-entrepreneur</p>
-                                  <p><i class="bi bi-currency-euro"></i> 45€/H</p>
-                                  <p><i class="bi bi-folder"></i> Informatique & Administratif</p>
-                                  <p> <img src="../public/assets/img/Img_page_ads/avatar5.webp" class="rounded-circle" width="30"> Rosie <i class="bi bi-star icon-etoile"></i> 4/5 36 avis</p> 
-                                  <p> <i class="bi bi-geo-alt"></i> Paris </p>
-                                </div>
-                          </div>
-                      </div>
-              
-                          <!-- Card 6 -->
-                          <div class="col mb-4">
-                              <div class="card classperso position-relative">
-                                  <img src="../public/assets/img/Img_page_ads/réparer.jpg" class="card-img-top" alt="...">
-                                  <div class="card-img-overlay d-flex flex-column">
-                                    <!-- Contenu de la carte -->
-                                    <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                        <i class="bi bi-heart favo"></i>
-                                    </div>
-                                    <p class="bg-ro text-white p-1 mt-5 align-self-end position-absolute">Demande</p>
-                                </div>
-                                  <div class="card-body">
-                                      <h5 class="card-title">Petite réparation rapide et efficace</h5>
-                                      <p><i class="bi bi-person"></i> Particulier</p>
-                                      <p><i class="bi bi-currency-euro"></i> 50€/H</p>
-                                      <p><i class="bi bi-folder"></i> Réparation & maintenance </p>
-                                      <p> <img src="../public/assets/img/Img_page_ads/avatar6.webp" class="rounded-circle" width="30"> Jordan <i class="bi bi-star icon-etoile"></i> 4/5  26 avis </p> 
-                                      <p> <i class="bi bi-geo-alt"></i> Rouen </p>
-                                    </div>
-                              </div>
-                          </div>
-              
-                          <!-- Card 7 -->
-                          <div class="col mb-4">
-                              <div class="card classperso position-relative">
-                                  <img src="../public/assets/img/Img_page_ads/ménage.jpg" class="card-img-top" alt="...">
-                                  <div class="card-img-overlay d-flex flex-column">
-                                    <!-- Contenu de la carte -->
-                                    <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                        <i class="bi bi-heart favo"></i>
-                                    </div>
-                                    <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                                </div>
-                                  <div class="card-body">
-                                      <h5 class="card-title">Femme de ménage expérimentée</h5>
-                                      <p><i class="bi bi-person"></i> Entreprise </p>
-                                      <p><i class="bi bi-currency-euro"></i> 30€/H</p>
-                                      <p><i class="bi bi-folder"></i> Ménage & nettoyage</p>
-                                      <p> <img src="../public/assets/img/Img_page_ads/avatar7.webp" class="rounded-circle" width="30"> Hervé <i class="bi bi-star icon-etoile"></i> 5/5 19 avis </p> 
-                                      <p> <i class="bi bi-geo-alt"></i> Toulon </p>
-                                    </div>
-                                </div>
-                              </div>
-                          
-              
-                          <!-- Card 8 -->
-                          <div class="col mb-4">
-                              <div class="card classperso position-relative">
-                                  <img src="../public/assets/img/Img_page_ads/travaux.webp" class="card-img-top" alt="...">
-                                  <div class="card-img-overlay d-flex flex-column">
-                                    <!-- Contenu de la carte -->
-                                    <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                        <i class="bi bi-heart favo"></i>
-                                    </div>
-                                    <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                                </div>
-                                  <div class="card-body">
-                                      <h5 class="card-title">Trouver rapidement un bricoleur</h5>
-                                      <p><i class="bi bi-person"></i> Auto-entrepreneur</p>
-                                      <p><i class="bi bi-currency-euro"></i> 50€/H </p>
-                                      <p><i class="bi bi-folder"></i> Jardinage & bricolage</p>
-                                      <p> <img src="../public/assets/img/Img_page_ads/avatar8.jpg" class="rounded-circle" width="30"> Franc <i class="bi bi-star icon-etoile"></i> 4/5 8 avis  </p> 
-                                      <p> <i class="bi bi-geo-alt"></i> Nante </p>
-                                    </div>
-                              </div>
-                          </div>
-                      </div>
-<br>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                    <img src="../public/assets/img/Img_page_ads/soin.jpg" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <!-- Contenu de la carte -->
-                      <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                          <i class="bi bi-heart favo"></i>
-                      </div>
-                      <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                  </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Spécialiste de soin et de la mise en beauté</h5>
-                        <p><i class="bi bi-person"></i> Entreprise</p>
-                        <p><i class="bi bi-currency-euro"></i>40€/H</p>
-                        <p><i class="bi bi-folder"></i> Santé et bien être</p>
-                        <p> <img src="../public/assets/img/Img_page_ads/avatar9.webp" class="rounded-circle" width="30"> Margaux <i class="bi bi-star icon-etoile"></i> 4/5 19avis </p> 
-                        <p> <i class="bi bi-geo-alt"></i>  Strasbourg</p>
-                      </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <!-- Card 1 -->
+                    <!-- Début de la boucle foreach -->
+
+                    <?php
+               
+                    foreach ($annonces as $annonce): ?>
+    <div class="col">
+        <a href="#" class="card-link">
+            <div class="card h-100 card-ad">
+                <div class="position-relative">
+                    <?php if (isset($annonce['photo'])): ?>
+                        <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                    <?php endif; ?>
+                    <div class="offer-badge">
+                        <?php if (isset($annonce['type'])): ?>
+                            <span class="offer-badge"><?php echo $annonce['type']; ?></span>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                    <img src="../public/assets/img/Img_page_ads/chien.jpg" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <!-- Contenu de la carte -->
-                      <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                          <i class="bi bi-heart favo"></i>
-                      </div>
-                      <p class="bg-ro text-white p-1 mt-5 align-self-end position-absolute">Demande</p>
-                  </div>
-                      <div class="card-body">
-                          <h5 class="card-title">Faire garder mon chien par une aide à domicile</h5>
-                          <p><i class="bi bi-person"></i> Particulier</p>
-                          <p><i class="bi bi-currency-euro"></i>20€/H</p>
-                          <p><i class="bi bi-folder"></i> Animaux</p>
-                          <p> <img src="../public/assets/img/Img_page_ads/avatar7.webp" class="rounded-circle" width="30"> Hugo <i class="bi bi-star icon-etoile"></i> 4/5 2avis</p> 
-                          <p> <i class="bi bi-geo-alt"></i>  Lyon</p>
-                          </div>
-                      </div>
-                  </div>
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                    <img src="../public/assets/img/Img_page_ads/cuisine.jpg" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <!-- Contenu de la carte -->
-                      <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                          <i class="bi bi-heart favo"></i>
-                      </div>
-                      <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                  </div>
-                      <div class="card-body">
-                            <h5 class="card-title">Un chef privé s'occupe de tout pour vous</h5>
-                            <p><i class="bi bi-person"></i> Particulier</p>
-                            <p><i class="bi bi-currency-euro"></i>50€/H</p>
-                            <p><i class="bi bi-folder"></i>  Service à la personne</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar6.webp" class="rounded-circle" width="30"> Eric  <i class="bi bi-star icon-etoile"></i> 5/5 23 avis</p> 
-                            <p> <i class="bi bi-geo-alt"></i>  Nice</p>
-                            </div>
-                      </div>
-                  </div>
-                <div class="col mb-4">
-                  <div class="card classperso position-relative">
-                    <img src="../public/assets/img/Img_page_ads/enfant.webp" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <!-- Contenu de la carte -->
-                      <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                          <i class="bi bi-heart favo"></i>
-                      </div>
-                      <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                  </div>
-                      <div class="card-body">
-                            <h5 class="card-title">Jeune etudiante cherche à garder vos enfants</h5>
-                            <p><i class="bi bi-person"></i> Particulier</p>
-                            <p><i class="bi bi-currency-euro"></i> 20€/H</p>
-                            <p><i class="bi bi-folder"></i> Enfant</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar1.webp" class="rounded-circle" width="30">  Claire  <i class="bi bi-star icon-etoile"></i> 4/5 8 avis</p> 
-                            <p> <i class="bi bi-geo-alt"></i> Montpeillier</p>
-                          </div>
-                      </div>
-                  </div>
-                
-                    <div class="col mb-4">
-                      <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/informatique.webp" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                          <div class="card-body">
-                            <h5 class="card-title">Informaticien propose ses services</h5>
-                            <p><i class="bi bi-person"></i> Auto-entrepreneur</p>
-                            <p><i class="bi bi-currency-euro"></i> 45€/H</p>
-                            <p><i class="bi bi-folder"></i> Informatique & Administratif</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar2.jpg" class="rounded-circle" width="30"> Rosie <i class="bi bi-star icon-etoile"></i> 4/5 36 avis</p> 
-                            <p> <i class="bi bi-geo-alt"></i> Paris </p>
-                            </div>
-                          </div>
-                      </div>
-                    <div class="col mb-4">
-                      <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/réparer.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                          <div class="card-body">
-                            <h5 class="card-title">Petite réparation rapide et efficace</h5>
-                            <p><i class="bi bi-person"></i> Particulier</p>
-                            <p><i class="bi bi-currency-euro"></i> 50€/H</p>
-                            <p><i class="bi bi-folder"></i> Réparation & maintenance </p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar3.jpg" class="rounded-circle" width="30"> Jordan <i class="bi bi-star icon-etoile"></i> 4/5  26 avis </p> 
-                            <p> <i class="bi bi-geo-alt"></i> Rouen </p>
-                            </div>
-                          </div>
-                      </div>
-                    <div class="col mb-4">
-                      <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/ménage.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay d-flex flex-column">
-                          <!-- Contenu de la carte -->
-                          <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                              <i class="bi bi-heart favo"></i>
-                          </div>
-                          <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
-                      </div>
-                          <div class="card-body">
-                            <h5 class="card-title">Femme de ménage expérimentée</h5>
-                            <p><i class="bi bi-person"></i> Entreprise </p>
-                            <p><i class="bi bi-currency-euro"></i> 30€/H</p>
-                            <p><i class="bi bi-folder"></i> Ménage & nettoyage</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar4.webp" class="rounded-circle" width="30"> Hervé <i class="bi bi-star icon-etoile"></i> 5/5 19 avis </p> 
-                            <p> <i class="bi bi-geo-alt"></i> Toulon </p>
-                            </div>
-                          </div>
-                      </div>
-                    <div class="col mb-4">
-                      <div class="card classperso position-relative">
-                        <img src="../public/assets/img/Img_page_ads/travaux.webp" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                          <div class="card-img-overlay d-flex flex-column">
-                            <!-- Contenu de la carte -->
-                            <div class="bg-white p-1 rounded-circle align-self-end mb-5">
-                                <i class="bi bi-heart favo"></i>
-                            </div>
-                            <p class="bg-gr text-white p-1 mt-5 align-self-end position-absolute">Offre</p>
+                <div class="card-body">
+                    <!-- Le reste de votre contenu avec des variables dynamiques -->
+                    <?php if (isset($annonce['titre'])): ?>
+                        <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
+                    <?php endif; ?>
+                    <div class="row align-items-center">
+                        <div class="col-1">
+                            <i class="icon fa-regular fa-user"></i>
                         </div>
+                        <div class="col ps-3">
+                            <?php if (isset($annonce['prix'])): ?>
+                                <span><?php echo $annonce['prix']; ?></span>
+                            <?php endif; ?>
                         </div>
-                          <div class="card-body">
-                            <h5 class="card-title">Trouver rapidement un bricoleur</h5>
-                            <p><i class="bi bi-person"></i> Auto-entrepreneur</p>
-                            <p><i class="bi bi-currency-euro"></i> 50€/H </p>
-                            <p><i class="bi bi-folder"></i> Jardinage & bricolage</p>
-                            <p> <img src="../public/assets/img/Img_page_ads/avatar5.webp" class="rounded-circle" width="30"> Aurélie <i class="bi bi-star icon-etoile"></i> 4/5 8 avis  </p> 
-                            <p> <i class="bi bi-geo-alt"></i> Nante </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  <br>
-                  <br>
-    
+                    </div>
+                    <!-- ... Autres informations dynamiques -->
+                </div>
+            </div>
+        </a>
+    </div>
+<?php endforeach; ?>
+
+<!-- Fin de la boucle foreach -->
+
+
+
             <!-- Pagination -->
             <nav aria-label="Page navigation">
               <ul class="pagination ads justify-content-center mt-4">

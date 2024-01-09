@@ -9,7 +9,7 @@ $componentController = new ComponentController();
 
 $authController = new AuthController($componentController);
 $authController->showMenu();
-$authController->login();
+$authController->store();
 $authController->showFooter();
 
 // Remove errors, success, and old data
