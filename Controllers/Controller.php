@@ -29,9 +29,14 @@ abstract class Controller {
         }
     }
     
-
-
     public function showFooter() {
         $this->componentController->renderFooter();
+    }
+
+    public function errors($message) {
+        // Handle errors as needed
+        echo $message;
+        // You might want to exit or redirect here
+        exit;
     }
 }
