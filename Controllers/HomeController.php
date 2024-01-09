@@ -12,22 +12,20 @@ class HomeController extends Controller
        
     }
 
+
     public function showContactPage(): void
     {
         $this->render('views/contact.php');
         // Le reste du code...
     }
-
-    public function showCguPage(): void
-    {
-        $this->render('views/cgu.php');
-        // Le reste du code...
+     public function cguPage() {
+        require_once __DIR__ . '/../views/cgu.php';
     }
-
-    public function showPolitiquePage(): void
-    {
-        $this->render('views/politique.php');
-        // Le reste du code...
+    public function showMyParameters() {
+        require_once __DIR__ . '/../views/parameters.php';
+    }
+    public function showPolitiquePage() {
+        require_once __DIR__ . '/../views/politique.php';
     }
 }
 

@@ -29,20 +29,23 @@ class AdsController extends Controller
         require_once __DIR__ . '/../views/ads.php';
     }
 
+
     public function showCreationPage()
     {
         require_once __DIR__ . '/../views/creationAd.php';
+
     }
 
+    public function showAdDetails()
+    {
+        require_once __DIR__ . '/../views/adDetails.php';
+    }
     public function showModificationPage()
     {
         require_once __DIR__ . '/../views/modificationAd.php';
     }
 
-    public function showDetails()
-    {
-        require_once __DIR__ . '/../views/adDetails.php';
-    }
+
 }
 
     
