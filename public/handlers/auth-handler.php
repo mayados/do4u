@@ -4,25 +4,32 @@ namespace Public\handlers;
 use helpers\class\Auth;
 use helpers\class\App;
 use Controllers\AuthController;
-use Controllers;
 
 require_once 'path/to/helpers/redirect_functions.php';
 
 if (!empty($_POST['action'])) {
-    $controller = new Controllers\AuthController($componentController);
+    $controller = new AuthController($componentController);
 
-    if ($_POST['action'] === 'store') {
-        Auth::isGuestOrRedirect();
-        $controller->store();
-    } elseif ($_POST['action'] === 'check') {
-        Auth::isGuestOrRedirect();
-        $controller->check();
-    } elseif ($_POST['action'] === 'logout') {
-        Auth::isAuthOrRedirect();
-        $controller->logout();
+    switch ($_POST['action']) {
+        case 'store':
+            Auth::isGuestOrRedirect();
+            $controller->store();
+            break;
+        case 'check':
+            Auth::isGuestOrRedirect();
+            $controller->check();
+            break;
+        case 'logout':
+            Auth::isAuthOrRedirect();
+            $controller->logout();
+            break;
+        default:
+            // Handle unknown action
+            break;
     }
 }
 
 App::terminate();
 
 redirectAndExit(AuthController::URL_AFTER_LOGOUT);
+

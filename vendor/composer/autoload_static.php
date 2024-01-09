@@ -13,20 +13,25 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'public\\handlers\\' => 16,
+            'public\\' => 7,
+        ),
         'h' => 
         array (
             'helpers\\class\\' => 14,
             'helpers\\' => 8,
+        ),
+        'b' => 
+        array (
+            'boostrap\\' => 9,
         ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
-        ),
-        'P' => 
-        array (
-            'Public\\' => 7,
         ),
         'M' => 
         array (
@@ -36,13 +41,17 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         array (
             'Controllers\\' => 12,
         ),
-        'B' => 
-        array (
-            'Boostrap\\' => 9,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'public\\handlers\\' => 
+        array (
+            0 => '/',
+        ),
+        'public\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/public',
+        ),
         'helpers\\class\\' => 
         array (
             0 => '/',
@@ -50,6 +59,10 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         'helpers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/helpers',
+        ),
+        'boostrap\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/bootstrap',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -63,10 +76,6 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Public\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/public',
-        ),
         'Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Models',
@@ -74,10 +83,6 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         'Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Controllers',
-        ),
-        'Boostrap\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/bootstrap',
         ),
     );
 

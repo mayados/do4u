@@ -8,9 +8,11 @@
       "Controllers\\": "Controllers/",
       "Models\\": "Models/",
       "helpers\\": "helpers/",
-      "Public\\": "public/",
-      "Boostrap\\": "bootstrap/",
-      "helpers\\class\\": "/"
+      "public\\": "public/",
+      "boostrap\\": "bootstrap/",
+      "helpers\\class\\": "/",
+      "public\\handlers\\":"/"
+      
     }
   }
 }

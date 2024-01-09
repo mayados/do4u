@@ -5,7 +5,6 @@ use helpers\class\DB;
 use helpers\class\Auth;
 
 
-
 class AuthController extends Controller
 {
     const URL_HANDLER = '/handlers/auth-handler.php';
@@ -14,39 +13,52 @@ class AuthController extends Controller
     const URL_AFTER_LOGIN = '/ads.php';
     const URL_AFTER_LOGOUT = '/index.php';
 
+
     public function login() 
     {
-        $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../views/connexion.php';
     }
  
 
     public function register() : void
     {
-        $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../views/inscription.php';
     }
 
     public function store() : void
     {
-        // Prepare POST
-        $name = $_POST['name'] ?? '';
+        require_once __DIR__ . '/../helpers/redirect_functions.php';// Prepare POST
+      
         $login = $_POST['login'] ?? '';
         $password = $_POST['password'] ?? '';
 
         $_SESSION['old'] = [
-            'name' => $name,
+         
             'login' => $login,
             'password' => $password,
         ];
 
         // Validation
-        if (strlen($name) < 2 or !$this->validateCredentials($login, $password)) {
-            errors("Le champs nom doit avoir au moins 2 charactères.");
-            errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
-            errors("Le champs de mot de passe doit avoir au moins 8 charactères");
-            redirectAndExit('/inscription.php');
+        if (!$this->validateCredentials($login, $password)) {
+            $errors = [];
+        
+            if (strlen($login) < 6) {
+                $errors[] = "Le champ d'e-mail doit avoir au moins 6 caractères.";
+            }
+        
+            if (strlen($password) < 8) {
+                $errors[] = "Le champ de mot de passe doit avoir au moins 8 caractères.";
+            }
+        
+            if (!empty($errors)) {
+                // Display the errors and redirect
+                foreach ($errors as $error) {
+                    echo $error . '<br>';
+                }
+                redirectAndExit(self::URL_REGISTER);
+            }
         }
+        
 
         // Check User
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
@@ -63,12 +75,11 @@ class AuthController extends Controller
 
         // Create new user
         $result = DB::statement(
-            "INSERT INTO utilisateur(login, password, name)"
-            ." VALUE(:login, :password, :name);",
+            "INSERT INTO utilisateur(login, password)"
+            ." VALUE(:login, :password);",
             [
                 'login' => $login,
                 'password' => $password,
-                'name' => $name,
             ]
         );
         if ($result === false) {

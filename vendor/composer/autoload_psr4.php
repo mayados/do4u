@@ -6,13 +6,14 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'public\\handlers\\' => array('/'),
+    'public\\' => array($baseDir . '/public'),
     'helpers\\class\\' => array('/'),
     'helpers\\' => array($baseDir . '/helpers'),
+    'boostrap\\' => array($baseDir . '/bootstrap'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
-    'Public\\' => array($baseDir . '/public'),
     'Models\\' => array($baseDir . '/Models'),
     'Controllers\\' => array($baseDir . '/Controllers'),
-    'Boostrap\\' => array($baseDir . '/bootstrap'),
 );

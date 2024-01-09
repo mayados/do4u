@@ -1,3 +1,4 @@
+<?var_dump($_POST); die();?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
