@@ -706,7 +706,6 @@ label {
 }
 
 .details {
-  height: 176px;
   border-radius: 15px;
   border: 1px solid #1D838A;
 }
@@ -751,7 +750,7 @@ label {
   display: flex;
   box-sizing: border-box;
   height: 40px;
-  border: 1px solid #3A3A3A;
+  border: 1px solid #3a3a3a;
   border-radius: 6px;
   justify-content: center;
   align-items: center;

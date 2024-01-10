@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/assets/sass/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 </head>
 <body>
     <main id="main-details">
@@ -39,30 +39,40 @@
                                 <div class="overlay-text"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
                                 <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-2">
                                     <span class="user-type">Particulier</span>
-                                    <div class="report" role="alert">
-                                        <a class="text-decoration-none" href="contact.php">
-                                            <i class="fa-regular fa-flag fa-xl"></i>
-                                        </a>  
-                                        <span class="badge text-wrap" style="width: 5rem;">
-                                            <a class="alert-link link-danger text-decoration-none" href="contact.php">Signaler un problème</a>
-                                        </span>
+                                    <!-- <a class="link text-decoration-none" id="signalement_annonce" tabindex="0">Signaler cete annonce</a> -->
+                                    <span><a class="link" href="#" data-bs-toggle="modal" data-bs-target="#annoce_sin">Signaler</a></span>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="modal fade" id="annoce_sin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content p-3">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title" id="exampleModalLabel">Signaler une annonce</h6>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" class="form-control small" id="annoce_sin" placeholder="Votre message">
+                                    </div>
+                                    <div class="modal-footer align-item-center">
+                                        <button type="button" class="btn button-primary-regular" data-bs-dismiss="modal">Envoyer </button>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="card details">
-                                <div class="d-flex flex-row justify-content-between p-2">
-                                    <i class="fa-regular fa-heart fa-2x" style="color: #1D838A;"></i>
-                                    <span class=""><?php echo $adDetails['datePublication']; ?></span>
-                                </div>
                                 <div class="card-body">
-                                    <h3 class="card-title details-title"><?php echo $adDetails['titre']; ?></h3>
-                                    <p class="card-text details-price"><?php echo $adDetails['prix']; ?> €</p>
+                                    <div class="d-flex justify-content-end pl-2">
+                                        <i class="fa-regular fa-heart fa-2x" style="color: #1D838A;"></i>
+                                    </div>
+                                    <h4 class=""><?php echo $adDetails['titre']; ?></h4>
+                                    <p class=""><?php echo $adDetails['prix']; ?> €</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> <?php echo $adDetails['villeUtilisateur']; ?></p>
+                                    <span class="">Date de Publication : <?php echo $adDetails['datePublication']; ?></span>
                                 </div>
                             </div>
-                            <div class="card details mt-2">
+                            <div class="card mt-2">
                                 <div class="card-body"> 
                                     <div class="flex-lg-row d-flex flex-wrap justify-content-between">
                                         <figure id="photo-user">
@@ -71,7 +81,7 @@
                                             </a>
                                         </figure>  
                                         <div class="flex-column d-flex flex-wrap justify-content-center align-items-start">
-                                            <h3 class="card-title"><?php echo $adDetails['nomUtilisateur']; ?></h3>
+                                            <h5 class=""><?php echo $adDetails['nomUtilisateur']; ?></h5>
                                             <p><i class="fa-solid fa-star" style="color: #E9AD10;"></i> 4/5 8 avis</p>
                                         </div>
                                         <div class="flex-sm-column d-flex flex-wrap justify-content-center align-items-end offset-sm-6">
@@ -107,10 +117,9 @@
                         </article>
                     </div>
                     <div class="col-12 col-lg-6 mt-2">
-                        <p><i class="fa-solid fa-location-dot"></i> <?php echo $adDetails['villeUtilisateur']; ?></p>
-                        <div class="google-map">
+                        <!-- <div class="google-map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d337936.5389198585!2d7.762078999999999!3d48.569074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg!5e0!3m2!1sen!2sfr!4v1701726815229!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -200,9 +209,11 @@
             </div>
         </section>
     </main>
-    
+    <!-- Bootstrap 5 JS, Popper.js, and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../public/assets/js/script.js"></script>
-    
+
+    <!-- Your other scripts -->
+    <script src="../public/js/script.js"></script>
 </body>
 </html>
