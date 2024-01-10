@@ -1,7 +1,9 @@
 <?php
 namespace Controllers;
-
 use Models\Annonce;
+use helpers\class\DB;
+use PDO;
+use PDOException;
 
 class AdsController extends Controller
 {
@@ -37,9 +39,28 @@ class AdsController extends Controller
     }
 
     public function showAdDetails()
-    {
-        require_once __DIR__ . '/../views/adDetails.php';
+    {   
+        // for now, we have the two variable but I need to add condition if categorietype is offre show list of offre else
+        // show list demande below the ad details
+        $annonceOffre = Annonce::getOffre();
+        $annonceDemande = Annonce::getDemmande();
+        
+        if (isset($_GET['id'])) {
+            $adId = intval($_GET['id']);
+            $adDetails = Annonce::getAdDetailsById($adId);
+
+            if ($adDetails) {
+                require_once __DIR__ . '/../views/adDetails.php';
+            } else {
+                // Handle case where ad with the given ID was not found
+                echo '<p>Ad not found</p>';
+            }
+        } else {
+            // Handle case where 'id' parameter is not set in the URL
+            echo '<p>Ad ID not provided</p>';
+        }
     }
+
     public function showModificationPage()
     {
         require_once __DIR__ . '/../views/modificationAd.php';
