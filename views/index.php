@@ -47,7 +47,7 @@
                     <?php if (!empty($annonceOffre)) : ?>
                         <?php foreach ($annonceOffre as $offre): ?>
                             <div class="col">
-                                <a href="" class="card-link">
+                                <a href="adDetails.php?id=<?php echo $offre['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
                                             <img src="../public/assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
@@ -126,7 +126,7 @@
                         <?php foreach ($annonceDemande as $demande): ?>
                             <!-- Card 1 -->
                             <div class="col">
-                                <a href="" class="card-link">
+                                <a href="adDetails.php?id=<?php echo $demande['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
