@@ -13,6 +13,10 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
     );
 
     public static $prefixLengthsPsr4 = array (
+        'v' => 
+        array (
+            'views\\' => 6,
+        ),
         'p' => 
         array (
             'public\\handlers\\' => 16,
@@ -44,6 +48,10 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
     );
 
     public static $prefixDirsPsr4 = array (
+        'views\\' => 
+        array (
+            0 => '/',
+        ),
         'public\\handlers\\' => 
         array (
             0 => '/',

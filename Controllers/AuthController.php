@@ -32,7 +32,7 @@ class AuthController extends Controller
                 if($user) {
                     if(password_verify($password, $this->getPasswordByEmail($email))) {
                         $_SESSION["user"] = $user;
-                        header("Location: ads.php?action=home");
+                        header("Location: ads.php?action=ads.php");
                         exit(); 
                     } else {
                         echo "Mot de passe incorrect";
@@ -47,16 +47,18 @@ class AuthController extends Controller
     }
     public function setErrorMessage($message) {
         $_SESSION['error_message'] = $message;
+        require_once __DIR__ . '/../views/connexion.php';
     }
 
     public function setSuccessMessage($message) {
         $_SESSION['success_message'] = $message;
+        require_once __DIR__ . '/../views/connexion.php';
     }
     
     public function getUser($email) {
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
         if ($users === false) {
-            ('Une erreur est survenue. Veuillez réessayer plus tard.');
+            echo'Une erreur est survenue. Veuillez réessayer plus tard.';
             Auth::redirectAndExit(self::URL_LOGIN);
         }
         return (count($users) >= 1) ? $users[0] : null;
@@ -83,16 +85,8 @@ class AuthController extends Controller
    
     }
 
-    public function store() 
+         
 
-    {
-        
-    }
-
-    public function check() 
-    {
-
-    }
 
     public function logout() {
         

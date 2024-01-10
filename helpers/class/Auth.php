@@ -15,7 +15,6 @@ class Auth {
         ("header Location: $url");
     }
 
-
         
 
     public static function redirectAndExit(string $url){
@@ -86,4 +85,5 @@ class Auth {
             self::redirectAndExit('/index.php');
         }
     }
+
 }

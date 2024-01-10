@@ -8,11 +8,11 @@ use helpers\class\Auth;
 // Check only if guest
 Auth::isGuestOrRedirect();
 
-$componentController = new ComponentController();
-$controller = new AdsController($componentController);
-$controller->showMenu();
+
+$controller = new AdsController();
+$controller->renderHeader();
 $controller->showCreationPage();
-$controller->showFooter();
+$controller->renderFooter();
 
 
 // Remove errors, success, and old data

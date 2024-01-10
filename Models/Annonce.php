@@ -2,7 +2,6 @@
 namespace Models;
 use helpers\class\DB;
 use PDO;
-use Exception;
 use PDOException;
 
 class Annonce
@@ -196,6 +195,20 @@ class Annonce
             exit();
         }
     }
-
+    public static function chercher(){
+        try {
+            $db = DB::getDB();
+            $query = $db->query("SELECT titre, description 
+                                    FROM  annonce 
+                                    WHERE tite LIKE ? OR description LIKE ?");
+        
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    
 
 }

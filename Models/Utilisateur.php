@@ -2,6 +2,9 @@
 
 namespace Models;
 use helpers\class\DB;
+use PDOException;
+
+
 
 class Utilisateur
 {
@@ -15,7 +18,7 @@ class Utilisateur
     public ?int $codePostalUtilisateur;
    
 
-    // Constructeur
+   
     public function __construct(
         ?int $idUtilisateur = null,
         ?string $email = null,
@@ -40,29 +43,25 @@ class Utilisateur
 
     public function addUtilisateur()
     {
-// Supposons que vous ayez les valeurs du formulaire dans des variables
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$email = $_POST['mail'];
-$motdepasse = $_POST['motdepasse'];
+
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $email = $_POST['mail'];
+        $motdepasse = $_POST['motdepasse'];
 
 try {
-    // Récupération de la connexion à la base de données
-    $db = DB::getDB();
-
-    // Construction de la requête INSERT INTO
+    
+    $db = DB::getDB(); 
     $sql = "INSERT INTO utilisateur(email, nomUtilisateur, prenomUtilisateur, motdepasse) VALUES (:email, :nomUtilisateur, :prenomUtilisateur, :motdepasse)";
-
-    // Préparation de la requête
+  
     $stmt = $db->prepare($sql);
 
-    // Liaison des valeurs avec les paramètres de la requête
+    
     $stmt->bindParam(':nomUtilisateur', $nom);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':prenomUtilisateur', $prenom);
-    $stmt->bindParam(':motdepasse', $motdepasse);  // Attention à la correspondance des noms
+    $stmt->bindParam(':motdepasse', $motdepasse);  
 
-    // Exécution de la requête
     if ($stmt->execute()) {
         echo "Enregistrement réussi";
     } else {

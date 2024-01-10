@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'views\\' => array('/'),
     'public\\handlers\\' => array('/'),
     'public\\' => array($baseDir . '/public'),
     'helpers\\class\\' => array('/'),

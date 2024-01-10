@@ -11,7 +11,8 @@
       "public\\": "public/",
       "boostrap\\": "bootstrap/",
       "helpers\\class\\": "/",
-      "public\\handlers\\":"/"
+      "public\\handlers\\":"/",
+      "views\\":"/"
       
     }
   }
