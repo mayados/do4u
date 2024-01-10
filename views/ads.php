@@ -118,25 +118,24 @@
                     </a>
                 </div>
             <?php endforeach; ?>
+            <!-- Fin de la boucle foreach -->
 
-<!-- Fin de la boucle foreach -->
-
-
-
-            <!-- Pagination -->
-            <nav aria-label="Page navigation">
-              <ul class="pagination ads justify-content-center mt-4">
-                  <li class="page-item">
-                      <a class="page-link ad" href="#">Previous</a>
-                  </li>
-                  <li class="page-item fanye"><a class="page-link ad" href="#">1</a></li>
-                  <li class="page-item fanye"><a class="page-link ad" href="#">2</a></li>
-                  <li class="page-item fanye"><a class="page-link ad" href="#">3</a></li>
-                  <li class="page-item fanye">
-                      <a class="page-link ad" href="#">Next</a>
-                  </li>
-              </ul>
-            </nav>
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination  d-flex justify-content-center pt-4">
+                <li class="page-item">
+                    <a class="page-link text-decoration-none link" href="?page=<?php echo max($currentPage - 1, 1); ?>">Précédent</a>
+                </li>
+                <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                    <li class="page-item <?php echo ($i == $currentPage) ? 'active' : ''; ?>">
+                        <a class="page-link text-decoration-none link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </li>
+                <?php endfor; ?>
+                <li class="page-item">
+                    <a class="page-link text-decoration-none link" href="?page=<?php echo min($currentPage + 1, $totalPages); ?>">Suivant</a>
+                </li>
+            </ul>
+        </nav>
       </div>
     </section>
 </main>
