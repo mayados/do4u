@@ -9,11 +9,6 @@ class AdsController extends Controller
     const URL_INDEX = '/views/index.php';
     const URL_HANDLER = '/handlers/ad-handler.php';
 
-    public function __construct(ComponentController $componentController)
-    {
-
-       parent::__construct($componentController);
-    }
 
     public function getAll()
     {

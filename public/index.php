@@ -3,14 +3,14 @@
 require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
 use helpers\class\App;
 use Controllers\HomeController;
-use Controllers\ComponentController;
 
-$componentController = new ComponentController();
 
-$homeController = new HomeController($componentController);
-$homeController->showMenu();
+
+
+$homeController = new HomeController();
+$homeController->renderHeader();
 $homeController->index();
-$homeController->showFooter();
+$homeController->renderFooter();
 
 // Remove errors, success, and old data
 App::terminate();

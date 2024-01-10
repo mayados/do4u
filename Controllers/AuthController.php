@@ -5,6 +5,7 @@ use helpers\class\DB;
 use helpers\class\Auth;
 
 
+
 class AuthController extends Controller
 {
     const URL_HANDLER = '/handlers/auth-handler.php';
@@ -17,20 +18,50 @@ class AuthController extends Controller
     public function login() 
     {
         require_once __DIR__ . '/../views/connexion.php';
+        $login = $_POST['login'] ?? '';
+        $password = $_POST['password'] ?? '';
+    
+        // Validation
+        if (!Auth::validateCredentials($login, $password)) {
+            $this->errors("Le champ d'e-mail doit avoir au moins 6 caractères.");
+            $this->errors("Le champ de mot de passe doit avoir au moins 8 caractères");
+            Auth::redirectAndExit(self::URL_LOGIN);
+        }
+    
+        // Check DB
+        $user = $this->getUserByEmail($login);
+    
+        // Check user retrieved
+        if ($user !== null && password_verify($password, $user['password'])) {
+            $_SESSION[Auth::getSessionUserIdKey()] = $user['id'];
+            Auth::redirectAndExit(self::URL_AFTER_LOGIN);
+        }
+    
+        $this->errors("Les identifiants ne correspondent pas.");
+        Auth::redirectAndExit(self::URL_LOGIN);
     }
+    
+  
+    
+    private function getUserByEmail($email) 
+    {
+      
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
+    
+        if ($users === false) {
+            $this->errors('Une erreur est survenue. Veuillez réessayer plus tard.');
+            Auth::redirectAndExit(self::URL_LOGIN);
+        }
+    
+        return (count($users) >= 1) ? $users[0] : null;
+    }
+    
  
 
     public function register() : void
     {
+        
         require_once __DIR__ . '/../views/inscription.php';
-    }
-
-    public function store() : void
-
-    {
-        require_once __DIR__ . '/../helpers/redirect_functions.php';// Prepare POST
-      
-
         $login = $_POST['login'] ?? '';
         $password = $_POST['password'] ?? '';
 
@@ -39,8 +70,9 @@ class AuthController extends Controller
             'login' => $login,
             'password' => $password,
         ];
-
-        // Validation
+    
+    
+            // Validation
 
         if (!$this->validateCredentials($login, $password)) {
             $errors = [];
@@ -58,23 +90,20 @@ class AuthController extends Controller
                 foreach ($errors as $error) {
                     echo $error . '<br>';
                 }
-                redirectAndExit(self::URL_REGISTER);
+                Auth::redirectAndExit(self::URL_AFTER_LOGOUT);
             }
 
-        }
-        
-
-        // Check User
+        }       
+         // Check User
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
         if ($users === false) {
             $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
-            redirectAndExit(self::URL_REGISTER);
+            Auth::redirectAndExit(self::URL_REGISTER);
         } elseif (count($users) >= 1) {
             $this->errors('Cette adresse email est déjà utilisée.');
-            redirectAndExit(self::URL_REGISTER);
+            Auth::redirectAndExit(self::URL_REGISTER);
         }
-
-        // Version 2: Secure password with hash method
+       // Version 2: Secure password with hash method
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         // Create new user
@@ -88,7 +117,7 @@ class AuthController extends Controller
         );
         if ($result === false) {
             $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
-            redirectAndExit(self::URL_REGISTER);
+            Auth::redirectAndExit(self::URL_REGISTER);
         }
 
         // Auth new user
@@ -98,42 +127,25 @@ class AuthController extends Controller
         unset($_SESSION['old']);
 
         // Message + Redirection
-        success('Vous êtes maintenant connecté.');
-        redirectAndExit(self::URL_AFTER_LOGIN);
+        $_SESSION['sucess']('Vous êtes maintenant connecté.');
+        Auth::redirectAndExit(self::URL_AFTER_LOGIN);
+    }
+
+    public function store() : void
+
+    {
+        
+
+
+        
+
+
+ 
     }
 
     public function check() : void
     {
-        $login = $_POST['login'] ?? '';
-        $password = $_POST['password'] ?? '';
 
-        // Validation
-        if (!$this->validateCredentials($login, $password)) {
-            $this->errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
-            $this->errors("Le champs de mot de passe doit avoir au moins 8 charactères");
-            redirectAndExit(self::URL_LOGIN);
-        }
-
-        // Check DB
-        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
-        if ($users === false) {
-            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
-            redirectAndExit(self::URL_LOGIN);
-        }
-
-        // Check user retrieved
-        if (count($users) >= 1) {
-            $user = $users[0];
-
-            // Version 2: with password hashing
-            if (password_verify($password, $user['password'])) {
-                $_SESSION[Auth::getSessionUserIdKey()] = $user['id'];
-                redirectAndExit(self::URL_AFTER_LOGIN);
-            }
-        }
-
-        $this->errors("Les identifiants ne correspondes pas.");
-        redirectAndExit(self::URL_LOGIN);
     }
 
     public function validateCredentials(string $login, string $password) : bool
@@ -146,10 +158,10 @@ class AuthController extends Controller
         return true;
     }
 
-    public function logout() : void
+    public function logout() 
     {
         session_destroy();
-        redirectAndExit(self::URL_AFTER_LOGOUT);
+        Auth::redirectAndExit(self::URL_AFTER_LOGOUT);
     }
     public function showInscription() : void
     {
