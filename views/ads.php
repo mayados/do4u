@@ -60,35 +60,60 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <?php foreach ($annonces as $annonce): ?>
                 <div class="col">
-                    <a href="#" class="card-link">
+                    <a href="" class="card-link">
                         <div class="card h-100 card-ad">
                             <div class="position-relative">
-                                <?php if (isset($annonce['photo'])): ?>
-                                    <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
-                                <?php endif; ?>
-                                <div class="offer-badge">
-                                    <?php if (isset($annonce['type'])): ?>
-                                        <span class="offer-badge"><?php echo $annonce['type']; ?></span>
-                                    <?php endif; ?>
-                                </div>
+                            <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                            <div class="demande-badge">
+                                <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
                             </div>
+                        </div>
                             <div class="card-body">
-                                <!-- Le reste de votre contenu avec des variables dynamiques -->
-                                <?php if (isset($annonce['titre'])): ?>
-                                    <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
-                                <?php endif; ?>
+                                <div class="heart-icon fa-lg">
+                                    <i class="icon fa-regular fa-heart"></i>
+                                </div>
+                                <p class="card-title fw-bold"><?php echo $annonce['titre']; ?></p>
                                 <div class="row align-items-center">
                                     <div class="col-1">
                                         <i class="icon fa-regular fa-user"></i>
                                     </div>
                                     <div class="col ps-3">
-                                        <?php if (isset($annonce['prix'])): ?>
-                                            <span><?php echo $annonce['prix']; ?></span>
-                                        <?php endif; ?>
+                                        <span>Auto entrepreneur</span>
                                     </div>
                                 </div>
-                                <!-- ... Autres informations dynamiques -->
-                            </div>
+                                <div class="row align-items-center">
+                                    <div class="col-1">
+                                        <i class="icon fa-solid fa-euro-sign"></i>
+                                    </div>
+                                    <div class="col ps-3">
+                                        <span><?php echo $annonce['prix']; ?></span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-1">
+                                        <i class="icon fa-regular fa-folder"></i>
+                                    </div>
+                                    <div class="col ps-3">
+                                        <span><?php echo $annonce['nomCategorie']; ?></span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-1">
+                                        <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
+                                    </div>
+                                    <div class="col ps-3">
+                                        <span><?php echo $annonce['nomUtilisateur']; ?></span> <span> 4.5(19 avis) </span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-1">
+                                        <i class="icon fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="col ps-3">
+                                        <span><?php echo $annonce['villeUtilisateur']; ?></span>
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
                     </a>
                 </div>
@@ -111,7 +136,7 @@
                       <a class="page-link ad" href="#">Next</a>
                   </li>
               </ul>
-          </nav>
+            </nav>
       </div>
     </section>
 </main>
