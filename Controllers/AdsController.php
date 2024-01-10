@@ -3,7 +3,7 @@ namespace Controllers;
 use Models\Annonce;
 use helpers\class\DB;
 use PDO;
-use PDOException;
+use Exception;
 
 class AdsController extends Controller
 {
@@ -68,6 +68,38 @@ class AdsController extends Controller
     public function showContactPage()
     {
         require_once __DIR__ . '/../views/contact.php';
+    }
+    public function chercherParMotClé()
+    {   $result = Annonce::chercher();
+        try
+        {
+         $bdd = DB::getDB();
+         $bdd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        catch(Exception $e)
+        {
+          die("Une érreur a été trouvé : " . $e->getMessage());
+        }
+        $bdd->query("SET NAMES UTF8");
+        
+        if (isset($_GET["s"]) AND $_GET["s"] == "Rechercher")
+        {
+         $_GET["terme"] = htmlspecialchars($_GET["terme"]); 
+         $terme = $_GET["terme"];
+         $terme = trim($terme); 
+         $terme = strip_tags($terme); 
+        
+         if (isset($terme))
+         {
+          $terme = strtolower($terme);
+          $select_terme = $result;
+          
+         }
+         else
+         {
+          $message=("Vous devez entrer votre requete dans la barre de recherche");
+         }
+        }
     }
 }
 

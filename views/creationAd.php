@@ -17,8 +17,9 @@
             <div class="crea p-5">
                 <div class="container-fluid">
                     <div class="row">
-                        <!-- Colonne gauche avec formulaire -->
-                        <div class="col-12 col-lg-8 mb-5 left-column flex-fill">
+                    <div class="col-lg-8 mb-5 left-column flex-fill">
+                    <form action="creationAd.php" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                        
                             <div class="card cardCre">
                                 <div class="card-body">
                                     <h3>Créer une annonce</h3>
@@ -100,7 +101,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 imgcontainer flex-fill">
+                </form>
+                <div class="col-lg-4 imgcontainer flex-fill">
                         <img src="./../public/assets/img/Img_page_ads/house-3950679_640.jpg" class="img-fluid d-none d-lg-block" alt="Image">
                     </div>                    
                     </div>

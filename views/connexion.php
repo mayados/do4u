@@ -1,4 +1,6 @@
-<?var_dump($_POST); die();?>
+<?php if(!empty($_POST)){
+    var_dump($_POST);
+}?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

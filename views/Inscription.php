@@ -1,3 +1,6 @@
+<?php if(!empty($_POST)){
+    var_dump($_POST);
+}?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,38 +37,38 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                    <form class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                                    <form action="Inscription.php?action=register" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="nom">Nom <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                                                <input type="text" name="nom" class="form-control" id="nom" placeholder="Votre nom">
                                               </div>
                                               <div class="col form-group">
                                                   <label for="prenom">Prénom <span class="text-danger">*</span></label>
-                                                  <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                                                  <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom">
                                             </div>
                                         </div>
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="pseudo">Pseudo <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo">
+                                                <input type="text" name="pseudo" class="form-control" id="pseudo" placeholder="Votre pseudo">
                                             </div>
                                             <div class="col form-group">
                                                 <label for="email">Adresse mail <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" id="email" placeholder="Votre Adresse mail">
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="pseudo">Adresse <span class="text-muted">(ville + code postal)</span> <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="adresse" placeholder="Votre adresse">
+                                            <input type="text" name="adresse" class="form-control" id="adresse" placeholder="Votre adresse">
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="motPass">Mot de passe <span class="text-danger">*</span></label>
-                                            <input type="password" class="form-control" id="motPass" placeholder="Votre mot de pass">
+                                            <input type="password" name="motdepasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
                                           </div>
                                         <div class="form-group mt-3">
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
-                                          <input type="password" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
+                                          <input type="password" name="motdepasse" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
                                         </div>
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -119,7 +122,7 @@
                                         <div class="mt-4">
                                             <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
                                         </div>
-                                    </form>
+                                    </form action="inscription.php" methode="post">
                                     <form class="tab-pane fade show" id="pills-entreprise" role="tabpanel" aria-labelledby="pills-entreprise-tab">
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
