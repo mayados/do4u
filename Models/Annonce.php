@@ -36,10 +36,11 @@ class Annonce
 
     }
 
-    public static function getAll() {
+    public static function getAll(int $offset, int $limit)
+    {
         try {
             $db = DB::getDB();
-            $query = $db->query("SELECT annonce.*, 
+            $query = $db->prepare("SELECT annonce.*, 
                                     categorie.nomCategorie AS nomCategorie, 
                                     utilisateur.nomUtilisateur AS nomUtilisateur, 
                                     utilisateur.villeUtilisateur AS villeUtilisateur,
@@ -53,10 +54,33 @@ class Annonce
                                 JOIN 
                                     typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
                                 ORDER BY 
-                                    annonce.idAnnonce ASC");
-        
+                                    annonce.idAnnonce ASC
+                                LIMIT :limit OFFSET :offset");
+
+            $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $query->bindParam(':offset', $offset, PDO::PARAM_INT);
+
+            $query->execute();
+
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+
+    public static function getTotalCount()
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT COUNT(*) AS total FROM annonce");
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+            return $result['total'];
         } catch (PDOException $e) {
             // Log PDO exceptions
             echo 'PDO Exception: ' . $e->getMessage();
