@@ -1,10 +1,26 @@
 <?php
 namespace helpers\class;
 
+
+
+
 class Auth {
+    const URL_AFTER_LOGOUT = '/index.php';
     const SESSION_KEY = 'current_user_id';
 
     private static ?array $user = null;
+    public static function redirect(string $url){
+        ("Location: $url");
+    }
+
+    public static function redirectAndExit(string $url){
+        self::redirect($url);
+        exit();
+    }
+    public static function validateCredentials($login, $password)
+    {
+        return strlen($login) >= 6 && strlen($password) >= 8;
+    }
 
     public static function getCurrentUser() : ?array
     {
@@ -31,13 +47,14 @@ class Auth {
         return self::$user;
     }
 
+
     public static function isAuthOrRedirect() : void
     {
         // Check user is auth
         if (!Auth::getCurrentUser()) {
             // Not Auth Or account not exists
-            errors('Vous devez être connecté pour accèder à cette page.');
-            redirectAndExit('/connexion.php');
+            $_SESSION ?? ['errors'] ?? []('Vous devez être connecté pour accèder à cette page.');
+            Auth::redirectAndExit('/connexion.php');
         }
     }
 
@@ -45,7 +62,7 @@ class Auth {
     {
         // Check user is guest (invité)
         if (Auth::getCurrentUser()) {
-            redirectAndExit('/ads.php');
+            Auth::redirectAndExit('/ads.php');
         }
     }
 

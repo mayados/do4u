@@ -1,9 +1,8 @@
 <?php
 
 namespace Models;
-
-require_once __DIR__.'/../bootstrap/app.php';
-
+use helpers\class\DB;
+use PDO;
 
 class Utilisateur
 {
@@ -39,7 +38,42 @@ class Utilisateur
         $this->codePostalUtilisateur = $codePostalUtilisateur;
        
     }
-    public function hasRole($role){
-     
+
+    public function addUtilisateur()
+    {
+// Supposons que vous ayez les valeurs du formulaire dans des variables
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$email = $_POST['mail'];
+$motdepasse = $_POST['motdepasse'];
+
+try {
+    // Récupération de la connexion à la base de données
+    $db = DB::getDB();
+
+    // Construction de la requête INSERT INTO
+    $sql = "INSERT INTO utilisateur(email, nomUtilisateur, prenomUtilisateur, motdepasse) VALUES (:email, :nomUtilisateur, :prenomUtilisateur, :motdepasse)";
+
+    // Préparation de la requête
+    $stmt = $db->prepare($sql);
+
+    // Liaison des valeurs avec les paramètres de la requête
+    $stmt->bindParam(':nomUtilisateur', $nom);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':prenomUtilisateur', $prenom);
+    $stmt->bindParam(':motdepasse', $motdepasse);  // Attention à la correspondance des noms
+
+    // Exécution de la requête
+    if ($stmt->execute()) {
+        echo "Enregistrement réussi";
+    } else {
+        echo "Erreur lors de l'enregistrement : " . $stmt->errorInfo()[2];
+    }
+} catch (PDOException $e) {
+    // Log PDO exceptions
+    echo 'PDO Exception: ' . $e->getMessage();
+    exit();
+}
+
     }
 }

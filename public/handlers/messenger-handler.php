@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__.'/../../bootstrap/app.php';
-require_once base_path('Controllers/MessengerController.php');
+use helpers\class\App;
+use helpers\class\Auth;
+require_once __DIR__ . '/../vendor/autoload.php';
 
 
 
@@ -8,4 +9,4 @@ require_once base_path('Controllers/MessengerController.php');
 App::terminate();
 
 // Unknown action
-redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT);
+Auth::redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT);

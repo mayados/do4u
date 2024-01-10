@@ -10,11 +10,6 @@ class AdsController extends Controller
     const URL_HANDLER = '/handlers/ad-handler.php';
     const ITEMS_PER_PAGE = 8;
 
-    public function __construct(ComponentController $componentController)
-    {
-
-       parent::__construct($componentController);
-    }
 
     public function getAll()
     {

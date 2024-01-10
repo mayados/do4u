@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__.'/../../bootstrap/app.php';
-require_once base_path('Controllers/UserController.php');
+namespace handlers;
+use helpers\class\App;
+use helpers\class\Auth;
+use Controllers\AuthController;
 
 
 
@@ -8,4 +10,4 @@ require_once base_path('Controllers/UserController.php');
 App::terminate();
 
 // Unknown action
-redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT);
+Auth::redirectAndExit(AuthController::URL_AFTER_LOGOUT);

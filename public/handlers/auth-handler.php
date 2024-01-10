@@ -5,19 +5,22 @@ use helpers\class\Auth;
 use helpers\class\App;
 use Controllers\AuthController;
 
-require_once 'path/to/helpers/redirect_functions.php';
+// If your project is configured with Composer autoloading, you might not need the next line.
+require_once __DIR__ . '/../vendor/autoload.php';
+
+
 
 if (!empty($_POST['action'])) {
-    $controller = new AuthController($componentController);
+    $controller = new AuthController();
 
     switch ($_POST['action']) {
-        case 'store':
+        case 'login':
             Auth::isGuestOrRedirect();
-            $controller->store();
+            $controller->login();
             break;
-        case 'check':
+        case 'register':
             Auth::isGuestOrRedirect();
-            $controller->check();
+            $controller->register();
             break;
         case 'logout':
             Auth::isAuthOrRedirect();
@@ -31,5 +34,6 @@ if (!empty($_POST['action'])) {
 
 App::terminate();
 
-redirectAndExit(AuthController::URL_AFTER_LOGOUT);
+
+
 
