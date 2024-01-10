@@ -2,7 +2,6 @@
 
 namespace Models;
 use helpers\class\DB;
-use PDO;
 
 class Utilisateur
 {

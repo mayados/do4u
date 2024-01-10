@@ -28,16 +28,16 @@
                 <div class="offset-lg-2 col-12 col-lg-5 order-1 order-lg-2 pb-5">
                     <!-- col-2-connexion -->
                     <div class="form-connexion">
-                        <form>
+                        <form action="connexion.php?action=login" method="POST">
                             <h3 class="fw-bolder">Bienvenue !</h3>
                             <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">
                                 <label for="adresseMail">Adresse mail</label>
-                                <input type="text" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
+                                <input type="text" name= "email" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="motPass">Mot de passe</label>
-                                <input type="password" class="form-control" id="motPass" placeholder="Votre mot de pass">
+                                <input type="password" name = "motdepasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn button-primary-regular">Connecter</button>

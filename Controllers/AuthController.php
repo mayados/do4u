@@ -14,158 +14,105 @@ class AuthController extends Controller
     const URL_AFTER_LOGIN = '/ads.php';
     const URL_AFTER_LOGOUT = '/index.php';
 
-
-    public function login() 
-    {
+    public function login() {
+     
         require_once __DIR__ . '/../views/connexion.php';
-        $login = $_POST['login'] ?? '';
-        $password = $_POST['password'] ?? '';
+        if(isset($_POST["submit"])) {
+            
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "motDePasse", FILTER_VALIDATE_REGEXP, [
+                "options" => [
+                    "regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/"
+                    // au moins 6 caractères, majuscules, minuscules et chiffres
+                ]
+            ]);
     
-        // Validation
-        if (!Auth::validateCredentials($login, $password)) {
-            $this->errors("Le champ d'e-mail doit avoir au moins 6 caractères.");
-            $this->errors("Le champ de mot de passe doit avoir au moins 8 caractères");
-            Auth::redirectAndExit(self::URL_LOGIN);
+            if($email && $password) {
+                $user = $this->getUser($email);
+                if($user) {
+                    if(password_verify($password, $this->getPasswordByEmail($email))) {
+                        $_SESSION["user"] = $user;
+                        header("Location: ads.php?action=home");
+                        exit(); 
+                    } else {
+                        echo "Mot de passe incorrect";
+                    }
+                } else {
+                    echo "Utilisateur non trouvé";
+                }
+            } else {
+                echo "Données invalides";
+            }
         }
-    
-        // Check DB
-        $user = $this->getUserByEmail($login);
-    
-        // Check user retrieved
-        if ($user !== null && password_verify($password, $user['password'])) {
-            $_SESSION[Auth::getSessionUserIdKey()] = $user['id'];
-            Auth::redirectAndExit(self::URL_AFTER_LOGIN);
-        }
-    
-        $this->errors("Les identifiants ne correspondent pas.");
-        Auth::redirectAndExit(self::URL_LOGIN);
+    }
+    public function setErrorMessage($message) {
+        $_SESSION['error_message'] = $message;
+    }
+
+    public function setSuccessMessage($message) {
+        $_SESSION['success_message'] = $message;
     }
     
-  
-    
-    private function getUserByEmail($email) 
-    {
-      
+    public function getUser($email) {
         $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
-    
         if ($users === false) {
-            $this->errors('Une erreur est survenue. Veuillez réessayer plus tard.');
+            ('Une erreur est survenue. Veuillez réessayer plus tard.');
             Auth::redirectAndExit(self::URL_LOGIN);
         }
-    
         return (count($users) >= 1) ? $users[0] : null;
     }
     
+
+    public function getPasswordByEmail($email) {
+        $result = DB::fetch("SELECT motdepasse FROM utilisateur WHERE email = :email;", ['email' => $email]);
+        
+        if ($result) {
+            return $result[0]['motdepasse'];
+        } else {
+            return null;
+        }
+    }
+    
  
 
-    public function register() : void
+    public function register() 
     {
         
         require_once __DIR__ . '/../views/inscription.php';
-        $login = $_POST['login'] ?? '';
-        $password = $_POST['password'] ?? '';
-
-        $_SESSION['old'] = [
-         
-            'login' => $login,
-            'password' => $password,
-        ];
-    
-    
-            // Validation
-
-        if (!$this->validateCredentials($login, $password)) {
-            $errors = [];
         
-            if (strlen($login) < 6) {
-                $errors[] = "Le champ d'e-mail doit avoir au moins 6 caractères.";
-            }
-        
-            if (strlen($password) < 8) {
-                $errors[] = "Le champ de mot de passe doit avoir au moins 8 caractères.";
-            }
-        
-            if (!empty($errors)) {
-                // Display the errors and redirect
-                foreach ($errors as $error) {
-                    echo $error . '<br>';
-                }
-                Auth::redirectAndExit(self::URL_AFTER_LOGOUT);
-            }
-
-        }       
-         // Check User
-        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
-        if ($users === false) {
-            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
-            Auth::redirectAndExit(self::URL_REGISTER);
-        } elseif (count($users) >= 1) {
-            $this->errors('Cette adresse email est déjà utilisée.');
-            Auth::redirectAndExit(self::URL_REGISTER);
-        }
-       // Version 2: Secure password with hash method
-        $password = password_hash($password, PASSWORD_DEFAULT);
-
-        // Create new user
-        $result = DB::statement(
-            "INSERT INTO utilisateur(login, password)"
-            ." VALUE(:login, :password);",
-            [
-                'login' => $login,
-                'password' => $password,
-            ]
-        );
-        if ($result === false) {
-            $this->errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
-            Auth::redirectAndExit(self::URL_REGISTER);
-        }
-
-        // Auth new user
-        $_SESSION[Auth::getSessionUserIdKey()] = DB::getDB()->lastInsertId();
-
-        // Clear old
-        unset($_SESSION['old']);
-
-        // Message + Redirection
-        $_SESSION['sucess']('Vous êtes maintenant connecté.');
-        Auth::redirectAndExit(self::URL_AFTER_LOGIN);
+   
     }
 
-    public function store() : void
+    public function store() 
 
     {
         
-
-
-        
-
-
- 
     }
 
-    public function check() : void
+    public function check() 
     {
 
     }
 
-    public function validateCredentials(string $login, string $password) : bool
-    {
-        // Validation
-        if (strlen($login) < 6 or strlen($password) < 8) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public function logout() 
-    {
+    public function logout() {
+        
         session_destroy();
-        Auth::redirectAndExit(self::URL_AFTER_LOGOUT);
+
+        header("Location: /connexion.php");
+        exit();
     }
-    public function showInscription() : void
+    public function showInscription() 
     {
-        $this->render('inscription');
+        require_once __DIR__ . '/../views/inscription.php';
+    }
+    public static function isAuthOrRedirect() 
+    {
+       Auth::isAuthOrRedirect();
+    }
+    
+    public static function isGuestOrRedirect() 
+    {
+       Auth:: isGuestOrRedirect();
     }
 }
 

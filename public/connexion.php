@@ -1,8 +1,10 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+require_once __DIR__ . '/../vendor/autoload.php'; 
 use helpers\class\App;
 use Controllers\AuthController;
+use helpers\class\Auth;
 
+Auth::isGuestOrRedirect();
 
 $authController = new AuthController();
 $authController->renderHeader();
