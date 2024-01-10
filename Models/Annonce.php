@@ -80,10 +80,10 @@ class Annonce
         );
     }
 
-    public function getAnnoncesByCategorie($categorie): void
+    public function getAnnoncesByCategorie(string $categorie): void
     {
-        // À implémenter
-        // Vous pouvez ajouter la logique pour récupérer les annonces par catégorie ici
+       $db = DB::getDB(); 
+       
     }
 
     public static function getOffre() {
@@ -140,4 +140,6 @@ class Annonce
             exit();
         }
     }
+
+
 }
