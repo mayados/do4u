@@ -52,7 +52,7 @@
                                         <div class="position-relative">
                                             <img src="../public/assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                             <div class="offer-badge">
-                                                <span class="offer-badge">Offre</span>
+                                                <span class="offer-badge"><?php echo $offre['nomTypeAnnonce'] ?></span>
                                             </div>
                                         </div>
                                         <div class="card-body">
@@ -131,7 +131,7 @@
                                         <div class="position-relative">
                                         <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
                                         <div class="demande-badge">
-                                            <span class="demande-badge">Demande</span>
+                                            <span class="demande-badge"><?php echo $demande['nomTypeAnnonce'] ?></span>
                                         </div>
                                     </div>
                                         <div class="card-body">

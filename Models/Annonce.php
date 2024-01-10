@@ -37,16 +37,31 @@ class Annonce
     }
 
     public static function getAll() {
-        $sql = "SELECT * FROM annonce";
-        $result = DB::fetch($sql);
-    
-        // Vérifier si la requête a réussi et que le résultat est un tableau ou un objet
-        if ($result !== false && is_iterable($result)) {
+        try {
+            $db = DB::getDB();
+            $query = $db->query("SELECT annonce.*, 
+                                    categorie.nomCategorie AS nomCategorie, 
+                                    utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                    utilisateur.villeUtilisateur AS villeUtilisateur,
+                                    typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                FROM 
+                                    annonce 
+                                JOIN 
+                                    categorie ON annonce.categorieId = categorie.idCategorie
+                                JOIN 
+                                    utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                JOIN 
+                                    typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                ORDER BY 
+                                    annonce.idAnnonce ASC");
+        
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
         }
-    
-        // Gérer les cas où la requête échoue ou le résultat n'est pas itérable
-        return [];
     }
     
     public function addAnnonce()
@@ -54,15 +69,13 @@ class Annonce
         return DB::statement(
             "INSERT INTO annonce ( titre, datePublication, photo, description, prix, ville)"
             . " VALUES ( :titre, :datePublication, :photo, :description, :prix, :ville)",
-            [
-               
+            [       
                 'titre' => $this->titre,
                 'datePublication' => $this->datePublication,
                 'photo' => $this->photo,
                 'description' => $this->description,
                 'prix' => $this->prix,
                 'ville' => $this->ville,
-
             ],
         );
     }
@@ -79,12 +92,18 @@ class Annonce
             $query = $db->query("SELECT annonce.*, 
                                     categorie.nomCategorie AS nomCategorie, 
                                     utilisateur.nomUtilisateur AS nomUtilisateur, 
-                                    utilisateur.villeUtilisateur AS villeUtilisateur
-                                FROM annonce 
-                                JOIN categorie ON annonce.idAnnonce = categorie.idCategorie
-                                JOIN utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                    utilisateur.villeUtilisateur AS villeUtilisateur,
+                                    typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                FROM 
+                                    annonce 
+                                JOIN 
+                                    categorie ON annonce.categorieId = categorie.idCategorie
+                                JOIN 
+                                    utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                JOIN 
+                                    typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce
                                 WHERE annonce.typeAnnonceId = 1 
-                                ORDER BY annonce.idAnnonce ASC LIMIT 4");
+                                ORDER BY annonce.idAnnonce ASC limit 4");
         
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
@@ -100,14 +119,19 @@ class Annonce
             $db = DB::getDB();
             $query = $db->query("SELECT annonce.*, 
                                     categorie.nomCategorie AS nomCategorie, 
-                                    utilisateur.nomUtilisateur AS nomUtilisateur,
-                                    utilisateur.nomUtilisateur AS nomUtilisateur,
-                                    utilisateur.villeUtilisateur AS villeUtilisateur
-                                FROM annonce 
-                                JOIN categorie ON annonce.idAnnonce = categorie.idCategorie
-                                JOIN utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                    utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                    utilisateur.villeUtilisateur AS villeUtilisateur,
+                                    typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                FROM 
+                                    annonce 
+                                JOIN 
+                                    categorie ON annonce.categorieId = categorie.idCategorie
+                                JOIN 
+                                    utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                JOIN 
+                                    typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce
                                 WHERE annonce.typeAnnonceId = 2 
-                                ORDER BY annonce.idAnnonce ASC LIMIT 4");
+                                ORDER BY annonce.idAnnonce ASC limit 4");
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
