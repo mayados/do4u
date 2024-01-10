@@ -1,17 +1,22 @@
 <?php
 namespace helpers\class;
 
-
-
-
 class Auth {
+    const URL_HANDLER = '/handlers/auth-handler.php';
+    const URL_REGISTER = '/inscription.php';
+    const URL_LOGIN = '/connexion.php';
+    const URL_AFTER_LOGIN = '/ads.php';
     const URL_AFTER_LOGOUT = '/index.php';
+
     const SESSION_KEY = 'current_user_id';
 
     private static ?array $user = null;
     public static function redirect(string $url){
-        ("Location: $url");
+        ("header Location: $url");
     }
+
+
+        
 
     public static function redirectAndExit(string $url){
         self::redirect($url);
@@ -48,23 +53,7 @@ class Auth {
     }
 
 
-    public static function isAuthOrRedirect() : void
-    {
-        // Check user is auth
-        if (!Auth::getCurrentUser()) {
-            // Not Auth Or account not exists
-            $_SESSION ?? ['errors'] ?? []('Vous devez être connecté pour accèder à cette page.');
-            Auth::redirectAndExit('/connexion.php');
-        }
-    }
 
-    public static function isGuestOrRedirect() : void
-    {
-        // Check user is guest (invité)
-        if (Auth::getCurrentUser()) {
-            Auth::redirectAndExit('/ads.php');
-        }
-    }
 
     public static function getSessionUserIdKey() : string
     {
@@ -79,5 +68,22 @@ class Auth {
     public static function removeSessionUserId() : void
     {
         unset($_SESSION[self::getSessionUserIdKey()]);
+    }
+    public static function isAuthOrRedirect() 
+    {
+        // Check user is auth
+        if (!self::getCurrentUser()) {
+            // Not Auth Or account not exists
+            $_SESSION['errors'][] = 'Vous devez être connecté pour accéder à cette page.';
+            self::redirectAndExit('/connexion.php');
+        }
+    }
+
+    public static function isGuestOrRedirect() 
+    {
+        // Check user is guest (invité)
+        if (self::getCurrentUser()) {
+            self::redirectAndExit('/index.php');
+        }
     }
 }

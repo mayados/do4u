@@ -39,6 +39,10 @@ class AdsController extends Controller
     {
         require_once __DIR__ . '/../views/modificationAd.php';
     }
+    public function showContactPage()
+    {
+        require_once __DIR__ . '/../views/contact.php';
+    }
 }
 
     

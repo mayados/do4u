@@ -15,9 +15,10 @@ class UserController extends Controller
         $this->render('myProfile');
     }
     
-    public function showUserProfile() : void
+    public function showUserProfile() 
     {
-        $this->render('userProfile');
+       
+        require_once __DIR__ . '/../views/userProfile.php';
     }
 
     public function showMyParameters()
