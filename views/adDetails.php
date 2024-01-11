@@ -35,7 +35,8 @@
                     <div class="row ">
                         <div class="col-12 col-lg-6">
                             <div class="image-container">
-                                <img src="../public/assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien">
+                                <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien"> -->
+                                <img src="../public/assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                 <div class="overlay-text"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
                                 <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-2">
                                     <span class="user-type">Particulier</span>
@@ -146,7 +147,8 @@
                                 <a href="" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="..."> -->
+                                        <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                         <div class="demande-badge">
                                             <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
                                         </div>

@@ -129,7 +129,8 @@
                                 <a href="adDetails.php?id=<?php echo $demande['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="...">
+                                        <img src="../public/assets/img/cards/<?php echo $demande['photo']; ?>" class="img-fluid card-img-top" alt="...">
+
                                         <div class="demande-badge">
                                             <span class="demande-badge"><?php echo $demande['nomTypeAnnonce'] ?></span>
                                         </div>
