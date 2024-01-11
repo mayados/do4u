@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
 
 abstract class Controller {
@@ -10,7 +10,7 @@ abstract class Controller {
 
     public function renderHeader(): void
     {
-        require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'menu.php';
+        require_once __DIR__ . '/../../views/menu.php';
     }
 
 
@@ -18,7 +18,7 @@ abstract class Controller {
     {
         extract($data); // Convert array key:value to $key = value variables
     
-        $viewPath = __DIR__ . '/../views/' . $view . '.php';
+        $viewPath = __DIR__ . '/../../views/' . $view . '.php';
     
         if (file_exists($viewPath)) {
             include $viewPath;
@@ -30,14 +30,13 @@ abstract class Controller {
     public function renderView(string $view): void
     {
         $actionUrl = self::URL_HANDLER;
-        require_once __DIR__ . "/../views/{$view}";
+        require_once __DIR__ . "/../../views/{$view}";
     }
     
     public function renderFooter(): void
     {
-        require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'footer.php';
+        require_once __DIR__ . '/../../views/footer.php';
     }
-
 
     public function errors($message) {
         // Handle errors as needed

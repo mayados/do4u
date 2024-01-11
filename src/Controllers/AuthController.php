@@ -1,8 +1,8 @@
 <?php
 
-namespace Controllers;
-use helpers\class\DB;
-use helpers\class\Auth;
+namespace App\Controllers;
+use DB;
+use Auth;
 
 
 
@@ -16,7 +16,7 @@ class AuthController extends Controller
 
     public function login() {
      
-        require_once __DIR__ . '/../views/connexion.php';
+        require_once __DIR__ . '/../../views/connexion.php';
         if(isset($_POST["submit"])) {
             
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
@@ -47,12 +47,12 @@ class AuthController extends Controller
     }
     public function setErrorMessage($message) {
         $_SESSION['error_message'] = $message;
-        require_once __DIR__ . '/../views/connexion.php';
+        require_once __DIR__ . '/../../views/connexion.php';
     }
 
     public function setSuccessMessage($message) {
         $_SESSION['success_message'] = $message;
-        require_once __DIR__ . '/../views/connexion.php';
+        require_once __DIR__ . '/../../views/connexion.php';
     }
     
     public function getUser($email) {
@@ -80,7 +80,7 @@ class AuthController extends Controller
     public function register() 
     {
         
-        require_once __DIR__ . '/../views/inscription.php';
+        require_once __DIR__ . '/../../views/inscription.php';
         
    
     }
@@ -97,7 +97,7 @@ class AuthController extends Controller
     }
     public function showInscription() 
     {
-        require_once __DIR__ . '/../views/inscription.php';
+        require_once __DIR__ . '/../../views/inscription.php';
     }
     public static function isAuthOrRedirect() 
     {

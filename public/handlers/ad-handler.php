@@ -1,9 +1,10 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
-use helpers\class\App;
+// require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
 
-// Remove errors, success and old data
+require_once __DIR__.'/../../bootstrap/app.php';
+
 App::terminate();
 
 // Unknown action
-redirectAndExit(Controllers\AuthController::URL_AFTER_LOGOUT);
+Auth::redirectAndExit(App\Controllers\AuthController::URL_AFTER_LOGOUT);
+

@@ -1,7 +1,7 @@
 <?php
 
-namespace Models;
-use helpers\class\DB;
+namespace App\Models;
+use DB;
 
 class CategorieModel extends Model
 {   

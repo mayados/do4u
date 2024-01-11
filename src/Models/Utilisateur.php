@@ -1,7 +1,7 @@
 <?php
 
-namespace Models;
-use helpers\class\DB;
+namespace App\Models;
+use DB;
 use PDOException;
 
 
@@ -17,7 +17,6 @@ class Utilisateur
     public ?string $villeUtilisateur;
     public ?int $codePostalUtilisateur;
    
-
    
     public function __construct(
         ?int $idUtilisateur = null,

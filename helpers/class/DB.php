@@ -1,10 +1,4 @@
 <?php
-namespace helpers\class;
-use PDO;
-use Exception;
-use PDOException;
-
-
 class DB {
     private static ?PDO $db = null; // "?PDO" allowed only on PHP 8.1+
 

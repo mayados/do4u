@@ -10,68 +10,26 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '06a77874c020d2dc710af9caa138ffe0' => __DIR__ . '/../..' . '/helpers/html_functions.php',
+        'cab345c586c1e532e311ad608922e424' => __DIR__ . '/../..' . '/helpers/path_functions.php',
+        '1efc24e0fe51f5cad2fb8b5978ef92e9' => __DIR__ . '/../..' . '/helpers/redirect_functions.php',
+        'ea54d6377909f934c1e3baa727784ee1' => __DIR__ . '/../..' . '/helpers/session_functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'v' => 
-        array (
-            'views\\' => 6,
-        ),
-        'p' => 
-        array (
-            'public\\handlers\\' => 16,
-            'public\\' => 7,
-        ),
-        'h' => 
-        array (
-            'helpers\\class\\' => 14,
-            'helpers\\' => 8,
-        ),
-        'b' => 
-        array (
-            'boostrap\\' => 9,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
-        'M' => 
+        'A' => 
         array (
-            'Models\\' => 7,
-        ),
-        'C' => 
-        array (
-            'Controllers\\' => 12,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'views\\' => 
-        array (
-            0 => '/',
-        ),
-        'public\\handlers\\' => 
-        array (
-            0 => '/',
-        ),
-        'public\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/public',
-        ),
-        'helpers\\class\\' => 
-        array (
-            0 => '/',
-        ),
-        'helpers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/helpers',
-        ),
-        'boostrap\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/bootstrap',
-        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -84,19 +42,18 @@ class ComposerStaticInitc536836a76c9e1600c97b3fe4a04891d
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Models\\' => 
+        'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Models',
-        ),
-        'Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Controllers',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
+        'App' => __DIR__ . '/../..' . '/helpers/class/App.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Auth' => __DIR__ . '/../..' . '/helpers/class/Auth.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DB' => __DIR__ . '/../..' . '/helpers/class/DB.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',

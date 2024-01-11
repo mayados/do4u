@@ -1,5 +1,5 @@
 <?php
-namespace Controllers;
+namespace App\Controllers;
 use Controllers\ComponentController;
 
 class ContactController extends Controller
@@ -11,7 +11,7 @@ class ContactController extends Controller
 
   
     public function showContactPage() {
-        require_once __DIR__ . '/../views/contact.php';
+        require_once __DIR__ . '/../../views/contact.php';
     }
 
 }

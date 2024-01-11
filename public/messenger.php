@@ -1,18 +1,11 @@
 <?php
-
 require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
-use helpers\class\App;
-use helpers\class\Auth;
-use Controllers\MessengerController;
 
 
 // Check only if guest
 Auth::isGuestOrRedirect();
 
-
-$MeseengerController = new MessengerController();
-// unable to display errors and messages
-// $MeseengerController->displayErrorsAndMessages();
+$MeseengerController = new App\Controllers\MessengerController();
 $MeseengerController->renderHeader();
 $MeseengerController->showMessage();
 $MeseengerController->renderFooter();
