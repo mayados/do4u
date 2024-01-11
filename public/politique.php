@@ -11,9 +11,9 @@ Auth::isGuestOrRedirect();
 $componentController = new ComponentController();
 
 $controller = new HomeController($componentController);
-$controller->showMenu();
+$controller->renderHeader();
 $controller->showPolitiquePage();
-$controller->showFooter();
+$controller->renderFooter();
 
 // Remove errors, success and old data
 App::terminate();

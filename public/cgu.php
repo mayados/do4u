@@ -4,16 +4,15 @@ use helpers\class\App;
 use Controllers\HomeController;
 use Controllers\ComponentController;
 use helpers\class\Auth;
-
 // Check only if guest 
 Auth::isGuestOrRedirect();
 
 $componentController = new ComponentController();
 
 $adsController = new HomeController($componentController);
-$adsController->showMenu();
+$adsController->renderHeader();
 $adsController->cguPage();
-$adsController->showFooter();
+$adsController->renderFooter();
 
 // Remove errors, success and old data
 App::terminate();

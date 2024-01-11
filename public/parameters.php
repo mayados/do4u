@@ -14,9 +14,9 @@ $parametersController = new HomeController($componentController);
 
 $userController = new ComponentController();
 $parametersController = new UserController($userController);
-$parametersController->showMenu();
+$parametersController->renderHeader();
 $parametersController->showMyParameters();
-$parametersController->showFooter();
+$parametersController->renderFooter();
 
 // Remove errors, success and old data
 App::terminate();
