@@ -1,108 +1,130 @@
 <?php
 
 namespace App\Controllers;
-use DB;
+
 use Auth;
-
-
+use DB;
 
 class AuthController extends Controller
 {
-    const URL_HANDLER = '/handlers/auth-handler.php';
-    const URL_REGISTER = '/inscription.php';
-    const URL_LOGIN = '/connexion.php';
-    const URL_AFTER_LOGIN = '/ads.php';
-    const URL_AFTER_LOGOUT = '/index.php';
+    public function login() : void
+    {
+        $this->render('auth/connexion'); // require views/auth/login.php
+    }
 
-    public function login() {
-     
-        require_once __DIR__ . '/../../views/connexion.php';
-        if(isset($_POST["submit"])) {
-            
-            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-            $password = filter_input(INPUT_POST, "motDePasse", FILTER_VALIDATE_REGEXP, [
-                "options" => [
-                    "regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/"
-                    // au moins 6 caractères, majuscules, minuscules et chiffres
-                ]
-            ]);
-    
-            if($email && $password) {
-                $user = $this->getUser($email);
-                if($user) {
-                    if(password_verify($password, $this->getPasswordByEmail($email))) {
-                        $_SESSION["user"] = $user;
-                        header("Location: ads.php?action=ads.php");
-                        exit(); 
-                    } else {
-                        echo "Mot de passe incorrect";
-                    }
-                } else {
-                    echo "Utilisateur non trouvé";
-                }
-            } else {
-                echo "Données invalides";
+    public function register() : void
+    {
+       $this->render('auth/inscription'); // require views/auth/register.php
+    }
+
+    public function store() : void
+    {
+        // Prepare POST
+        $name = $_POST['nom'] ?? '';
+        $login = $_POST['email'] ?? '';
+        $password = $_POST['motdepass'] ?? '';
+
+        $_SESSION['old'] = [
+            'nom' => $name,
+            'email' => $login,
+            'motdepasse' => $password,
+        ];
+
+        // Validation
+        if (strlen($name) < 2 or !$this->validateCredentials($login, $password)) {
+            errors("Le champs nom doit avoir au moins 2 charactères.");
+            errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
+            errors("Le champs de mot de passe doit avoir au moins 8 charactères");
+            redirectToRouteAndExit('inscription');
+        }
+
+        // Check User
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
+        if ($users === false) {
+            errors('Sorry, a error has occurred !');
+            redirectToRouteAndExit('inscription');
+        } elseif (count($users) >= 1) {
+            errors('Cette adresse email est déjà utilisée.');
+            redirectToRouteAndExit('inscription');
+        }
+
+        // Version 2: Secure password with hash method
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Create new user
+        $result = DB::statement(
+            "INSERT INTO utilisateur(email, password, nom)"
+            ." VALUE(:email, :motdepasse, :nom);",
+            [
+                'email' => $login,
+                'motdepasse' => $password,
+                'nom' => $name,
+            ]
+        );
+        if ($result === false) {
+            errors('Sorry, a error has occurred !');
+            redirectToRouteAndExit('inscription');
+        }
+
+        // Auth new user
+        $_SESSION[Auth::getSessionUserIdKey()] = DB::getDB()->lastInsertId();
+
+        // Clear old
+        unset($_SESSION['old']);
+
+        // Message + Redirection
+        success('You are now logged.');
+        redirectToRouteAndExit('index');
+    }
+
+    public function check() : void
+    {
+        $login = $_POST['email'] ?? '';
+        $password = $_POST['motdepasse'] ?? '';
+
+        // Validation
+        if (!$this->validateCredentials($login, $password)) {
+            errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
+            errors("Le champs de mot de passe doit avoir au moins 8 charactères");
+            redirectToRouteAndExit('connextion');
+        }
+
+        // Check DB
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :login;", ['login' => $login]);
+        if ($users === false) {
+            errors('Sorry, a error has occurred !');
+            redirectToRouteAndExit('connextion');
+        }
+
+        // Check user retrieved
+        if (count($users) >= 1) {
+            $user = $users[0];
+
+            // Version 2: with password hashing
+            if (password_verify($password, $user['motdepasse'])) {
+                $_SESSION[Auth::getSessionUserIdKey()] = $user['id'];
+                redirectToRouteAndExit('index');
             }
         }
-    }
-    public function setErrorMessage($message) {
-        $_SESSION['error_message'] = $message;
-        require_once __DIR__ . '/../../views/connexion.php';
+
+        errors("The credentials does not match.");
+        redirectToRouteAndExit('connextion');
     }
 
-    public function setSuccessMessage($message) {
-        $_SESSION['success_message'] = $message;
-        require_once __DIR__ . '/../../views/connexion.php';
-    }
-    
-    public function getUser($email) {
-        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
-        if ($users === false) {
-            echo'Une erreur est survenue. Veuillez réessayer plus tard.';
-            Auth::redirectAndExit(self::URL_LOGIN);
-        }
-        return (count($users) >= 1) ? $users[0] : null;
-    }
-    
-
-    public function getPasswordByEmail($email) {
-        $result = DB::fetch("SELECT motdepasse FROM utilisateur WHERE email = :email;", ['email' => $email]);
-        
-        if ($result) {
-            return $result[0]['motdepasse'];
-        } else {
-            return null;
-        }
-    }
-    
-
-    public function register() 
+    public function validateCredentials(string $login, string $password) : bool
     {
-        
-        require_once __DIR__ . '/../../views/inscription.php';
-        
-   
+        // Validation
+        if (strlen($login) < 6 or strlen($password) < 8) {
+            return false;
+        }
+
+        return true;
     }
 
-         
-    public function logout() {
-        
+    public function logout() : void
+    {
+        unset($_SESSION);
         session_destroy();
-
-        header("Location: /connexion.php");
-        exit();
-    }
-    public function showInscription() 
-    {
-        require_once __DIR__ . '/../../views/inscription.php';
-    }
-    public static function isAuthOrRedirect() 
-    {
-       Auth::isAuthOrRedirect();
-    }
-    
-    public static function isGuestOrRedirect() 
-    {
-       Auth:: isGuestOrRedirect();
+        redirectToRouteAndExit('index');
     }
 }

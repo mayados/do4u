@@ -34,6 +34,9 @@ class Annonce
         $this->ville = $ville;
 
     }
+    public function getAnnonces(){
+      
+    }
 
     public static function getAll(int $offset, int $limit)
     {

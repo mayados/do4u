@@ -5,31 +5,29 @@ namespace App\Controllers;
 
 class UserController extends Controller
 {
-    const URL_CREATE = '';
-    const URL_INDEX = '';
-    const URL_HANDLER = '/handlers/user-handler.php';
+    
 
     
     public function showMyProfile()
     {
-        $this->render('myProfile');
+        require_once base_path('views/myProfile.php');
     }
     
     public function showUserProfile() 
     {
        
-        require_once __DIR__ . '/../../views/userProfile.php';
+        require_once base_path('views/userProfile.php');
     }
 
     public function showMyParameters()
     {
-        $this->render('parameters');
+        require_once base_path('views/parameters.php');
     }
  
 
     public function showInscription() : void
     {
-        $this->render('inscription');
+        require_once base_path('views/auth/inscription.php');
     }
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 class DB {
     private static ?PDO $db = null; // "?PDO" allowed only on PHP 8.1+
 
@@ -9,6 +10,59 @@ class DB {
         }
 
         return self::$db;
+    }
+
+    public static function update(
+        string $table,
+        array $data,
+        int|string|null $identifier = null,
+        $identifierName = 'id'
+    ): bool {
+        // Check identifier and remove it from data
+        $identifier = $identifier ?? $data[$identifierName] ?? null;
+        unset($data[$identifierName]);
+        if (empty($identifier)) {
+            return false;
+        }
+
+        // Generate updates part of sql query
+
+        // only keys: ['enable', 'label', 'description', 'brand', 'price_ttc', 'price_ht', 'vat', 'quantity', 'created_at']
+        $keys = array_keys($data);
+
+        // "enable = :enable, label = :label, description = :description, brand = :brand, price_ttc = :price_ttc, price_ht = :price_ht, vat = :vat, quantity = :quantity, created_at = :created_at"
+        $updates = [];
+        foreach ($keys as $key) {
+            $updates[] = "$key = :$key";
+        }
+        $updates = implode(', ', $updates);
+
+        // Inject identifier in data
+        $data[$identifierName] = $identifier;
+
+        return DB::statement(
+            "UPDATE $table SET $updates"
+            ." WHERE $identifierName = :$identifierName",
+            $data,
+        );
+    }
+
+    public static function insert(string $table, array $data): bool
+    {
+        // only keys: ['enable', 'label', 'description', 'brand', 'price_ttc', 'price_ht', 'vat', 'quantity', 'created_at']
+        $keys = array_keys($data);
+
+        // enable, label, description, brand, price_ttc, price_ht, vat, quantity, created_at
+        $cols = implode(', ', $keys);
+
+        // :enable, :label, :description, :brand, :price_ttc, :price_ht, :vat, :quantity, :created_at
+        $params = ':'.implode(', :', $keys);
+
+        return DB::statement(
+            "INSERT INTO $table ($cols)"
+            ." VALUES ($params)",
+            $data,
+        );
     }
 
     public static function fetch(
@@ -88,8 +142,7 @@ class DB {
     {
         try {
             return new PDO(
-                // the host has to be changed when it  willl be on a server. Yet it's a local configuration
-                'mysql:host=localhost;port=3306;dbname=do4u',
+                'mysql:host=php_mysql;port=3306;dbname=do4U',
                 'root',
                 '',
                 [

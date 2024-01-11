@@ -30,7 +30,8 @@
                 <div class="offset-lg-2 col-12 col-lg-5 order-1 order-lg-2 pb-5">
                     <!-- col-2-connexion -->
                     <div class="form-connexion">
-                        <form action="connexion.php?action=login" method="POST">
+                    <form action="<?php routeEcho('login.check'); ?>" method="POST">
+                    <p>Bonjour, <?php echo Auth::getCurrentUser()['nom']; ?></p>
                             <h3 class="fw-bolder">Bienvenue !</h3>
                             <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">

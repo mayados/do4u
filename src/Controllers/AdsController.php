@@ -7,20 +7,18 @@ use Exception;
 
 class AdsController extends Controller
 {
-    const URL_CREATE = '/views/creationAd.php';
-    const URL_INDEX = '/views/index.php';
-    const URL_HANDLER = '/handlers/ad-handler.php';
+
     const ITEMS_PER_PAGE = 8;
 
 
     public function getAll()
-    {
+    {  
         $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
         $offset = ($currentPage - 1) * self::ITEMS_PER_PAGE;
         $totalItems = Annonce::getTotalCount();
         $totalPages = ceil($totalItems / self::ITEMS_PER_PAGE);
         $annonces = Annonce::getAll($offset, self::ITEMS_PER_PAGE);
-        require_once __DIR__ . '/../../views/ads.php';
+        require_once base_path('views/ads.php');
     }
 
     public function showAdsByCategorie()
@@ -28,13 +26,13 @@ class AdsController extends Controller
         // Your main content logic goes here
 
         // Assuming ads.php is in the views directory
-        require_once __DIR__ . '/../../views/ads.php';
+        require_once base_path('views/ads.php');
     }
 
 
     public function showCreationPage()
     {
-        require_once __DIR__ . '/../../views/creationAd.php';
+        require_once base_path('views/creationAd.php');
 
     }
 
@@ -50,7 +48,7 @@ class AdsController extends Controller
             $adDetails = Annonce::getAdDetailsById($adId);
 
             if ($adDetails) {
-                require_once __DIR__ . '/../../views/adDetails.php';
+                require_once base_path('views/adDetails.php');
             } else {
                 // Handle case where ad with the given ID was not found
                 echo '<p>Ad not found</p>';
@@ -63,11 +61,11 @@ class AdsController extends Controller
 
     public function showModificationPage()
     {
-        require_once __DIR__ . '/../../views/modificationAd.php';
+        require_once base_path('views/modificationAd.php');
     }
     public function showContactPage()
     {
-        require_once __DIR__ . '/../../views/contact.php';
+        require_once base_path('views/contact.php');
     }
     public function chercherParMotClé()
     {   $result = Annonce::chercher();
