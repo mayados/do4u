@@ -75,7 +75,6 @@ class AuthController extends Controller
         }
     }
     
- 
 
     public function register() 
     {
@@ -86,8 +85,6 @@ class AuthController extends Controller
     }
 
          
-
-
     public function logout() {
         
         session_destroy();
@@ -109,7 +106,3 @@ class AuthController extends Controller
        Auth:: isGuestOrRedirect();
     }
 }
-
-
-
-    

@@ -1,15 +1,5 @@
 <?php
-
-namespace Public\handlers;
-
-use Auth;
-use App;
-use App\Controllers\AuthController;
-
-
-require_once __DIR__ . '/../vendor/autoload.php';
-
-$authController = new AuthController();
+require_once __DIR__.'/../../bootstrap/app.php';
 
 if (!empty($_POST['action'])) {
     if ($_POST['action'] === 'login') {
@@ -28,7 +18,7 @@ if (!empty($_POST['action'])) {
 App::terminate();
 
 // Unknown action
-Auth::redirectAndExit(AuthController::URL_AFTER_LOGOUT);
+Auth::redirectAndExit(App\Controllers\AuthController::URL_AFTER_LOGOUT);
 
 
 
