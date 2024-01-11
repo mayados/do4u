@@ -1,5 +1,4 @@
 <?php
-namespace helpers\class;
 
 class Auth {
     const URL_HANDLER = '/handlers/auth-handler.php';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace App\Models;
 
 require_once __DIR__.'/../bootstrap/app.php';
 

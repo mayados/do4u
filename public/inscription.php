@@ -1,16 +1,11 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
-use helpers\class\App;
-use Controllers\AuthController;
 
 
-
-$authController = new AuthController();
+$authController = new App\Controllers\AuthController();
 $authController->renderHeader();
-
 $authController->register();
-
 $authController->renderFooter();
 
 // Remove errors, success, and old data

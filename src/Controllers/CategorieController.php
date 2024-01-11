@@ -1,7 +1,7 @@
 <?php
 
-namespace Controllers;
-use Models\CategorieModel;
+namespace App\Controllers;
+use App\Models\CategorieModel;
 
 class CategorieController extends Controller
 {
@@ -20,6 +20,6 @@ class CategorieController extends Controller
 
 
         // Include the view file
-        include_once(__DIR__ . '/../views/categorie.php');
+        include_once(__DIR__ . '/../../views/categorie.php');
     }
 }

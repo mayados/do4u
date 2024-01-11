@@ -9,4 +9,8 @@ return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     'a4a119a56e50fbb293281d9a48007e0e' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     '667aeda72477189d0494fecd327c3641' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
+    '06a77874c020d2dc710af9caa138ffe0' => $baseDir . '/helpers/html_functions.php',
+    'cab345c586c1e532e311ad608922e424' => $baseDir . '/helpers/path_functions.php',
+    '1efc24e0fe51f5cad2fb8b5978ef92e9' => $baseDir . '/helpers/redirect_functions.php',
+    'ea54d6377909f934c1e3baa727784ee1' => $baseDir . '/helpers/session_functions.php',
 );

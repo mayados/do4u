@@ -1,8 +1,8 @@
 <?php
 namespace handlers;
-use helpers\class\App;
-use helpers\class\Auth;
-use Controllers\AuthController;
+use App;
+use Auth;
+use App\Controllers\AuthController;
 
 
 

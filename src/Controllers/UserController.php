@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
 
 class UserController extends Controller
@@ -18,7 +18,7 @@ class UserController extends Controller
     public function showUserProfile() 
     {
        
-        require_once __DIR__ . '/../views/userProfile.php';
+        require_once __DIR__ . '/../../views/userProfile.php';
     }
 
     public function showMyParameters()

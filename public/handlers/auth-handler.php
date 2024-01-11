@@ -2,9 +2,9 @@
 
 namespace Public\handlers;
 
-use helpers\class\Auth;
-use helpers\class\App;
-use Controllers\AuthController;
+use Auth;
+use App;
+use App\Controllers\AuthController;
 
 
 require_once __DIR__ . '/../vendor/autoload.php';

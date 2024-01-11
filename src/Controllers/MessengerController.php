@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
 
 class MessengerController extends Controller
@@ -11,7 +11,7 @@ class MessengerController extends Controller
 
     public function showMessage()
     {
-        require_once __DIR__ . '/../views/messenger.php';
+        require_once __DIR__ . '/../../views/messenger.php';
     }
 
 }

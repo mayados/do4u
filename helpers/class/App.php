@@ -1,5 +1,4 @@
 <?php
-namespace helpers\class;
 
 class App
 {
