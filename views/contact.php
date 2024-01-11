@@ -38,25 +38,25 @@
             <div class="row align-items-stretch">
                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                     <div class="contact-form">
-                        <form>
+                        <form action="handle-form-submission" method="post">
                             <h2 class="fw-bolder pb-3">Nous contacter !</h2>
                             <div class="form-row">
                                 <div class="col">
                                     <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom">
                                 </div>
                                 <div class="col">
                                     <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Votre prénom">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="adresseMail">Adresse mail</label>
-                                <input type="text" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
+                                <input type="text" class="form-control" name="adresseMail" id="adresseMail" placeholder="mattsmith@mail.com">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn button-primary-regular">Envoyer</button>
