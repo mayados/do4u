@@ -50,8 +50,25 @@ class Auth {
 
         return self::$user;
     }
+    public function getUserByEmail($email) {
+        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
+        if ($users === false) {
+            echo'Une erreur est survenue. Veuillez réessayer plus tard.';
+            Auth::redirectAndExit(self::URL_LOGIN);
+        }
+        return (count($users) >= 1) ? $users[0] : null;
+    }
+    
 
-
+    public function getPasswordByEmail($email) {
+        $result = DB::fetch("SELECT motdepasse FROM utilisateur WHERE email = :email;", ['email' => $email]);
+        
+        if ($result) {
+            return $result[0]['motdepasse'];
+        } else {
+            return null;
+        }
+    }
 
 
     public static function getSessionUserIdKey() : string

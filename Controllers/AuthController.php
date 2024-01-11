@@ -15,7 +15,7 @@ class AuthController extends Controller
     const URL_AFTER_LOGOUT = '/index.php';
 
     public function login() {
-     
+        
         require_once __DIR__ . '/../views/connexion.php';
         if(isset($_POST["submit"])) {
             
@@ -55,25 +55,7 @@ class AuthController extends Controller
         require_once __DIR__ . '/../views/connexion.php';
     }
     
-    public function getUser($email) {
-        $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
-        if ($users === false) {
-            echo'Une erreur est survenue. Veuillez réessayer plus tard.';
-            Auth::redirectAndExit(self::URL_LOGIN);
-        }
-        return (count($users) >= 1) ? $users[0] : null;
-    }
-    
 
-    public function getPasswordByEmail($email) {
-        $result = DB::fetch("SELECT motdepasse FROM utilisateur WHERE email = :email;", ['email' => $email]);
-        
-        if ($result) {
-            return $result[0]['motdepasse'];
-        } else {
-            return null;
-        }
-    }
     
  
 
