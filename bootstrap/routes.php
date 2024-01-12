@@ -22,12 +22,12 @@ Route::new('/logout', AuthController::class, 'logout', 'logout');
 
 // Home
 Route::new('/index', HomeController::class, 'index', '');
-Route::new('/getAll', AdsController::class, 'getAll', 'getAll');
+Route::new('/ads', AdsController::class, 'showAll', 'showAll');
 
 
 Route::auto(AdsController::class, [
     'index', 
-    'getAll',
+    'showAll',
     '',
     'show',
     'edit',

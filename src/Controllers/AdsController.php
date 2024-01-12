@@ -4,22 +4,39 @@ use App\Models\Annonce;
 use DB;
 use PDO;
 use Exception;
+use PDOException;
 
 class AdsController extends Controller
 {
-
+    
     const ITEMS_PER_PAGE = 8;
 
 
-    public function getAll()
-    {  
-        $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
-        $offset = ($currentPage - 1) * self::ITEMS_PER_PAGE;
-        $totalItems = Annonce::getTotalCount();
-        $totalPages = ceil($totalItems / self::ITEMS_PER_PAGE);
-        $annonces = Annonce::getAll($offset, self::ITEMS_PER_PAGE);
-        require_once base_path('views/ads.php');
+    public function showAll() {
+        try {
+            $db = DB::getDB(); 
+    
+            $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+            $offset = ($currentPage - 1) * self::ITEMS_PER_PAGE;
+            
+          
+            $totalItems = Annonce::getTotalCount($db);
+    
+            $totalPages = ceil($totalItems / self::ITEMS_PER_PAGE);
+            
+          
+            $annonces = Annonce::getAll($db, $offset, self::ITEMS_PER_PAGE);
+    
+            
+            require_once base_path('views/ads.php');
+        } catch (PDOException $e) {
+           
+            echo 'PDO Exception: ' . $e->getMessage();
+            require_once base_path('views/errors/500.php');
+        }
+
     }
+    
 
     public function showAdsByCategorie()
     {

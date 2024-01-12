@@ -60,7 +60,8 @@
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <?php foreach ($annonces as $annonce): ?>
+           
+            <?php  foreach ($annonces as $annonce): ?>
                 <div class="col">
                         <a href="adDetails.php?id=<?php echo $annonce['idAnnonce']; ?>" class="card-link">
                         <div class="card h-100 card-ad">
