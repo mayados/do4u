@@ -1,43 +1,59 @@
 <?php
 namespace App\Models;
-use App\Controllers\AdsController;
 use DB;
 use PDO;
 use PDOException;
-use DateTime;
 
-class Annonce extends Model 
-{   
-    const TABLE_NAME = 'annonce';
-    const DATE_PUBLICATION_FORMAT = 'Y-m-d H:i:s';
-    const COL_ID = 'idAnnonce';
-    const COL_TITRE = 'titre';
-    const COL_PHOTO = 'photo';
-    const COL_DESCRIPTION = 'description';
-    const COL_PRIX = 'prix';
-    const COL_VILLE = 'ville';
+class Annonce
+{
+    public ?int $id;
+    public ?string $titre;
+    public ?string $datePublication;
+    public ?string $photo;
+    public ?string $description;
+    protected ?float $prix;
+    public ?string $ville;
 
-  
 
-    public function __construct(array $data = [])
-    {
-        $this->hydrate($data);
+
+    // Constructeur
+    public function __construct(
+        ?string $titre ,
+        ?string $datePublication,
+        ?string $photo,
+        ?string $description,
+        ?float $prix,
+        ?string $ville,
+
+    ) {
+        $this->titre = $titre;
+        $this->datePublication = $datePublication;
+        $this->photo = $photo;
+        $this->description = $description;
+        $this->prix = $prix;
+        $this->ville = $ville;
+
     }
-    public function toArray()
-    {
-        return [
-            self::COL_TITRE => $this->titre,
-            self::COL_PHOTO => $this->photo
-            
-        ];
-    }
-   
-   
-    public static function getAll(PDO $db, $offset, $limit)
+
+    public static function getAll(int $offset, int $limit)
     {
         try {
-            $query = $db->prepare("SELECT * FROM " . self::TABLE_NAME . "
-                                ORDER BY " . self::COL_ID . " ASC
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT annonce.*, 
+                                    categorie.nomCategorie AS nomCategorie, 
+                                    utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                    utilisateur.villeUtilisateur AS villeUtilisateur,
+                                    typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                FROM 
+                                    annonce 
+                                JOIN 
+                                    categorie ON annonce.categorieId = categorie.idCategorie
+                                JOIN 
+                                    utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                JOIN 
+                                    typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                ORDER BY 
+                                    annonce.idAnnonce ASC
                                 LIMIT :limit OFFSET :offset");
 
             $query->bindParam(':limit', $limit, PDO::PARAM_INT);
@@ -45,23 +61,14 @@ class Annonce extends Model
 
             $query->execute();
 
-            $results = $query->fetchAll(PDO::FETCH_ASSOC);
-            
-          
-            $annonces = [];
-            foreach ($results as $result) {
-                $annonces[] = new Annonce($result);
-            }
-
-            return $annonces;
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
         } catch (PDOException $e) {
             // Log PDO exceptions
             echo 'PDO Exception: ' . $e->getMessage();
             exit();
         }
     }
-
-    
 
     public static function getTotalCount()
     {
@@ -112,7 +119,21 @@ class Annonce extends Model
         }
     }
 
-
+    public function addAnnonce()
+    {
+        return DB::statement(
+            "INSERT INTO annonce ( titre, datePublication, photo, description, prix, ville)"
+            . " VALUES ( :titre, :datePublication, :photo, :description, :prix, :ville)",
+            [       
+                'titre' => $this->titre,
+                'datePublication' => $this->datePublication,
+                'photo' => $this->photo,
+                'description' => $this->description,
+                'prix' => $this->prix,
+                'ville' => $this->ville,
+            ],
+        );
+    }
 
     public function getAnnoncesByCategorie(string $categorie): void
     {
