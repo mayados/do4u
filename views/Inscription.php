@@ -37,7 +37,7 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                <form action="<?php routeEcho('register.store'); ?>" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                                    <form action="Inscription.php?action=register" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="nom">Nom <span class="text-danger">*</span></label>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 class ContactController extends Controller
 {
     public function showContactPage() {
-        require_once base_path('views/contact.php');
+        require_once __DIR__ . '/../../views/contact.php';
     }
 
     // send email function

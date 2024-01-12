@@ -9,22 +9,22 @@ class HomeController extends Controller
     public function index() {
         $annonceOffre = Annonce::getOffre();
         $annonceDemande = Annonce::getDemmande();
-        require_once base_path('views/index.php');
+        require_once __DIR__ . '/../../views/index.php';
     }
 
     public function showContactPage(): void
     {
-        require_once base_path('views/contact.php');
-      
+        $this->render('views/contact.php');
+        // Le reste du code...
     }
      public function cguPage() {
-        require_once base_path('views/cgu.php');
+        require_once __DIR__ . '/../../views/cgu.php';
     }
     public function showMyParameters() {
-        require_once base_path('views/parameters.php');
+        require_once __DIR__ . '/../../views/parameters.php';
     }
     public function showPolitiquePage() {
-        require_once base_path('views/politique.php');
+        require_once __DIR__ . '/../../views/politique.php';
     }
 }
 

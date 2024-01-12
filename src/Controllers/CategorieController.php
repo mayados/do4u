@@ -20,6 +20,6 @@ class CategorieController extends Controller
 
 
         // Include the view file
-        require_once base_path('views/categorie.php');
+        include_once(__DIR__ . '/../../views/categorie.php');
     }
 }
