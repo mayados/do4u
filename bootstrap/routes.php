@@ -18,9 +18,11 @@ Route::new('/connexion', AuthController::class, 'login', 'login');
 Route::new('/connexion/check', AuthController::class, 'check', 'login.check');
 Route::new('/logout', AuthController::class, 'logout', 'logout');
 
-// Home
-Route::new('/dashboard', HomeController::class, 'index', '');
 
+
+// Home
+Route::new('/index', HomeController::class, 'index', '');
+Route::new('/getAll', AdsController::class, 'getAll', 'getAll');
 
 
 Route::auto(AdsController::class, [
