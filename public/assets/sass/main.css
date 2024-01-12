@@ -1124,18 +1124,10 @@ label {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-.index-home {
-  margin-top: 7vh;
-  padding-bottom: 7vh;
-  overflow-x: hidden;
-}
-@media (max-width: 992px) {
   .index-home {
-    margin-top: 15vh;
+    padding-top: 7rem;
   }
 }
-
 .left-side {
   flex: 1;
   width: 60%;
