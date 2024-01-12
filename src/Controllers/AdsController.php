@@ -117,9 +117,3 @@ class AdsController extends Controller
         }
     }
 }
-
-    
-  
-    
-
-

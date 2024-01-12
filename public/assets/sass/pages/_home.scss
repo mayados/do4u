@@ -27,9 +27,9 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-.index-home {
-  @include main-common-style;
+  .index-home {
+    padding-top: 7rem;
+  }
 }
 .left-side {
   flex: 1;
