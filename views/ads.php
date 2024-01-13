@@ -49,11 +49,17 @@
                         <a href="adDetails.php?id=<?php echo $annonce['idAnnonce']; ?>" class="card-link">
                         <div class="card h-100 card-ad">
                             <div class="position-relative">
-                            <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
-                            <div class="demande-badge">
-                                <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
+                                <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                <?php if ($annonce['nomTypeAnnonce'] === 'Demande'): ?>
+                                    <div class="demande-badge">
+                                        <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="offer-badge">
+                                        <span class="offer-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        </div>
                             <div class="card-body">
                                 <div class="heart-icon fa-lg">
                                     <i class="icon fa-regular fa-heart"></i>
