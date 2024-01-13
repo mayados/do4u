@@ -70,47 +70,47 @@ class Auth {
             unset($_SESSION[self::getSessionUserIdKey()]);
         }
         
-        public static function registerUser() : void
+        public static function registerUser(): void
         {
             
-            if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['ville'], $_POST['codepostal'], $_POST['motDePasse'])) {
-               
+            if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['ville'], $_POST['codepostal'], $_POST['motDePasse'])) 
+            {
                 
-                $nom= $_POST['nom'];
+                $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
                 $email = $_POST['email'];
                 $villeUtilisateur = $_POST['ville'];
-                $codePostalUtilisateur= $_POST['codepostal'];
+                $codePostalUtilisateur = $_POST['codepostal'];
                 $motDePasse = $_POST['motDePasse'];
-        
-          
+         
                 $hashedPassword = password_hash($motDePasse, PASSWORD_DEFAULT);
         
+                $userData = [
+                    'nomUtilisateur' => $nom,
+                    'prenomUtilisateur' => $prenom,
+                    'email' => $email,
+                    'villeUtilisateur' => $villeUtilisateur,
+                    'codePostalUtilisateur' => $codePostalUtilisateur,
+                    'motDePasse' => $hashedPassword,
+                ];
+        
                 try {
-                    $db = DB::getDB();
-                    $query = $db->prepare("INSERT INTO utilisateur (nomUtilisateur, prenomUtilisateur, email, villeUtilisateur, codePostalUtilisateur, motDePasse) 
-                                            VALUES(:nom, :prenom, :email, :ville, :codePostal :motDePasse)");
                     
-                    $query->bindParam(':nom', $nom, PDO::PARAM_STR);
-                    $query->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-                    $query->bindParam(':email', $email, PDO::PARAM_STR);
-                    $query->bindParam(':ville', $villeUtilisateur, PDO::PARAM_STR);
-                    $query->bindParam(':codePostal', $codePostalUtilisateur, PDO::PARAM_STR);
-                    $query->bindParam(':motDePasse', $hashedPassword, PDO::PARAM_STR);
-        
-                    $query->execute();
-        
+                    DB::insert('utilisateur', $userData);
                 } catch (PDOException $e) {
-                    
+                   
                     echo 'PDOException: ' . $e->getMessage();
                     exit();
                 }
             } else {
-                
                 echo 'Erreur: Données du formulaire manquantes.';
             }
         }
-        public static function loginUser() {
+        
+        public static function loginUser()
+        {
+            session_start(); 
+        
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['motDePasse'])) {
                 $email = $_POST['email'];
                 $motDePasse = $_POST['motDePasse'];
@@ -121,19 +121,20 @@ class Auth {
                 $query->bindParam(':email', $email, PDO::PARAM_STR);
                 $query->execute();
         
-                $user = $query->fetch(PDO::FETCH_ASSOC);
+                $user = $query->fetch(PDO::FETCH_ASSOC); 
+        
                 if ($user && password_verify($motDePasse, $user['motDePasse'])) {
-                   
                     $_SESSION['user'] = $user;
-                    header('Location: ads.php');
+                    echo ('sucess');
                     exit();
                 } else {
-                   
-                    header('Location: connexion.php?error=1');
+                    $_SESSION['errors'] = 'Erreur d\'authentification'; 
+                    echo ('errors');
                     exit();
                 }
         
                 $db = null;
             }
         }
+        
     }

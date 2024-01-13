@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
 
 function base_path(string $path = ''): string
 {

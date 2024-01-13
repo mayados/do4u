@@ -1,4 +1,6 @@
-<?php var_dump($_POST); ?>
+<?php if(!empty($_POST)){
+    var_dump($_POST);
+}?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -41,7 +43,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="motPass">Mot de passe</label>
-                                <input type="password" name = "motdepasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
+                                <input type="password" name = "motDePasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn button-primary-regular">Connecter</button>

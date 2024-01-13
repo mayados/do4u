@@ -4,41 +4,97 @@ namespace App\Models;
 use DB;
 use PDOException;
 
-
-
 class Utilisateur
 {
-    public ?int $idUtilisateur;
-    public ?string $email;
-    public ?string $nomUtilisateur;
-    public ?string $prenomUtilisateur;
-    public ?string $description;
+    protected ?int $idUtilisateur;
+    protected ?string $email;
+    protected ?string $nomUtilisateur;
+    protected ?string $prenomUtilisateur;
+    protected ?string $description;
     protected ?string $photo;
-    public ?string $villeUtilisateur;
-    public ?int $codePostalUtilisateur;
-   
-   
-    public function __construct(
-        ?int $idUtilisateur = null,
-        ?string $email = null,
-        ?string $nomUtilisateur = null,
-        ?string $prenomUtilisateur = null,
-        ?string $description =null,
-        ?string $photo = null,
-        ?string $villeUtilisateur = null,
-        ?int $codePostalUtilisateur = null,
-      
-    ) {
-        $this->idUtilisateur = $idUtilisateur;
-        $this->email= $email;
-        $this->nomUtilisateur = $nomUtilisateur;
-        $this->prenomUtilisateur = $prenomUtilisateur;
-        $this->description = $description;
-        $this->photo = $photo;
-        $this->villeUtilisateur = $villeUtilisateur;
-        $this->codePostalUtilisateur = $codePostalUtilisateur;
-       
+    protected ?string $villeUtilisateur;
+    protected ?int $codePostalUtilisateur;
+
+    public function getIdUtilisateur(): ?int
+    {
+        return $this->idUtilisateur;
     }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): void
+    {
+        $this->email = $email;
+    }
+
+    public function getNomUtilisateur(): ?string
+    {
+        return $this->nomUtilisateur;
+    }
+
+    public function setNomUtilisateur(?string $nomUtilisateur): void
+    {
+        $this->nomUtilisateur = $nomUtilisateur;
+    }
+
+    public function getPrenomUtilisateur(): ?string
+    {
+        return $this->prenomUtilisateur;
+    }
+
+    public function setPrenomUtilisateur(?string $prenomUtilisateur): void
+    {
+        $this->prenomUtilisateur = $prenomUtilisateur;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): void
+    {
+        $this->photo = $photo;
+    }
+
+    public function getVilleUtilisateur(): ?string
+    {
+        return $this->villeUtilisateur;
+    }
+
+    public function setVilleUtilisateur(?string $villeUtilisateur): void
+    {
+        $this->villeUtilisateur = $villeUtilisateur;
+    }
+
+    public function getCodePostalUtilisateur(): ?int
+    {
+        return $this->codePostalUtilisateur;
+    }
+
+    public function setCodePostalUtilisateur(?int $codePostalUtilisateur): void
+    {
+        $this->codePostalUtilisateur = $codePostalUtilisateur;
+    }
+
+    public function hasRole(): bool
+    {
+        return false;
+    }
+
 
     public function addUtilisateur()
     {
