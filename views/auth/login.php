@@ -1,3 +1,5 @@
+<?php var_dump($_POST); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +14,8 @@
     <link rel="stylesheet" href="../public/assets/sass/main.css">
 </head>
 <body>
+
+
   
     <main class="container-fluid d-flex d-flex-column connexion">
         <div class="container">
@@ -27,7 +31,8 @@
                 <div class="offset-lg-2 col-12 col-lg-5 order-1 order-lg-2 pb-5">
                     <!-- col-2-connexion -->
                     <div class="form-connexion">
-                        <form action="<?php echo($actionUrl); ?>" method="POST">
+                    
+                        <form action="" method="POST"> 
                             <h3 class="fw-bolder">Bienvenue !</h3>
                             <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">
@@ -69,8 +74,8 @@
             </div>
         </div>
     </div>
-
-
+   
+    
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/assets/js/script.js"></script>

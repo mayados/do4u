@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/assets/sass/main.css">
 </head>
-
+<?php
+ob_start();?>
 <header> 
         <nav class="na">
             <input type="checkbox" id="burger-check">            
@@ -123,6 +124,9 @@
         </nav>          
     </header>
     <body>
+    <?php
+
+ob_end_flush();  ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/assets/js/script.js"></script>
 </body>

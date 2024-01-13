@@ -21,7 +21,7 @@ CREATE TABLE Utilisateur (
     nomUtilisateur VARCHAR(100) NOT NULL,
     prenomUtilisateur VARCHAR(50) NOT NULL,
     description TEXT DEFAULT NULL,
-    photo VARCHAR(255) NOT NULL,
+    photo VARCHAR(255) DEFAULT NULL,
     villeUtilisateur VARCHAR(50) NOT NULL,
     codePostalUtilisateur VARCHAR(5) NOT NULL,
     dateInscription DATE NOT NULL,
