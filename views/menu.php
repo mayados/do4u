@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/assets/sass/main.css">
 </head>
-<?php
-ob_start();?>
+
+<?php ob_start();?>
+
 <header> 
         <nav class="na">
             <input type="checkbox" id="burger-check">            
