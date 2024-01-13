@@ -112,6 +112,16 @@
   align-items: center;
 }
 
+.button-filter {
+  color: #1D838A;
+  background-color: #ffffff;
+  justify-content: center;
+  width: 10vh;
+  display: flex;
+  font-weight: 600;
+  border: solid 2px #1D838A;
+}
+
 .button-primary-outline:hover {
   width: 100%;
   background-color: #1D838A;
@@ -688,12 +698,29 @@ label {
   height: 364px;
 }
 
-.overlay-text {
+.overlay-text-o {
   position: absolute;
-  bottom: 55px;
+  bottom: 56px;
   right: 0px;
   border-radius: 10px 0px 0px 0px;
   background-color: #1D838A;
+  color: #ffffff;
+  padding: 9px 28px;
+  font-size: 16px;
+  font-family: "Nunito Sans-Bold", Helvetica;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+  line-height: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.overlay-text-d {
+  position: absolute;
+  bottom: 56px;
+  right: 0px;
+  border-radius: 10px 0px 0px 0px;
+  background-color: #E65A14;
   color: #ffffff;
   padding: 9px 28px;
   font-size: 16px;
@@ -769,10 +796,17 @@ label {
 }
 
 .annonces {
-  margin-top: 60px;
-  margin-bottom: 10px;
-  padding: 20px;
+  margin-top: 7vh;
+  padding-bottom: 7vh;
+  overflow-x: hidden;
+  padding-left: 3vh;
+  padding-right: 3vh;
   overflow-y: auto;
+}
+@media (max-width: 992px) {
+  .annonces {
+    margin-top: 15vh;
+  }
 }
 
 .classperso {

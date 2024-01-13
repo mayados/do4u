@@ -36,8 +36,13 @@
                         <div class="col-12 col-lg-6">
                             <div class="image-container">
                                 <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien"> -->
-                                <img src="../public/assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid card-img-top" alt="...">
-                                <div class="overlay-text"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
+                                <img src="../public/assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid rounded card-img-top" alt="...">
+                                <?php if ($adDetails['nomTypeAnnonce'] === 'Demande'): ?>
+                                    <div class="overlay-text-d"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
+                                <?php else: ?>
+                                    <div class="overlay-text-o"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
+                                <?php endif; ?>
+                                
                                 <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-2">
                                     <span class="user-type">Particulier</span>
                                     <!-- <a class="link text-decoration-none" id="signalement_annonce" tabindex="0">Signaler cete annonce</a> -->
@@ -149,9 +154,15 @@
                                         <div class="position-relative">
                                         <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="..."> -->
                                         <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
-                                        <div class="demande-badge">
-                                            <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
-                                        </div>
+                                        <?php if ($annonce['nomTypeAnnonce'] === 'Demande'): ?>
+                                            <div class="demande-badge">
+                                                <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="offer-badge">
+                                                <span class="offer-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                         <div class="card-body">
                                             <div class="heart-icon fa-lg">

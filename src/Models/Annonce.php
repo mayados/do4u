@@ -90,7 +90,7 @@ class Annonce
         return null;
     }
 
-    public static function getAll(int $offset, int $limit)
+    public static function getAll( $offset,  $limit, $searchTerm = null)
     {
         try {
             $db = DB::getDB();
@@ -107,15 +107,89 @@ class Annonce
                                     utilisateur ON annonce.createurId = utilisateur.idUtilisateur
                                 JOIN 
                                     typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                WHERE
+                                    annonce.titre LIKE :searchTerm
                                 ORDER BY 
                                     annonce.idAnnonce ASC
                                 LIMIT :limit OFFSET :offset");
 
+            $searchTerm = '%' . $searchTerm . '%';
+            $query->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
             $query->bindParam(':limit', $limit, PDO::PARAM_INT);
             $query->bindParam(':offset', $offset, PDO::PARAM_INT);
 
             $query->execute();
 
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+
+    public static function getByCategory(string $category, int $offset, int $limit)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT annonce.*, 
+                                    categorie.nomCategorie AS nomCategorie, 
+                                    utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                    utilisateur.villeUtilisateur AS villeUtilisateur,
+                                    typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                FROM 
+                                    annonce 
+                                JOIN 
+                                    categorie ON annonce.categorieId = categorie.idCategorie
+                                JOIN 
+                                    utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                JOIN 
+                                    typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce
+                                WHERE categorie.nomCategorie = :category
+                                ORDER BY annonce.idAnnonce ASC
+                                LIMIT :limit OFFSET :offset");
+
+            $query->bindParam(':category', $category, PDO::PARAM_STR);
+            $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $query->bindParam(':offset', $offset, PDO::PARAM_INT);
+
+            $query->execute();
+
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+
+    public static function getTotalCountByCategory(string $category)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT COUNT(*) AS total FROM annonce 
+                                JOIN categorie ON annonce.categorieId = categorie.idCategorie
+                                WHERE categorie.nomCategorie = :category");
+            $query->bindParam(':category', $category, PDO::PARAM_STR);
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+            return $result['total'];
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+
+    public static function getAllCategories()
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->query("SELECT DISTINCT nomCategorie FROM categorie");
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
@@ -250,13 +324,19 @@ class Annonce
             exit();
         }
     }
-    public static function chercher(){
+
+    // search by keyword
+    public static function chercher($terme)
+    {
         try {
             $db = DB::getDB();
-            $query = $db->query("SELECT titre, description 
-                                    FROM  annonce 
-                                    WHERE tite LIKE ? OR description LIKE ?");
-        
+            $query = $db->prepare("SELECT titre, description 
+                                    FROM annonce 
+                                    WHERE titre LIKE :terme OR description LIKE :terme");
+            
+            $query->bindParam(':terme', '%' . $terme . '%', PDO::PARAM_STR);
+            $query->execute();
+
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
@@ -264,6 +344,24 @@ class Annonce
             exit();
         }
     }
-    
 
+
+    // search by Zahra
+    public static function getTotalCountBySearch($searchTerm)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT COUNT(*) as count FROM annonce WHERE titre LIKE :searchTerm");
+            $searchTerm = '%' . $searchTerm . '%';
+            $query->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+            $query->execute();
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            return $result['count'];
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    
 }

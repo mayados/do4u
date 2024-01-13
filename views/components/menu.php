@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/assets/sass/main.css">
 </head>
-<?php
-ob_start();?>
+
+<?php ob_start();?>
+
 <header> 
         <nav class="na">
             <input type="checkbox" id="burger-check">            
@@ -21,12 +22,12 @@ ob_start();?>
                     <span></span>
                     <span></span>
             </button>               
-            <form class="na__form na__form--mobile">
+            <form class="na__form na__form--mobile" action="ads.php" method="get">
                 <div class="na__container_fields">
-                    <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
+                    <input type="text" name="terme" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">
                 </div>
-                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
-            </form> 
+                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
                 <div class="offcanvas-header">
                 <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.php"><img src="../public/assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
@@ -122,9 +123,9 @@ ob_start();?>
                 </li> 
             </ul>              
         </nav>          
-    </header>
-    <body>
-    <?php
+</header>
+<body>
+<?php
 
 ob_end_flush();  ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
