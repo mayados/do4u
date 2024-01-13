@@ -14,14 +14,30 @@ class AdsController extends Controller
 
 
     public function getAll()
-    {
-        $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
-        $offset = ($currentPage - 1) * self::ITEMS_PER_PAGE;
+{
+    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $offset = ($currentPage - 1) * self::ITEMS_PER_PAGE;
+
+    // Check if a category filter is applied
+    $selectedCategory = isset($_GET['selectedCategory']) ? $_GET['selectedCategory'] : null;
+
+    if ($selectedCategory) {
+        // Category filter is applied
+        $totalItems = Annonce::getTotalCountByCategory($selectedCategory);
+        $totalPages = ceil($totalItems / self::ITEMS_PER_PAGE);
+        $annonces = Annonce::getByCategory($selectedCategory, $offset, self::ITEMS_PER_PAGE);
+    } else {
+        // No category filter, show all categories
         $totalItems = Annonce::getTotalCount();
         $totalPages = ceil($totalItems / self::ITEMS_PER_PAGE);
         $annonces = Annonce::getAll($offset, self::ITEMS_PER_PAGE);
-        require_once __DIR__ . '/../../views/ads.php';
     }
+
+    $allCategories = Annonce::getAllCategories();
+
+    require_once __DIR__ . '/../../views/ads.php';
+}
+
 
     public function showAdsByCategorie()
     {

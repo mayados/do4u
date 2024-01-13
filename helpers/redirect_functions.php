@@ -1,16 +1,15 @@
 <?php
-
-if (!function_exists('redirectAndExit')) {
-    function redirectAndExit(string $url)
+if (!function_exists('redirect')) {
+    function redirect(string $url): void
     {
-        redirect($url);
+       header("Location: $url");
         exit();
     }
 }
 
-if (!function_exists('redirect')) {
-    function redirect(string $url)
+if (!function_exists('redirectAndExit')) {
+    function redirectAndExit(string $url): void
     {
-        header("Location: $url");
+        redirect($url);
     }
 }

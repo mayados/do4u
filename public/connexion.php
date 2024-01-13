@@ -5,8 +5,10 @@ Auth::isGuestOrRedirect();
 
 $authController = new App\Controllers\AuthController();
 $authController->renderHeader();
-$authController->login();
+$authController->formLogin();
 $authController->renderFooter();
 
 // Remove errors, success, and old data
 App::terminate();
+
+

@@ -37,30 +37,31 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                    <form action="Inscription.php?action=register" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                                <form action="index.php?action=register" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
-                                                <label for="nom">Nom <span class="text-danger">*</span></label>
+                                                <label for="email">Nom <span class="text-danger">*</span></label>
                                                 <input type="text" name="nom" class="form-control" id="nom" placeholder="Votre nom">
                                               </div>
                                               <div class="col form-group">
-                                                  <label for="prenom">Prénom <span class="text-danger">*</span></label>
+                                                  <label for="nom">Prénom <span class="text-danger">*</span></label>
                                                   <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom">
                                             </div>
                                         </div>
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
-                                                <label for="pseudo">Pseudo <span class="text-danger">*</span></label>
-                                                <input type="text" name="pseudo" class="form-control" id="pseudo" placeholder="Votre pseudo">
+                                            <label for="email"> email <span class="text-danger">*</span></label>
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">
+                                                
                                             </div>
                                             <div class="col form-group">
-                                                <label for="email">Adresse mail <span class="text-danger">*</span></label>
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">
+                                                <label for="ville"> ville <span class="text-danger">*</span></label>
+                                                <input type="ville" name="ville" class="form-control" id="ville" placeholder="Votre Adresse ville">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="pseudo">Adresse <span class="text-muted">(ville + code postal)</span> <span class="text-danger">*</span></label>
-                                            <input type="text" name="adresse" class="form-control" id="adresse" placeholder="Votre adresse">
+                                            <label for="pseudo">codePostal <span class="text-muted"></span> <span class="text-danger">*</span></label>
+                                            <input type="text" name="codePostal" class="form-control" id="adresse" placeholder="Votre adresse">
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="motPass">Mot de passe <span class="text-danger">*</span></label>
