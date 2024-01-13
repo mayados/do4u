@@ -23,12 +23,27 @@
   width: 569px;
   height: 364px;
 }
-.overlay-text {
+.overlay-text-o {
   position: absolute;
-  bottom: 55px;
+  bottom: 56px;
   right: 0px;
   border-radius: 10px 0px 0px 0px;
   background-color: $primary-color;
+  color: #ffffff;
+  padding: 9px 28px;
+  font-size: 16px;
+  font-family: "Nunito Sans-Bold", Helvetica;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+  line-height: normal;
+  width: fit-content;
+}
+.overlay-text-d {
+  position: absolute;
+  bottom: 56px;
+  right: 0px;
+  border-radius: 10px 0px 0px 0px;
+  background-color: $secondary-color;
   color: #ffffff;
   padding: 9px 28px;
   font-size: 16px;
