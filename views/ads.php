@@ -112,22 +112,31 @@
             <?php endforeach; ?>
             <!-- Fin de la boucle foreach -->
 
-        <!-- Pagination -->
       </div>
-      <div class="row pt-3 pb-3">
+        <!-- Pagination -->
+        <div class="row pt-3 pb-3">
             <div class="col-12 d-flex justify-content-center">
                 <nav aria-label="Page navigation">
                     <ul class="pagination pt-4">
                         <li class="page-item">
-                            <a class="page-link text-decoration-none link" href="?page=<?php echo max($currentPage - 1, 1); ?>">Précédent</a>
+                            <a class="page-link text-decoration-none link" href="?page=<?php echo max($currentPage - 1, 1); ?>
+                                <?php echo isset($selectedCategory) ? '&selectedCategory=' . $selectedCategory : ''; ?>
+                                <?php echo isset($searchTerm) ? '&terme=' . urlencode($searchTerm) : ''; ?>">Précédent</a>
                         </li>
                         <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
                             <li class="page-item <?php echo ($i == $currentPage) ? 'active' : ''; ?>">
-                                <a class="page-link text-decoration-none link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                <a class="page-link text-decoration-none link" href="?page=<?php echo $i; ?>
+                                    <?php echo isset($selectedCategory) ? '&selectedCategory=' . $selectedCategory : ''; ?>
+                                    <?php echo isset($searchTerm) ? '&terme=' . urlencode($searchTerm) : ''; ?>">
+                                    <?php echo $i; ?>
+                                </a>
                             </li>
                         <?php endfor; ?>
                         <li class="page-item">
-                            <a class="page-link text-decoration-none link" href="?page=<?php echo min($currentPage + 1, $totalPages); ?>">Suivant</a>
+                            <a class="page-link text-decoration-none link" href="?page=<?php echo min($currentPage + 1, $totalPages); ?>
+                                <?php echo isset($selectedCategory) ? '&selectedCategory=' . $selectedCategory : ''; ?>
+                                <?php echo isset($searchTerm) ? '&terme=' . urlencode($searchTerm) : ''; ?>">Suivant
+                            </a>
                         </li>
                     </ul>
                 </nav>

@@ -35,7 +35,7 @@ class Annonce
 
     }
 
-    public static function getAll(int $offset, int $limit)
+    public static function getAll( $offset,  $limit, $searchTerm = null)
     {
         try {
             $db = DB::getDB();
@@ -52,10 +52,14 @@ class Annonce
                                     utilisateur ON annonce.createurId = utilisateur.idUtilisateur
                                 JOIN 
                                     typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                WHERE
+                                    annonce.titre LIKE :searchTerm
                                 ORDER BY 
                                     annonce.idAnnonce ASC
                                 LIMIT :limit OFFSET :offset");
 
+            $searchTerm = '%' . $searchTerm . '%';
+            $query->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
             $query->bindParam(':limit', $limit, PDO::PARAM_INT);
             $query->bindParam(':offset', $offset, PDO::PARAM_INT);
 
@@ -265,13 +269,19 @@ class Annonce
             exit();
         }
     }
-    public static function chercher(){
+
+    // search by keyword
+    public static function chercher($terme)
+    {
         try {
             $db = DB::getDB();
-            $query = $db->query("SELECT titre, description 
-                                    FROM  annonce 
-                                    WHERE tite LIKE ? OR description LIKE ?");
-        
+            $query = $db->prepare("SELECT titre, description 
+                                    FROM annonce 
+                                    WHERE titre LIKE :terme OR description LIKE :terme");
+            
+            $query->bindParam(':terme', '%' . $terme . '%', PDO::PARAM_STR);
+            $query->execute();
+
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
@@ -279,6 +289,24 @@ class Annonce
             exit();
         }
     }
-    
 
+
+    // search by Zahra
+    public static function getTotalCountBySearch($searchTerm)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT COUNT(*) as count FROM annonce WHERE titre LIKE :searchTerm");
+            $searchTerm = '%' . $searchTerm . '%';
+            $query->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+            $query->execute();
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            return $result['count'];
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    
 }
