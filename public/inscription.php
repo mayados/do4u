@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Include autoloader if using Composer
+require_once __DIR__.'/../bootstrap/app.php';
 use App\Controllers\AuthController;
 
 $authController = new AuthController();

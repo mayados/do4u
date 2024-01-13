@@ -37,15 +37,15 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                <form action="index.php?action=register" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                                <form action="" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="email">Nom <span class="text-danger">*</span></label>
-                                                <input type="text" name="nom" class="form-control" id="nom" placeholder="Votre nom">
+                                                <input type="text" name="nomUtilisateur" class="form-control" id="nom" placeholder="Votre nom">
                                               </div>
                                               <div class="col form-group">
                                                   <label for="nom">Prénom <span class="text-danger">*</span></label>
-                                                  <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom">
+                                                  <input type="text" name="prenomUtilisateur" class="form-control" id="prenom" placeholder="Votre prénom">
                                             </div>
                                         </div>
                                         <div class="form-row mb-0">
@@ -56,16 +56,16 @@
                                             </div>
                                             <div class="col form-group">
                                                 <label for="ville"> ville <span class="text-danger">*</span></label>
-                                                <input type="ville" name="ville" class="form-control" id="ville" placeholder="Votre Adresse ville">
+                                                <input type="ville" name="villeUtilisateur" class="form-control" id="ville" placeholder="Votre Adresse ville">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="pseudo">codePostal <span class="text-muted"></span> <span class="text-danger">*</span></label>
-                                            <input type="text" name="codePostal" class="form-control" id="adresse" placeholder="Votre adresse">
+                                            <input type="text" name="codePostalUtilisateur" class="form-control" id="adresse" placeholder="Votre adresse">
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="motPass">Mot de passe <span class="text-danger">*</span></label>
-                                            <input type="password" name="motdepasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
+                                            <input type="password" name="motDePasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
                                           </div>
                                         <div class="form-group mt-3">
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
