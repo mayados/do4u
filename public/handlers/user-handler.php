@@ -5,4 +5,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 App::terminate();
 
 // Unknown action
-Auth::redirectAndExit(App\Controllers\AuthController::URL_AFTER_LOGOUT);
+redirectAndExit(App\Controllers\AuthController::URL_AFTER_LOGOUT);

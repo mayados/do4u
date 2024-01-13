@@ -12,40 +12,26 @@
 </head>
 <body>
     <main>
-    <section class="annonces">
-        <div class="container p-5">
+    <section class="annonces pb-2">
+        <div class="container pt-5">
             <!-- Filtres de recherche -->
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                 <div class="col">
                     <div class="Catégorie">
-                        <select class="form-select form-select-sm" aria-label="Small select example">
-                            <option selected>Catégorie</option>
-                            <option selected>Catégorie</option>
-                            <option value="1">ménage, nettoyage, services à la personne</option>
-                            <option value="2">rénovation & construction</option>
-                            <option value="3">réparation et maintenance</option>
-                            <option value="3">informatique & administratif</option>
-                            <option value="3">cours et coaching</option>
-                            <option value="3">santé et bien être</option>
-                            <option value="3">evénements et divertissements</option>
-                            <option value="3">animaux</option>
-                            <option value="3">artisanat & création</option>
-                            <option value="3">enfants</option>
-                            <option value="3">autre</option>
-                        </select>
+                        <form method="get" class="d-flex">
+                            <select class="form-select form-select-sm me-2" aria-label="Small select example" name="selectedCategory">
+                                <option value="">All Categories</option>
+                                <?php foreach ($allCategories as $category): ?>
+                                    <option value="<?php echo $category['nomCategorie']; ?>" <?php echo ($selectedCategory === $category['nomCategorie']) ? 'selected' : ''; ?>><?php echo $category['nomCategorie']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <button type="submit" class="btn button-filter">Filter</button>
+                        </form>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="ville">
-                        <select class="form-select form-select-sm" aria-label="Small select example">
-                            <option selected>Lieu</option>
-                            <!-- ... Options de lieu ... -->
-                        </select>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="type">
-                        <div class="form-check form-check-reverse">
+                <!-- <div class="col">
+                    <div class="type d-flex">
+                        <div class="form-check form-check-reverse me-3">
                             <input class="form-check-input" type="checkbox" value="" id="reverseCheck1">
                             <label class="form-check-label" for="reverseCheck1">Offre</label>
                         </div>
@@ -54,7 +40,7 @@
                             <label class="form-check-label" for="reverseCheck2">Demande</label>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -121,22 +107,26 @@
             <!-- Fin de la boucle foreach -->
 
         <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination  d-flex justify-content-center pt-4">
-                <li class="page-item">
-                    <a class="page-link text-decoration-none link" href="?page=<?php echo max($currentPage - 1, 1); ?>">Précédent</a>
-                </li>
-                <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                    <li class="page-item <?php echo ($i == $currentPage) ? 'active' : ''; ?>">
-                        <a class="page-link text-decoration-none link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
-                <?php endfor; ?>
-                <li class="page-item">
-                    <a class="page-link text-decoration-none link" href="?page=<?php echo min($currentPage + 1, $totalPages); ?>">Suivant</a>
-                </li>
-            </ul>
-        </nav>
       </div>
+      <div class="row pt-3 pb-3">
+            <div class="col-12 d-flex justify-content-center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pt-4">
+                        <li class="page-item">
+                            <a class="page-link text-decoration-none link" href="?page=<?php echo max($currentPage - 1, 1); ?>">Précédent</a>
+                        </li>
+                        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                            <li class="page-item <?php echo ($i == $currentPage) ? 'active' : ''; ?>">
+                                <a class="page-link text-decoration-none link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            </li>
+                        <?php endfor; ?>
+                        <li class="page-item">
+                            <a class="page-link text-decoration-none link" href="?page=<?php echo min($currentPage + 1, $totalPages); ?>">Suivant</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </section>
 </main>
 
