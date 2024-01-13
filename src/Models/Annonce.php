@@ -6,33 +6,88 @@ use PDOException;
 
 class Annonce
 {
-    public ?int $id;
-    public ?string $titre;
-    public ?string $datePublication;
-    public ?string $photo;
-    public ?string $description;
-    protected ?float $prix;
-    public ?string $ville;
+ 
+    protected ?int $id = null;
+    protected ?string $titre = null;
+    protected ?string $datePublication = null;
+    protected ?string $photo = null;
+    protected ?string $description = null;
+    protected ?float $prix = null;
+    protected ?string $ville = null;
 
+    public function getID(): ?int
+    {
+        return $this->id;
+    }
 
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
 
-    // Constructeur
-    public function __construct(
-        ?string $titre ,
-        ?string $datePublication,
-        ?string $photo,
-        ?string $description,
-        ?float $prix,
-        ?string $ville,
-
-    ) {
+    public function setTitre(?string $titre): void
+    {
         $this->titre = $titre;
-        $this->datePublication = $datePublication;
-        $this->photo = $photo;
-        $this->description = $description;
-        $this->prix = $prix;
-        $this->ville = $ville;
+    }
 
+    public function getDatePublication(): ?string
+    {
+        return $this->datePublication;
+    }
+
+    public function setDatePublication(?string $datePublication): void
+    {
+        $this->datePublication = $datePublication;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): void
+    {
+        $this->photo = $photo;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(?float $prix): void
+    {
+        $this->prix = $prix;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(?string $ville): void
+    {
+        $this->ville = $ville;
+    }
+
+    public function getType(): ?string
+    {
+        return null;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return null;
     }
 
     public static function getAll(int $offset, int $limit)

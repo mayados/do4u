@@ -10,10 +10,17 @@ abstract class Controller {
 
     public function renderHeader(): void
     {
-        require_once __DIR__ . '/../../views/menu.php';
+        require_once __DIR__ . '/../../views/components/menu.php';
     }
+    public function renderMenu_unconnected(): void
+    {
 
-
+        require_once __DIR__ . '/../../views/components/menu-unconnected.php';
+    }
+    public function renderMenu_without_searchbar(): void
+    {
+        require_once __DIR__ . '/../../views/components/menu-without-searchbar.php';
+    }
     public function render(string $view, array $data = []): void
     {
         extract($data); // Convert array key:value to $key = value variables
@@ -35,7 +42,7 @@ abstract class Controller {
     
     public function renderFooter(): void
     {
-        require_once __DIR__ . '/../../views/footer.php';
+        require_once __DIR__ . '/../../views/components/footer.php';
     }
 
     public function errors($message) {
