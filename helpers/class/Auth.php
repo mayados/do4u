@@ -109,8 +109,7 @@ class Auth {
         
         public static function loginUser()
         {
-            session_start(); 
-        
+            
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['motDePasse'])) {
                 $email = $_POST['email'];
                 $motDePasse = $_POST['motDePasse'];
