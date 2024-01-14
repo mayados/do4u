@@ -12,10 +12,10 @@
 <body>
 
     <main>
-        <section class="creation">
+        <section class="creation pt-lg-2">
                 <div class="container-fluid">
                     <div class="row align-items-stretch">
-                        <div class="col-lg-8 pt-5 pt-lg-0">
+                        <div class="col-lg-8 pt-lg-0">
                             <form action="creationAd.php" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                                 <div class="card cardCre">
                                     <div class="card-body">
@@ -91,7 +91,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-lg-4 pt-5">
+                        <div class="col-lg-4">
                             <img src="./../public/assets/img/Img_page_ads/house-3950679_640.jpg" class="img-fluid rounded d-none d-lg-block" alt="Image">
                         </div>                    
                     </div>

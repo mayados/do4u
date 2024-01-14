@@ -1,17 +1,10 @@
 .creation {
-  padding-top: 9rem;
-  padding-bottom: 50px;
+  @include main-common-style;
 }
 
 .typecheck {
   display: flex;
   align-items: center;
-}
-
-.cardCre {
-  padding-top: 9rem;
-  padding-bottom: 50px;
-  background-color: rgba($light-blue, 0.2);
 }
 
 .d-grid {
