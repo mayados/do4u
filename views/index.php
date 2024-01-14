@@ -43,7 +43,6 @@
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
-                    <!-- Card 1 -->
                     <?php if (!empty($annonceOffre)) : ?>
                         <?php foreach ($annonceOffre as $offre): ?>
                             <div class="col">
@@ -124,7 +123,6 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <?php if (!empty($annonceDemande)) : ?>
                         <?php foreach ($annonceDemande as $demande): ?>
-                            <!-- Card 1 -->
                             <div class="col">
                                 <a href="adDetails.php?id=<?php echo $demande['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
@@ -191,7 +189,6 @@
                 </div>
             </div>
         </section>
-
         <section class="mt-5 last-section news-letter">
             <div class="container d-flex justify-content-center">
                 <div class=" text-center">
@@ -210,7 +207,6 @@
                 </div>
             </div>     
         </section>
-
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

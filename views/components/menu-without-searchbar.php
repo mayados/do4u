@@ -8,12 +8,12 @@
                     <span></span>
                     <span></span>
             </button>               
-            <form class="na__form na__form--none">
+            <form class="na__form na__form--mobile" action="ads.php" method="get">
                 <div class="na__container_fields">
-                    <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
+                    <input type="text" name="terme" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">
                 </div>
-                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
-            </form> 
+                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
                 <div class="offcanvas-header">
                 <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.php"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>

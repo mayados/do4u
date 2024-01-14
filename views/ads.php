@@ -22,7 +22,10 @@
                             <select class="form-select form-select-sm me-2" aria-label="Small select example" name="selectedCategory">
                                 <option value="">All Categories</option>
                                 <?php foreach ($allCategories as $category): ?>
-                                    <option value="<?php echo $category['nomCategorie']; ?>" <?php echo ($selectedCategory === $category['nomCategorie']) ? 'selected' : ''; ?>><?php echo $category['nomCategorie']; ?></option>
+                                    <option value="<?php echo $category['nomCategorie']; ?>"
+                                                    <?php echo ($selectedCategory === $category['nomCategorie']) ? 'selected' : ''; ?>>
+                                                    <?php echo $category['nomCategorie']; ?>
+                                    </option>
                                 <?php endforeach; ?>
                             </select>
                             <button type="submit" class="btn button-filter">Filter</button>
