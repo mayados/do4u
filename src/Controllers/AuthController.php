@@ -1,13 +1,12 @@
 <?php
 namespace App\Controllers;
-use DB;
 use Auth;
 
 class AuthController extends Controller
 {
     const URL_HANDLER = '/handlers/auth-handler.php';
-    const URL_REGISTER = '/inscription.php';
-    const URL_LOGIN = '/connexion.php';
+    const URL_REGISTER = '/register.php';
+    const URL_LOGIN = '/login.php';
     const URL_AFTER_LOGIN = '/ads.php';
     const URL_AFTER_LOGOUT = '/index.php';
    
