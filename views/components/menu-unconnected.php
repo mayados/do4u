@@ -7,11 +7,11 @@
                     <span></span>
                     <span></span>
             </button>              
-            <form class="na__form na__form--mobile na__form--unconnected">
+            <<form class="na__form na__form--mobile" action="ads.php" method="get">
                 <div class="na__container_fields">
-                    <input type="text" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">                    
+                    <input type="text" name="terme" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">
                 </div>
-                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>                  
+                <button class="na__search-glass" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
                 <div class="offcanvas-header">

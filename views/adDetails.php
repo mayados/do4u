@@ -132,9 +132,7 @@
         <?php endif; ?>
         <!-- section with ads cards-->
         <section>
-            <?php
-                $annonceType = ($adDetails['nomTypeAnnonce'] === 'Offre') ? $annonceOffre : $annonceDemande;
-            ?>
+            <?php $annonceType = ($adDetails['nomTypeAnnonce'] === 'Offre') ? $annonceOffre : $annonceDemande; ?>
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-12">
@@ -142,7 +140,6 @@
                         <div class="d-flex justify-content-end align-items-center mt-3 mb-3 p-2 gap-2">
                             <a class="link text-decoration-none" href="ads.php">Voir plus d'<?php echo $adDetails['nomTypeAnnonce']; ?> ➔</a>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
