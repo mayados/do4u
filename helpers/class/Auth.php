@@ -72,22 +72,20 @@ class Auth {
         
         public static function registerUser(): void
         {
-            
-            if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['ville'], $_POST['codepostal'], $_POST['motDePasse'])) 
+            if (isset($_POST['nomUtilisateur'], $_POST['prenomUtilisateur'], $_POST['email'], $_POST['villeUtilisateur'], $_POST['codePostalUtilisateur'], $_POST['motDePasse'])) 
             {
-                
-                $nom = $_POST['nom'];
-                $prenom = $_POST['prenom'];
+                $nomUtilisateur = $_POST['nomUtilisateur'];
+                $prenomUtilisateur = $_POST['prenomUtilisateur'];
                 $email = $_POST['email'];
-                $villeUtilisateur = $_POST['ville'];
-                $codePostalUtilisateur = $_POST['codepostal'];
+                $villeUtilisateur = $_POST['villeUtilisateur'];
+                $codePostalUtilisateur = $_POST['codePostalUtilisateur'];
                 $motDePasse = $_POST['motDePasse'];
-         
+        
                 $hashedPassword = password_hash($motDePasse, PASSWORD_DEFAULT);
         
                 $userData = [
-                    'nomUtilisateur' => $nom,
-                    'prenomUtilisateur' => $prenom,
+                    'nomUtilisateur' => $nomUtilisateur,
+                    'prenomUtilisateur' => $prenomUtilisateur,
                     'email' => $email,
                     'villeUtilisateur' => $villeUtilisateur,
                     'codePostalUtilisateur' => $codePostalUtilisateur,
@@ -95,10 +93,9 @@ class Auth {
                 ];
         
                 try {
-                    
                     DB::insert('utilisateur', $userData);
+                    echo 'Inscription réussie !';
                 } catch (PDOException $e) {
-                   
                     echo 'PDOException: ' . $e->getMessage();
                     exit();
                 }
@@ -106,6 +103,7 @@ class Auth {
                 echo 'Erreur: Données du formulaire manquantes.';
             }
         }
+        
         
         public static function loginUser()
         {

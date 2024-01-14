@@ -2,7 +2,7 @@
 require_once __DIR__.'/../bootstrap/app.php';
 
 $homeController = new App\Controllers\HomeController();
-$homeController->renderMenu_without_searchbar();
+$homeController->renderMenu_unconnected();
 $homeController->index();
 $homeController->renderFooter();
 

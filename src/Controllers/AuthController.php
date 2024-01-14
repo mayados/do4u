@@ -8,8 +8,8 @@ class AuthController extends Controller
     const URL_HANDLER = '/handlers/auth-handler.php';
     const URL_REGISTER = '/inscription.php';
     const URL_LOGIN = '/connexion.php';
-    const URL_AFTER_LOGIN = '/index.php';
-    const URL_AFTER_LOGOUT = '/';
+    const URL_AFTER_LOGIN = '/ads.php';
+    const URL_AFTER_LOGOUT = '/index.php';
    
         public function formRegister() {
             $auth = new Auth();
@@ -20,10 +20,7 @@ class AuthController extends Controller
     
         public function formLogin() {
           
-            if (isset($_SESSION['user'])) {
-                header('Location: ads.php');
-                exit();
-            }  $auth = new Auth();
+            $auth = new Auth();
             $auth->loginUser();
             require_once __DIR__ . '/../../views/auth/login.php';
         }
