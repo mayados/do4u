@@ -37,8 +37,8 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                <form action="inscription.php?action=register" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
-                                        <div class="form-row mb-0">
+                                <form action="" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" >
+                                       <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="email">Nom <span class="text-danger">*</span></label>
                                                 <input type="text" name="nomUtilisateur" class="form-control" id="nom" placeholder="Votre nom">
@@ -69,7 +69,7 @@
                                           </div>
                                         <div class="form-group mt-3">
                                           <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
-                                          <input type="password" name="motdepasse" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
+                                          <input type="password" name="motDePasseConfirm" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
                                         </div>
                                         <div class="form-check mt-3">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

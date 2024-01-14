@@ -1,7 +1,3 @@
-<?php if(!empty($_POST)){
-    var_dump($_POST);
-}?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,8 +13,6 @@
 </head>
 <body>
 
-
-  
     <main class="container-fluid d-flex d-flex-column connexion">
         <div class="container">
             <div class="row d-flex align-items-center align-content-center pb-5">
@@ -33,12 +27,13 @@
                 <div class="offset-lg-2 col-12 col-lg-5 order-1 order-lg-2 pb-5">
                     <!-- col-2-connexion -->
                     <div class="form-connexion">
-                    
-                        <form action="connexion.php?action=login" method="POST"> 
+                    <form action="" method="POST">
                             <h3 class="fw-bolder">Bienvenue !</h3>
                             <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">
+                            
                                 <label for="adresseMail">Adresse mail</label>
+                                
                                 <input type="text" name= "email" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
                             </div>
                             <div class="form-group mt-3">
