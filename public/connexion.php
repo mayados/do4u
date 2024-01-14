@@ -10,5 +10,3 @@ $authController->renderFooter();
 
 // Remove errors, success, and old data
 App::terminate();
-
-

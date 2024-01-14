@@ -63,7 +63,9 @@
                     <i class="fa fa-close" data-dismiss="modal" aria-label="Close"></i>
                 </div>
                 <div class="modal-body">
-                    <input type="email" class="form-control small" id="forgotPasswordEmail" placeholder="Votre adresse mail">
+                    <form id="forgotPasswordForm" action="reset_password.php" method="POST">
+                        <input type="email" class="form-control small" name="forgotPasswordEmail" id="forgotPasswordEmail" placeholder="Your email address" required>
+                    </form>
                 </div>
                 <div class="modal-footer align-item-center">
                     <button type="button" class="btn button-primary-regular" onclick="sendResetLink()">Envoyer le lien de réinitialisation</button>
@@ -72,26 +74,12 @@
         </div>
     </div>
    
-    
-   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/assets/js/script.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../public/js/script.js"></script>
-    <script>
-        function sendResetLink() {
-            //  reset link
-            $('#forgotPasswordModal').modal('hide');
-        }
-    </script>
-    <script>
-        function closeForgotPasswordModal() {
-            $('#forgotPasswordModal').modal('hide');
-        }
-    </script>
 </body>
 </html>
