@@ -1,5 +1,4 @@
 <?php
-use App\Controllers\AuthController;
 
 class Auth {
    
@@ -9,11 +8,11 @@ class Auth {
     
         private static ?array $user = null;
     
-        public static function getCurrentUser() : ?array
+        public static function getCurrentUser(): ?array
         {
             $id = self::getSessionUserId();
     
-            if (self::$user === null and $id) {
+            if (self::$user === null && $id) {
                 self::$user = DB::fetch(
                     "SELECT * FROM utilisateur WHERE id = :id LIMIT 1",
                     ['id' => $id]
@@ -40,7 +39,7 @@ class Auth {
             if (!Auth::getCurrentUser()) {
                 // Not Auth Or account not exists
                 errors('Vous devez être connecté pour accèder à cette page.');
-                redirectAndExit('/connexion.php');
+                redirectAndExit('/login.php');
             }
         }
     
@@ -104,31 +103,39 @@ class Auth {
         
         public static function loginUser()
         {
-            
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['motDePasse'])) {
                 $email = $_POST['email'];
                 $motDePasse = $_POST['motDePasse'];
-        
+    
+                // Validation des données du formulaire
+                if (empty($email) || empty($motDePasse)) {
+                    $_SESSION['errors'] = 'Veuillez remplir tous les champs du formulaire.';
+                    self::isAuthOrRedirect();
+                    exit();
+                }
+    
                 $db = DB::getDB();
-        
+    
                 $query = $db->prepare("SELECT * FROM utilisateur WHERE email = :email LIMIT 1");
                 $query->bindParam(':email', $email, PDO::PARAM_STR);
                 $query->execute();
-        
-                $user = $query->fetch(PDO::FETCH_ASSOC); 
-        
+    
+                $user = $query->fetch(PDO::FETCH_ASSOC);
+    
                 if ($user && password_verify($motDePasse, $user['motDePasse'])) {
-                    $_SESSION['user'] = $user;
-                    echo ('sucess');
+                    $_SESSION['user_id'] = $user['id']; 
+                    require_once __DIR__ . '/../../views/myProfile.php';
                     exit();
+                
                 } else {
-                    $_SESSION['errors'] = 'Erreur d\'authentification'; 
-                    echo ('errors');
+                    $_SESSION['errors'] = 'Erreur d\'authentification';
+                    require_once __DIR__ . '/../../views/auth/login.php';
                     exit();
                 }
-        
+    
                 $db = null;
             }
         }
-        
     }
+    
+        
