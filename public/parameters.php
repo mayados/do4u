@@ -5,7 +5,7 @@ require_once __DIR__.'/../bootstrap/app.php';
 Auth::isGuestOrRedirect();
 
 $parametersController = new App\Controllers\UserController();
-$parametersController->renderHeader();
+$parametersController->renderMenu();
 $parametersController->showMyParameters();
 $parametersController->renderFooter();
 

@@ -5,7 +5,7 @@ require_once __DIR__.'/../bootstrap/app.php';
 Auth::isGuestOrRedirect();
 
 $MeseengerController = new App\Controllers\MessengerController();
-$MeseengerController->renderHeader();
+$MeseengerController->renderMenu();
 $MeseengerController->showMessage();
 $MeseengerController->renderFooter();
 

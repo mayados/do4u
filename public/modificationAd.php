@@ -5,7 +5,7 @@ require_once __DIR__.'/../bootstrap/app.php';
 Auth::isGuestOrRedirect();
 
 $adscontroller = new App\Controllers\AdsController();
-$adscontroller->renderHeader();
+$adscontroller->renderMenu();
 $adscontroller->showModificationPage();
 $adscontroller->renderFooter();
 

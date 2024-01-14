@@ -2,7 +2,7 @@
 require_once __DIR__.'/../bootstrap/app.php';
 
 $controller = new App\Controllers\HomeController();
-$controller->renderHeader();
+$controller->renderMenu();
 $controller->showPolitiquePage();
 $controller->renderFooter();
 

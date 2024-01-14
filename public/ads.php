@@ -6,7 +6,7 @@ Auth::isGuestOrRedirect();
 
 
 $adsController = new App\Controllers\AdsController();
-$adsController->renderHeader();
+$adsController->renderMenu();
 $adsController->getAll();
 $adsController->renderFooter();
 

@@ -5,7 +5,7 @@ require_once __DIR__.'/../bootstrap/app.php';
 Auth::isGuestOrRedirect();
 
 $adsController = new App\Controllers\ConversationController();
-$adsController->renderHeader();
+$adsController->renderMenu();
 $adsController->showConversationPage();
 $adsController->renderFooter();
 
