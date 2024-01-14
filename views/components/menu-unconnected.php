@@ -7,7 +7,7 @@
                     <span></span>
                     <span></span>
             </button>              
-            <<form class="na__form na__form--mobile" action="ads.php" method="get">
+            <form class="na__form na__form--mobile" action="ads.php" method="get">
                 <div class="na__container_fields">
                     <input type="text" name="terme" placeholder="chercher une annonce par mot-clé" aria-label="Rechercher une annonce" class="na__input">
                 </div>
