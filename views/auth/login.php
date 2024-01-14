@@ -1,3 +1,4 @@
+<?php session_start() ;var_dump($_SESSION);  ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,7 +35,7 @@
                             
                                 <label for="adresseMail">Adresse mail</label>
                                 
-                                <input type="text" name= "email" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
+                                <input type="email" name= "email" class="form-control" id="adresseMail" placeholder="mattsmith@mail.com">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="motPass">Mot de passe</label>
