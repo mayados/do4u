@@ -2,7 +2,7 @@
 <header> 
         <nav class="na">
             <input type="checkbox" id="burger-check">            
-            <h1><a href="index.php" id="link-logo"><img src="../public/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a> </h1>
+            <h1><a href="index.php" id="link-logo"><img src="../public/assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a> </h1>
             <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
                     <span></span>
                     <span></span>
