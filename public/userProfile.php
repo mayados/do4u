@@ -5,7 +5,7 @@ require_once __DIR__.'/../bootstrap/app.php';
 Auth::isGuestOrRedirect();
 
 $usercontroller = new App\Controllers\UserController();
-$usercontroller->renderHeader();
+$usercontroller->renderMenu();
 $usercontroller->showUserProfile();
 $usercontroller->renderFooter();
 

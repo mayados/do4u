@@ -109,8 +109,9 @@ class Auth {
     
                 // Validation des données du formulaire
                 if (empty($email) || empty($motDePasse)) {
-                    $_SESSION['errors'] = 'Veuillez remplir tous les champs du formulaire.';
-                    self::isAuthOrRedirect();
+                    $_SESSION['errors'] = displayErrorsAndMessages();
+                    self::isGuestOrRedirect();
+                    require_once __DIR__ . '/../../views/auth/login.php';
                     exit();
                 }
     
@@ -128,7 +129,7 @@ class Auth {
                     exit();
                 
                 } else {
-                    $_SESSION['errors'] = 'Erreur d\'authentification';
+                    $_SESSION['errors'] = displayErrorsAndMessages();
                     require_once __DIR__ . '/../../views/auth/login.php';
                     exit();
                 }

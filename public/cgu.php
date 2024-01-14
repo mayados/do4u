@@ -5,7 +5,7 @@ Auth::isGuestOrRedirect();
 
 
 $adsController = new App\Controllers\HomeController();
-$adsController->renderHeader();
+$adsController->renderMenu();
 $adsController->cguPage();
 $adsController->renderFooter();
 

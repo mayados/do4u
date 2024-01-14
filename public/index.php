@@ -2,7 +2,7 @@
 require_once __DIR__.'/../bootstrap/app.php';
 
 $homeController = new App\Controllers\HomeController();
-$homeController->renderMenu_unconnected();
+$homeController->renderMenu();
 $homeController->index();
 $homeController->renderFooter();
 

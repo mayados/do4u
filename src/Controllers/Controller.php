@@ -8,7 +8,7 @@ abstract class Controller {
    
   
 
-    public function renderHeader(): void
+    public function renderMenu(): void
     {
         require_once __DIR__ . '/../../views/components/menu.php';
     }
