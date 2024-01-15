@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../public/assets/sass/main.css">
+    <link rel="stylesheet" href="assets/sass/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 </head>
 <body>
@@ -35,8 +35,8 @@
                     <div class="row ">
                         <div class="col-12 col-lg-6">
                             <div class="image-container">
-                                <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien"> -->
-                                <img src="../public/assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid rounded card-img-top" alt="...">
+                                <!-- <img src="assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien"> -->
+                                <img src="assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid rounded card-img-top" alt="...">
                                 <?php if ($adDetails['nomTypeAnnonce'] === 'Demande'): ?>
                                     <div class="overlay-text-d"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
                                 <?php else: ?>
@@ -83,7 +83,7 @@
                                     <div class="flex-lg-row d-flex flex-wrap justify-content-between">
                                         <figure id="photo-user">
                                             <a href="myProfile.php">
-                                                <img src="../public/assets/img/woman_face.jpg" alt="Photo d'un utilisateur">
+                                                <img src="assets/img/woman_face.jpg" alt="Photo d'un utilisateur">
                                             </a>
                                         </figure>  
                                         <div class="flex-column d-flex flex-wrap justify-content-center align-items-start">
@@ -149,8 +149,8 @@
                                 <a href="" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                        <!-- <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="..."> -->
-                                        <img src="../public/assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                        <!-- <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="..."> -->
+                                        <img src="assets/img/cards/<?php echo $annonce['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                         <?php if ($annonce['nomTypeAnnonce'] === 'Demande'): ?>
                                             <div class="demande-badge">
                                                 <span class="demande-badge"><?php echo $annonce['nomTypeAnnonce'] ?></span>
@@ -192,7 +192,7 @@
                                             </div>
                                             <div class="row align-items-center">
                                                 <div class="col-1">
-                                                    <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
+                                                    <img class="rounded-circle" width="22" width="22" src="assets/img/woman_photo.jpg" alt="">
                                                 </div>
                                                 <div class="col ps-3">
                                                     <span><?php echo $annonce['nomUtilisateur']; ?></span> <span> 4.5(19 avis) </span>
@@ -224,6 +224,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <!-- Your other scripts -->
-    <script src="../public/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ Auth::isGuestOrRedirect();
 
 $authController = new App\Controllers\AuthController();
 $authController->renderMenu();
-$authController->formLogin();
+$authController->login();
 $authController->renderFooter();
 
 // Remove errors, success, and old data

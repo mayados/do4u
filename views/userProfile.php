@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil de Léa</title>
-    <link rel="icon" href="../public/assets/img/logo_do4u.svg">
+    <link rel="icon" href="assets/img/logo_do4u.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../public/assets/sass/main.css">
+    <link rel="stylesheet" href="assets/sass/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -29,7 +29,7 @@
             <div class="row d-flex flex-lg-row align-items-lg-center">
                 <div class="col-12 col-lg-6 d-flex flex-column gap-2 flex-lg-row align-items-lg-center  gap-lg-3">
                     <figure class="mx-auto m-lg-0 figure-user-profile-style">
-                        <img src="../public/assets/img/woman_face.jpg" alt="Photo de profil de Léa">
+                        <img src="assets/img/woman_face.jpg" alt="Photo de profil de Léa">
                     </figure>
                     <div>
                         <div class="d-flex flex-column gap-1 flex-lg-row align-items-lg-center flex-lg-wrap">
@@ -109,7 +109,7 @@
                             <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
-                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
+                                        <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
                                         <div class="offer-badge">
                                             <span class="offer-badge">Offre</span>
                                         </div>
@@ -145,7 +145,7 @@
                                         </div>
                                         <div class="row align-items-center">
                                             <div class="col-1">
-                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="Image de profil de Rosie">
+                                                <img class="rounded-circle" width="22" width="22" src="img/woman_photo.jpg" alt="Image de profil de Rosie">
                                             </div>
                                             <div class="col ps-3">
                                                 <span>Rosie</span> <span> 4.5(19 avis) </span>
@@ -167,7 +167,7 @@
                             <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
-                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
+                                        <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
                                         <div class="offer-badge">
                                             <span class="offer-badge">Offre</span>
                                         </div>
@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="row align-items-center">
                                             <div class="col-1">
-                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="Image de profil de Rosie">
+                                                <img class="rounded-circle" width="22" width="22" src="img/woman_photo.jpg" alt="Image de profil de Rosie">
                                             </div>
                                             <div class="col ps-3">
                                                 <span>Rosie</span> <span> 4.5(19 avis) </span>
@@ -225,7 +225,7 @@
                             <a href="adDetails.php" class="card-link">
                                 <div class="card h-100 card-ad">
                                     <div class="position-relative">
-                                        <img src="../public/assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
+                                        <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
                                         <div class="offer-badge">
                                             <span class="offer-badge">Offre</span>
                                         </div>
@@ -261,7 +261,7 @@
                                         </div>
                                         <div class="row align-items-center">
                                             <div class="col-1">
-                                                <img class="rounded-circle" width="22" width="22" src="../public/img/woman_photo.jpg" alt="Image de profil de Rosie">
+                                                <img class="rounded-circle" width="22" width="22" src="img/woman_photo.jpg" alt="Image de profil de Rosie">
                                             </div>
                                             <div class="col ps-3">
                                                 <span>Rosie</span> <span> 4.5(19 avis) </span>
@@ -289,7 +289,7 @@
                     <section>
                         <div class="rounded d-flex flex-row align-items-center gap-2 p-2 mb-5" id="ajout-avis" tabindex="0" role="button">
                             <figure class="figure-rating mb-0">
-                                <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="ma photo de profil">
+                                <img src="assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="ma photo de profil">
                             </figure> 
                             <p class="m-0">Lola, donnez votre avis</p>
                         </div>
@@ -345,7 +345,7 @@
                             <div>
                                 <div class="d-flex gap-2">
                                     <figure class="figure-avis mb-0">
-                                        <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Nolan">
+                                        <img src="assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Nolan">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
                                         <a href="userProfile.php" class="mb-0 text-decoration-none">Nolan</a>
@@ -390,7 +390,7 @@
                             <div>
                                 <div class="d-flex gap-2">
                                     <figure class="figure-avis mb-0">
-                                        <img src="../public/assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Jessica">
+                                        <img src="assets/img/woman_face.jpg" class="rounded-circle object-fit-cover" alt="Image de profil de Jessica">
                                     </figure> 
                                     <div class="d-flex flex-column justify-content-center">
                                         <a href="userProfile.php" class="mb-0 text-decoration-none">Jessica</a>
@@ -437,7 +437,7 @@
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../public/assets/js/script.js"></script>
-    <script src="../public/assets/js/map.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/map.js"></script>
 </body>
 </html>
