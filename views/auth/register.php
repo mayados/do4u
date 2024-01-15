@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/sass/main.css">
 </head>
 <body >
- 
     <main>
         <section class="container-fluid container-f-inscription d-flex d-flex-column">
             <div class="container insscription-container justify-content-center align-items-center">
@@ -34,7 +33,8 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                <form action="" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" >
+                                <form action="<?php echo $actionUrl ?>" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" >
+                                    <input type="text" name="action" value="store" hidden>
                                        <div class="form-row mb-0">
                                             <div class=" col form-group">
                                                 <label for="email">Nom <span class="text-danger">*</span></label>
@@ -47,9 +47,8 @@
                                         </div>
                                         <div class="form-row mb-0">
                                             <div class=" col form-group">
-                                            <label for="email"> email <span class="text-danger">*</span></label>
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">
-                                                
+                                                <label for="email"> email <span class="text-danger">*</span></label>
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">       
                                             </div>
                                             <div class="col form-group">
                                                 <label for="ville"> ville <span class="text-danger">*</span></label>
