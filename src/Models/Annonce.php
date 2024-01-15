@@ -248,27 +248,9 @@ class Annonce
         }
     }
 
-    public function addAnnonce()
-    {
-        return DB::statement(
-            "INSERT INTO annonce ( titre, datePublication, photo, description, prix, ville)"
-            . " VALUES ( :titre, :datePublication, :photo, :description, :prix, :ville)",
-            [       
-                'titre' => $this->titre,
-                'datePublication' => $this->datePublication,
-                'photo' => $this->photo,
-                'description' => $this->description,
-                'prix' => $this->prix,
-                'ville' => $this->ville,
-            ],
-        );
-    }
 
-    public function getAnnoncesByCategorie(string $categorie): void
-    {
-       $db = DB::getDB(); 
-       
-    }
+    
+
 
     public static function getOffre() {
         try {
