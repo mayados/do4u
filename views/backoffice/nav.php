@@ -4,6 +4,6 @@
     <div class="form-input"></div>
   </form>
   <a href="#" class="profile">
-    <img src="../../public/assets/img/woman_face.jpg" />
+    <img src="assets/img/woman_face.jpg" />
   </a>
 </nav>

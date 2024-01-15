@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../public/img/logo_do4u.svg">
-    <link rel="icon" href="../public/img/logo_do4u.svg">
+    <link rel="icon" href="img/logo_do4u.svg">
+    <link rel="icon" href="img/logo_do4u.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../public/assets/sass/main.css">
+    <link rel="stylesheet" href="assets/sass/main.css">
 </head>
 <body>
 <footer class="footer-element pt-5">
         <section class="container">
             <div class="row mb-4">
                 <div class="col-12 col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
-                    <img src="../public/assets/img/logo_do4u_footer.svg" alt="logo de Do4U" class="footer-element__logo">
+                    <img src="assets/img/logo_do4u_footer.svg" alt="logo de Do4U" class="footer-element__logo">
                     <p class="text-lg-start">Votre plateforme de choix de prestataires.</p>
 
                     <h2 class="text-center text-lg-start pb-3 footer-element__title">Retrouvez-nous sur</h2>
@@ -73,6 +73,6 @@
         </section>         
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../public/assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

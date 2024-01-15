@@ -4,12 +4,12 @@ require_once __DIR__.'/../../bootstrap/app.php';
 if (!empty($_POST['action'])) {
     $controller = new App\Controllers\AuthController();
 
-    if ($_POST['action'] === 'register') {
+    if ($_POST['action'] === 'store') {
         Auth::isGuestOrRedirect(); // Check guest only
-        $controller->formRegister();
+        $controller->store();
     } elseif ($_POST['action'] === 'login') {
         Auth::isGuestOrRedirect(); // Check guest only
-        $controller->formLogin(); 
+        $controller->check(); 
     } elseif ($_POST['action'] === 'logout') {
         Auth::isAuthOrRedirect(); // Check auth
         $controller->logout();

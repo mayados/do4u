@@ -23,7 +23,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../../public/assets/sass/main.css" />
+    <link rel="stylesheet" href="assets/sass/main.css" />
 
     <title>Do4U</title>
   </head>
@@ -118,6 +118,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../../public/assets/js/backoffice.js"></script>
+    <script src="assets/js/backoffice.js"></script>
   </body>
 </html>

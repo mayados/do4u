@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="icon" href="../public/assets/img/logo_do4u.svg">
+    <link rel="icon" href="assets/img/logo_do4u.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../public/assets/sass/main.css">
+    <link rel="stylesheet" href="assets/sass/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="path/to/animate.css">
 
@@ -26,7 +26,7 @@
                         <a class="mt-2 btn button-primary-pill" href="contact.php">En savoir plus</a>
                     </div>
                     <div class="col-md-6 ">
-                        <img class="kenburns-top img-fluid test mx-auto"  src="../public/assets/img/Img_home_page/hero-img.svg" alt="">
+                        <img class="kenburns-top img-fluid test mx-auto"  src="assets/img/Img_home_page/hero-img.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                                 <a href="adDetails.php?id=<?php echo $offre['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                            <img src="../public/assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                            <img src="assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                             <div class="offer-badge">
                                                 <span class="offer-badge"><?php echo $offre['nomTypeAnnonce'] ?></span>
                                             </div>
@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="row align-items-center">
                                                 <div class="col-1">
-                                                    <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
+                                                    <img class="rounded-circle" width="22" width="22" src="assets/img/woman_photo.jpg" alt="">
                                                 </div>
                                                 <div class="col ps-3">
                                                     <span><?php echo $offre['nomUtilisateur'] ?></span> <span> 4.5(19 avis) </span>
@@ -127,7 +127,7 @@
                                 <a href="adDetails.php?id=<?php echo $demande['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                        <img src="../public/assets/img/cards/<?php echo $demande['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                        <img src="assets/img/cards/<?php echo $demande['photo']; ?>" class="img-fluid card-img-top" alt="...">
 
                                         <div class="demande-badge">
                                             <span class="demande-badge"><?php echo $demande['nomTypeAnnonce'] ?></span>
@@ -164,7 +164,7 @@
                                             </div>
                                             <div class="row align-items-center">
                                                 <div class="col-1">
-                                                    <img class="rounded-circle" width="22" width="22" src="../public/assets/img/woman_photo.jpg" alt="">
+                                                    <img class="rounded-circle" width="22" width="22" src="assets/img/woman_photo.jpg" alt="">
                                                 </div>
                                                 <div class="col ps-3">
                                                     <span><?php echo $demande['nomUtilisateur']; ?></span> <span> 4.5(19 avis) </span>
@@ -210,6 +210,6 @@
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../public/assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

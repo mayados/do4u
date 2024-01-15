@@ -1,7 +1,7 @@
 <header>
         <nav class="na">
             <input type="checkbox" id="burger-check">            
-            <a href="index.php" id="link-logo"><img src="../public/assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a>
+            <a href="index.php" id="link-logo"><img src="assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a>
             <button class="na__burger-menu" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
                     <span></span>
                     <span></span>
@@ -15,7 +15,7 @@
             </form>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasEndLabel">
                 <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.php"><img src="../public/assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
+                <h2 class="offcanvas-title" id="offcanvasEndLabel"><a href="index.php"><img src="assets/img/logo_do4u.svg" alt="logo Do4U" class="logo"></a></h2>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
