@@ -4,8 +4,7 @@ use App\Controllers\AuthController;
 
 $authController = new AuthController();
 $authController->renderMenu();
-
-$authController->formRegister();
+$authController->register();
 $authController->renderFooter();
 
 // Remove errors, success, and old data
