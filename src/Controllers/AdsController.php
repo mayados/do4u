@@ -3,8 +3,9 @@ namespace App\Controllers;
 use App\Models\Annonce;
 use DB;
 use PDO;
-use Exception;
+use PDOException;
 use Auth;
+use Exception;
 
     class AdsController extends Controller
     {
@@ -128,4 +129,67 @@ use Auth;
             }
         }
     }
-}
+    public function createAnnonce()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $annonceTitle = strip_tags(trim($_POST["titre"]));
+            $annonceDescription = htmlspecialchars(trim($_POST["description"]));
+            $annoncePrix = floatval($_POST["prix"]); 
+            $annonceLieu = htmlspecialchars(trim($_POST["ville"]));
+            $annonceCodePostal = htmlspecialchars(trim($_POST["codePostal"]));
+            $categorieSelect = intval($_POST["categorieId"]); 
+            $annonceType = intval($_POST["typeAnnonceId"]); 
+        
+            try {
+                $db = DB::getDB();
+        
+                $uploadDirectory = "../../public/assets/img/upload";
+        
+                if (!empty($_FILES["photo"]["name"][0])) {
+                    $uploadedFiles = [];
+                    foreach ($_FILES["photo"]["name"] as $key => $value) {
+                        $fileName = $_FILES["photo"]["name"][$key];
+                        $fileTmpName = $_FILES["photo"]["tmp_name"][$key];
+                        $targetFilePath = $uploadDirectory . basename($fileName);
+        
+                       
+                        if (move_uploaded_file($fileTmpName, $targetFilePath)) {
+                            $uploadedFiles[] = $targetFilePath;
+                        } else {
+                            echo "Erreur lors de l'upload du fichier.";
+                            exit();
+                        }
+                    }
+                    $photoPath = implode(",", $uploadedFiles);
+                } else {
+                    $photoPath = null;
+                }
+        
+                $sql = "INSERT INTO annonce(titre, description, prix, lieu, ville, codePostal, photo, typeAnnonceId, categorieId) 
+                        VALUES (:titre, :description, :prix, :lieu, :ville, :codePostal, :photo, :typeAnnonceId, :categorieId)";
+        
+                $stmt = $db->prepare($sql);
+        
+                $stmt->bindParam(':titre', $annonceTitle);
+                $stmt->bindParam(':description', $annonceDescription);
+                $stmt->bindParam(':prix', $annoncePrix);
+                $stmt->bindParam(':lieu', $annonceLieu);
+                $stmt->bindParam(':ville', $annonceVille);
+                $stmt->bindParam(':codePostal', $annonceCodePostal);
+                $stmt->bindParam(':photo', $photoPath);
+                $stmt->bindParam(':typeAnnonceId', $annonceType);
+                $stmt->bindParam(':categorieId', $categorieSelect);
+        
+                if ($stmt->execute()) {
+                    echo "Annonce créée avec succès";
+                    require_once __DIR__ . '/../../views/ads.php';
+                } else {
+                    echo "Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2];
+                }
+            } catch (PDOException $e) {
+                echo 'PDO Exception: ' . $e->getMessage();
+                exit();
+            }
+        }
+     }
+    }

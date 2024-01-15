@@ -123,7 +123,7 @@ try {
         echo "Erreur lors de l'enregistrement : " . $stmt->errorInfo()[2];
     }
 } catch (PDOException $e) {
-    // Log PDO exceptions
+  
     echo 'PDO Exception: ' . $e->getMessage();
     exit();
 }

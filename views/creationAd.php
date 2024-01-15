@@ -1,3 +1,6 @@
+<?php 
+var_dump($_POST);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,19 +18,19 @@
             <div class="container-fluid">
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
-                        <form action="creationAd.php" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                        <form action="" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                             <div class="card cardCre">
                                 <div class="card-body">
                                     <h3>Créer une annonce</h3>
                                     <!-- Titre de l'annonce -->
                                     <div class="mb-3">
                                         <label for="annonceTitle" class="form-label">Titre de votre annonce *</label>
-                                        <input type="text" class="form-control" id="annonceTitle" placeholder="Titre de votre annonce">
+                                        <input type="text" class="form-control" id="annonceTitle" name="titre" placeholder="Titre de votre annonce"required>
                                     </div>
                                     <!-- Catégorie -->
                                     <div class="mb-3">
                                         <label for="categorieSelect" class="form-label">Catégorie *</label>
-                                        <select class="form-select" id="categorieSelect">
+                                        <select class="form-select" id="categorieSelect" name="categorieId" required>
                                             <option selected>Choisir une catégorie</option>
                                             <option value="1">ménage, nettoyage, services à la personne</option>
                                             <option value="2">rénovation & construction</option>
@@ -46,41 +49,37 @@
                                     <div class="mb-3 typecheck">
                                         <span>Type d'annonce &nbsp;</span>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <input class="form-check-input" type="radio" name="typeAnnonceId" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">Offre</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <input class="form-check-input" type="radio" name="typeAnnonceId" id="inlineRadio2" value="2" required>
                                             <label class="form-check-label" for="inlineRadio2">Demande</label>
                                         </div>
                                     </div>
                                     <!-- Ajouter des photos -->
                                     <div class="addphoto mb-3">
                                         <span>Ajouter des photos (pas obligatoire)</span>
-                                        <!-- <div class="icone row d-flex justify-content-start"> -->
+                                        <input type="file" class="form-control" id="annoncePhoto" name="Photo[]" multiple accept="image/*">
+                                        <a href="#" id="downloadlink" style="display:none;" download>Télécharger l'image</a>
                                             <div class="card icone-card">
                                                 <div class="card-body">
                                                     <i class="bi bi-image fa-2x photo-icon"></i>
                                                 </div>
                                             </div>
-                                            <!-- <div class="card icone-card">
-                                                <div class="card-body mt-3">
-                                                    <i class="bi bi-plus-lg fa-2x plus-icon"></i>
-                                                </div>
-                                            </div> -->
-                                        <!-- </div> -->
+
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceDescription" class="form-label">Description *</label>
-                                        <textarea class="form-control" id="annonceDescription" rows="5"></textarea>
+                                        <textarea class="form-control" id="annonceDescription" name="description" rows="5" required></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
-                                        <input type="text" class="form-control" id="annoncePrix" placeholder="Votre prix de service">
+                                        <input type="text" class="form-control" id="annoncePrix" name="prix" placeholder="Votre prix de service" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">Votre lieu de service ? *</label>
-                                        <input type="text" class="form-control" id="annonceLieu" placeholder="Votre lieu de service">
+                                        <input type="text" class="form-control" id="annonceLieu" name="ville" placeholder="Votre lieu de service" required>
                                     </div>
                                     <!-- Bouton -->
                                     <div class="d-grid gap-2">
@@ -97,6 +96,7 @@
             </div>
         </section>
     </main>   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
