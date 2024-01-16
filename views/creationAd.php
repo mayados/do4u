@@ -18,8 +18,8 @@ var_dump($_POST);
             <div class="container-fluid">
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
-                        <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
-                        <input type="text" name="action" value="createAnnonce" hidden>
+                        <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
+                        <input type="text" name="action" value="createAnnonce" hidden/>
                             <div class="card cardCre">
                                 <div class="card-body">
                                     <h3>Créer une annonce</h3>
@@ -63,8 +63,8 @@ var_dump($_POST);
                                     <!-- Ajouter des photos -->
                                     <div class="addphoto mb-3">
                                         <span>Ajouter des photos (pas obligatoire)</span>
-                                        <input type="file" class="form-control" id="annoncePhoto" name="Photo[]" multiple accept="image/*">
-                                        <a href="#" id="downloadlink" style="display:none;" download>Télécharger l'image</a>
+                                        <input type="file" class="form-control" id="file" name="file" multiple accept="image/*">
+                                        <input type="submit" name="submit" value="submit">
                                             <div class="card icone-card">
                                                 <div class="card-body">
                                                     <i class="bi bi-image fa-2x photo-icon"></i>

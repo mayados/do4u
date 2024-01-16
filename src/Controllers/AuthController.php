@@ -42,8 +42,11 @@ class AuthController extends Controller
         // user registration
         public static function store(): void
         {
-            if (isset($_POST['nomUtilisateur'], $_POST['prenomUtilisateur'], $_POST['email'], $_POST['villeUtilisateur'], $_POST['codePostalUtilisateur'], $_POST['motDePasse'])) 
-            {
+            $requiredFields = ['nomUtilisateur', 'prenomUtilisateur', 'email', 'villeUtilisateur', 'codePostalUtilisateur', 'motDePasse'];
+        
+            // Vérifie si toutes les données requises sont présentes
+            if (self::arePostFieldsSet($requiredFields)) {
+                // Récupération des données du formulaire
                 $nomUtilisateur = $_POST['nomUtilisateur'];
                 $prenomUtilisateur = $_POST['prenomUtilisateur'];
                 $email = $_POST['email'];
@@ -51,8 +54,10 @@ class AuthController extends Controller
                 $codePostalUtilisateur = $_POST['codePostalUtilisateur'];
                 $motDePasse = $_POST['motDePasse'];
         
+                // Hash du mot de passe
                 $hashedPassword = password_hash($motDePasse, PASSWORD_DEFAULT);
         
+                // Données utilisateur
                 $userData = [
                     'nomUtilisateur' => $nomUtilisateur,
                     'prenomUtilisateur' => $prenomUtilisateur,
@@ -63,16 +68,36 @@ class AuthController extends Controller
                 ];
         
                 try {
+                    // Insertion des données dans la base de données
                     DB::insert('utilisateur', $userData);
+        
+                    // Authentification du nouvel utilisateur
+                    $_SESSION[Auth::getSessionUserIdKey()] = $user['idUtilisateur'] = DB::getDB()->lastInsertId();
+        
+                    // Nettoyer les données du formulaire précédent
+                    unset($_SESSION['old']);
+        
+                    // Message de succès + redirection
+                    success('Vous êtes maintenant connecté.');
+                    redirectAndExit(self::URL_AFTER_LOGIN);
                 } catch (PDOException $e) {
                     echo 'PDOException: ' . $e->getMessage();
-                    exit();
                 }
             } else {
                 echo 'Erreur: Données du formulaire manquantes.';
                 redirectAndExit(self::URL_AFTER_LOGIN);
             }
         }
+
+        public static function arePostFieldsSet(array $fields): bool
+            {
+                foreach ($fields as $field) {
+                    if (!isset($_POST[$field])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         
         // user connexion
         public static function check()
@@ -81,7 +106,7 @@ class AuthController extends Controller
             $motDePasse = $_POST['motDePasse'] ?? '';
             
             $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
-            var_dump($users);
+           
             if ($users === false) {
                 errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
                 redirectAndExit(self::URL_LOGIN);
