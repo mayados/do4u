@@ -8,8 +8,8 @@ use PDOException;
 class AuthController extends Controller
 {
     const URL_HANDLER = '/handlers/auth-handler.php';
-    const URL_REGISTER = '/register.php';
-    const URL_LOGIN = '/login.php';
+    const URL_REGISTER = '/inscription.php';
+    const URL_LOGIN = '/connexion.php';
     const URL_AFTER_LOGIN = '/index.php';
     const URL_AFTER_LOGOUT = '/connexion.php';
         
@@ -30,7 +30,7 @@ class AuthController extends Controller
             redirectAndExit(self::URL_AFTER_LOGOUT);
         }
 
-        public function validateCredentials(string $email, string $motDePasse) : bool
+        public static function validateCredentials(string $email, string $motDePasse) : bool
         {
             // Validation
             if (strlen($email) < 6 or strlen($motDePasse) < 8) {
@@ -80,26 +80,19 @@ class AuthController extends Controller
         {
             $email = $_POST['email'] ?? '';
             $motDePasse = $_POST['motDePasse'] ?? '';
-
-            if (!self::validateCredentials($email, $motDePasse)) {
-                errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
-                errors("Le champs de mot de passe doit avoir au moins 8 charactères");
-                redirectAndExit(self::URL_LOGIN);
-            }
             
             $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
+            var_dump($users);
             if ($users === false) {
                 errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
                 redirectAndExit(self::URL_LOGIN);
             }
 
-            // Check user retrieved
             if (count($users) >= 1) {
                 $user = $users[0];
 
-                // Version 2: with password hashing
-                if (password_verify($motDePasse, $user['password'])) {
-                    $_SESSION[Auth::getSessionUserIdKey()] = $user['id'];
+                if (password_verify($motDePasse, $user['motDePasse'])) {
+                    $_SESSION[Auth::getSessionUserIdKey()] = $user['idUtilisateur'];
                     redirectAndExit(self::URL_AFTER_LOGIN);
                 }
             }
@@ -107,5 +100,4 @@ class AuthController extends Controller
             errors("Les identifiants ne correspondes pas.");
             redirectAndExit(self::URL_LOGIN);
         }
-
 }
