@@ -72,7 +72,10 @@
                                     <a href="parameters.php">Paramètres</a>
                                 </li>
                                 <li>
-                                    <a href="connexion.php">Déconnexion</a>
+                                    <form action="/handlers/auth-handler.php" method="post">
+                                        <input type="text" name="action" value="logout">
+                                        Déconnexion
+                                    </form>
                                 </li>
                             </ul>   
                         </li> 
@@ -118,7 +121,10 @@
                                 <a href="parameters.php">Paramètres</a>
                             </li>
                             <li>
-                                <a href="connexion.php">Déconnexion</a>
+                                <form action="/handlers/auth-handler.php" method="post" id="logout">
+                                    <input type="text" name="action" value="logout" hidden>
+                                    <a href="javascript:void(0);" onclick="document.getElementById('logout').submit();">Déconnexion</a>
+                                </form>
                             </li>
                         </ul>   
                     </li> 
