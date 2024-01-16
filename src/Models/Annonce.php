@@ -249,9 +249,6 @@ class Annonce
     }
 
 
-    
-
-
     public static function getOffre() {
         try {
             $db = DB::getDB();
@@ -346,6 +343,29 @@ class Annonce
         }
     }
 
+
+    public static function getUserAnnonces(){
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT annonce.*, 
+                                        typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                    FROM 
+                                        annonce
+                                    JOIN 
+                                        typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                    WHERE
+                                        annonce.createurId = :idUtilisateur
+                                    ORDER BY datePublication DESC");
+
     
+            $idUtilisateur = $_SESSION['current_user_id'];
+            $query->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+            $query->execute();
     
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
 }
