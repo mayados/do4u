@@ -32,17 +32,19 @@ var_dump($_POST);
                                         <label for="categorieSelect" class="form-label">Catégorie *</label>
                                         <select class="form-select" id="categorieSelect" name="categorieId" required>
                                             <option selected>Choisir une catégorie</option>
-                                            <option value="1">ménage, nettoyage, services à la personne</option>
-                                            <option value="2">rénovation & construction</option>
-                                            <option value="3">réparation et maintenance</option>
-                                            <option value="4">informatique & administratif</option>
-                                            <option value="5">cours et coaching</option>
-                                            <option value="6">santé et bien être</option>
-                                            <option value="7">evénements et divertissements</option>
-                                            <option value="8">animaux</option>
-                                            <option value="9">artisanat & création</option>
-                                            <option value="10">enfants</option>
-                                            <option value="11">autre</option>
+                                            <option value="1">Ménage</option>
+                                            <option value="2">Services à la personne</option>
+                                            <option value="3">Rénovation & construction</option>
+                                            <option value="4">Jardinage & bricolage</option>
+                                            <option value="5">Réparation & maintenance</option>
+                                            <option value="6">Informatique & administratif</option>
+                                            <option value="7">Cours & coaching</option>
+                                            <option value="8">Evènements & divertissements</option>
+                                            <option value="9">Santé & bien-être</option>
+                                            <option value="10">Animaux</option>
+                                            <option value="11">Artisanat & création</option>
+                                            <option value="12">Garde d'enfants</option>
+                                            <option value="13">Autres</option>
                                         </select>
                                     </div>
                                     <!-- Type d'annonce -->
@@ -78,8 +80,12 @@ var_dump($_POST);
                                         <input type="text" class="form-control" id="annoncePrix" name="prix" placeholder="Votre prix de service" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="annonceLieu" class="form-label">Votre lieu de service ? *</label>
-                                        <input type="text" class="form-control" id="annonceLieu" name="ville" placeholder="Votre lieu de service" required>
+                                        <label for="annonceLieu" class="form-label">ville de service ? *</label>
+                                        <input type="text" class="form-control" id="ville" name="ville" placeholder="Votre lieu de service" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="annonceLieu" class="form-label">code postal*</label>
+                                        <input type="text" class="form-control" id="codePostal" name="codePostal" placeholder="codePostal service" required>
                                     </div>
                                     <!-- Bouton -->
                                     <div class="d-grid gap-2">
