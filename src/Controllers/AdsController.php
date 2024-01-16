@@ -135,7 +135,7 @@ use Exception;
             $annonceTitle = strip_tags(trim($_POST["titre"]));
             $annonceDescription = htmlspecialchars(trim($_POST["description"]));
             $annoncePrix = floatval($_POST["prix"]); 
-            $annonceLieu = htmlspecialchars(trim($_POST["ville"]));
+            $annonceVille = htmlspecialchars(trim($_POST["ville"]));
             $annonceCodePostal = htmlspecialchars(trim($_POST["codePostal"]));
             $categorieSelect = intval($_POST["categorieId"]); 
             $annonceType = intval($_POST["typeAnnonceId"]); 
@@ -165,15 +165,14 @@ use Exception;
                     $photoPath = null;
                 }
         
-                $sql = "INSERT INTO annonce(titre, description, prix, lieu, ville, codePostal, photo, typeAnnonceId, categorieId) 
-                        VALUES (:titre, :description, :prix, :lieu, :ville, :codePostal, :photo, :typeAnnonceId, :categorieId)";
+                $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal ) 
+                        VALUES (:titre, :categorieId, :typeAnnonceId, :photo,:description, :prix, :ville, :codePostal  )";
         
                 $stmt = $db->prepare($sql);
         
                 $stmt->bindParam(':titre', $annonceTitle);
                 $stmt->bindParam(':description', $annonceDescription);
                 $stmt->bindParam(':prix', $annoncePrix);
-                $stmt->bindParam(':lieu', $annonceLieu);
                 $stmt->bindParam(':ville', $annonceVille);
                 $stmt->bindParam(':codePostal', $annonceCodePostal);
                 $stmt->bindParam(':photo', $photoPath);
