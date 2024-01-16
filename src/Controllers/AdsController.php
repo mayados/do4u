@@ -68,8 +68,6 @@ use Exception;
 
     public function showAdDetails()
     {   
-        // for now, we have the two variable but I need to add condition if categorietype is offre show list of offre else
-        // show list demande below the ad details
         $annonceOffre = Annonce::getOffre();
         $annonceDemande = Annonce::getDemmande();
         
