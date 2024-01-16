@@ -72,7 +72,10 @@
                                     <a href="parameters.php">Paramètres</a>
                                 </li>
                                 <li>
-                                    <a href="connexion.php">Déconnexion</a>
+                                    <form action="/handlers/auth-handler.php" method="post">
+                                        <input type="text" name="action" value="logout">
+                                        Déconnexion
+                                    </form>
                                 </li>
                             </ul>   
                         </li> 
@@ -103,24 +106,36 @@
                 </li> 
                 <li>
                     <a href="contact.php" class="nav-link">Contact</a>   
-                </li> 
-                <li>
+                </li>
+                <?php if ($_SESSION): ?>
+                    <li>
                     <a href="messenger.php" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
-                </li> 
-                <li class="na__link_dropdown" id="dropdown-link-user">
-                    <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
-                    <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
-                        <li>
-                            <a href="myProfile.php">Mon profil</a>
-                        </li>
-                        <li>
-                            <a href="parameters.php">Paramètres</a>
-                        </li>
-                        <li>
-                            <a href="connexion.php">Déconnexion</a>
-                        </li>
-                    </ul>   
-                </li> 
+                    </li> 
+                    <li class="na__link_dropdown" id="dropdown-link-user">
+                        <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
+                        <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
+                            <li>
+                                <a href="myProfile.php?=id<?php echo($_SESSION['current_user_id']) ?>">Mon profil</a>
+                            </li>
+                            <li>
+                                <a href="parameters.php">Paramètres</a>
+                            </li>
+                            <li>
+                                <form action="/handlers/auth-handler.php" method="post" id="logout">
+                                    <input type="text" name="action" value="logout" hidden>
+                                    <a href="javascript:void(0);" onclick="document.getElementById('logout').submit();">Déconnexion</a>
+                                </form>
+                            </li>
+                        </ul>   
+                    </li> 
+                <?php else: ?>
+                    <li>
+                        <a href="connexion.php" class="nav-link button-primary-pill">Connexion</a>
+                    </li>
+                    <li>
+                        <a href="inscription.php" class="nav-link button-primary-pill">Inscription</a>
+                    </li>
+                <?php endif; ?>
             </ul>              
         </nav>          
 </header>

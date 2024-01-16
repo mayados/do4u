@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Models;
+
+use DateTime;
 use DB;
 use PDOException;
+use PDO;
 
-class Utilisateur
+class Utilisateur extends Model
 {
     protected ?int $idUtilisateur;
     protected ?string $email;
@@ -14,6 +17,7 @@ class Utilisateur
     protected ?string $photo;
     protected ?string $villeUtilisateur;
     protected ?int $codePostalUtilisateur;
+    protected ?DateTime $dateInscription;
 
     public function getIdUtilisateur(): ?int
     {
@@ -90,6 +94,19 @@ class Utilisateur
         $this->codePostalUtilisateur = $codePostalUtilisateur;
     }
 
+    //get DateInscription
+    public function getDateInscription(): ?DateTime
+    {
+        return $this->dateInscription;
+    }
+
+    public function setDateInscription(?DateTime $dateInscription): void
+    {
+        $this->dateInscription = $dateInscription;
+    }
+
+    // end get and set DateInscription
+
     public function hasRole(): bool
     {
         return false;
@@ -104,29 +121,58 @@ class Utilisateur
         $email = $_POST['mail'];
         $motdepasse = $_POST['motdepasse'];
 
-try {
-    
-    $db = DB::getDB(); 
-    $sql = "INSERT INTO utilisateur(email, nomUtilisateur, prenomUtilisateur, motdepasse) VALUES (:email, :nomUtilisateur, :prenomUtilisateur, :motdepasse)";
-  
-    $stmt = $db->prepare($sql);
+        try {     
+            $db = DB::getDB(); 
+            $sql = "INSERT INTO utilisateur(email, nomUtilisateur, prenomUtilisateur, motdepasse) VALUES (:email, :nomUtilisateur, :prenomUtilisateur, :motdepasse)";
+        
+            $stmt = $db->prepare($sql);
+            
+            $stmt->bindParam(':nomUtilisateur', $nom);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':prenomUtilisateur', $prenom);
+            $stmt->bindParam(':motdepasse', $motdepasse);  
 
-    
-    $stmt->bindParam(':nomUtilisateur', $nom);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':prenomUtilisateur', $prenom);
-    $stmt->bindParam(':motdepasse', $motdepasse);  
+            if ($stmt->execute()) {
+                echo "Enregistrement réussi";
+            } else {
+                echo "Erreur lors de l'enregistrement : " . $stmt->errorInfo()[2];
+            }
+        } catch (PDOException $e) {
+        
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
 
-    if ($stmt->execute()) {
-        echo "Enregistrement réussi";
-    } else {
-        echo "Erreur lors de l'enregistrement : " . $stmt->errorInfo()[2];
     }
-} catch (PDOException $e) {
-  
-    echo 'PDO Exception: ' . $e->getMessage();
-    exit();
-}
 
+    public static function getUserById(int $idUtilisateur): ?Utilisateur
+    {
+        try {
+            $db = DB::getDB();
+            $sql = "SELECT * FROM utilisateur WHERE idUtilisateur = :idUtilisateur";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':idUtilisateur', $idUtilisateur);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                $utilisateur = new Utilisateur();
+                $utilisateur->setEmail($result['email']);
+                $utilisateur->setNomUtilisateur($result['nomUtilisateur']);
+                $utilisateur->setPrenomUtilisateur($result['prenomUtilisateur']);
+                $dateInscription = DateTime::createFromFormat('Y-m-d H:i:s', $result['dateInscription']);
+                $utilisateur->setDateInscription($dateInscription);
+                $utilisateur->setDescription($result['description']);
+                $utilisateur->setPhoto($result['photo']);
+                $utilisateur->setVilleUtilisateur($result['villeUtilisateur']);
+                $utilisateur->setCodePostalUtilisateur($result['codePostalUtilisateur']);
+                return $utilisateur;
+            } else {
+                return null;
+            }
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
     }
 }

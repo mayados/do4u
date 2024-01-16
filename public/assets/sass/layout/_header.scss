@@ -1,286 +1,276 @@
-.na{
-    height: 7vh;
+.na {
+  height: 7vh;
+  background-color: $white-color;
+  border-bottom: 1px solid $light-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  padding: 2vw 4vw 2vw 2.5vw;
+
+  &__form {
+    width: 35vw;
     background-color: $white-color;
-    border-bottom: 1px solid $light-blue;
+    position: relative;
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__form--unconnected {
+    width: 25vw;
+  }
+
+  &__container_fields {
+    flex: 10;
+  }
+
+  // Searchbar should be on the bottom of the nav in mobile version
+  &__form--mobile,
+  &__form--mobile:nth-child(1),
+  &__form--mobile:nth-child(2) {
+    @media (max-width: 992px) {
+      top: 7vh;
+      position: absolute;
+      width: 100vw;
+      height: 8vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      left: 0;
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.125);
+      padding: 0 2% 0 2%;
+    }
+  }
+
+  &__form--none,
+  &__form--none:nth-child(1),
+  &__form--none:nth-child(2) {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__input {
+    background-color: $searchbar-color;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    width: 100%;
+    outline: none;
+    height: 2rem;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+
+  &__search-glass {
+    border: none;
+    flex: 1;
+    border-radius: 0px 5px 5px 0px;
+
+    @media (max-width: 992px) {
+      height: 2rem;
+    }
+  }
+
+  &__burger-menu {
+    border: none;
+    background-color: $white-color;
+    display: none;
+    @media (max-width: 992px) {
+      display: block;
+    }
+  }
+
+  &__burger-menu span {
+    display: none;
+
+    @media (max-width: 992px) {
+      display: block;
+      height: 5px;
+      width: 2rem;
+      border-top: 2px solid $dark-color;
+    }
+  }
+
+  &__burger-menu label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+  }
+
+  &__list {
+    display: flex;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    width: 100vw;
-    padding: 0 2vw;
-
-
-    &__form{
-        width: 35vw;    
-        background-color: $white-color;    
-        position: relative; 
-        display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    margin-bottom: 0;
+    height: 7vh;
+    @media (max-width: 992px) {
+      display: none;
     }
+  }
 
-    &__form--unconnected{
-        width: 25vw;
+  &__list > li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 992px) {
+      height: auto;
+      display: initial;
     }
+  }
 
-    &__container_fields{
-        flex: 10;
+  .logo {
+    width: 7rem;
+  }
+
+  #dropdown-link-user,
+  .dropdown-link-annonces {
+    position: relative;
+    text-align: center;
+  }
+
+  &__dropdown {
+    position: absolute;
+    // For accessibility, beacause display: none is non accessible
+    left: -999999px;
+    top: 7vh;
+    list-style-type: none;
+    width: fit-content;
+    background-color: $white-color;
+    @media (max-width: 992px) {
+      display: none;
+      position: inherit;
+      top: inherit;
+      left: inherit;
     }
+  }
 
-    // Searchbar should be on the bottom of the nav in mobile version
-    &__form--mobile,
-    &__form--mobile:nth-child(1),
-    &__form--mobile:nth-child(2){
-        @media (max-width: 992px){
-            top: 7vh;            
-            position: absolute;
-            width: 100vw;
-            height: 8vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            right: 0;
-            left: 0;
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.125); 
-            padding: 0 2% 0 2%;
-        }  
+  &__dropdown li a {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  &__dropdown li {
+    list-style-type: none;
+  }
+
+  &__dropdown_annonces {
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 1rem;
     }
+  }
 
+  // We don't want to visually display the checkbox
+  #burger-check {
+    display: none;
+  }
 
-    &__form--none,
-    &__form--none:nth-child(1),
-    &__form--none:nth-child(2){
-        @media (max-width: 992px){
-            display: none;
-        }  
-    }
+  &__dropdown_annonces li a:focus {
+    color: $secondary-color;
+  }
 
+  /* Linked to JavaScript */
 
-    &__input{
-        background-color: $searchbar-color;
-        border-radius: 5px 0px 0px 5px;
-        border: none;
-        width: 100%;
-        outline: none;
-        height: 2rem;
-        padding: 0 0.5rem;
-        position: relative;
-    
-    }
+  // Classes taken after click on the links to display dropdown menus (js)
+  &__dropdown_annonces--active,
+  &__dropdown_user--active {
+    margin-top: 2rem;
+    display: inherit;
+    background-color: $white-color;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-    &__search-glass{
-        border: none;
-        flex: 1;
-        border-radius: 0px 5px 5px 0px;
+  &__dropdown_user--active {
+    align-items: center;
+    padding-left: 0;
+  }
 
-        @media (max-width: 992px){
-            height: 2rem;
-        }    
-    }
+  // class to display nav links when burger menu is click - Js
+  &__list--mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    left: 0;
+    right: 0;
+    position: relative;
+    z-index: 555;
+    background-color: $white-color;
+    width: 100%;
+    min-height: 90vh;
+    gap: 2rem;
+    padding: 0;
+  }
 
-    &__burger-menu{
-        border: none;
-        background-color: $white-color;
-        display: none;
-        @media (max-width: 992px){
-            display: block;
-        }
-    }
-
-    &__burger-menu span{
-        display: none;
-
-        @media (max-width: 992px){
-            display: block;
-            height: 5px;
-            width: 2rem;
-            border-top: 2px solid $dark-color;
-        }
-
-    }
-
-    &__burger-menu label{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 50px;
-        width: 50px;
-    }
-
-
-    &__list{
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-        gap: 2rem;
-        margin-bottom: 0;
-        height: 7vh;
-        @media (max-width: 992px){
-            display: none;
-        }
-
-    }
-
-
-    &__list > li{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        @media (max-width: 992px){
-            height: auto;
-            display: initial;
-        }         
-    }
-
-    .logo{
-        width: 7rem;
-    }
-
-    #dropdown-link-user,
-    .dropdown-link-annonces{
-        position: relative;
-        text-align: center;
-    }
-
-     &__dropdown{
-        position: absolute;
-        // For accessibility, beacause display: none is non accessible
-        left: -999999px;
-        top: 7vh;
-        list-style-type: none;
-        width: fit-content;
-        background-color: $white-color;
-        @media (max-width: 992px){
-            display: none;
-            position: inherit;
-            top: inherit;
-            left: inherit;
-        }          
-    }   
-
-    &__dropdown li a{
-        text-decoration: none;
-        color: $text-color;
-    }
-
-    &__dropdown li{
-        list-style-type: none;
-    }
-
-    &__dropdown_annonces {
-        @media (max-width: 992px){
-            flex-direction: column;
-            gap: 1rem;
-        }     
-    }
-
-    // We don't want to visually display the checkbox
-    #burger-check{
-        display: none;
-    }
-
-    &__dropdown_annonces li a:focus{
-        color: $secondary-color;
-    }
-
-    /* Linked to JavaScript */
-
-    // Classes taken after click on the links to display dropdown menus (js)
-    &__dropdown_annonces--active,
-    &__dropdown_user--active{
-        margin-top: 2rem;
-        display: inherit;
-        background-color: $white-color;
-        text-align: center;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__dropdown_user--active{
-        align-items: center;
-        padding-left: 0;
-    }
-
-    // class to display nav links when burger menu is click - Js
-    &__list--mobile{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: space-evenly;
-        left: 0;
-        right: 0;
-        position: relative;
-        z-index: 555;
-        background-color: $white-color;
-        width: 100%;
-        min-height: 90vh;
-        gap: 2rem;
-        padding: 0;
-    }
-
-    &__list--mobile li{
-        list-style-type: none;
-        font-size: 1.2rem;
-    }
-
+  &__list--mobile li {
+    list-style-type: none;
+    font-size: 1.2rem;
+  }
 }
 
-    /* We don't want issues with :hover on responsive. To avoid this kind of isues, 
+/* We don't want issues with :hover on responsive. To avoid this kind of isues, 
     we declare all the :hover in a media. If the media doesn't correspond with :hover, it doesn't take these properties
     */
-    @media (hover: hover){
+@media (hover: hover) {
+  .na__list li:hover,
+  .na__list li:hover i {
+    color: $primary-color;
+  }
 
-        .na__list li:hover,
-        .na__list li:hover i{
-            color: $primary-color;
-        }
+  .na__dropdown_annonces li a:hover,
+  .na__dropdown_user a:hover {
+    color: $secondary-color;
+  }
 
-        .na__dropdown_annonces li a:hover,
-        .na__dropdown_user a:hover{
-            color: $secondary-color;
-        }
+  .dropdown-link-annonces:hover .na__dropdown_annonces,
+  .dropdown-link-annonces:focus-within .na__dropdown_annonces {
+    top: 7.1vh;
+    height: auto;
+    column-count: 2;
+    column-gap: 2rem;
+    min-width: 20vw;
+    padding: 1rem 1rem 1rem 1rem;
+  }
 
-        .dropdown-link-annonces:hover .na__dropdown_annonces,
-        .dropdown-link-annonces:focus-within .na__dropdown_annonces {
-            top: 7.1vh;
-            height: auto;
-            column-count: 2;
-            column-gap: 2rem;
-            min-width: 20vw; 
-            padding: 1rem 1rem 1rem 1rem;
-        }
+  .dropdown-link-annonces:hover .na__dropdown_annonces li,
+  .dropdown-link-annonces:focus-within .na__dropdown_annonces li {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 
-        .dropdown-link-annonces:hover .na__dropdown_annonces  li,
-        .dropdown-link-annonces:focus-within .na__dropdown_annonces  li {
-            margin-bottom: 1rem;
-            width: 100%;
-        }
+  .dropdown-link-annonces:hover .na__dropdown_annonces,
+  .dropdown-link-annonces:focus-within .na__dropdown_annonces,
+  #dropdown-link-user:focus-within .na__dropdown_user {
+    left: 0;
+    height: auto;
+    padding: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
 
-        .dropdown-link-annonces:hover .na__dropdown_annonces,
-        .dropdown-link-annonces:focus-within .na__dropdown_annonces,
-        #dropdown-link-user:focus-within .na__dropdown_user{
-            left: 0;
-            height: auto;
-            padding: 1rem;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        }
+  #dropdown-link-user:hover .na__dropdown_user,
+  #dropdown-link-user:focus-within .na__dropdown_user {
+    top: 7.1vh;
+    left: 7rem;
+    height: auto;
+    padding: 1rem 2rem 1rem 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: center;
+  }
 
-        #dropdown-link-user:hover .na__dropdown_user,
-        #dropdown-link-user:focus-within .na__dropdown_user{
-            top: 7.1vh;
-            left: 7rem;
-            height: auto;
-            padding: 1rem 2rem 1rem 1rem;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            text-align: center;
-        }
-
-        #dropdown-link-user:hover .na__dropdown_user,
-        #dropdown-link-user:focus-within .na__dropdown_user{
-            display: flex;
-            flex-direction: column;
-            left: -5rem;   
-        }
-    }
+  #dropdown-link-user:hover .na__dropdown_user,
+  #dropdown-link-user:focus-within .na__dropdown_user {
+    display: flex;
+    flex-direction: column;
+    left: -5rem;
+  }
+}
