@@ -54,7 +54,7 @@
                             </ul>
                         </li> 
                         <li>
-                            <a href="creationAd.php" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                            <a href="creationAd.php" class="nav-link button-primary-regular"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
                         </li> 
                         <li>
                             <a href="contact.php" class="nav-link">Contact</a>   
@@ -102,12 +102,12 @@
                     </ul>
                 </li> 
                 <li>
-                    <a href="creationAd.php" class="nav-link button-primary-pill"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
-                </li> 
-                <li>
                     <a href="contact.php" class="nav-link">Contact</a>   
                 </li>
                 <?php if ($_SESSION): ?>
+                    <li>
+                        <a href="creationAd.php" class="nav-link button-primary-regular"><i class="fa-solid fa-plus"></i> Créer une annonce</a>   
+                    </li>
                     <li>
                     <a href="messenger.php" class="nav-link" aria-label="Consulter la messagerie"><i class="fa-solid fa-envelope"></i></a>   
                     </li> 
@@ -130,10 +130,10 @@
                     </li> 
                 <?php else: ?>
                     <li>
-                        <a href="connexion.php" class="nav-link button-primary-pill">Connexion</a>
+                        <a href="connexion.php" class="nav-link button-primary-regular">Connexion</a>
                     </li>
                     <li>
-                        <a href="inscription.php" class="nav-link button-primary-pill">Inscription</a>
+                        <a href="inscription.php" class="nav-link button-primary-regular">Inscription</a>
                     </li>
                 <?php endif; ?>
             </ul>              
