@@ -14,8 +14,8 @@ class Auth {
     
             if (self::$user === null && $id) {
                 self::$user = DB::fetch(
-                    "SELECT * FROM utilisateur WHERE id = :id LIMIT 1",
-                    ['id' => $id]
+                    "SELECT * FROM utilisateur WHERE idUtilisateur = :idUtilisateur LIMIT 1",
+                    ['idUtilisateur' => $id]
                 );
     
                 if (self::$user === false) {
@@ -39,7 +39,7 @@ class Auth {
             if (!Auth::getCurrentUser()) {
                 // Not Auth Or account not exists
                 errors('Vous devez être connecté pour accèder à cette page.');
-                redirectAndExit('/login.php');
+                redirectAndExit(\App\Controllers\AuthController::URL_LOGIN);
             }
         }
     
@@ -47,7 +47,7 @@ class Auth {
         {
             // Check user is guest (invité)
             if (Auth::getCurrentUser()) {
-                redirectAndExit('/index.php');
+                redirectAndExit('/');
             }
         }
     

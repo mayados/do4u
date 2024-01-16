@@ -345,5 +345,22 @@ class Annonce
             exit();
         }
     }
+
+    public static function getAnnonceCreate()
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT * FROM annonce ORDER BY datePublication DESC");
+
+            $query->execute();
+    
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    
     
 }
