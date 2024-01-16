@@ -81,15 +81,13 @@ class AuthController extends Controller
             $email = $_POST['email'] ?? '';
             $motDePasse = $_POST['motDePasse'] ?? '';
 
-            // Validation
             if (!self::validateCredentials($email, $motDePasse)) {
                 errors("Le champs d'e-mail doit avoir au moins 6 charactères.");
                 errors("Le champs de mot de passe doit avoir au moins 8 charactères");
                 redirectAndExit(self::URL_LOGIN);
             }
-
-            // Check DB
-            $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['login' => $email]);
+            
+            $users = DB::fetch("SELECT * FROM utilisateur WHERE email = :email;", ['email' => $email]);
             if ($users === false) {
                 errors('Une erreur est survenue. Veuillez ré-essayer plus tard.');
                 redirectAndExit(self::URL_LOGIN);
