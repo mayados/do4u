@@ -42,7 +42,7 @@
                         <p><a href="ads.php"><span class="arrow-icon link text-decoration-none"> Voir toutes les offres ➔</span></a></p>
                     </div>
                 </div>
-                <?php echo($_SESSION['current_user_id'])?>
+                <!-- <?php echo($_SESSION['current_user_id'])?> -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                     <?php if (!empty($annonceOffre)) : ?>
                         <?php foreach ($annonceOffre as $offre): ?>
