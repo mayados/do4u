@@ -130,72 +130,76 @@ use Exception;
     }
     public function createAnnonce()
     {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $titre = strip_tags(trim($_POST["titre"]));
-            $description = htmlspecialchars(trim($_POST["description"]));
-            $prix = floatval($_POST["prix"]); 
-            $ville = htmlspecialchars(trim($_POST["ville"]));
-            $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
-            $categorieSelect = intval($_POST["categorieId"]); 
-            $annonceType = intval($_POST["typeAnnonceId"]); 
-        
-            try {
-                $db = DB::getDB();
-        
-                $uploadDirectory = "../../public/assets/img/upload";
-        
-                if (!empty($_FILES["photo"]["name"][0])) {
-                    $uploadedFiles = [];
-                    foreach ($_FILES["photo"]["name"] as $key => $value) {
-                        $fileName = $_FILES["photo"]["name"][$key];
-                        $fileTmpName = $_FILES["photo"]["tmp_name"][$key];
-                        $targetFilePath = $uploadDirectory . basename($fileName);
-        
-                       
-                        if (move_uploaded_file($fileTmpName, $targetFilePath)) {
-                            $uploadedFiles[] = $targetFilePath;
-                        } else {
-                            echo "Erreur lors de l'upload du fichier.";
-                            exit();
-                        }
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $titre = strip_tags(trim($_POST["titre"]));
+                $description = htmlspecialchars(trim($_POST["description"]));
+                $prix = floatval($_POST["prix"]);
+                $ville = htmlspecialchars(trim($_POST["ville"]));
+                $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
+                $categorieSelect = intval($_POST["categorieId"]);
+                $annonceType = intval($_POST["typeAnnonceId"]);
+    
+                $createurId = Auth::getSessionUserId();
+    
+                // Vérifier si le fichier a été téléchargé avec succès
+                if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+                    $img_name = $_FILES['file']['name'];
+                    $img_size = $_FILES['file']['size'];
+                    $tmp_name = $_FILES['file']['tmp_name'];
+                    $file_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
+    
+                    $allowed_extensions = array("jpg", "jpeg", "png");
+                    if (in_array($file_extension, $allowed_extensions) && $img_size <= 125000) {
+                        $new_file = 'public/assets/img/Img_page_ads/' . uniqid("IMG-", true) . '.' . $file_extension;
+                        
+                        // Déplacer le fichier téléchargé vers le dossier d'uploads
+                        move_uploaded_file($tmp_name, $new_file);
+                    } else {
+                        echo "<center>Invalid file type or file size too large. Allowed types: jpg, jpeg, png (Max size: 125KB).</center><br>";
+                        $new_file = null;
                     }
-                    $photoPath = implode(",", $uploadedFiles);
                 } else {
-                    $photoPath = null;
+                    echo "<center>No file uploaded.</center><br>";
+                    $new_file = null;
                 }
-        
-                $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal ) 
-                        VALUES (:titre, :categorieId, :typeAnnonceId, :photo,:description, :prix, :ville, :codePostal )";
-        
+    
+                $db = DB::getDB();
+                $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal, createurId) 
+                        VALUES (:titre, :categorieId, :typeAnnonceId, :photo, :description, :prix, :ville, :codePostal, :createurId)";
+    
                 $stmt = $db->prepare($sql);
-        
+    
                 $stmt->bindParam(':titre', $titre);
                 $stmt->bindParam(':description', $description);
                 $stmt->bindParam(':prix', $prix);
                 $stmt->bindParam(':ville', $ville);
                 $stmt->bindParam(':codePostal', $codePostal);
-                $stmt->bindParam(':photo', $photoPath);
+                $stmt->bindParam(':photo', $new_file);
                 $stmt->bindParam(':typeAnnonceId', $annonceType);
                 $stmt->bindParam(':categorieId', $categorieSelect);
-        
+                $stmt->bindParam(':createurId', $createurId, PDO::PARAM_INT);
+    
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
     
-                    $query = $db->prepare("SELECT * FROM annonce WHERE createurId = ? OR createurId IS NULL ORDER BY datePublication DESC");
-                    $query->bindParam(1, $_SESSION['idUtilisateur']);
+                    $query = $db->prepare("SELECT * FROM annonce ORDER BY datePublication ASC");
                     $query->execute();
-
-                    $results = $query->fetchAll(PDO::FETCH_ASSOC);
     
+                    $query->fetchAll(PDO::FETCH_ASSOC);
+    
+                    // Traiter les résultats ici si nécessaire
                 } else {
                     throw new Exception("Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2]);
                 }
-            } catch (PDOException $e) {
-                throw new Exception('PDO Exception: ' . $e->getMessage());
-            } catch (Exception $e) {
-                echo $e->getMessage();
             }
+        } catch (PDOException $e) {
+            throw new Exception('PDO Exception: ' . $e->getMessage());
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
     }
+    
+}
 
-    }
+    
