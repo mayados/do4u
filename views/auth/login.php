@@ -28,7 +28,7 @@
                     <!-- col-2-connexion -->
                     <div class="form-connexion">
                     <form action="<?php echo $actionUrl; ?>" method="POST">
-                            <input type="text" name="action" value="store" hidden>
+                            <input type="text" name="action" value="login" hidden>
                             <h3 class="fw-bolder">Bienvenue !</h3>
                             <p>Connectez-vous ou <a class="link" href="Inscription.php">créez un compte</a></p>
                             <div class="form-group mt-3">
