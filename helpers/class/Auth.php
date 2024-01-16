@@ -14,7 +14,7 @@ class Auth {
     
             if (self::$user === null && $id) {
                 self::$user = DB::fetch(
-                    "SELECT * FROM utilisateur WHERE id = :id LIMIT 1",
+                    "SELECT * FROM utilisateur WHERE idUtilisateur = :id LIMIT 1",
                     ['id' => $id]
                 );
     
@@ -32,7 +32,8 @@ class Auth {
     
             return self::$user;
         }
-    
+        
+        // if the user is connected
         public static function isAuthOrRedirect() : void
         {
             // Check user is auth
@@ -42,7 +43,8 @@ class Auth {
                 redirectAndExit('/login.php');
             }
         }
-    
+        
+        // if the user is not connected
         public static function isGuestOrRedirect() : void
         {
             // Check user is guest (invité)
