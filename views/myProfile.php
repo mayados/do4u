@@ -12,10 +12,11 @@
 </head>
 <body>
     <main class="container" id="main-container-mine">
+    <?php if ($users): ?>
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb fil-ariane">
               <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
+              <li class="breadcrumb-item active" aria-current="page"><?php echo $users->getNomUtilisateur() ?> <?php echo $users->getPrenomUtilisateur() ?></li>
             </ol>
         </nav>
         <section>
@@ -26,10 +27,9 @@
                     </figure>
                     <div>
                         <div class="d-flex flex-column gap-1 flex-lg-row align-items-lg-center flex-lg-wrap">
-                            <h1 class="title-profile text-center text-lg-start m-0">Lola</h1>
+                            <h1 class="title-profile text-center text-lg-start m-0"><?php echo $users->getPrenomUtilisateur() ?></h1>
                             <span class="fw-bold text-white rounded mx-auto mx-lg-0 profile-badge">Particulier</span>                             
                         </div>
-
                         <p class="mt-4 mt-lg-2 mb-0"><i class="fa-solid fa-star full-star-icon"></i> 4/5 <span>(18 avis)</span></p>
                     </div>
                 </div>
@@ -44,8 +44,7 @@
             </div>
             <article class="mt-4">
                 <h2>Présentation</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti perspiciatis laudantium quidem, modi vel repellat voluptatibus odio quis ratione tenetur, sit exercitationem, corporis laboriosam dolores provident iste illo minus voluptate.
-                Totam culpa odio consequatur ipsum sequi iure, unde atque aliquam dignissimos alias adipisci aut quod temporibus nemo ab? Ipsam possimus corrupti, ipsa dolores ipsum enim quibusdam. Minus sequi sint tempore!</p>
+                <p><?php echo $users->getDescription() ?></p>
             </article>
         </section>
         <div class="line-divider"></div>
@@ -513,6 +512,7 @@
                 </div>
               </div>
         </section>
+    <?php endif; ?>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
