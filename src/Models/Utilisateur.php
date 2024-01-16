@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Models;
+
+use DateTime;
 use DB;
 use PDOException;
 use PDO;
@@ -15,6 +17,7 @@ class Utilisateur extends Model
     protected ?string $photo;
     protected ?string $villeUtilisateur;
     protected ?int $codePostalUtilisateur;
+    protected ?DateTime $dateInscription;
 
     public function getIdUtilisateur(): ?int
     {
@@ -91,6 +94,19 @@ class Utilisateur extends Model
         $this->codePostalUtilisateur = $codePostalUtilisateur;
     }
 
+    //get DateInscription
+    public function getDateInscription(): ?DateTime
+    {
+        return $this->dateInscription;
+    }
+
+    public function setDateInscription(?DateTime $dateInscription): void
+    {
+        $this->dateInscription = $dateInscription;
+    }
+
+    // end get and set DateInscription
+
     public function hasRole(): bool
     {
         return false;
@@ -141,8 +157,11 @@ class Utilisateur extends Model
 
             if ($result) {
                 $utilisateur = new Utilisateur();
+                $utilisateur->setEmail($result['email']);
                 $utilisateur->setNomUtilisateur($result['nomUtilisateur']);
                 $utilisateur->setPrenomUtilisateur($result['prenomUtilisateur']);
+                $dateInscription = DateTime::createFromFormat('Y-m-d H:i:s', $result['dateInscription']);
+                $utilisateur->setDateInscription($dateInscription);
                 $utilisateur->setDescription($result['description']);
                 $utilisateur->setPhoto($result['photo']);
                 $utilisateur->setVilleUtilisateur($result['villeUtilisateur']);

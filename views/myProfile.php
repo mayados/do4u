@@ -35,11 +35,11 @@
                 </div>
                 <div class="col-12 col-lg-3">
                     <p class="d-none d-lg-inline">Informations vérifiées :</p>
-                    <p><i class="fa-solid fa-circle-check checked-icon"></i> E-mail</p>                    
+                    <p><i class="fa-solid fa-circle-check checked-icon"></i> <?php echo $users->getEmail(); ?></p>                    
                 </div>
                 <div class="col-12 col-lg-3">
                     <p class="mb-0"><i class="fa-solid fa-location-dot primary-icon"></i> Strasbourg</p>
-                    <p><i class="fa-solid fa-user primary-icon"></i> Membre depuis le 08/11/2023</p>
+                    <p><i class="fa-solid fa-user primary-icon"></i> Membre depuis le <?php echo $users->getDateInscription()->format('Y-m-d H:i:s'); ?></p>
                 </div>
             </div>
             <article class="mt-4">
