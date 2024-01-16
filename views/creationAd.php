@@ -18,7 +18,8 @@ var_dump($_POST);
             <div class="container-fluid">
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
-                        <form action="" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                        <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
+                        <input type="text" name="action" value="createAnnonce" hidden>
                             <div class="card cardCre">
                                 <div class="card-body">
                                     <h3>Créer une annonce</h3>
@@ -73,11 +74,11 @@ var_dump($_POST);
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceDescription" class="form-label">Description *</label>
-                                        <textarea class="form-control" id="annonceDescription" name="description" rows="5" required></textarea>
+                                        <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
-                                        <input type="text" class="form-control" id="annoncePrix" name="prix" placeholder="Votre prix de service" required>
+                                        <input type="text" class="form-control" id="prix" name="prix" placeholder="Votre prix de service" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">ville de service ? *</label>
@@ -89,7 +90,7 @@ var_dump($_POST);
                                     </div>
                                     <!-- Bouton -->
                                     <div class="d-grid gap-2">
-                                        <button class="button-primary-regular" type="button">Déposer une annonce</button>
+                                        <button class="button-primary-regular" type="submit">Déposer une annonce</button>
                                     </div>
                                 </div>
                             </div>

@@ -9,8 +9,9 @@ use Exception;
 
     class AdsController extends Controller
     {
-        const URL_CREATE = '/views/creationAd.php';
-        const URL_INDEX = '/views/index.php';
+        const URL_CREATE = '/creationAd.php';
+        const URL_INDEX = '/ads.php';
+        const URL_ADS = '/ads.php';
         const URL_HANDLER = '/handlers/ad-handler.php';
         const ITEMS_PER_PAGE = 8;
 
@@ -61,8 +62,8 @@ use Exception;
 
     public function showCreationPage()
     {
+        $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/creationAd.php';
-
     }
 
     public function showAdDetails()
@@ -132,11 +133,11 @@ use Exception;
     public function createAnnonce()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $annonceTitle = strip_tags(trim($_POST["titre"]));
-            $annonceDescription = htmlspecialchars(trim($_POST["description"]));
-            $annoncePrix = floatval($_POST["prix"]); 
-            $annonceVille = htmlspecialchars(trim($_POST["ville"]));
-            $annonceCodePostal = htmlspecialchars(trim($_POST["codePostal"]));
+            $titre = strip_tags(trim($_POST["titre"]));
+            $description = htmlspecialchars(trim($_POST["description"]));
+            $prix = floatval($_POST["prix"]); 
+            $ville = htmlspecialchars(trim($_POST["ville"]));
+            $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
             $categorieSelect = intval($_POST["categorieId"]); 
             $annonceType = intval($_POST["typeAnnonceId"]); 
         
@@ -166,22 +167,24 @@ use Exception;
                 }
         
                 $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal ) 
-                        VALUES (:titre, :categorieId, :typeAnnonceId, :photo,:description, :prix, :ville, :codePostal  )";
+                        VALUES (:titre, :categorieId, :typeAnnonceId, :photo,:description, :prix, :ville, :codePostal )";
         
                 $stmt = $db->prepare($sql);
         
-                $stmt->bindParam(':titre', $annonceTitle);
-                $stmt->bindParam(':description', $annonceDescription);
-                $stmt->bindParam(':prix', $annoncePrix);
-                $stmt->bindParam(':ville', $annonceVille);
-                $stmt->bindParam(':codePostal', $annonceCodePostal);
+                $stmt->bindParam(':titre', $titre);
+                $stmt->bindParam(':description', $description);
+                $stmt->bindParam(':prix', $prix);
+                $stmt->bindParam(':ville', $ville);
+                $stmt->bindParam(':codePostal', $codePostal);
                 $stmt->bindParam(':photo', $photoPath);
                 $stmt->bindParam(':typeAnnonceId', $annonceType);
                 $stmt->bindParam(':categorieId', $categorieSelect);
         
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
-                    require_once __DIR__ . '/../../views/ads.php';
+                    
+                   $annoncesAvecCreate= Annonce::getAnnonceCreate();
+                    redirectAndExit(self::URL_ADS);
                 } else {
                     echo "Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2];
                 }
@@ -191,4 +194,5 @@ use Exception;
             }
         }
      }
+
     }
