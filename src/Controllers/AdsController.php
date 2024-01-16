@@ -180,17 +180,22 @@ use Exception;
         
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
-                    
-                   $annoncesAvecCreate= Annonce::getAnnonceCreate();
-                    redirectAndExit(self::URL_ADS);
+    
+                    $query = $db->prepare("SELECT * FROM annonce WHERE createurId = ? OR createurId IS NULL ORDER BY datePublication DESC");
+                    $query->bindParam(1, $_SESSION['idUtilisateur']);
+                    $query->execute();
+
+                    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    
                 } else {
-                    echo "Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2];
+                    throw new Exception("Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2]);
                 }
             } catch (PDOException $e) {
-                echo 'PDO Exception: ' . $e->getMessage();
-                exit();
+                throw new Exception('PDO Exception: ' . $e->getMessage());
+            } catch (Exception $e) {
+                echo $e->getMessage();
             }
         }
-     }
+    }
 
     }

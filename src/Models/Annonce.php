@@ -343,21 +343,6 @@ class Annonce
         }
     }
 
-    public static function getAnnonceCreate()
-    {
-        try {
-            $db = DB::getDB();
-            $query = $db->prepare("SELECT * FROM annonce ORDER BY datePublication DESC");
-
-            $query->execute();
-    
-            return $query->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            // Log PDO exceptions
-            echo 'PDO Exception: ' . $e->getMessage();
-            exit();
-        }
-    }
 
     public static function getUserAnnonces(){
         try {
@@ -371,6 +356,7 @@ class Annonce
                                     WHERE
                                         annonce.createurId = :idUtilisateur
                                     ORDER BY datePublication DESC");
+
     
             $idUtilisateur = $_SESSION['current_user_id'];
             $query->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
