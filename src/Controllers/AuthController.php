@@ -2,7 +2,6 @@
 namespace App\Controllers;
 use Auth;
 use DB;
-use PDO;
 use PDOException;
 
 class AuthController extends Controller
