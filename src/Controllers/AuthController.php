@@ -79,13 +79,13 @@ class AuthController extends Controller
         
                     // Message de succès + redirection
                     success('Vous êtes maintenant connecté.');
-                    redirectAndExit(self::URL_AFTER_LOGIN);
+                    redirectAndExit(self::URL_AFTER_LOGOUT);
                 } catch (PDOException $e) {
                     echo 'PDOException: ' . $e->getMessage();
                 }
             } else {
                 echo 'Erreur: Données du formulaire manquantes.';
-                redirectAndExit(self::URL_AFTER_LOGIN);
+                redirectAndExit(self::URL_AFTER_LOGOUT);
             }
         }
 
