@@ -150,20 +150,22 @@ use Exception;
                     $file_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
     
                     $allowed_extensions = array("jpg", "jpeg", "png");
-                    if (in_array($file_extension, $allowed_extensions) && $img_size <= 125000) {
-                        $new_file = 'public/assets/img/Img_page_ads/' . uniqid("IMG-", true) . '.' . $file_extension;
-                        
-                        // Déplacer le fichier téléchargé vers le dossier d'uploads
+                    if (in_array($file_extension, $allowed_extensions) && $img_size <= 4000000) {
+                        $new_file = '/' . uniqid("IMG-", true) . '.' . $file_extension;
+                    if(!file_exists($new_file)){
+                        mkdir($new_file, 0777, true);
+                    }
+                    echo "chemin du fichier de destination : $new_file";
                         move_uploaded_file($tmp_name, $new_file);
                     } else {
-                        echo "<center>Invalid file type or file size too large. Allowed types: jpg, jpeg, png (Max size: 125KB).</center><br>";
+                        echo "<center>Invalid file type or file size too large. Allowed types: jpg, jpeg, png .</center><br>";
                         $new_file = null;
                     }
                 } else {
                     echo "<center>No file uploaded.</center><br>";
                     $new_file = null;
                 }
-    
+        
                 $db = DB::getDB();
                 $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal, createurId) 
                         VALUES (:titre, :categorieId, :typeAnnonceId, :photo, :description, :prix, :ville, :codePostal, :createurId)";
