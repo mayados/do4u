@@ -19,8 +19,8 @@ var_dump($_POST);
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
                         <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
-                        <input type="text" name="action" value="createAnnonce" hidden/>
-                            <div class="card cardCre">
+                            <input type="text" name="action" value="createAnnonce" hidden/>
+                                <div class="card cardCre">
                                 <div class="card-body">
                                     <h3>Créer une annonce</h3>
                                     <!-- Titre de l'annonce -->
@@ -94,8 +94,8 @@ var_dump($_POST);
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
                     <div class="col-lg-4">
                         <img src="./assets/img/Img_page_ads/house-3950679_640.jpg" class="img-fluid rounded d-none d-lg-block" alt="Image">
                     </div>                    

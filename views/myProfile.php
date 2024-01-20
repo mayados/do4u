@@ -76,7 +76,7 @@
                         <div class="col-12">
                             <div class="card card-ad">
                                 <div class="position-relative">
-                                    <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
+                                <img src="handlers/upload/<?php echo $ad['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                     <?php if ($ad['nomTypeAnnonce'] === 'Demande'): ?>
                                         <div class="demande-badge">
                                             <span class="demande-badge"><?php echo $ad['nomTypeAnnonce'] ?></span>
@@ -91,8 +91,8 @@
                                     <p class="card-title text-center fw-bold text-start"><?php echo $ad['titre']; ?> </p>
                                     <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
                                         <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php?id=<?php echo $ad['idAnnonce'] ?>">Consulter <i class="fa-solid fa-eye"></i></a>
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
-                                        <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
+                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php?id=<?php echo $ad['idAnnonce'] ?>">Modifier <i class="fa-solid fa-pen"></i></a>
+                                        <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" type='submit' data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
                                     </div>
                                 </div>                            
                             </div>

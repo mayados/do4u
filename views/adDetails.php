@@ -36,7 +36,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="image-container">
                                 <!-- <img src="assets/img/cards/image1.jpg" class="img-fluid rounded" alt="Soutien"> -->
-                                <img src="assets/img/cards/<?php echo $adDetails['photo']; ?>" class="img-fluid rounded card-img-top" alt="...">
+                                <img src="handlers/upload/<?php echo $adDetails['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                 <?php if ($adDetails['nomTypeAnnonce'] === 'Demande'): ?>
                                     <div class="overlay-text-d"><?php echo $adDetails['nomTypeAnnonce']; ?></div>
                                 <?php else: ?>

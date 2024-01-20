@@ -7,12 +7,15 @@ if (!empty($_POST['action'])) {
     if ($_POST['action'] === 'createAnnonce') {
         Auth::isAuthOrRedirect();
         $controller->createAnnonce();
-    } elseif ($_POST['action'] === 'update') {
+    } elseif ($_POST['action'] === 'updateAnnonce') {
         Auth::isAuthOrRedirect();
-        $controller->updateAnnonce(); 
-    } 
-   
-}
+        $controller->updateAnnonce($idAnnonce);    
+    } elseif ($_POST['action'] === 'deleteAnnonce'){
+        Auth:: isAuthOrRedirect();
+        $controller->deleteAnnonce($idAnnonce);
+    }
+ }
+
 
 // Remove errors, success and old data
 App::terminate();

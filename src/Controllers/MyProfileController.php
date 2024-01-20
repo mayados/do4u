@@ -6,10 +6,10 @@ use App\Models\Annonce;
 
 class MyProfileController extends Controller
 {
-    const URL_CREATE = '/views/creationAd.php';
-    const URL_INDEX = '/views/index.php';
+    const URL_CREATE = '/creationAd.php';
+    const URL_INDEX = '/index.php';
     const URL_HANDLER = '/handlers/ad-handler.php';
-    private $componentController;
+
     
 
     public function showMyProfile() {
