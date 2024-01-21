@@ -73,52 +73,60 @@
                     </p>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
                         <?php foreach ($ads as $ad): ?>
-                        <div class="col-12">
-                            <div class="card card-ad">
-                                <div class="position-relative">
-                                    <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
-                                    <?php if ($ad['nomTypeAnnonce'] === 'Demande'): ?>
-                                        <div class="demande-badge">
-                                            <span class="demande-badge"><?php echo $ad['nomTypeAnnonce'] ?></span>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="offer-badge">
-                                            <span class="offer-badge"><?php echo $ad['nomTypeAnnonce'] ?></span>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-title text-center fw-bold text-start"><?php echo $ad['titre']; ?> </p>
-                                    <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php?id=<?php echo $ad['idAnnonce'] ?>">Consulter <i class="fa-solid fa-eye"></i></a>
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
-                                        <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
+                            <div class="col-12">
+                                <div class="card card-ad">
+                                    <div class="position-relative">
+                                        <img src="assets/img/cards/image1.jpg" class="img-fluid card-img-top" alt="Image principale de l'annonce spécialiste de soin et de la mise en beauté">
+                                        <?php if ($ad['nomTypeAnnonce'] === 'Demande'): ?>
+                                            <div class="demande-badge">
+                                                <span class="demande-badge"><?php echo $ad['nomTypeAnnonce'] ?></span>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="offer-badge">
+                                                <span class="offer-badge"><?php echo $ad['nomTypeAnnonce'] ?></span>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
-                                </div>                            
+                                    <div class="card-body">
+                                        <p class="card-title text-center fw-bold text-start"><?php echo $ad['titre']; ?> </p>
+                                        <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
+                                            <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php?id=<?php echo $ad['idAnnonce'] ?>">Consulter <i class="fa-solid fa-eye"></i></a>
+                                            <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
+                                            <form action="<?php echo $actionUrl ?>" method="POST">
+                                                <input type="text" name="action" value="delete" hidden>
+                                                <input type="text" name="id" value="<?php echo($ad['idAnnonce']) ?>" hidden>
+                                                <button type="submit" class="action-ad-link text-center border-0 p-2 rounded action-ad-supprimer">Supprimer</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Modal for ad delete-->
-                        <div class="modal fade modal-z-index" id="modal_ad_petsitter" tabindex="-1" aria-labelledby="suppressionAnnonce" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h2 class="modal-title fs-5" id="suppressionAnnonce">Supprimer mon annonce</h2>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                            <!-- Modal for ad delete -->
+                            <!-- <div class="modal fade modal-z-index" id="modal_ad_<?php echo $ad['idAnnonce']; ?>" tabindex="-1" aria-labelledby="suppressionAnnonce_<?php echo $ad['idAnnonce']; ?>" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title fs-5" id="suppressionAnnonce_<?php echo $ad['idAnnonce']; ?>">Supprimer mon annonce</h2>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Etes-vous sûr de vouloir supprimer votre annonce "<?php echo $ad['titre']; ?>" ?<br>
+                                                Attention, cette action est irréversible</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form action="<?php echo($actionUrl); ?>" method="POST">
+                                                <input type="text" name="action" value="delete" hidden>
+                                                <input type="text" name="id" value="<?php echo($ad['idAnnonce']) ?>" hidden>
+                                                <button type="submit" class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0">Supprimer</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    <p>Etes-vous sûr de vouloir supprimer votre annonce "Petsitter expérimentée" ?<br>
-                                    Attention, cette action est irréversible</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                    <button type="button" class="btn btn-primary">Supprimer l'annonce</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>                                               
-                    </div> 
+                            </div> -->
+                        <?php endforeach; ?>
+                    </div>
+ 
                 </div>
 
                 <!-- tab-pan for the favorit annoces of the current user -->
