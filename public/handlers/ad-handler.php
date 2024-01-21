@@ -12,14 +12,19 @@ if (!empty($_POST['action'])) {
     } elseif ($_POST['action'] === 'updateAnnonce') {
         Auth::isAuthOrRedirect(); 
         $controller->updateAnnonce(); 
+
     } elseif ($_POST['action'] === 'deleteAnnonce') {
         Auth::isAuthOrRedirect(); 
         $controller->deleteAnnonce();
     }
+
 }
 
 
 // Remove errors, success and old data
 App::terminate();
 
-redirectAndExit(App\Controllers\AdsController::URL_ADS);
+
+// Unknown action
+redirectAndExit(App\Controllers\MyProfileController::URL_INDEX);
+

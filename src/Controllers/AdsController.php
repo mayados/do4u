@@ -17,7 +17,7 @@ use Exception;
         const URL_DETAIL = '/adDetails.php';
         const URL_HANDLER = '/handlers/ad-handler.php';
         const ITEMS_PER_PAGE = 8;
-
+        const MY_PROFIEL_URL = '/myProfile.php';
 
     public function getAll()
     {
@@ -113,7 +113,7 @@ use Exception;
     }
 
 
-    public function chercherParMotClé()
+    public function seachByKeyword()
     {   
         try
         {
@@ -143,6 +143,7 @@ use Exception;
             }
         }
     }
+
     public function createAnnonce()
     {
         try {
@@ -304,7 +305,63 @@ use Exception;
             echo $e->getMessage();
         }
     }
+   
+    // delete annonce
+    // delete annonce
+    public static function deleteAnnonce()
+    {
+        try {
+            // Retrieve idAnnonce from $_POST
+            $idAnnonce = intval($_POST["id"]);
+
+            $db = DB::getDB();
+            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                echo "Annonce supprimée avec succès";
+                redirectAndExit(self::MY_PROFIEL_URL);
+            } else {
+                throw new Exception("Erreur lors de la suppression de l'annonce: " . $stmt->errorInfo()[2]);
+            }
+        } catch (PDOException $e) {
+            throw new Exception('PDO Exception: ' . $e->getMessage());
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
     
+
+
+    // update annonce
+    public static function updateAnnonce(){
+        try {
+            $db = DB::getDB();
+            $sql = "UPDATE annonce SET titre = :titre, description = :description, prix = :prix, ville = :ville, codePostal = :codePostal, categorieId = :categorieId, typeAnnonceId = :typeAnnonceId WHERE idAnnonce = :idAnnonce";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+            $stmt->bindParam(':titre', $titre);
+            $stmt->bindParam(':description', $description);
+            $stmt->bindParam(':prix', $prix);
+            $stmt->bindParam(':ville', $ville);
+            $stmt->bindParam(':codePostal', $codePostal);
+            $stmt->bindParam(':categorieId', $categorieSelect);
+            $stmt->bindParam(':typeAnnonceId', $annonceType);
+            if ($stmt->execute()) {
+                echo "Annonce modifiée avec succès";
+                redirectAndExit(self::MY_PROFIEL_URL);
+            } else {
+                throw new Exception("Erreur lors de la modification de l'annonce: " . $stmt->errorInfo()[2]);
+            }
+        } catch (PDOException $e) {
+            throw new Exception('PDO Exception: ' . $e->getMessage());
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+}
+
 
     
     
