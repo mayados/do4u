@@ -9,9 +9,12 @@ use Exception;
 
     class AdsController extends Controller
     {
+        const URL_PROFIL = '/MyProfile.php';
         const URL_CREATE = '/creationAd.php';
+        const URL_UPDATE = '/modificationAd.php';
         const URL_INDEX = '/ads.php';
         const URL_ADS = '/ads.php';
+        const URL_DETAIL = '/adDetails.php';
         const URL_HANDLER = '/handlers/ad-handler.php';
         const ITEMS_PER_PAGE = 8;
         const MY_PROFIEL_URL = '/myProfile.php';
@@ -65,7 +68,10 @@ use Exception;
         $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/creationAd.php';
     }
-
+    public function showMyProfil()
+    {
+        require_once __DIR__ . '/../../views/MyProfile.php';
+    }
     public function showAdDetails()
     {   
         $annonceOffre = Annonce::getOffre();
@@ -88,8 +94,17 @@ use Exception;
     }
 
     public function showModificationPage()
-    {
+    {   $idAnnonce = isset($_GET['id']) ? $_GET['id'] : null; 
+       $adDetails =  Annonce::getAdDetailsById($idAnnonce);
+        $annonceTypes= Annonce::getAnnonceTypes($idAnnonce);
+
+       
+        $annonceTypeIds= Annonce::getAnnonceTypeIds($idAnnonce);
+        $categories = Annonce::getAllCategories();
+        $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/modificationAd.php';
+   
+     
     }
 
     public function showContactPage()
@@ -144,29 +159,18 @@ use Exception;
                 $createurId = Auth::getSessionUserId();
     
                 // Vérifier si le fichier a été téléchargé avec succès
-                if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
-                    $img_name = $_FILES['file']['name'];
-                    $img_size = $_FILES['file']['size'];
-                    $tmp_name = $_FILES['file']['tmp_name'];
-                    $file_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
+                if (isset($_FILES['file'])) {
+                    $file = $this->uploadFile($_FILES['file']);
     
-                    $allowed_extensions = array("jpg", "jpeg", "png");
-                    if (in_array($file_extension, $allowed_extensions) && $img_size <= 4000000) {
-                        $new_file = '/' . uniqid("IMG-", true) . '.' . $file_extension;
-                    if(!file_exists($new_file)){
-                        mkdir($new_file, 0777, true);
-                    }
-                    echo "chemin du fichier de destination : $new_file";
-                        move_uploaded_file($tmp_name, $new_file);
-                    } else {
-                        echo "<center>Invalid file type or file size too large. Allowed types: jpg, jpeg, png .</center><br>";
-                        $new_file = null;
+                    if (!$file) {
+                        echo "Erreur lors du téléchargement du fichier.";
+                        return;
                     }
                 } else {
-                    echo "<center>No file uploaded.</center><br>";
-                    $new_file = null;
+                    echo "Aucun fichier téléchargé.";
+                    return;
                 }
-        
+    
                 $db = DB::getDB();
                 $sql = "INSERT INTO annonce(titre, categorieId, typeAnnonceId, photo, description, prix, ville, codePostal, createurId) 
                         VALUES (:titre, :categorieId, :typeAnnonceId, :photo, :description, :prix, :ville, :codePostal, :createurId)";
@@ -178,26 +182,125 @@ use Exception;
                 $stmt->bindParam(':prix', $prix);
                 $stmt->bindParam(':ville', $ville);
                 $stmt->bindParam(':codePostal', $codePostal);
-                $stmt->bindParam(':photo', $new_file);
+                $stmt->bindParam(':photo', $file);
                 $stmt->bindParam(':typeAnnonceId', $annonceType);
                 $stmt->bindParam(':categorieId', $categorieSelect);
                 $stmt->bindParam(':createurId', $createurId, PDO::PARAM_INT);
     
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
-    
-                    $query = $db->prepare("SELECT * FROM annonce ORDER BY datePublication ASC");
-                    $query->execute();
-    
-                    $query->fetchAll(PDO::FETCH_ASSOC);
-    
-                    // Traiter les résultats ici si nécessaire
+                    
                 } else {
-                    throw new Exception("Erreur lors de la création de l'annonce: " . $stmt->errorInfo()[2]);
+                    echo "Une erreur est survenue lors de la création de l'annonce.";
                 }
             }
         } catch (PDOException $e) {
-            throw new Exception('PDO Exception: ' . $e->getMessage());
+            echo 'PDO Exception: ' . $e->getMessage();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    
+    private function uploadFile($file)
+    {
+        $tmpName = $file['tmp_name'];
+        $name = $file['name'];
+        $size = $file['size'];
+        $error = $file['error'];
+    
+        $tabExtension = explode('.', $name);
+        $extension = strtolower(end($tabExtension));
+    
+        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        $maxSize = 4000000;
+    
+        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
+            $uniqueName = uniqid('', true);
+            $newFileName = $uniqueName . '.' . $extension;
+    
+            $destination = './upload/' . $newFileName;
+    
+            if (move_uploaded_file($tmpName, $destination)) {
+                return $newFileName;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    
+
+    public function updateAnnonce()
+    { 
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $titre = strip_tags(trim($_POST["titre"]));
+                $description = htmlspecialchars(trim($_POST["description"]));
+                $prix = floatval($_POST["prix"]);
+                $ville = htmlspecialchars(trim($_POST["ville"]));
+                $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
+                $createurId = Auth::getSessionUserId();
+
+                
+                $db = DB::getDB();
+                $sql = "UPDATE annonce SET 
+                        titre = :titre,
+                        description = :description,
+                        prix = :prix,
+                        ville = :ville,
+                        codePostal = :codePostal
+                        WHERE idAnnonce = :idAnnonce";
+    
+                $stmt = $db->prepare($sql);
+    
+                $stmt->bindParam(':titre', $titre);
+                $stmt->bindParam(':description', $description);
+                $stmt->bindParam(':prix', $prix);
+                $stmt->bindParam(':ville', $ville);
+                $stmt->bindParam(':codePostal', $codePostal);
+                $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+    
+                if ($stmt->execute()) {
+                    echo "Annonce mise à jour avec succès";
+                    redirectAndExit(self::URL_PROFIL);
+                    exit();
+                } else {
+                    echo "Une erreur est survenue lors de la mise à jour de l'annonce.";
+                }
+            }
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    
+
+    
+    
+    
+    
+    public function deleteAnnonce()
+    {
+        try {
+            $idUtilisateur = Auth::getSessionUserId();
+    
+            $db = DB::getDB();
+            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
+    
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+    
+            if ($stmt->execute()) {
+                echo "Annonce supprimée avec succès";
+                header("Location: myProfile.php");
+                exit();
+            } else {
+                echo "Une erreur est survenue lors de la suppression de l'annonce.";
+            }
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -229,6 +332,8 @@ use Exception;
         }
     }
     
+
+
     // update annonce
     public static function updateAnnonce(){
         try {
@@ -257,4 +362,7 @@ use Exception;
     }
 }
 
+
     
+    
+}   

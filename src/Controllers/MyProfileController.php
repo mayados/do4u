@@ -4,12 +4,15 @@ namespace App\Controllers;
 use App\Models\Utilisateur;
 use App\Models\Annonce;
 
+
 class MyProfileController extends Controller
 {
-    const URL_CREATE = '/views/creationAd.php';
-    const URL_INDEX = '/views/myProfile.php';
+
+    const URL_CREATE = '/creationAd.php';
+    const URL_INDEX = '/index.php';
+
     const URL_HANDLER = '/handlers/ad-handler.php';
-    private $componentController;
+
     
     public function showMyProfile() {
         // get user id from session
@@ -23,6 +26,8 @@ class MyProfileController extends Controller
         
         require_once __DIR__ . '/../../views/myProfile.php';
     }
+
+
 }
 
     
