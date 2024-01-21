@@ -10,7 +10,11 @@ if (!empty($_POST['action'])) {
     } elseif ($_POST['action'] === 'update') {
         Auth::isAuthOrRedirect();
         $controller->updateAnnonce(); 
-    } 
+    }
+     elseif ($_POST['action'] === 'delete') {
+        Auth::isAuthOrRedirect();
+        $controller->deleteAnnonce(); 
+    }
    
 }
 
@@ -18,4 +22,4 @@ if (!empty($_POST['action'])) {
 App::terminate();
 
 // Unknown action
-redirectAndExit(App\Controllers\AdsController::URL_ADS);
+redirectAndExit(App\Controllers\MyProfileController::URL_INDEX);
