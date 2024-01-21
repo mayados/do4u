@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/sass/main.css">
 </head>
 <body>
-
+<?php ob_start(); ?>
     <main>
     <section class="modification pt-lg-2">
             <div class="container-fluid">
@@ -20,7 +20,7 @@
                         
                         <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
                             <input type="text" name="action" value="updateAnnonce" hidden>
-                            <input type="hidden" name="idAnnonce" value="<?php echo $adDetails['idAnnonce']; ?>">
+                            <input type="hidden" name="idAnnonce" value="<?php echo $adDetails['idAnnonce']; ?>"> 
                         <div class="card cardCre">
                             <div class="card-body">
                                 <h3>Modification d'annonce</h3>
@@ -34,7 +34,7 @@
             <!-- Catégorie -->
                         <div class="mb-3">
                         <label for="categorieSelect" class="form-label">Catégorie *</label>
-                                        <select class="form-select" id="categorieSelect" name="categorieId"
+                                        <select class="form-select" id="categorieSelect" name="categorieId">
                                                             
                             <?php
 
@@ -64,18 +64,18 @@
     ?>
                 <div class="form-check form-check-inline">
                     
-                    <label class="form-check-label" for="inlineRadio1"></label>
+                   
                 </div>
                 <div class="form-check form-check-inline">
                     
-                    <label class="form-check-label" for="inlineRadio2"></label>
-                </div>
-            </div>
+                    
+                </div>                        
 
-           
+           </div>
                 <div class="mb-3">
                     <label for="annonceDescription" class="form-label">Description *</label>
-                    <textarea name="description" value="<?php echo $adDetails['description']; ?>"class="form-control" id="annonceDescription" rows="5"></textarea>
+                    <textarea name="description" class="form-control" id="annonceDescription" rows="5"><?php echo $adDetails['description']; ?></textarea>
+
                 </div>
                 <div class="mb-3">
                     <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">code postal*</label>
-                                        <input type="text" class="form-control" id="codePostal" name="codePostal"value="<?php echo $adDetails['codePostal']; ?>" placeholder="codePostal service" required>
+                                        <input type="text" name="codePostal"value="<?php echo $adDetails['codePostal']; ?>"class="form-control" id="codePostal"  placeholder="codePostal service" required>
                                     </div>
 
                 <!-- Bouton -->
@@ -106,7 +106,7 @@
                 </div>
         </section>
     </main>   
-    
+    <?php ob_end_flush(); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

@@ -380,37 +380,7 @@ class Annonce
         }
     }
 
-    public static function getAdModificationById(int $adId)
-    {
-        try {
-            $db = DB::getDB();
-            $query = $db->prepare("SELECT annonce.*, 
-                                        categorie.nomCategorie AS nomCategorie, 
-                                        utilisateur.nomUtilisateur AS nomUtilisateur, 
-                                        utilisateur.villeUtilisateur AS villeUtilisateur,
-                                        typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
-                                    FROM 
-                                        annonce 
-                                    JOIN 
-                                        categorie ON annonce.categorieId = categorie.idCategorie
-                                    JOIN 
-                                        utilisateur ON annonce.createurId = utilisateur.idUtilisateur
-                                    JOIN 
-                                        typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
-                                    WHERE
-                                        annonce.idAnnonce = :id
-                                    ORDER BY 
-                                        annonce.idAnnonce ASC");
-            $query->bindParam(':id', $adId, PDO::PARAM_INT);
-            $query->execute();
 
-            return $query->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            // Log PDO exceptions
-            echo 'PDO Exception: ' . $e->getMessage();
-            exit();
-        }
-    } 
     public static function getAnnonceTypes($idAnnonce)
     {
         try {

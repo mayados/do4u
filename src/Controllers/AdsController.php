@@ -95,13 +95,13 @@ use Exception;
 
     public function showModificationPage()
     {   $idAnnonce = isset($_GET['id']) ? $_GET['id'] : null; 
-        $adDetails = Annonce::getAdDetailsById($idAnnonce);
-        $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
+       $adDetails =  Annonce::getAdDetailsById($idAnnonce);
+        $annonceTypes= Annonce::getAnnonceTypes($idAnnonce);
 
        
-        $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
+        $annonceTypeIds= Annonce::getAnnonceTypeIds($idAnnonce);
         $categories = Annonce::getAllCategories();
-        $actionUrl = self::URL_DETAIL;
+        $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/modificationAd.php';
    
      
@@ -188,7 +188,7 @@ use Exception;
     
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
-                    echo "Image enregistrée";
+                    
                 } else {
                     echo "Une erreur est survenue lors de la création de l'annonce.";
                 }
@@ -230,16 +230,17 @@ use Exception;
     }
     
 
-    public function updateAnnonce($idAnnonce)
-    {  
+    public function updateAnnonce()
+    { 
         try {
-    
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $titre = strip_tags(trim($_POST["titre"]));
                 $description = htmlspecialchars(trim($_POST["description"]));
                 $prix = floatval($_POST["prix"]);
                 $ville = htmlspecialchars(trim($_POST["ville"]));
                 $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
+                $createurId = Auth::getSessionUserId();
+
                 
                 $db = DB::getDB();
                 $sql = "UPDATE annonce SET 
@@ -261,24 +262,29 @@ use Exception;
     
                 if ($stmt->execute()) {
                     echo "Annonce mise à jour avec succès";
-                    self::URL_DETAIL;
+                    redirectAndExit(self::URL_PROFIL);
                     exit();
                 } else {
-                    throw new Exception("Erreur lors de la mise à jour de l'annonce: " . $stmt->errorInfo()[2]);
+                    echo "Une erreur est survenue lors de la mise à jour de l'annonce.";
                 }
             }
         } catch (PDOException $e) {
-            throw new Exception('PDO Exception: ' . $e->getMessage());
+            echo 'PDO Exception: ' . $e->getMessage();
         } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
     
+
     
-    public function deleteAnnonce($idAnnonce)
-    {          $idUtilisateur = Auth::getSessionUserId(); 
-       
+    
+    
+    
+    public function deleteAnnonce()
+    {
         try {
+            $idUtilisateur = Auth::getSessionUserId();
+    
             $db = DB::getDB();
             $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
     
@@ -287,17 +293,19 @@ use Exception;
     
             if ($stmt->execute()) {
                 echo "Annonce supprimée avec succès";
-                // Redirection 
                 header("Location: myProfile.php");
                 exit();
             } else {
-                throw new Exception("Erreur lors de la suppression de l'annonce: " . $stmt->errorInfo()[2]);
+                echo "Une erreur est survenue lors de la suppression de l'annonce.";
             }
         } catch (PDOException $e) {
-            throw new Exception('PDO Exception: ' . $e->getMessage());
+            echo 'PDO Exception: ' . $e->getMessage();
         } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
+    
+
+    
     
 }   
