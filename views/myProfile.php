@@ -92,38 +92,41 @@
                                         <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
                                             <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php?id=<?php echo $ad['idAnnonce'] ?>">Consulter <i class="fa-solid fa-eye"></i></a>
                                             <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php">Modifier <i class="fa-solid fa-pen"></i></a>
-                                            <form action="<?php echo $actionUrl ?>" method="POST">
-                                                <input type="text" name="action" value="delete" hidden>
-                                                <input type="text" name="id" value="<?php echo($ad['idAnnonce']) ?>" hidden>
-                                                <button type="submit" class="action-ad-link text-center border-0 p-2 rounded action-ad-supprimer">Supprimer</button>
+
+                                            <!-- Add data-bs-toggle and data-bs-target to trigger the modal -->
+                                            <button type="button" class="action-ad-link text-center border-0 p-2 rounded action-ad-supprimer" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+                                            Supprimer
+                                            </button>
+
+                                            <!-- Hidden form for deletion -->
+                                            <form id="deleteForm" action="<?php echo $actionUrl ?>" method="POST">
+                                            <input type="text" name="action" value="delete" hidden>
+                                            <input type="text" name="id" value="<?php echo($ad['idAnnonce']) ?>" hidden>
                                             </form>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
 
                             <!-- Modal for ad delete -->
-                            <!-- <div class="modal fade modal-z-index" id="modal_ad_<?php echo $ad['idAnnonce']; ?>" tabindex="-1" aria-labelledby="suppressionAnnonce_<?php echo $ad['idAnnonce']; ?>" aria-hidden="true">
+                            <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title fs-5" id="suppressionAnnonce_<?php echo $ad['idAnnonce']; ?>">Supprimer mon annonce</h2>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Etes-vous sûr de vouloir supprimer votre annonce "<?php echo $ad['titre']; ?>" ?<br>
-                                                Attention, cette action est irréversible</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <form action="<?php echo($actionUrl); ?>" method="POST">
-                                                <input type="text" name="action" value="delete" hidden>
-                                                <input type="text" name="id" value="<?php echo($ad['idAnnonce']) ?>" hidden>
-                                                <button type="submit" class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0">Supprimer</button>
-                                            </form>
-                                        </div>
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Etes-vous sûr de vouloir supprimer cette annonce ?
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                        <!-- Directly trigger the form submission from the modal -->
+                                        <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+                                    </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         <?php endforeach; ?>
                     </div>
  
@@ -397,7 +400,7 @@
                                 <button class="vertical-dots d-flex align-items-center rounded signalement" id="signalement1" tabindex="0"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 <button class="signalement-action button-secondary-regular" id="signalement_avis1" tabindex="-1" data-bs-toggle="modal" data-bs-target="#signalement_modal1">Signaler</button>
                                 <div class="modal fade modal-z-index" id="signalement_modal1" tabindex="-1" aria-labelledby="signalerAvis" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                         <h2 class="modal-title fs-5 text-center" id="signalerAvis1">Signaler l'avis</h2>
@@ -484,6 +487,12 @@
     <?php endif; ?>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <script>
+        document.getElementById('confirmDelete').addEventListener('click', function () {
+            // Trigger the form submission directly from the modal
+            var form = document.getElementById('deleteForm');
+            form.submit();
+        });
+    x</script>
 </body>
 </html>
