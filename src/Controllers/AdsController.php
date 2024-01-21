@@ -9,6 +9,7 @@ use Exception;
 
     class AdsController extends Controller
     {
+        const URL_PROFIL = '/MyProfile.php';
         const URL_CREATE = '/creationAd.php';
         const URL_UPDATE = '/modificationAd.php';
         const URL_INDEX = '/ads.php';
@@ -67,7 +68,10 @@ use Exception;
         $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/creationAd.php';
     }
-
+    public function showMyProfil()
+    {
+        require_once __DIR__ . '/../../views/MyProfile.php';
+    }
     public function showAdDetails()
     {   
         $annonceOffre = Annonce::getOffre();
@@ -90,20 +94,16 @@ use Exception;
     }
 
     public function showModificationPage()
-    {           if (isset($_GET['id'])) {
-        $adId = intval($_GET['id']);
-        $adModification = Annonce::getAdModificationById($adId);
+    {   $idAnnonce = isset($_GET['id']) ? $_GET['id'] : null; 
+        $adDetails = Annonce::getAdDetailsById($idAnnonce);
+        $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
 
-        if ($adModification) {
-            require_once __DIR__ . '/../../views/modificationAd.php';
-        } else {
-            // Handle case where ad with the given ID was not found
-            echo '<p>Ad not found</p>';
-        }
-    } else {
-        // Handle case where 'id' parameter is not set in the URL
-        echo '<p>Ad ID not provided</p>';
-    }
+       
+        $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
+        $categories = Annonce::getAllCategories();
+        $actionUrl = self::URL_DETAIL;
+        require_once __DIR__ . '/../../views/modificationAd.php';
+   
      
     }
 
@@ -231,9 +231,9 @@ use Exception;
     
 
     public function updateAnnonce($idAnnonce)
-    {     
-    
+    {  
         try {
+    
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $titre = strip_tags(trim($_POST["titre"]));
                 $description = htmlspecialchars(trim($_POST["description"]));
@@ -261,8 +261,7 @@ use Exception;
     
                 if ($stmt->execute()) {
                     echo "Annonce mise à jour avec succès";
-                    // Redirection 
-                    header("Location: myProfile.php?idAnnonce=" . $idAnnonce);
+                    self::URL_DETAIL;
                     exit();
                 } else {
                     throw new Exception("Erreur lors de la mise à jour de l'annonce: " . $stmt->errorInfo()[2]);
@@ -274,6 +273,7 @@ use Exception;
             echo $e->getMessage();
         }
     }
+    
     
     public function deleteAnnonce($idAnnonce)
     {          $idUtilisateur = Auth::getSessionUserId(); 

@@ -17,9 +17,10 @@
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
                         <!-- Colonne gauche avec formulaire -->
-                        <?php if ($adModification): ?>  
+                        
                         <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
                             <input type="text" name="action" value="updateAnnonce" hidden>
+                            <input type="hidden" name="idAnnonce" value="<?php echo $adDetails['idAnnonce']; ?>">
                         <div class="card cardCre">
                             <div class="card-body">
                                 <h3>Modification d'annonce</h3>
@@ -27,59 +28,66 @@
             <!-- Titre de l'annonce -->
                         <div class="mb-3">
                             <label for="annonceTitle" class="form-label">Titre de votre annonce *</label>
-                            <input type="text" name="titre" value="" class="form-control" id="titre" placeholder=" " required>
+                            <input type="text" name="titre" value="<?php echo $adDetails['titre']; ?>" class="form-control" id="titre" placeholder=" " required>
                         </div>
 
             <!-- Catégorie -->
                         <div class="mb-3">
                         <label for="categorieSelect" class="form-label">Catégorie *</label>
-                                        <select class="form-select" id="categorieSelect" name="categorieId" required>
-                                            <option selected>Choisir une catégorie</option>
-                                            <option value="1">Ménage</option>
-                                            <option value="2">Services à la personne</option>
-                                            <option value="3">Rénovation & construction</option>
-                                            <option value="4">Jardinage & bricolage</option>
-                                            <option value="5">Réparation & maintenance</option>
-                                            <option value="6">Informatique & administratif</option>
-                                            <option value="7">Cours & coaching</option>
-                                            <option value="8">Evènements & divertissements</option>
-                                            <option value="9">Santé & bien-être</option>
-                                            <option value="10">Animaux</option>
-                                            <option value="11">Artisanat & création</option>
-                                            <option value="12">Garde d'enfants</option>
-                                            <option value="13">Autres</option>
+                                        <select class="form-select" id="categorieSelect" name="categorieId"
+                                                            
+                            <?php
+
+                            $annonceCategorieId = $annonceDetails['categorieId'];
+
+                            foreach ($categories as $categorie) {
+                                $selected = ($categorie['idCategorie'] == $annonceCategorieId) ? 'selected' : '';
+                                echo '<option value="' . $categorie['idCategorie'] . '" ' . $selected . '>' . $categorie['nomCategorie'] . '</option>';
+                            }
+                            ?>
                                         </select>
-            </div>
+                     
+                                    </div>
 
             <!-- Type d'annonce -->
             <div class="mb-3 typecheck">
                 <span>Type d'annonce &nbsp;</span>
+                <?php
+ 
+    foreach ($annonceTypes as $type) {
+        $checked = (in_array($type['idTypeAnnonce'], $annonceTypeIds)) ? 'checked' : '';
+        echo '<div class="form-check form-check-inline">';
+        echo '<input class="form-check-input" type="checkbox" name="typeAnnonceId[]" value="' . $type['idTypeAnnonce'] . '" ' . $checked . '>';
+        echo '<label class="form-check-label">' . $type['nomTypeAnnonce'] . '</label>';
+        echo '</div>';
+    }
+    ?>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="typeAnnonceId" id="inlineRadio1" value="1"  required>
-                    <label class="form-check-label" for="inlineRadio1">Offre</label>
+                    
+                    <label class="form-check-label" for="inlineRadio1"></label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="typeAnnonceId" id="inlineRadio2" value="2"  required>
-                    <label class="form-check-label" for="inlineRadio2">Demande</label>
+                    
+                    <label class="form-check-label" for="inlineRadio2"></label>
                 </div>
             </div>
 
            
                 <div class="mb-3">
                     <label for="annonceDescription" class="form-label">Description *</label>
-                    <textarea name="description" class="form-control" id="annonceDescription" rows="5"></textarea>
+                    <textarea name="description" value="<?php echo $adDetails['description']; ?>"class="form-control" id="annonceDescription" rows="5"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
-                    <input type="text" name="prix" value="" class="form-control" id="annoncePrix" placeholder="Votre prix de service" required>
+                    <input type="text" name="prix" value="<?php echo $adDetails['prix']; ?>" class="form-control" id="annoncePrix" placeholder="Votre prix de service" required>
                 </div>
                 <div class="mb-3">
                     <label for="annonceLieu" class="form-label">Votre lieu de service ? *</label>
-                    <input type="text" name="ville" value="" class="form-control" id="annonceLieu" placeholder="Votre lieu de service" required>
+                    <input type="text" name="ville" value="<?php echo $adDetails['ville']; ?>" class="form-control" id="annonceLieu" placeholder="Votre lieu de service" required>
                 </div>
                 <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">code postal*</label>
-                                        <input type="text" class="form-control" id="codePostal" name="codePostal" placeholder="codePostal service" required>
+                                        <input type="text" class="form-control" id="codePostal" name="codePostal"value="<?php echo $adDetails['codePostal']; ?>" placeholder="codePostal service" required>
                                     </div>
 
                 <!-- Bouton -->
@@ -90,7 +98,7 @@
         </div> 
     </form>
 </div>
-<?php endif; ?>              
+          
                     <div class="col-lg-4">
                             <img src="assets/img/Img_page_ads/kit.jpg" class="img-fluid rounded d-none d-lg-block"  alt="Image">
                         </div>

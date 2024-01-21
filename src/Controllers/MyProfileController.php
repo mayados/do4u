@@ -3,6 +3,11 @@
 namespace App\Controllers;
 use App\Models\Utilisateur;
 use App\Models\Annonce;
+use DB;
+use PDO;
+use Auth;
+use PDOException;
+use Exception;
 
 class MyProfileController extends Controller
 {
@@ -22,6 +27,8 @@ class MyProfileController extends Controller
         
         require_once __DIR__ . '/../../views/myProfile.php';
     }
+
+
 }
 
     

@@ -411,4 +411,48 @@ class Annonce
             exit();
         }
     } 
-}
+    public static function getAnnonceTypes($idAnnonce)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT typeannonce.idTypeAnnonce, typeannonce.nomTypeAnnonce
+                                    FROM annonce
+                                    JOIN typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce
+                                    WHERE annonce.idAnnonce = :id");
+    
+            $query->bindParam(':id', $idAnnonce, PDO::PARAM_INT);
+            $query->execute();
+    
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    public static function getAnnonceTypeIds($idAnnonce)
+    {
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT typeannonce.idTypeAnnonce
+                                    FROM annonce
+                                    JOIN typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce
+                                    WHERE annonce.idAnnonce = :id");
+    
+            $query->bindParam(':id', $idAnnonce, PDO::PARAM_INT);
+            $query->execute();
+    
+            $typeIds = array();
+            while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $typeIds[] = $row['idTypeAnnonce'];
+            }
+    
+            return $typeIds;
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+    }
+    
+}    
