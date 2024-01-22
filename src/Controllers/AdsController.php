@@ -94,19 +94,30 @@ use Exception;
     }
 
     public function showModificationPage()
-    {   $idAnnonce = isset($_GET['id']) ? $_GET['id'] : null; 
-       $adDetails =  Annonce::getAdDetailsById($idAnnonce);
-        $annonceTypes= Annonce::getAnnonceTypes($idAnnonce);
+    {
+      
+        if (isset($_GET['id'])) {
+            $idAnnonce = intval($_GET['id']);
+            
+            $adModification = Annonce::getModificationAd($idAnnonce);
 
-       
-        $annonceTypeIds= Annonce::getAnnonceTypeIds($idAnnonce);
-        $categories = Annonce::getAllCategories();
-        $actionUrl = self::URL_HANDLER;
-        require_once __DIR__ . '/../../views/modificationAd.php';
-   
-     
+                if ($adModification){
+                $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
+                $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
+    
+                $categories = Annonce::getAllCategories();
+    
+                $actionUrl = self::URL_HANDLER;
+
+                    require_once __DIR__ . '/../../views/modificationAd.php';
+                 }
+
+    
+            
+                
+        }
     }
-
+    
     public function showContactPage()
     {
         require_once __DIR__ . '/../../views/contact.php';
@@ -235,6 +246,7 @@ use Exception;
     public function updateAnnonce()
     { 
         try {
+            $idAnnonce = intval($_POST["id"]);
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $titre = strip_tags(trim($_POST["titre"]));
                 $description = htmlspecialchars(trim($_POST["description"]));
