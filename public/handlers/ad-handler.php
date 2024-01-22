@@ -2,7 +2,6 @@
 require_once __DIR__.'/../../bootstrap/app.php'; 
 
 
-
 if (!empty($_POST['action'])) {
     $controller = new App\Controllers\AdsController();
 
@@ -13,7 +12,7 @@ if (!empty($_POST['action'])) {
         Auth::isAuthOrRedirect(); 
         $controller->updateAnnonce(); 
 
-    } elseif ($_POST['action'] === 'deleteAnnonce') {
+    } elseif ($_POST['action'] === 'delete') {
         Auth::isAuthOrRedirect(); 
         $controller->deleteAnnonce();
     }

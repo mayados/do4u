@@ -276,36 +276,6 @@ use Exception;
             echo $e->getMessage();
         }
     }
-    
-
-    
-    
-    
-    
-    public function deleteAnnonce()
-    {
-        try {
-            $idUtilisateur = Auth::getSessionUserId();
-    
-            $db = DB::getDB();
-            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
-    
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
-    
-            if ($stmt->execute()) {
-                echo "Annonce supprimée avec succès";
-                header("Location: myProfile.php");
-                exit();
-            } else {
-                echo "Une erreur est survenue lors de la suppression de l'annonce.";
-            }
-        } catch (PDOException $e) {
-            echo 'PDO Exception: ' . $e->getMessage();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
    
     // delete annonce by id
     public static function deleteAnnonce()
@@ -333,8 +303,3 @@ use Exception;
     }
     
 }
-
-
-    
-    
-}   
