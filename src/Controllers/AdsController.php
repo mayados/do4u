@@ -185,6 +185,7 @@ use Exception;
     
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
+                    redirectAndExit(self::MY_PROFIEL_URL);
     
                     $query = $db->prepare("SELECT * FROM annonce ORDER BY datePublication ASC");
                     $query->execute();
@@ -203,8 +204,7 @@ use Exception;
         }
     }
    
-    // delete annonce
-    // delete annonce
+    // delete annonce by id
     public static function deleteAnnonce()
     {
         try {
@@ -229,6 +229,7 @@ use Exception;
         }
     }
     
+
     // update annonce
     public static function updateAnnonce(){
         try {
