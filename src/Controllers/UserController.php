@@ -21,15 +21,4 @@ class UserController extends Controller
         require_once __DIR__ . '/../../views/userProfile.php';
     }
 
-    public function showMyParameters()
-    {
-        $this->render('parameters');
-    }
- 
-
-    public function showInscription() : void
-    {
-        $this->render('inscription');
-    }
-
 }
