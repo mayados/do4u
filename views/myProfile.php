@@ -109,17 +109,7 @@
 
                                         </div>
                                     </div> 
-                                </div>
-
-                                <div class="card-body">
-                                    <p class="card-title text-center fw-bold text-start"><?php echo $ad['titre']; ?> </p>
-                                    <div class="flex-column d-flex justify-content-evenly gap-3 pt-2 container-ad-actions">
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-consulter" href="adDetails.php?id=<?php echo $ad['idAnnonce'] ?>">Consulter <i class="fa-solid fa-eye"></i></a>
-                                        <a class="action-ad-link text-center p-2 rounded action-ad-modifier" href="modificationAd.php?id=<?php echo $ad['idAnnonce'] ?>">Modifier <i class="fa-solid fa-pen"></i></a>
-                                        <button  class="action-ad-link text-center p-2 rounded action-ad-supprimer border-0" type='submit' data-bs-toggle="modal" data-bs-target="#modal_ad_petsitter">Supprimer <i class="fa-solid fa-trash"></i></button>                                
-                                    </div>
-                                </div>                            
-
+                                </div>                          
                             </div>
 
                             <!-- Modal for ad delete -->
