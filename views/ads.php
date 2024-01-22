@@ -46,6 +46,17 @@
                 </div> -->
             </div>
 
+            <!-- Barre de recherche  message -->
+            <?php if (isset($searchTerm) && !empty($annonces)): ?>
+                <div class="row d-flex justify-content-center pt-3">
+                    <p class="text-center">
+                        <?php $numberOfAnnouncements = count($annonces); 
+                            echo $numberOfAnnouncements .' annonces publiées trouvée pour le terme de recherche \'' . htmlspecialchars($searchTerm) . '\' dans cette page !';
+                        ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <?php foreach ($annonces as $annonce): ?>
                 <div class="col">
@@ -115,8 +126,12 @@
                 </div>
             <?php endforeach; ?>
             <!-- Fin de la boucle foreach -->
-
       </div>
+            <?php if (empty($annonces)): ?>
+                <div class="row d-flex justify-content-center pt-3">
+                    <p class="text-center">Aucune annonce trouvée pour le terme de recherche '<?php echo htmlspecialchars($searchTerm); ?>'</p>
+                </div>
+            <?php endif; ?>
         <!-- Pagination -->
         <div class="row pt-3 pb-3">
             <div class="col-12 d-flex justify-content-center">

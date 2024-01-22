@@ -23,6 +23,7 @@
                         <!-- <h2 class=" h1">Votre plateforme de choix de prestataires et d'offres de services ! </h2> -->
                         <h2 class="pb-5 animate__animated animate__fadeInDownBig">Votre plateforme de choix de prestataires et d'offres de services !</h2>
                         <h4 class="scale-up-center">Profitez de la tranquillité d'esprit en sachant que vous faites appel à des individus passionnés par la fourniture de services de qualité.</h4>
+                        <h4>Inscrivez-vous et créez votre première annonce !</h4>
                         <a class="mt-2 btn button-primary-pill" href="contact.php">En savoir plus</a>
                     </div>
                     <div class="col-md-6 ">
@@ -50,7 +51,7 @@
                                 <a href="adDetails.php?id=<?php echo $offre['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                            <img src="assets/img/cards/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                            <img src="handlers/upload/<?php echo $offre['photo']; ?>" class="img-fluid card-img-top" alt="...">
                                             <div class="offer-badge">
                                                 <span class="offer-badge"><?php echo $offre['nomTypeAnnonce'] ?></span>
                                             </div>
@@ -128,7 +129,7 @@
                                 <a href="adDetails.php?id=<?php echo $demande['idAnnonce']; ?>" class="card-link">
                                     <div class="card h-100 card-ad">
                                         <div class="position-relative">
-                                        <img src="assets/img/cards/<?php echo $demande['photo']; ?>" class="img-fluid card-img-top" alt="...">
+                                        <img src="handlers/upload/<?php echo $demande['photo']; ?>" class="img-fluid card-img-top" alt="...">
 
                                         <div class="demande-badge">
                                             <span class="demande-badge"><?php echo $demande['nomTypeAnnonce'] ?></span>

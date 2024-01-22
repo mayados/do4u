@@ -328,7 +328,12 @@ class Annonce
             $query->execute();
 
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+
+            if (empty($result)) {
+                return "No annonces found for the search term '$terme'";
+            } else {
+                return $result;
+            }
         } catch (PDOException $e) {
             echo 'PDO Exception: ' . $e->getMessage();
             exit();
