@@ -27,6 +27,11 @@ class MyProfileController extends Controller
         require_once __DIR__ . '/../../views/myProfile.php';
     }
 
+    public function showMyParameters()
+    {
+        $this->render('parameters');
+    }
+
 
 }
 

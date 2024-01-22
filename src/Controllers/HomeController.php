@@ -20,9 +20,7 @@ class HomeController extends Controller
      public function cguPage() {
         require_once __DIR__ . '/../../views/cgu.php';
     }
-    public function showMyParameters() {
-        require_once __DIR__ . '/../../views/parameters.php';
-    }
+    
     public function showPolitiquePage() {
         require_once __DIR__ . '/../../views/politique.php';
     }

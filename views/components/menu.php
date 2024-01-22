@@ -115,10 +115,10 @@
                         <button class="border-0 nav-link user-link" aria-haspopup="true" aria-label="Ouvrir le sous-menu utilisateur" role="button"><i class="fa-solid fa-user"></i></button>
                         <ul class="na__dropdown na__dropdown_user" aria-label="Sous-menu utilisateur">
                             <li>
-                                <a href="myProfile.php?=id<?php echo($_SESSION['current_user_id']) ?>">Mon profil</a>
+                                <a href="myProfile.php?id=<?php echo($_SESSION['current_user_id']) ?>">Mon profil</a>
                             </li>
                             <li>
-                                <a href="parameters.php">Paramètres</a>
+                                <a href="parameters.php?id=<?php echo($_SESSION['current_user_id']) ?>">Paramètres</a>
                             </li>
                             <li>
                                 <form action="/handlers/auth-handler.php" method="post" id="logout">
