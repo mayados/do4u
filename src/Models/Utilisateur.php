@@ -112,7 +112,7 @@ class Utilisateur extends Model
         return false;
     }
 
-
+    // insert user in database
     public function addUtilisateur()
     {
 
@@ -145,6 +145,7 @@ class Utilisateur extends Model
 
     }
 
+    // get user by id
     public static function getUserById(int $idUtilisateur): ?Utilisateur
     {
         try {
@@ -175,4 +176,24 @@ class Utilisateur extends Model
             exit();
         }
     }
+
+    // update the data of user in parameters page
+    public static function updateUtilisateur(int $idUtilisateur, string $villeUtilisateur, string $description): bool
+    {
+        try {
+            $db = DB::getDB();
+            $sql = "UPDATE utilisateur SET villeUtilisateur = :villeUtilisateur, description = :description WHERE idUtilisateur = :idUtilisateur";
+            $stmt = $db->prepare($sql);
+            
+            $stmt->bindParam(':idUtilisateur', $idUtilisateur);
+            $stmt->bindParam(':villeUtilisateur', $villeUtilisateur);
+            $stmt->bindParam(':description', $description);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo 'PDO Exception: ' . $e->getMessage();
+            return false;
+        }
+    }
+
 }

@@ -38,6 +38,7 @@
         </section>
         <section class="container-fluid d-flex d-flex-column">
             <div class="container parametres-content">
+            <?php if ($users): ?>
                 <div class="row ">
                     <div class="col-lg-3 col-12">
                         <div id="choose-photo">
@@ -48,12 +49,8 @@
                         <form action="">
                             <div class="form-row mb-0">
                                 <div class="col form-group">
-                                    <label for="pseudo">Pseudo</label>
-                                    <input type="text" class="form-control" id="pseudo" placeholder="lola_67" disabled>
-                                </div>
-                                <div class="col form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="lola_67@gmail.com" disabled>
+                                    <input type="email" class="form-control" id="email" placeholder="<?php echo $users->getEmail() ?>" disabled>
                                 </div>
                             </div>
                         </form>
@@ -66,23 +63,30 @@
                                     <div class="form-row mb-0">
                                         <div class="col form-group">
                                             <label for="nom">Nom</label>
-                                            <input type="text" class="form-control" id="nom" placeholder="Dupont" disabled>
+                                            <input type="text" class="form-control" id="nom" placeholder="<?php echo $users->getNomUtilisateur() ?>" disabled>
                                           </div>
                                           <div class="col form-group">
                                               <label for="prenom">Prénom</label>
-                                              <input type="text" class="form-control" id="prenom" placeholder="Lola" disabled>
+                                              <input type="text" class="form-control" id="prenom" placeholder="<?php echo $users->getPrenomUtilisateur() ?>" disabled>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="adresse">Adresse (ville + code postal)</label>
-                                        <input type="text" class="form-control" id="adresse" placeholder="Strasbourg">
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label for="bio">Bio</label>
-                                        <div class="form-floating">
-                                            <textarea class="form-control" id="bio">Sociale, à l’écoute, bienveillante et sérieuse, j’adore m’occuper des personnes âgées. Ayant déjà plusieurs expériences réussies dans le service à la personne, je suis une aliée de confiance. </textarea>
-                                          </div>
-                                      </div>
+                                    <!-- form to update user data -->
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="adresse">Adresse (ville + code postal)</label>
+                                            <input type="text" class="form-control" id="adresse" placeholder="<?php echo $users->getVilleUtilisateur() ?>">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="bio">Bio</label>
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="bio"><?php echo $users->getDescription() ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-row gap-3 mt-4">
+                                            <button type="submit" class="btn btn-parametres">Annuler</button>
+                                            <button type="submit" class="btn btn-parametres">Enregistrer</button>
+                                        </div>
+                                    </form>
                                     <div class="line-divider mt-4"></div>
                                     <div class="mt-4">
                                       <a href="#" class="text-black">Changer mot de passe</a>
@@ -90,14 +94,11 @@
                                     <div class="mt-4">
                                         <a href="#" class="text-danger">Supprimer mon compte</a>
                                     </div>
-                                    <div class="form-row gap-3 mt-4">
-                                        <button type="submit" class="btn btn-parametres">Annuler</button>
-                                        <button type="submit" class="btn btn-parametres">Enregistrer</button>
-                                    </div>
                                 </form> 
                             </div>
                     </div>
                 </div>
+            <?php endif; ?>
             </div>
         </section>
     </main>
