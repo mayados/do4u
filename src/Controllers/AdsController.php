@@ -7,6 +7,7 @@ use PDOException;
 use Auth;
 use Exception;
 
+    // Path: src/Controllers/AdsController.php
     class AdsController extends Controller
     {
         const URL_PROFIL = '/MyProfile.php';
@@ -19,6 +20,7 @@ use Exception;
         const ITEMS_PER_PAGE = 8;
         const MY_PROFIEL_URL = '/myProfile.php';
 
+    // show all ads
     public function getAll()
     {
         $userId = Auth::getSessionUserId();
@@ -56,22 +58,26 @@ use Exception;
         require_once __DIR__ . '/../../views/components/menu.php';
     }
 
-
+    //  show ads by categorie
     public function showAdsByCategorie()
     {   
         require_once __DIR__ . '/../../views/ads.php';
     }
 
-
+    // add creation page
     public function showCreationPage()
     {
         $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/creationAd.php';
     }
+
+    // my profile page
     public function showMyProfil()
     {
         require_once __DIR__ . '/../../views/MyProfile.php';
     }
+
+    // show ad details
     public function showAdDetails()
     {   
         $annonceOffre = Annonce::getOffre();
@@ -93,6 +99,7 @@ use Exception;
         }
     }
 
+    // show modification page
     public function showModificationPage()
     {
       
@@ -101,60 +108,62 @@ use Exception;
             
             $adModification = Annonce::getModificationAd($idAnnonce);
 
-                if ($adModification){
-                $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
-                $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
-    
-                $categories = Annonce::getAllCategories();
-    
-                $actionUrl = self::URL_HANDLER;
+            if ($adModification){
+            $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
+            $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
 
-                    require_once __DIR__ . '/../../views/modificationAd.php';
-                 }
+            $categories = Annonce::getAllCategories();
 
-    
-            
-                
+            $actionUrl = self::URL_HANDLER;
+
+                require_once __DIR__ . '/../../views/modificationAd.php';
+            }      
         }
     }
     
+    // show contact page
     public function showContactPage()
     {
         require_once __DIR__ . '/../../views/contact.php';
     }
 
-
-    public function seachByKeyword()
-    {   
-        try
-        {
+    // search by keyword
+    public function searchByKeyword()
+    {
+        try {
             $bdd = DB::getDB();
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        catch(Exception $e)
-        {
+        } catch (Exception $e) {
             die("Une érreur a été trouvée : " . $e->getMessage());
         }
+
         $bdd->query("SET NAMES UTF8");
 
-        if (isset($_GET["s"]) && $_GET["s"] == "Rechercher")
-        {
+        if (isset($_GET["s"]) && $_GET["s"] == "Rechercher") {
             $terme = isset($_GET["terme"]) ? htmlspecialchars($_GET["terme"]) : '';
-            $terme = trim($terme); 
-            $terme = strip_tags($terme); 
+            $terme = trim(strip_tags($terme));
 
-            if (!empty($terme))
-            {
+            if (!empty($terme)) {
                 $terme = strtolower($terme);
-                $select_terme = Annonce::chercher($terme);
-            }
-            else
-            {
-                $message = "Vous devez entrer votre requête dans la barre de recherche";
+                $terms = str_split($terme);
+                $select_terme = Annonce::chercherMultiChars($terms);
+
+                if (is_array($select_terme) && !empty($select_terme)) {
+                    // Handle $select_terme as an array of results
+                    print_r($select_terme);
+                } else {
+                    // Display a message indicating no results
+                    echo "No annonces found for the search term '{$terme}'";
+                }
+            } else {
+                // Display a message for an empty search term
+                echo "Vous devez entrer votre requête dans la barre de recherche";
             }
         }
     }
 
+
+    // create annonce controller
     public function createAnnonce()
     {
         try {
@@ -213,6 +222,7 @@ use Exception;
         }
     }
     
+    // upload file function
     private function uploadFile($file)
     {
         $tmpName = $file['tmp_name'];
@@ -242,7 +252,7 @@ use Exception;
         }
     }
     
-
+    // update annonce function
     public function updateAnnonce()
     {
         try {

@@ -10,7 +10,7 @@ class MyProfileController extends Controller
 
     const URL_CREATE = '/creationAd.php';
     const URL_INDEX = '/index.php';
-    const URL_HANDLER = '/handlers/ad-handler.php';
+    const URL_HANDLER = '/handlers/user-handler.php';
     
 
     
@@ -29,15 +29,16 @@ class MyProfileController extends Controller
     public function showMyParameters()
     {   
 
-        $users = Utilisateur::getUserById($_SESSION['current_user_id']);
+        $actionUrl = self::URL_HANDLER;
 
+        $users = Utilisateur::getUserById($_SESSION['current_user_id']);
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Assuming you have the user ID in the session
+            dd($_POST);
             $idUtilisateur = $_SESSION['current_user_id'];
             
-            // Retrieve form data
-            $villeUtilisateur = $_POST['adresse'];
-            $description = $_POST['bio'];
+            $villeUtilisateur = $_POST['villeUtilisateur'];
+            $description = $_POST['description'];
 
             // Update user information
             $utilisateur = new Utilisateur();
