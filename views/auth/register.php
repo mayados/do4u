@@ -33,48 +33,56 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
-                                <form action="<?php echo $actionUrl ?>" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" >
-                                    <input type="text" name="action" value="store" hidden>
-                                       <div class="form-row mb-0">
-                                            <div class=" col form-group">
-                                                <label for="email">Nom <span class="text-danger">*</span></label>
-                                                <input type="text" name="nomUtilisateur" class="form-control" id="nom" placeholder="Votre nom">
-                                              </div>
-                                              <div class="col form-group">
-                                                  <label for="nom">Prénom <span class="text-danger">*</span></label>
-                                                  <input type="text" name="prenomUtilisateur" class="form-control" id="prenom" placeholder="Votre prénom">
+                                    <form action="<?php echo $actionUrl ?>" method="POST" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" >
+                                        <input type="text" name="action" value="store" hidden>
+                                        <div class="form-row mb-0">
+                                            <div class="col form-group">
+                                                <label for="nom">Nom <span class="text-danger">*</span></label>
+                                                <input type="text" name="nomUtilisateur" class="form-control" id="nom" placeholder="Votre nom" required>
+                                                <div class="error-message text-small text-danger" id="error-nom"></div>
+                                            </div>
+                                            <div class="col form-group">
+                                                <label for="prenom">Prénom <span class="text-danger">*</span></label>
+                                                <input type="text" name="prenomUtilisateur" class="form-control" id="prenom" placeholder="Votre prénom" required>
+                                                <div class="error-message text-small text-danger" id="error-prenom"></div>
                                             </div>
                                         </div>
                                         <div class="form-row mb-0">
-                                            <div class=" col form-group">
-                                                <label for="email"> email <span class="text-danger">*</span></label>
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail">       
+                                            <div class="col form-group">
+                                                <label for="email">Email <span class="text-danger">*</span></label>
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Votre Adresse mail" required>
+                                                <div class="error-message text-small text-danger" id="error-email"></div>
                                             </div>
                                             <div class="col form-group">
-                                                <label for="ville"> ville <span class="text-danger">*</span></label>
-                                                <input type="ville" name="villeUtilisateur" class="form-control" id="ville" placeholder="Votre Adresse ville">
+                                                <label for="ville">Ville <span class="text-danger">*</span></label>
+                                                <input type="text" name="villeUtilisateur" class="form-control" id="ville" placeholder="Votre Adresse ville" required>
+                                                <div class="error-message text-small text-danger" id="error-ville"></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="pseudo">codePostal <span class="text-muted"></span> <span class="text-danger">*</span></label>
-                                            <input type="text" name="codePostalUtilisateur" class="form-control" id="adresse" placeholder="Votre adresse">
+                                            <label for="codePostal">Code Postal <span class="text-danger">*</span></label>
+                                            <input type="text" name="codePostalUtilisateur" class="form-control" id="codePostal" placeholder="Votre code postal" required>
+                                            <div class="error-message text-small text-danger" id="error-codePostal"></div>
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="motPass">Mot de passe <span class="text-danger">*</span></label>
-                                            <input type="password" name="motDePasse" class="form-control" id="motPass" placeholder="Votre mot de pass">
-                                          </div>
+                                            <input type="password" name="motDePasse" class="form-control" id="motPass" placeholder="Votre mot de passe" required>
+                                            <div class="error-message text-small text-danger" id="error-motPass"></div>
+                                        </div>
                                         <div class="form-group mt-3">
-                                          <label for="motPass">Confirmer mot de passe <span class="text-danger">*</span></label>
-                                          <input type="password" name="motDePasseConfirm" class="form-control" id="motPass" placeholder="Confirmez votre mot de passe">
+                                            <label for="motPassConfirm">Confirmer mot de passe <span class="text-danger">*</span></label>
+                                            <input type="password" name="motDePasseConfirm" class="form-control" id="motPassConfirm" placeholder="Confirmez votre mot de passe" required>
+                                            <div class="error-message text-small text-danger" id="error-motPassConfirm"></div>
                                         </div>
                                         <div class="form-check mt-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                             <label class="form-check-label" for="flexCheckDefault">
-                                                En cochant cette case vous acceptez les <a class="link" href="cgu.php" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.php" target="_blank" rel="noopener noreferrer"    > politique de confidentialité</a> du site
+                                                En cochant cette case vous acceptez les <a class="link" href="cgu.php" target="_blank" rel="noopener noreferrer"> conditions générales d'utilisation </a> et la <a class="link" href="politique.php" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a> du site
                                             </label>
+                                            <div class="error-message text-small text-danger" id="error-flexCheckDefault"></div>
                                         </div>
                                         <div class="mt-4">
-                                            <button type="submit " class="btn button-primary-regular">Je m'inscris</button>
+                                            <button type="submit" class="btn button-primary-regular" onclick="validateForm()">Je m'inscris</button>
                                         </div>
                                     </form>
                                     <form class="tab-pane fade show" id="pills-entrepreneur" role="tabpanel" aria-labelledby="pills-entrepreneur-tab">
@@ -174,9 +182,9 @@
         </section>
         
     </main>
-   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/formValidation.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
