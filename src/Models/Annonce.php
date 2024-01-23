@@ -1,8 +1,11 @@
 <?php
 namespace App\Models;
+
+use App\Controllers\AdsController;
 use DB;
 use PDO;
 use PDOException;
+use Exception;
 
 class Annonce
 {
@@ -473,6 +476,34 @@ class Annonce
             // Log PDO exceptions
             echo 'PDO Exception: ' . $e->getMessage();
             exit();
+        }
+    }
+
+    // delete an ad by id
+    public static function deleteAnnonce($idAnnonce)
+    {
+        try {
+            // Retrieve idAnnonce from $_POST
+            $idAnnonce = intval($_POST["id"]);
+
+            // Use provided $db or get the DB instance
+            $db = $db ?? DB::getDB();
+
+            $db = DB::getDB();
+            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                echo "Annonce supprimée avec succès";
+                redirectAndExit(AdsController::MY_PROFIEL_URL);
+            } else {
+                throw new Exception("Erreur lors de la suppression de l'annonce: " . $stmt->errorInfo()[2]);
+            }
+        } catch (PDOException $e) {
+            throw new Exception('PDO Exception: ' . $e->getMessage());
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
     }
     

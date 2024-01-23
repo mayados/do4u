@@ -7,7 +7,6 @@ use PDOException;
 use Auth;
 use Exception;
 
-    // Path: src/Controllers/AdsController.php
     class AdsController extends Controller
     {
         const URL_PROFIL = '/MyProfile.php';
@@ -302,26 +301,7 @@ use Exception;
     // delete annonce by id
     public static function deleteAnnonce()
     {
-        try {
-            // Retrieve idAnnonce from $_POST
-            $idAnnonce = intval($_POST["id"]);
-
-            $db = DB::getDB();
-            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
-
-            if ($stmt->execute()) {
-                echo "Annonce supprimée avec succès";
-                redirectAndExit(self::MY_PROFIEL_URL);
-            } else {
-                throw new Exception("Erreur lors de la suppression de l'annonce: " . $stmt->errorInfo()[2]);
-            }
-        } catch (PDOException $e) {
-            throw new Exception('PDO Exception: ' . $e->getMessage());
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        Annonce::deleteAnnonce($_POST['idAnnonce']);
     }
     
 }
