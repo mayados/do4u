@@ -53,7 +53,6 @@ class MyProfileController extends Controller
         require_once __DIR__ . '/../../views/parameters.php';
     }
 
-
 }
 
     

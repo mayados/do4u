@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\AnnonceTest::testDeleteAnnonce":8,"Tests\\AnnonceTest::testDeleteAnnonceSuccess":7,"Tests\\AnnonceTest::testDeleteAnnonceFailure":7},"times":{"Tests\\AnnonceTest::testDeleteAnnonce":0.022,"Tests\\AnnonceTest::testDeleteAnnonceSuccess":0.031,"Tests\\AnnonceTest::testDeleteAnnonceFailure":0.002}}
