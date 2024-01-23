@@ -10,7 +10,7 @@ class MyProfileController extends Controller
 
     const URL_CREATE = '/creationAd.php';
     const URL_INDEX = '/index.php';
-    const URL_HANDLER = '/handlers/user-handler.php';
+    const URL_HANDLER = '/handlers/ad-handler.php';
     
 
     
