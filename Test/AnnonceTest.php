@@ -1,49 +1,41 @@
 <?php
 
-namespace Tests;
-use App\Models\Annonce;
-use DB;
-use PDO;
-use PDOStatement;
+//./vendor/bin/phpunit tests/AuthControllerTest.php
+
+use App\Controllers\AdsController;
 use PHPUnit\Framework\TestCase;
+use App\Controllers\AuthController;
 
 class AnnonceTest extends TestCase{
 
-    // 
-    public function testDeleteAnnonce()
+    public function testCreateAnnonceSuccess()
     {
-        $_POST["id"] = 1;
+        $annonceController = new AdsController();
 
-        $dbMock = $this->getMockBuilder(DB::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $data = [
+            'createurId' => 1,
+            'titre' => 'test',
+            'description' => 'test',
+            'prix' => '10',
+            'ville' => 'test',
+            'codePostal' => 'test',
+            'categorieId' => 1, 
+            'typeAnnonceId' => 1,
+        ];
 
-        $stmtMock = $this->getMockBuilder(PDOStatement::class)
-            ->getMock();
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        $_POST = $data;
+        $_FILES['file'] = [
+            'name' => 'test.jpg',
+            'tmp_name' => '/tmp/test.jpg',
+            'size' => 1000000,
+        ];
 
-        $dbMock->expects($this->once())
-            ->method('prepare')
-            ->with('DELETE FROM annonce WHERE idAnnonce = :idAnnonce')
-            ->willReturn($stmtMock);
+        ob_start();
+        $annonceController->createAnnonce();
+        $output = ob_get_clean();
 
-        $stmtMock->expects($this->once())
-            ->method('bindParam')
-            ->with(':idAnnonce', 1, PDO::PARAM_INT);
-
-        $stmtMock->expects($this->once())
-            ->method('execute')
-            ->willReturn(true);
-
-        $dbMock = $this->getMockBuilder(DB::class)
-            ->onlyMethods(['getDB'])
-            ->getMock();
-
-        $dbMock->method('getDB')
-            ->willReturn($dbMock);
-
-        Annonce::deleteAnnonce(1);
-
-        $this->expectOutputString("Annonce supprimée avec succès");
+        $this->assertStringContainsString('Annonce créée avec succès', $output);
     }
 }
 
