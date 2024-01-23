@@ -244,18 +244,17 @@ use Exception;
     
 
     public function updateAnnonce()
-    { 
+    {
         try {
-            $idAnnonce = intval($_POST["id"]);
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $idAnnonce = intval($_POST["idAnnonce"]);  
                 $titre = strip_tags(trim($_POST["titre"]));
                 $description = htmlspecialchars(trim($_POST["description"]));
                 $prix = floatval($_POST["prix"]);
                 $ville = htmlspecialchars(trim($_POST["ville"]));
                 $codePostal = htmlspecialchars(trim($_POST["codePostal"]));
                 $createurId = Auth::getSessionUserId();
-
-                
+    
                 $db = DB::getDB();
                 $sql = "UPDATE annonce SET 
                         titre = :titre,
@@ -288,6 +287,7 @@ use Exception;
             echo $e->getMessage();
         }
     }
+    
    
     // delete annonce by id
     public static function deleteAnnonce()
