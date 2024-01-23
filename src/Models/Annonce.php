@@ -258,6 +258,37 @@ class Annonce
             exit();
         }
     }
+    public static function getModificationAd(int $idAnnonce){
+        try {
+            $db = DB::getDB();
+            $query = $db->prepare("SELECT annonce.*, 
+                                        categorie.nomCategorie AS nomCategorie, 
+                                        utilisateur.nomUtilisateur AS nomUtilisateur, 
+                                        utilisateur.villeUtilisateur AS villeUtilisateur,
+                                        typeannonce.nomTypeAnnonce AS nomTypeAnnonce    
+                                    FROM 
+                                        annonce 
+                                    JOIN 
+                                        categorie ON annonce.categorieId = categorie.idCategorie
+                                    JOIN 
+                                        utilisateur ON annonce.createurId = utilisateur.idUtilisateur
+                                    JOIN 
+                                        typeannonce ON annonce.typeAnnonceId = typeannonce.idTypeAnnonce 
+                                    WHERE
+                                        annonce.idAnnonce = :id
+                                    ORDER BY 
+                                        annonce.idAnnonce ASC");
+            $query->bindParam(':id', $idAnnonce, PDO::PARAM_INT);
+            $query->execute();
+
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Log PDO exceptions
+            echo 'PDO Exception: ' . $e->getMessage();
+            exit();
+        }
+
+    }
 
 
     public static function getOffre() {
@@ -328,7 +359,12 @@ class Annonce
             $query->execute();
 
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+
+            if (empty($result)) {
+                return "No annonces found for the search term '$terme'";
+            } else {
+                return $result;
+            }
         } catch (PDOException $e) {
             echo 'PDO Exception: ' . $e->getMessage();
             exit();

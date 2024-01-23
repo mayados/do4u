@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="assets/sass/main.css">
 </head>
 <body>
-<?php ob_start(); ?>
+
+<?php  if ($adModification): ?>
     <main>
     <section class="modification pt-lg-2">
             <div class="container-fluid">
@@ -20,7 +21,7 @@
                         
                         <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
                             <input type="text" name="action" value="updateAnnonce" hidden>
-                            <input type="hidden" name="idAnnonce" value="<?php echo $adDetails['idAnnonce']; ?>"> 
+                            <input type="hidden" name="idAnnonce" value="<?php echo $adModification['idAnnonce']; ?>"> 
                         <div class="card cardCre">
                             <div class="card-body">
                                 <h3>Modification d'annonce</h3>
@@ -28,7 +29,7 @@
             <!-- Titre de l'annonce -->
                         <div class="mb-3">
                             <label for="annonceTitle" class="form-label">Titre de votre annonce *</label>
-                            <input type="text" name="titre" value="<?php echo $adDetails['titre']; ?>" class="form-control" id="titre" placeholder=" " required>
+                            <input type="text" name="titre" value="<?php echo $adModification['titre']; ?>" class="form-control" id="titre" placeholder=" " required>
                         </div>
 
             <!-- Catégorie -->
@@ -38,7 +39,7 @@
                                                             
                             <?php
 
-                            $annonceCategorieId = $annonceDetails['categorieId'];
+                            $annonceCategorieId = $adModification['categorieId'];
 
                             foreach ($categories as $categorie) {
                                 $selected = ($categorie['idCategorie'] == $annonceCategorieId) ? 'selected' : '';
@@ -74,20 +75,20 @@
            </div>
                 <div class="mb-3">
                     <label for="annonceDescription" class="form-label">Description *</label>
-                    <textarea name="description" class="form-control" id="annonceDescription" rows="5"><?php echo $adDetails['description']; ?></textarea>
+                    <textarea name="description" class="form-control" id="annonceDescription" rows="5"><?php echo $adModification['description']; ?></textarea>
 
                 </div>
                 <div class="mb-3">
                     <label for="annoncePrix" class="form-label">Votre prix de service ? *</label>
-                    <input type="text" name="prix" value="<?php echo $adDetails['prix']; ?>" class="form-control" id="annoncePrix" placeholder="Votre prix de service" required>
+                    <input type="text" name="prix" value="<?php echo $adModification['prix']; ?>" class="form-control" id="annoncePrix" placeholder="Votre prix de service" required>
                 </div>
                 <div class="mb-3">
                     <label for="annonceLieu" class="form-label">Votre lieu de service ? *</label>
-                    <input type="text" name="ville" value="<?php echo $adDetails['ville']; ?>" class="form-control" id="annonceLieu" placeholder="Votre lieu de service" required>
+                    <input type="text" name="ville" value="<?php echo $adModification['ville']; ?>" class="form-control" id="annonceLieu" placeholder="Votre lieu de service" required>
                 </div>
                 <div class="mb-3">
                                         <label for="annonceLieu" class="form-label">code postal*</label>
-                                        <input type="text" name="codePostal"value="<?php echo $adDetails['codePostal']; ?>"class="form-control" id="codePostal"  placeholder="codePostal service" required>
+                                        <input type="text" name="codePostal"value="<?php echo $adModification['codePostal']; ?>"class="form-control" id="codePostal"  placeholder="codePostal service" required>
                                     </div>
 
                 <!-- Bouton -->
@@ -104,9 +105,11 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
         </section>
-    </main>   
-    <?php ob_end_flush(); ?>
+    </main>  
+   
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

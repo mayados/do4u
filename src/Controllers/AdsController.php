@@ -94,19 +94,30 @@ use Exception;
     }
 
     public function showModificationPage()
-    {   $idAnnonce = isset($_GET['id']) ? $_GET['id'] : null; 
-       $adDetails =  Annonce::getAdDetailsById($idAnnonce);
-        $annonceTypes= Annonce::getAnnonceTypes($idAnnonce);
+    {
+      
+        if (isset($_GET['id'])) {
+            $idAnnonce = intval($_GET['id']);
+            
+            $adModification = Annonce::getModificationAd($idAnnonce);
 
-       
-        $annonceTypeIds= Annonce::getAnnonceTypeIds($idAnnonce);
-        $categories = Annonce::getAllCategories();
-        $actionUrl = self::URL_HANDLER;
-        require_once __DIR__ . '/../../views/modificationAd.php';
-   
-     
+                if ($adModification){
+                $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
+                $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
+    
+                $categories = Annonce::getAllCategories();
+    
+                $actionUrl = self::URL_HANDLER;
+
+                    require_once __DIR__ . '/../../views/modificationAd.php';
+                 }
+
+    
+            
+                
+        }
     }
-
+    
     public function showContactPage()
     {
         require_once __DIR__ . '/../../views/contact.php';
@@ -189,6 +200,7 @@ use Exception;
     
                 if ($stmt->execute()) {
                     echo "Annonce créée avec succès";
+                    redirectAndExit(self::MY_PROFIEL_URL);
                     
                 } else {
                     echo "Une erreur est survenue lors de la création de l'annonce.";
@@ -207,7 +219,7 @@ use Exception;
         $name = $file['name'];
         $size = $file['size'];
         $error = $file['error'];
-    
+      
         $tabExtension = explode('.', $name);
         $extension = strtolower(end($tabExtension));
     
@@ -234,6 +246,7 @@ use Exception;
     public function updateAnnonce()
     { 
         try {
+            $idAnnonce = intval($_POST["id"]);
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $titre = strip_tags(trim($_POST["titre"]));
                 $description = htmlspecialchars(trim($_POST["description"]));
@@ -275,39 +288,8 @@ use Exception;
             echo $e->getMessage();
         }
     }
-    
-
-    
-    
-    
-    
-    public function deleteAnnonce()
-    {
-        try {
-            $idUtilisateur = Auth::getSessionUserId();
-    
-            $db = DB::getDB();
-            $sql = "DELETE FROM annonce WHERE idAnnonce = :idAnnonce";
-    
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
-    
-            if ($stmt->execute()) {
-                echo "Annonce supprimée avec succès";
-                header("Location: myProfile.php");
-                exit();
-            } else {
-                echo "Une erreur est survenue lors de la suppression de l'annonce.";
-            }
-        } catch (PDOException $e) {
-            echo 'PDO Exception: ' . $e->getMessage();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
    
-    // delete annonce
-    // delete annonce
+    // delete annonce by id
     public static function deleteAnnonce()
     {
         try {
@@ -332,36 +314,4 @@ use Exception;
         }
     }
     
-
-
-    // update annonce
-    public static function updateAnnonce(){
-        try {
-            $db = DB::getDB();
-            $sql = "UPDATE annonce SET titre = :titre, description = :description, prix = :prix, ville = :ville, codePostal = :codePostal, categorieId = :categorieId, typeAnnonceId = :typeAnnonceId WHERE idAnnonce = :idAnnonce";
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
-            $stmt->bindParam(':titre', $titre);
-            $stmt->bindParam(':description', $description);
-            $stmt->bindParam(':prix', $prix);
-            $stmt->bindParam(':ville', $ville);
-            $stmt->bindParam(':codePostal', $codePostal);
-            $stmt->bindParam(':categorieId', $categorieSelect);
-            $stmt->bindParam(':typeAnnonceId', $annonceType);
-            if ($stmt->execute()) {
-                echo "Annonce modifiée avec succès";
-                redirectAndExit(self::MY_PROFIEL_URL);
-            } else {
-                throw new Exception("Erreur lors de la modification de l'annonce: " . $stmt->errorInfo()[2]);
-            }
-        } catch (PDOException $e) {
-            throw new Exception('PDO Exception: ' . $e->getMessage());
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
 }
-
-
-    
-    
