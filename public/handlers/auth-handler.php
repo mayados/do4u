@@ -22,5 +22,3 @@ App::terminate();
 // Unknown action
 redirectAndExit(App\Controllers\AuthController::URL_AFTER_LOGOUT);
 
-
-

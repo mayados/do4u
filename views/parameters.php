@@ -71,19 +71,20 @@
                                         </div>
                                     </div>
                                     <!-- form to update user data -->
-                                    <form action="">
+                                    <form action="<?php echo $actionUrl ?>" method="POST">
+                                        <input type="text" name="action" value="update" hidden>
                                         <div class="form-group">
                                             <label for="adresse">Adresse (ville + code postal)</label>
-                                            <input type="text" class="form-control" id="adresse" placeholder="<?php echo $users->getVilleUtilisateur() ?>">
+                                            <input type="text" class="form-control" id="adresse" name="villeUtilisateur" placeholder="<?php echo $users->getVilleUtilisateur() ?>">
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="bio">Bio</label>
                                             <div class="form-floating">
-                                                <textarea class="form-control" id="bio"><?php echo $users->getDescription() ?></textarea>
+                                                <textarea class="form-control" id="bio" name="description"><?php echo $users->getDescription() ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-row gap-3 mt-4">
-                                            <button type="submit" class="btn btn-parametres">Annuler</button>
+                                            <button type="button" class="btn btn-parametres">Annuler</button>
                                             <button type="submit" class="btn btn-parametres">Enregistrer</button>
                                         </div>
                                     </form>
