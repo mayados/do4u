@@ -65,12 +65,11 @@ var_dump($_POST);
                                         <span>Ajouter des photos (pas obligatoire)</span>
                                         <input type="file" class="form-control" id="file" name="file" multiple accept="image/*">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="4 000 000">
-                                            <div class="card icone-card">
-                                                <div class="card-body">
-                                                    <i class="bi bi-image fa-2x photo-icon"></i>
-                                                </div>
+                                        <div class="card icone-card">
+                                            <div class="card-body">
+                                                <i class="bi bi-image fa-2x photo-icon"></i>
                                             </div>
-
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="annonceDescription" class="form-label">Description *</label>
