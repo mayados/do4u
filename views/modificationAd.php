@@ -19,7 +19,7 @@
                     <div class="col-lg-8 pt-lg-0">
                         <!-- Colonne gauche avec formulaire -->
                         
-                        <form action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab" enctype="multipart/form-data">
+                        <form id="update" action="<?php echo $actionUrl; ?>" method="post" class="tab-pane fade show active" id="pills-particulier" role="tabpanel" aria-labelledby="pills-particulier-tab">
                             <input type="text" name="action" value="updateAnnonce" hidden>
                             <input type="hidden" name="idAnnonce" value="<?php echo $adModification['idAnnonce']; ?>"> 
                         <div class="card cardCre">
@@ -36,42 +36,33 @@
                         <div class="mb-3">
                         <label for="categorieSelect" class="form-label">Catégorie *</label>
                         <select class="form-select" id="categorieSelect" name="categorieId">
-                                                            
                             <?php
-
                             $annonceCategorieId = $adModification['categorieId'];
-
                             foreach ($categories as $categorie) {
                                 $selected = ($categorie['idCategorie'] == $annonceCategorieId) ? 'selected' : '';
                                 echo '<option value="' . $categorie['idCategorie'] . '" ' . $selected . '>' . $categorie['nomCategorie'] . '</option>';
                             }
-                            ?>
+                          
                         </select>
                      
                     </div>
 
-            <!-- Type d'annonce -->
-            <div class="mb-3 typecheck">
-                <span>Type d'annonce &nbsp;</span>
-                <?php
- 
-    foreach ($annonceTypes as $type) {
-        $checked = (in_array($type['idTypeAnnonce'], $annonceTypeIds)) ? 'checked' : '';
-        echo '<div class="form-check form-check-inline">';
-        echo '<input class="form-check-input" type="checkbox" name="typeAnnonceId[]" value="' . $type['idTypeAnnonce'] . '" ' . $checked . '>';
-        echo '<label class="form-check-label">' . $type['nomTypeAnnonce'] . '</label>';
-        echo '</div>';
-    }
-    ?>
+                <!-- Type d'annonce -->
+                <div class="mb-3 typecheck">
+                    <span>Type d'annonce &nbsp;</span>
+                    <?php
+                foreach ($annonceTypes as $type) {
+                    $checked = (in_array($type['idTypeAnnonce'], $annonceTypeIds)) ? 'checked' : '';
+                    echo '<div class="form-check form-check-inline">';
+                    echo '<input class="form-check-input" type="checkbox" name="typeAnnonceId[]" value="' . $type['idTypeAnnonce'] . '" ' . $checked . '>';
+                    echo '<label class="form-check-label">' . $type['nomTypeAnnonce'] . '</label>';
+                    echo '</div>';
+                }
+                ?>
                 <div class="form-check form-check-inline">
-                    
-                   
                 </div>
                 <div class="form-check form-check-inline">
-                    
-                    
                 </div>                        
-
            </div>
                 <div class="mb-3">
                     <label for="annonceDescription" class="form-label">Description *</label>
@@ -90,26 +81,25 @@
                                         <label for="annonceLieu" class="form-label">code postal*</label>
                                         <input type="text" name="codePostal"value="<?php echo $adModification['codePostal']; ?>"class="form-control" id="codePostal"  placeholder="codePostal service" required>
                                     </div>
-
                 <!-- Bouton -->
-                                    <div class="d-grid gap-2">
-                                        <button class="button-primary-regular" type="submit">Modifier une annonce</button>
-                                    </div>
-                                </div>
-                            </div> 
-                        </form>
-                    </div>
-          
-                    <div class="col-lg-4">
-                            <img src="assets/img/Img_page_ads/kit.jpg" class="img-fluid rounded d-none d-lg-block"  alt="Image">
-                        </div>
-                    </div>
+                <div class="d-grid gap-2">
+                    <button class="button-primary-regular" type="submit">Modifier une annonce</button>
                 </div>
-                <?php endif; ?>
+            </div>
+        </div> 
+    </form>
+</div>
+
+     <div class="col-lg-4">
+        <img src="assets/img/Img_page_ads/kit.jpg" class="img-fluid rounded d-none d-lg-block"  alt="Image">
+         </div>
+        </div>
+        </div>
+        <?php endif; ?>
+
         </section>
     </main>  
-   
-   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
