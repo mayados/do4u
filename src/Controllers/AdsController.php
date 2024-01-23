@@ -123,38 +123,44 @@ use Exception;
         require_once __DIR__ . '/../../views/contact.php';
     }
 
-
-    public function seachByKeyword()
-    {   
-        try
-        {
+    // search by keyword
+    public function searchByKeyword()
+    {
+        try {
             $bdd = DB::getDB();
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        catch(Exception $e)
-        {
+        } catch (Exception $e) {
             die("Une érreur a été trouvée : " . $e->getMessage());
         }
+
         $bdd->query("SET NAMES UTF8");
 
-        if (isset($_GET["s"]) && $_GET["s"] == "Rechercher")
-        {
+        if (isset($_GET["s"]) && $_GET["s"] == "Rechercher") {
             $terme = isset($_GET["terme"]) ? htmlspecialchars($_GET["terme"]) : '';
-            $terme = trim($terme); 
-            $terme = strip_tags($terme); 
+            $terme = trim(strip_tags($terme));
 
-            if (!empty($terme))
-            {
+            if (!empty($terme)) {
                 $terme = strtolower($terme);
-                $select_terme = Annonce::chercher($terme);
-            }
-            else
-            {
-                $message = "Vous devez entrer votre requête dans la barre de recherche";
+                $terms = str_split($terme);
+                $select_terme = Annonce::chercherMultiChars($terms);
+
+                if (is_array($select_terme) && !empty($select_terme)) {
+                    // Handle $select_terme as an array of results
+                    print_r($select_terme);
+                } else {
+                    // Display a message indicating no results
+                    echo "No annonces found for the search term '{$terme}'";
+                }
+            } else {
+                // Display a message for an empty search term
+                echo "Vous devez entrer votre requête dans la barre de recherche";
             }
         }
     }
 
+
+
+    // create annonce
     public function createAnnonce()
     {
         try {
@@ -213,6 +219,7 @@ use Exception;
         }
     }
     
+    // upload file function
     private function uploadFile($file)
     {
         $tmpName = $file['tmp_name'];
@@ -242,7 +249,7 @@ use Exception;
         }
     }
     
-
+    // update annonce function
     public function updateAnnonce()
     { 
         try {

@@ -347,27 +347,30 @@ class Annonce
     }
 
     // search by keyword
-    public static function chercher($terme)
+    public static function chercherMultiChars($terms)
     {
         try {
             $db = DB::getDB();
+            $conditions = [];
+
+            foreach ($terms as $key => $term) {
+                $conditions[] = "(titre LIKE :term{$key} OR description LIKE :term{$key})";
+            }
+
             $query = $db->prepare("SELECT titre, description 
                                     FROM annonce 
-                                    WHERE titre LIKE :terme OR description LIKE :terme");
-            
-            $query->bindParam(':terme', '%' . $terme . '%', PDO::PARAM_STR);
+                                    WHERE " . implode(" AND ", $conditions));
+
+            foreach ($terms as $key => $term) {
+                $query->bindValue(":term{$key}", '%' . $term . '%', PDO::PARAM_STR);
+            }
+
             $query->execute();
 
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $query->fetchAll(PDO::FETCH_ASSOC);
 
-            if (empty($result)) {
-                return "No annonces found for the search term '$terme'";
-            } else {
-                return $result;
-            }
         } catch (PDOException $e) {
-            echo 'PDO Exception: ' . $e->getMessage();
-            exit();
+            return 'PDO Exception: ' . $e->getMessage();
         }
     }
 
