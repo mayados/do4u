@@ -13,7 +13,7 @@
 
 <?php  if ($adModification): ?>
     <main>
-    <section class="modification pt-lg-2">
+    <section class="creation pt-lg-2">
             <div class="container-fluid">
                 <div class="row align-items-stretch">
                     <div class="col-lg-8 pt-lg-0">
@@ -35,7 +35,7 @@
             <!-- Catégorie -->
                         <div class="mb-3">
                         <label for="categorieSelect" class="form-label">Catégorie *</label>
-                                        <select class="form-select" id="categorieSelect" name="categorieId">
+                        <select class="form-select" id="categorieSelect" name="categorieId">
                                                             
                             <?php
 
@@ -46,9 +46,9 @@
                                 echo '<option value="' . $categorie['idCategorie'] . '" ' . $selected . '>' . $categorie['nomCategorie'] . '</option>';
                             }
                             ?>
-                                        </select>
+                        </select>
                      
-                                    </div>
+                    </div>
 
             <!-- Type d'annonce -->
             <div class="mb-3 typecheck">
@@ -92,13 +92,13 @@
                                     </div>
 
                 <!-- Bouton -->
-                <div class="d-grid gap-2">
-                    <button class="button-primary-regular" type="submit">Modifier une annonce</button>
-                </div>
-            </div>
-        </div> 
-    </form>
-</div>
+                                    <div class="d-grid gap-2">
+                                        <button class="button-primary-regular" type="submit">Modifier une annonce</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </form>
+                    </div>
           
                     <div class="col-lg-4">
                             <img src="assets/img/Img_page_ads/kit.jpg" class="img-fluid rounded d-none d-lg-block"  alt="Image">
