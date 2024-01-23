@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../bootstrap/app.php';
 
-// Check only if guest
+Auth::isAuthOrRedirect();
 
 $adscontroller = new App\Controllers\AdsController();
 $adscontroller->renderMenu();
