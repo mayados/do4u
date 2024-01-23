@@ -1,11 +1,8 @@
 <?php
 require_once __DIR__.'/../bootstrap/app.php';
 
-
-
-
 session_destroy();
-
+Auth::isGuestOrRedirect();
 
 $authController = new App\Controllers\AuthController();
 $authController->renderMenu();
