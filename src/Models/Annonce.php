@@ -101,6 +101,8 @@ class Annonce
         $this->createurId = $createurId;
 
     }
+
+    // get all ads form database and paginate them
     public static function getAll( $offset,  $limit, $searchTerm = null)
     {
         try {
@@ -140,6 +142,7 @@ class Annonce
         }
     }
 
+    // get all ads by category and paginate them
     public static function getByCategory(string $category, int $offset, int $limit)
     {
         try {
@@ -176,6 +179,7 @@ class Annonce
         }
     }
 
+    // count all ads by category
     public static function getTotalCountByCategory(string $category)
     {
         try {
@@ -196,6 +200,7 @@ class Annonce
         }
     }
 
+    // filter ads by category and paginate them
     public static function getAllCategories()
     {
         try {
@@ -210,6 +215,7 @@ class Annonce
         }
     }
 
+    // count all ads
     public static function getTotalCount()
     {
         try {
@@ -226,8 +232,9 @@ class Annonce
             exit();
         }
     }
-    
-   public static function getAdDetailsById(int $adId)
+
+    // get an ad by id  
+    public static function getAdDetailsById(int $adId)
     {
         try {
             $db = DB::getDB();
@@ -258,6 +265,8 @@ class Annonce
             exit();
         }
     }
+
+    // Modify an ad
     public static function getModificationAd(int $idAnnonce){
         try {
             $db = DB::getDB();
@@ -290,7 +299,7 @@ class Annonce
 
     }
 
-
+    // get ads by their type which is offer
     public static function getOffre() {
         try {
             $db = DB::getDB();
@@ -319,6 +328,7 @@ class Annonce
         }
     }
     
+    // get ads by their type which is demand
     public static function getDemmande(){
         try {
             $db = DB::getDB();
@@ -375,7 +385,7 @@ class Annonce
     }
 
 
-    // search by Zahra
+    // get total count of ads by search term
     public static function getTotalCountBySearch($searchTerm)
     {
         try {
@@ -393,7 +403,7 @@ class Annonce
         }
     }
 
-
+    // get all annonce of a user by user id
     public static function getUserAnnonces(){
         try {
             $db = DB::getDB();
@@ -419,7 +429,7 @@ class Annonce
         }
     }
 
-
+    // get an ads type by id
     public static function getAnnonceTypes($idAnnonce)
     {
         try {
@@ -439,6 +449,8 @@ class Annonce
             exit();
         }
     }
+
+    // get an ads type by id
     public static function getAnnonceTypeIds($idAnnonce)
     {
         try {

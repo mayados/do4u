@@ -7,6 +7,7 @@ use PDOException;
 use Auth;
 use Exception;
 
+    // Path: src/Controllers/AdsController.php
     class AdsController extends Controller
     {
         const URL_PROFIL = '/MyProfile.php';
@@ -19,6 +20,7 @@ use Exception;
         const ITEMS_PER_PAGE = 8;
         const MY_PROFIEL_URL = '/myProfile.php';
 
+    // show all ads
     public function getAll()
     {
         $userId = Auth::getSessionUserId();
@@ -56,22 +58,26 @@ use Exception;
         require_once __DIR__ . '/../../views/components/menu.php';
     }
 
-
+    //  show ads by categorie
     public function showAdsByCategorie()
     {   
         require_once __DIR__ . '/../../views/ads.php';
     }
 
-
+    // add creation page
     public function showCreationPage()
     {
         $actionUrl = self::URL_HANDLER;
         require_once __DIR__ . '/../../views/creationAd.php';
     }
+
+    // my profile page
     public function showMyProfil()
     {
         require_once __DIR__ . '/../../views/MyProfile.php';
     }
+
+    // show ad details
     public function showAdDetails()
     {   
         $annonceOffre = Annonce::getOffre();
@@ -93,6 +99,7 @@ use Exception;
         }
     }
 
+    // show modification page
     public function showModificationPage()
     {
       
@@ -101,23 +108,20 @@ use Exception;
             
             $adModification = Annonce::getModificationAd($idAnnonce);
 
-                if ($adModification){
-                $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
-                $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
-    
-                $categories = Annonce::getAllCategories();
-    
-                $actionUrl = self::URL_HANDLER;
+            if ($adModification){
+            $annonceTypes = Annonce::getAnnonceTypes($idAnnonce);
+            $annonceTypeIds = Annonce::getAnnonceTypeIds($idAnnonce);
 
-                    require_once __DIR__ . '/../../views/modificationAd.php';
-                 }
+            $categories = Annonce::getAllCategories();
 
-    
-            
-                
+            $actionUrl = self::URL_HANDLER;
+
+                require_once __DIR__ . '/../../views/modificationAd.php';
+            }      
         }
     }
     
+    // show contact page
     public function showContactPage()
     {
         require_once __DIR__ . '/../../views/contact.php';
@@ -159,8 +163,7 @@ use Exception;
     }
 
 
-
-    // create annonce
+    // create annonce controller
     public function createAnnonce()
     {
         try {
